@@ -1,0 +1,19 @@
+// ============================================================
+// S-1 Beauty Landing — DemoHeaderBar / DemoFloatingHome 색상 override
+// ============================================================
+//
+// [왜 :root에 override하는가]
+// - DemoHeaderBar/FloatingHome은 CSS 변수(`--demo-bar-*`, `--demo-fab-*`)로 색상을 제어
+// - 이 파일이 라우트 활성 시 head에 로드되면, :root 변수가 웜화이트/로즈골드로 교체됨
+// - 데모 chrome이 S-1의 디자인 톤과 자연스럽게 어우러짐
+
+:root {
+  // 상단 DemoHeaderBar: 웜화이트 반투명 배경 + 소프트 블랙 텍스트 + 로즈골드 경계
+  --demo-bar-bg: rgba(250, 250, 248, 0.85);
+  --demo-bar-text: #2c2c2c;
+  --demo-bar-border: rgba(176, 141, 115, 0.2);
+
+  // 우하단 DemoFloatingHome: 로즈골드 배경 + 웜화이트 아이콘
+  --demo-fab-bg: #b08d73;
+  --demo-fab-icon: #fafaf8;
+}

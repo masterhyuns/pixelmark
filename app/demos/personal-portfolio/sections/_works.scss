@@ -1,0 +1,264 @@
+// ============================================================
+// Works 섹션 — 2열 그리드 + hover 오버레이 + 모달
+// ============================================================
+
+.personal-portfolio .pp-works {
+  .pp-works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--pp-gap-lg);
+
+    @media (max-width: 639px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .pp-work-card {
+    cursor: pointer;
+
+    .pp-work-thumb {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--pp-radius-sm);
+      background: var(--pp-bg-soft);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(100%) contrast(1.05);
+        transition: filter var(--pp-duration-slow) var(--pp-ease),
+                    transform var(--pp-duration-slow) var(--pp-ease);
+      }
+
+      // 오버레이 (hover 시 나타남)
+      .pp-work-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: var(--pp-text-caption);
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        opacity: 0;
+        transition: opacity var(--pp-duration-base) var(--pp-ease);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          img {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+          }
+          .pp-work-overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .pp-work-meta {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .pp-work-title {
+      font-family: var(--pp-font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--pp-text);
+      letter-spacing: -0.01em;
+    }
+
+    .pp-work-category {
+      font-size: var(--pp-text-caption);
+      color: var(--pp-text-mute);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      flex-shrink: 0;
+    }
+  }
+
+  // ----- 작업물 모달 -----
+  .pp-work-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--pp-duration-base) var(--pp-ease);
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .pp-work-modal {
+    background: var(--pp-bg);
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px;
+    border-radius: var(--pp-radius-md);
+    transform: translateY(16px) scale(0.98);
+    transition: transform var(--pp-duration-slow) var(--pp-ease);
+
+    @media (max-width: 479px) {
+      padding: 28px 24px;
+    }
+  }
+
+  .pp-work-modal-backdrop.is-open .pp-work-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .pp-work-modal-image {
+    margin: -40px -40px 28px;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--pp-bg-soft);
+
+    @media (max-width: 479px) {
+      margin: -28px -24px 24px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .pp-work-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+
+    h2 {
+      font-family: var(--pp-font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--pp-text);
+      letter-spacing: -0.02em;
+    }
+
+    .pp-work-modal-year {
+      font-size: var(--pp-text-caption);
+      color: var(--pp-text-mute);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  .pp-work-modal-category {
+    font-size: var(--pp-text-small);
+    color: var(--pp-text-mute);
+    margin-bottom: 24px;
+  }
+
+  .pp-work-modal-desc {
+    font-size: var(--pp-text-body);
+    color: var(--pp-text-soft);
+    line-height: 1.85;
+    margin-bottom: 28px;
+  }
+
+  .pp-work-modal-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+
+    span {
+      padding: 5px 12px;
+      background: var(--pp-bg-soft);
+      font-size: var(--pp-text-caption);
+      color: var(--pp-text);
+      border-radius: var(--pp-radius-md);
+    }
+  }
+
+  .pp-work-modal-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pp-border);
+  }
+
+  .pp-work-modal-link {
+    font-size: var(--pp-text-small);
+    color: var(--pp-link-base);
+    border-bottom: 1px solid currentColor;
+    transition: color var(--pp-duration-quick) var(--pp-ease);
+
+    &:hover {
+      color: var(--pp-link-hover);
+    }
+  }
+
+  .pp-work-modal-close {
+    font-size: var(--pp-text-small);
+    color: var(--pp-text-soft);
+    padding: 8px 16px;
+    border: 1px solid var(--pp-border);
+    border-radius: var(--pp-radius-md);
+    transition: border-color var(--pp-duration-quick) var(--pp-ease),
+                background var(--pp-duration-quick) var(--pp-ease);
+
+    &:hover {
+      border-color: var(--pp-border-strong);
+    }
+  }
+
+  // ----- 커서 옆 작업물 미리보기 (Nice-to-have) -----
+  .pp-work-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 140px;
+    background: var(--pp-bg-soft);
+    border-radius: var(--pp-radius-sm);
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: opacity 0.2s var(--pp-ease), transform 0.2s var(--pp-ease);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.is-visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    @media (hover: none), (max-width: 767px) {
+      display: none;
+    }
+  }
+}

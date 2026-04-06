@@ -1,0 +1,152 @@
+// ============================================================
+// 아코디언 (Services 페이지 전문분야 상세)
+// ============================================================
+
+.law-office {
+  .lo-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .lo-accordion-item {
+    border: 1px solid var(--lo-border);
+    border-radius: var(--lo-radius-lg);
+    background: #fff;
+    overflow: hidden;
+    transition: border-color var(--lo-duration-base) var(--lo-ease),
+                box-shadow var(--lo-duration-base) var(--lo-ease);
+
+    &.is-open {
+      border-color: var(--lo-accent);
+      box-shadow: var(--lo-shadow-md);
+    }
+  }
+
+  .lo-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 28px;
+    text-align: left;
+    transition: background var(--lo-duration-base) var(--lo-ease);
+
+    &:hover {
+      background: var(--lo-bg-alt);
+    }
+
+    .lo-accordion-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lo-accordion-number {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--lo-accent-soft);
+      color: var(--lo-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .lo-accordion-title-wrap {
+      min-width: 0;
+
+      .lo-accordion-title {
+        font-size: 1.0625rem;
+        font-weight: 700;
+        color: var(--lo-text);
+        margin-bottom: 4px;
+      }
+
+      .lo-accordion-summary {
+        font-size: var(--lo-text-small);
+        color: var(--lo-text-soft);
+        line-height: 1.6;
+      }
+    }
+
+    .lo-accordion-chevron {
+      flex-shrink: 0;
+      color: var(--lo-text-soft);
+      transition: transform var(--lo-duration-base) var(--lo-ease);
+
+      svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 2;
+      }
+    }
+  }
+
+  .lo-accordion-item.is-open .lo-accordion-chevron {
+    transform: rotate(180deg);
+    color: var(--lo-accent);
+  }
+
+  // 콘텐츠: max-height 전환으로 collapse/expand
+  .lo-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--lo-duration-slow) var(--lo-ease);
+
+    .lo-accordion-content-inner {
+      padding: 0 28px 28px;
+      border-top: 1px solid var(--lo-border);
+      padding-top: 24px;
+    }
+
+    .lo-accordion-desc {
+      font-size: var(--lo-text-body);
+      color: var(--lo-text-soft);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .lo-accordion-cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+
+      @media (max-width: 639px) {
+        grid-template-columns: 1fr;
+      }
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--lo-text);
+
+        &::before {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background: var(--lo-cta);
+          margin-top: 10px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+
+  .lo-accordion-item.is-open .lo-accordion-content {
+    // is-open 상태의 max-height는 JS가 scrollHeight를 기준으로 inline style 설정
+    // (CSS만으로는 실제 콘텐츠 높이를 알 수 없음)
+  }
+}

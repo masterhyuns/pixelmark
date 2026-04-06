@@ -1,0 +1,77 @@
+// ============================================================
+// Reviews 섹션 — 캐러셀 슬라이더 (자동 재생 + 수동)
+// ============================================================
+
+.beauty-landing .bl-reviews {
+  background: var(--bl-bg-soft);
+  overflow: hidden;
+
+  .bl-reviews-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 64px;
+  }
+
+  .bl-reviews-swiper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-bottom: 56px; // 도트 페이지네이션 공간
+  }
+
+  .bl-review-card {
+    background: #fff;
+    padding: 48px 40px;
+    border-radius: 2px;
+    box-shadow: var(--bl-shadow-card);
+    text-align: center;
+
+    .bl-review-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 24px;
+      color: var(--bl-accent);
+
+      svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+    }
+
+    .bl-review-body {
+      font-family: var(--bl-font-serif);
+      font-size: 1.375rem;
+      line-height: 1.6;
+      color: var(--bl-text);
+      margin-bottom: 28px;
+      font-style: italic;
+
+      // 앞뒤 따옴표 장식
+      &::before { content: "\201C"; margin-right: 4px; }
+      &::after { content: "\201D"; margin-left: 4px; }
+    }
+
+    .bl-review-author {
+      font-size: var(--bl-text-small);
+      color: var(--bl-text-soft);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  // Swiper 페이지네이션 도트 커스텀
+  .swiper-pagination-bullet {
+    background: var(--bl-text-soft);
+    opacity: 0.3;
+    transition: opacity var(--bl-duration-quick) var(--bl-ease),
+                width var(--bl-duration-base) var(--bl-ease);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--bl-accent);
+    opacity: 1;
+    width: 24px;
+    border-radius: 4px;
+  }
+}

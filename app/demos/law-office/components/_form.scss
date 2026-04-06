@@ -1,0 +1,136 @@
+// ============================================================
+// 상담 예약 폼 (Contact 페이지)
+// ============================================================
+
+.law-office {
+  .lo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .lo-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    // 가로 2열 레이아웃 (이름 + 연락처)
+    &.lo-form-group--row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      @media (max-width: 639px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  .lo-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lo-form-label {
+    font-size: var(--lo-text-small);
+    font-weight: 600;
+    color: var(--lo-text);
+
+    .lo-form-required {
+      color: var(--lo-cta);
+      margin-left: 2px;
+    }
+  }
+
+  .lo-form-input,
+  .lo-form-select,
+  .lo-form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: #fff;
+    border: 1px solid var(--lo-border);
+    border-radius: var(--lo-radius-md);
+    font-size: var(--lo-text-body);
+    color: var(--lo-text);
+    transition: border-color var(--lo-duration-base) var(--lo-ease),
+                box-shadow var(--lo-duration-base) var(--lo-ease);
+
+    &::placeholder {
+      color: var(--lo-text-light);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--lo-accent);
+      box-shadow: 0 0 0 3px rgba(27, 69, 114, 0.1);
+    }
+
+    // 에러 상태
+    &.has-error {
+      border-color: #d84343;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(216, 67, 67, 0.1);
+      }
+    }
+  }
+
+  .lo-form-textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.7;
+  }
+
+  .lo-form-select {
+    // 기본 화살표 제거하고 커스텀
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%235a6472' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    padding-right: 40px;
+  }
+
+  .lo-form-error {
+    font-size: 12px;
+    color: #d84343;
+    display: none;
+  }
+
+  .lo-form-field.has-error .lo-form-error {
+    display: block;
+  }
+
+  .lo-form-submit {
+    margin-top: 8px;
+    width: 100%;
+    padding: 18px;
+    font-size: var(--lo-text-body);
+    font-weight: 600;
+  }
+
+  // 개인정보 동의
+  .lo-form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--lo-text-soft);
+    line-height: 1.6;
+
+    input[type="checkbox"] {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--lo-accent);
+      cursor: pointer;
+    }
+
+    a {
+      color: var(--lo-accent);
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+// ============================================================
+// Notice 섹션 — 이벤트/공지 카드
+// ============================================================
+
+.cafe-restaurant .cr-notice {
+  background: var(--cr-bg-soft);
+
+  .cr-notice-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .cr-notice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--cr-card-gap);
+    max-width: 960px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cr-notice-card {
+    display: flex;
+    background: var(--cr-card);
+    border-radius: var(--cr-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--cr-shadow-card);
+    transition: transform var(--cr-duration-base) var(--cr-ease),
+                box-shadow var(--cr-duration-base) var(--cr-ease);
+
+    @media (hover: hover) {
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--cr-shadow-card-hover);
+      }
+    }
+
+    .cr-notice-image {
+      width: 140px;
+      flex-shrink: 0;
+      background: var(--cr-bg-soft);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 479px) {
+        width: 110px;
+      }
+    }
+
+    .cr-notice-body {
+      flex: 1;
+      padding: 20px 24px;
+    }
+
+    .cr-notice-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--cr-highlight); // 올리브 그린
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      border-radius: var(--cr-radius-pill);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .cr-notice-title {
+      font-family: var(--cr-font-serif);
+      font-size: 1.125rem;
+      color: var(--cr-text);
+      margin-bottom: 6px;
+    }
+
+    .cr-notice-period {
+      font-size: var(--cr-text-small);
+      color: var(--cr-text-soft);
+      margin-bottom: 6px;
+    }
+
+    .cr-notice-desc {
+      font-size: var(--cr-text-small);
+      color: var(--cr-text-soft);
+      line-height: 1.6;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+// ============================================================
+// Products 섹션 — 가로 드래그 슬라이더 (Swiper)
+// ============================================================
+
+.beauty-landing .bl-products {
+  background: var(--bl-bg-soft);
+  overflow: hidden; // Swiper가 컨테이너 밖으로 나가지 않도록
+
+  .bl-products-header {
+    text-align: center;
+    margin-bottom: 64px;
+
+    .section-subtitle {
+      display: inline-block;
+    }
+  }
+
+  // Swiper 스와이퍼 컨테이너 (Swiper 기본 클래스 .swiper 사용)
+  .bl-products-swiper {
+    // Swiper 내부 패딩을 음수 마진으로 보정 (카드 그림자 잘림 방지)
+    padding: 24px 0 48px;
+    overflow: visible;
+
+    .swiper-slide {
+      width: 320px;
+      height: auto;
+
+      @media (max-width: 767px) {
+        width: 260px;
+      }
+    }
+  }
+
+  // 제품 카드
+  .bl-product-card {
+    background: #fff;
+    border-radius: var(--bl-radius-md);
+    overflow: hidden;
+    box-shadow: var(--bl-shadow-card);
+    transition: box-shadow var(--bl-duration-base) var(--bl-ease),
+                transform var(--bl-duration-base) var(--bl-ease);
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: var(--bl-shadow-card-hover);
+        transform: translateY(-4px);
+
+        .bl-product-image img {
+          transform: scale(1.05);
+        }
+
+        .bl-product-overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .bl-product-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--bl-bg-soft);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--bl-duration-slow) var(--bl-ease);
+    }
+  }
+
+  // 호버 시 나타나는 오버레이 텍스트
+  .bl-product-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient(
+      to top,
+      rgba(44, 44, 44, 0.6),
+      transparent 50%
+    );
+    opacity: 0;
+    transition: opacity var(--bl-duration-base) var(--bl-ease);
+
+    span {
+      color: #fff;
+      font-size: var(--bl-text-small);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+  }
+
+  .bl-product-body {
+    padding: 24px;
+    text-align: center;
+
+    .bl-product-category {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--bl-accent);
+      margin-bottom: 8px;
+    }
+
+    .bl-product-name {
+      font-family: var(--bl-font-serif);
+      font-size: 1.375rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--bl-text);
+    }
+
+    .bl-product-desc {
+      font-size: var(--bl-text-small);
+      color: var(--bl-text-soft);
+      margin-bottom: 20px;
+      min-height: 2.8em;
+    }
+
+    .bl-product-price {
+      font-family: var(--bl-font-serif);
+      font-size: 1.25rem;
+      color: var(--bl-text);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// ============================================================
+// S-2 Law Office — CSS 변수
+// ============================================================
+//
+// [컨셉: 신뢰감, 정보 중심]
+// 화이트 베이스 + 네이비 포인트 + 골드브라운 CTA
+// 장식 최소화, 정보 전달 우선, 여백 충분
+
+.law-office {
+  // ----- 컬러 -----
+  --lo-bg: #ffffff;
+  --lo-bg-alt: #f4f6f8;            // 섹션 교차 배경
+  --lo-bg-dark: #0f2440;           // 푸터 등 다크 영역
+  --lo-text: #1a1a1a;              // 딥 블랙
+  --lo-text-soft: #5a6472;         // 보조 텍스트
+  --lo-text-light: #8a94a3;        // 캡션
+  --lo-accent: #1b4572;            // 네이비 (포인트)
+  --lo-accent-dark: #12304f;       // hover 어두운 네이비
+  --lo-accent-soft: #e8eef5;       // 네이비 옅은 배경
+  --lo-cta: #c8872a;               // 골드브라운 (CTA 전용)
+  --lo-cta-dark: #a86f1f;          // hover 어두운 골드
+  --lo-border: #e4e8ee;            // 옅은 구분선
+  --lo-border-strong: #d1d7e0;     // hover 보더
+
+  // ----- 서체 -----
+  --lo-font-sans: "Pretendard Variable", "Pretendard", "Inter", sans-serif;
+
+  // ----- 타입 스케일 -----
+  // 가독성 우선 (전문직 사이트 특성)
+  --lo-text-hero: clamp(2.25rem, 5vw, 3.5rem);
+  --lo-text-display: clamp(1.75rem, 3.5vw, 2.5rem);
+  --lo-text-section: 1.5rem;
+  --lo-text-body: 1rem;
+  --lo-text-lead: 1.0625rem;
+  --lo-text-small: 0.875rem;
+  --lo-line-height: 1.8; // 가독성 우선
+
+  // ----- 간격 -----
+  --lo-section-gap: clamp(64px, 9vw, 120px);
+  --lo-container-max: 1180px;
+  --lo-container-padding: clamp(20px, 4vw, 40px);
+  --lo-card-gap: 24px;
+
+  // ----- 반경 (절제된 사용) -----
+  --lo-radius-sm: 4px;
+  --lo-radius-md: 6px;
+  --lo-radius-lg: 10px;
+  --lo-radius-pill: 999px;
+
+  // ----- 그림자 (은은하게) -----
+  --lo-shadow-sm: 0 1px 3px rgba(15, 36, 64, 0.05);
+  --lo-shadow-md: 0 4px 16px rgba(15, 36, 64, 0.08);
+  --lo-shadow-lg: 0 12px 32px rgba(15, 36, 64, 0.12);
+
+  // ----- 트랜지션 -----
+  --lo-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --lo-duration-quick: 0.15s;
+  --lo-duration-base: 0.25s;
+  --lo-duration-slow: 0.4s;
+}

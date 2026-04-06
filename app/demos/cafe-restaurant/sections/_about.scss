@@ -1,0 +1,75 @@
+// ============================================================
+// About 섹션 — 좌 비대칭 이미지 / 우 스토리
+// ============================================================
+
+.cafe-restaurant .cr-about {
+  background: var(--cr-bg);
+
+  .cr-about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 6vw, 96px);
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  // 좌측 비대칭 이미지 (2장 오버랩, 하나는 기울임)
+  .cr-about-images {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    max-width: 520px;
+
+    .cr-about-img {
+      position: absolute;
+      border-radius: var(--cr-radius-md);
+      overflow: hidden;
+      box-shadow: var(--cr-shadow-card);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .cr-about-img--main {
+      width: 78%;
+      height: 88%;
+      top: 0;
+      left: 0;
+    }
+
+    .cr-about-img--sub {
+      width: 52%;
+      height: 56%;
+      bottom: 0;
+      right: 0;
+      // 기획서 명시: 약간 기울인 배치
+      transform: rotate(3deg);
+      border: 6px solid var(--cr-bg);
+    }
+  }
+
+  .cr-about-text {
+    .cr-about-body {
+      color: var(--cr-text-soft);
+      line-height: 1.9;
+      margin-top: 24px;
+
+      p + p {
+        margin-top: 16px;
+      }
+    }
+
+    .cr-about-sign {
+      margin-top: 32px;
+      font-family: var(--cr-font-serif);
+      font-size: 1.125rem;
+      color: var(--cr-accent);
+    }
+  }
+}

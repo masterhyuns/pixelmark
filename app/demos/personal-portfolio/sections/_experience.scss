@@ -1,0 +1,141 @@
+// ============================================================
+// Experience 섹션 — 경력 타임라인 (좌우 교차)
+// ============================================================
+
+.personal-portfolio .pp-experience {
+  .pp-timeline {
+    position: relative;
+    padding-top: 20px;
+
+    // 중앙선 (데스크탑: 중앙, 모바일: 좌측)
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: var(--pp-border);
+      transform: translateX(-0.5px);
+
+      @media (max-width: 767px) {
+        left: 12px;
+      }
+    }
+
+    // 중앙선 draw 애니메이션 overlay
+    // scroll에 따라 높이가 증가하도록 timeline.ts가 style.height 업데이트
+    .pp-timeline-line-fill {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 0;
+      background: var(--pp-border-strong);
+      transform: translateX(-0.5px);
+      transition: height 0.1s linear;
+
+      @media (max-width: 767px) {
+        left: 12px;
+      }
+    }
+  }
+
+  .pp-timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    padding: 32px 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s var(--pp-ease), transform 0.6s var(--pp-ease);
+
+    &.is-revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      padding-left: 40px;
+      gap: 0;
+    }
+
+    // 데스크탑: 좌우 교차 배치
+    // 홀수 번째 → 좌측에 콘텐츠
+    &:nth-child(odd) {
+      .pp-timeline-content {
+        grid-column: 1;
+        text-align: right;
+        padding-right: 40px;
+
+        @media (max-width: 767px) {
+          grid-column: 1;
+          text-align: left;
+          padding-right: 0;
+        }
+      }
+    }
+
+    // 짝수 번째 → 우측에 콘텐츠
+    &:nth-child(even) {
+      .pp-timeline-content {
+        grid-column: 2;
+        padding-left: 40px;
+
+        @media (max-width: 767px) {
+          grid-column: 1;
+          padding-left: 0;
+        }
+      }
+    }
+
+    // 타임라인 점
+    &::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pp-bg);
+      border: 2px solid var(--pp-border-strong);
+      transform: translateX(-50%);
+      z-index: 2;
+
+      @media (max-width: 767px) {
+        left: 12px;
+      }
+    }
+  }
+
+  .pp-timeline-period {
+    font-size: var(--pp-text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--pp-text-mute);
+    margin-bottom: 6px;
+  }
+
+  .pp-timeline-role {
+    font-family: var(--pp-font-display);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--pp-text);
+    margin-bottom: 4px;
+  }
+
+  .pp-timeline-company {
+    font-size: var(--pp-text-small);
+    color: var(--pp-text-soft);
+    margin-bottom: 8px;
+  }
+
+  .pp-timeline-desc {
+    font-size: var(--pp-text-small);
+    color: var(--pp-text-soft);
+    line-height: 1.7;
+  }
+}

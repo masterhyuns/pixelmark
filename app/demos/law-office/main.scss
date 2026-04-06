@@ -1,0 +1,42 @@
+// ============================================================
+// S-2 Law Office — SCSS 진입점
+// ============================================================
+//
+// [멀티페이지 특수 구조]
+// - 부모 layout(`_law-office.tsx`)에서 이 main.scss를 import
+// - 부모 layout이 활성인 동안 5 sub-route 모두 같은 CSS 공유 (중복 로드 없음)
+// - React Router 7이 layout 라우트 전환 시 CSS swap 자동 처리
+//
+// [import 순서]
+// 1. variables — :root CSS 변수 정의
+// 2. reset — 스코프 reset
+// 3. base — 타이포/배경
+// 4. layout — 컨테이너/버튼/섹션
+// 5. demo-chrome — DemoHeaderBar/FloatingHome 색상 override
+// 6. components — 재사용 UI (header/footer/floating/scroll/card/accordion/form/modal)
+// 7. pages — 페이지별 레이아웃
+//
+// [외부 라이브러리 0개]
+// Swiper/GLightbox/Lenis 모두 사용 금지 (기획서: 신뢰감 컨셉 보호)
+// 카카오맵은 iframe 직접 임베드, CSS/JS 불필요
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "components/site-header";
+@use "components/site-footer";
+@use "components/floating-button";
+@use "components/scroll-progress";
+@use "components/card";
+@use "components/accordion";
+@use "components/form";
+@use "components/modal";
+
+@use "pages/home";
+@use "pages/about";
+@use "pages/services";
+@use "pages/reviews";
+@use "pages/contact";

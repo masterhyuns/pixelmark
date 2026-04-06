@@ -1,0 +1,130 @@
+// ============================================================
+// Hero 섹션 — 풀스크린 배경 + 브랜드명 + 스크롤 유도
+// ============================================================
+
+.beauty-landing .bl-hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 0; // section 기본 padding 제거 (풀스크린)
+  padding-bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // ----- 배경 이미지 레이어 (패럴랙스 대상) -----
+  .bl-hero-bg {
+    position: absolute;
+    inset: 0;
+    // 패럴랙스로 아래쪽이 비지 않도록 상하 여유분 확보
+    top: -10%;
+    bottom: -10%;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+  }
+
+  // ----- 히어로 마우스 spotlight (hoverable에서만) -----
+  .bl-hero-spotlight {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    // JS에서 --x, --y를 마우스 위치에 맞춰 업데이트
+    background: radial-gradient(
+      circle 400px at var(--x, 50%) var(--y, 50%),
+      rgba(255, 255, 255, 0.15),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--bl-duration-slow) var(--bl-ease);
+
+    @media (hover: hover) {
+      // spotlight가 이미 JS에서 on 상태면 opacity 1 유지
+      .is-spotlight-on & {
+        opacity: 1;
+      }
+    }
+  }
+
+  // 배경 위 어두운 오버레이 (텍스트 가독성)
+  .bl-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(44, 44, 44, 0.2) 0%,
+      rgba(44, 44, 44, 0.4) 100%
+    );
+  }
+
+  // ----- 콘텐츠 -----
+  .bl-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 var(--bl-container-padding);
+
+    .bl-hero-eyebrow {
+      display: inline-block;
+      font-size: var(--bl-text-small);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin-bottom: 28px;
+      opacity: 0.9;
+    }
+
+    .bl-hero-title {
+      font-family: var(--bl-font-serif);
+      font-size: var(--bl-text-hero);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    .bl-hero-tagline {
+      font-size: var(--bl-text-lead);
+      max-width: 540px;
+      margin: 0 auto 48px;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    .bl-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  // ----- 스크롤 유도 화살표 (바운스 loop) -----
+  .bl-hero-scroll-cue {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    animation: bl-scroll-bounce 1.8s infinite ease-in-out;
+
+    svg {
+      stroke: currentColor;
+    }
+  }
+
+  @keyframes bl-scroll-bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
+  }
+}

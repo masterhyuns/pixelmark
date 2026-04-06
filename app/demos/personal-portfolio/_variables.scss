@@ -1,0 +1,79 @@
+// ============================================================
+// S-4 Personal Portfolio — CSS 변수 (Light + Dark)
+// ============================================================
+//
+// [컨셉: 절제, 타이포 중심]
+// 흑백 기반, 포인트 색상 없음. 여백이 디자인.
+//
+// [다크모드 구조]
+// - :root에 light 기본값 정의
+// - [data-theme="dark"] 블록이 같은 변수 override
+// - darkMode.ts가 `<html data-theme="dark">` 토글
+// - 모든 색상을 CSS 변수로만 참조 → 다크모드 전환 시 자동 갱신
+
+.personal-portfolio {
+  // ----- 라이트 모드 (기본) -----
+  --pp-bg: #fafafa;
+  --pp-bg-soft: #f0f0f0;       // 태그 배경
+  --pp-text: #111111;
+  --pp-text-soft: #555555;
+  --pp-text-mute: #999999;
+  --pp-border: #dddddd;
+  --pp-border-strong: #111111;
+
+  // 링크 hover 전환 (유일한 "포인트" 변화)
+  --pp-link-base: #555555;
+  --pp-link-hover: #111111;
+
+  // ----- 서체 -----
+  --pp-font-sans: "Pretendard Variable", "Pretendard", "Inter", sans-serif;
+  --pp-font-display: "Space Grotesk", "Pretendard Variable", sans-serif;
+
+  // ----- 타입 스케일 -----
+  // 이름(인트로)은 특대, 나머지는 절제된 크기
+  --pp-text-name: clamp(3rem, 10vw, 6rem);
+  --pp-text-display: clamp(1.5rem, 3vw, 2.25rem);
+  --pp-text-body: 1rem;
+  --pp-text-lead: 1.125rem;
+  --pp-text-small: 0.875rem;
+  --pp-text-caption: 0.75rem;
+  --pp-line-height: 1.8;
+
+  // ----- 간격 -----
+  // 기획서: 섹션 간 160px (여백 = 디자인)
+  --pp-section-gap: clamp(96px, 14vw, 160px);
+  --pp-container-max: 900px;   // 좁게 모아 시선 집중
+  --pp-container-padding: clamp(20px, 5vw, 40px);
+  --pp-gap-md: 24px;
+  --pp-gap-lg: 48px;
+
+  // ----- 반경 -----
+  --pp-radius-sm: 2px;
+  --pp-radius-md: 4px;
+
+  // ----- 트랜지션 -----
+  --pp-ease: cubic-bezier(0.6, 0, 0.2, 1);
+  --pp-duration-quick: 0.15s;
+  --pp-duration-base: 0.4s;
+  --pp-duration-slow: 0.6s;
+}
+
+// ----- 다크 모드 override -----
+//
+// [왜 :root[data-theme="dark"] 대신 .personal-portfolio[data-theme="dark"]가 아닌가]
+// - darkMode.ts는 `document.documentElement.setAttribute("data-theme", "dark")`로
+//   `<html>` 태그에 속성을 부여 → `:root` 셀렉터가 올바름
+// - 다만 .personal-portfolio 스코프 안의 변수만 override하려면 조합 셀렉터 필요
+// - 여기서는 `:root[data-theme="dark"] .personal-portfolio` 로 정확히 타겟
+:root[data-theme="dark"] .personal-portfolio {
+  --pp-bg: #0a0a0a;
+  --pp-bg-soft: #1a1a1a;
+  --pp-text: #fafafa;
+  --pp-text-soft: #aaaaaa;
+  --pp-text-mute: #666666;
+  --pp-border: #333333;
+  --pp-border-strong: #fafafa;
+
+  --pp-link-base: #aaaaaa;
+  --pp-link-hover: #fafafa;
+}

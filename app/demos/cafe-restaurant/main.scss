@@ -1,0 +1,30 @@
+// ============================================================
+// S-3 Cafe & Restaurant — SCSS 진입점
+// ============================================================
+//
+// [import 순서]
+// 1. variables — :root CSS 변수 정의
+// 2. reset — 스코프 내 reset
+// 3. base — 타이포/배경
+// 4. layout — 컨테이너/네비/버튼
+// 5. demo-chrome — DemoHeaderBar/FloatingHome 색상 override
+// 6. sections — 7개 섹션 스타일
+//
+// [Swiper/GLightbox CSS는 라우트 파일에서 JS import]
+// - Dart Sass 3.0에서 @import 제거 예정 → SCSS에서 CSS 파일 직접 import 회피
+// - 라우트 .tsx에서 `import "swiper/css"`, `import "glightbox/dist/css/glightbox.min.css"`
+//   Vite가 해당 라우트 CSS 청크에 자동 포함
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/hero";
+@use "sections/about";
+@use "sections/menu";
+@use "sections/gallery";
+@use "sections/notice";
+@use "sections/location";
+@use "sections/footer";

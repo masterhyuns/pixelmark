@@ -1,0 +1,127 @@
+// ============================================================
+// Contact 페이지 (상담 예약)
+// ============================================================
+
+.law-office {
+  .lo-contact-section {
+    .lo-contact-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 56px;
+      align-items: start;
+
+      @media (max-width: 1023px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    // 폼 카드
+    .lo-contact-form-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--lo-radius-lg);
+      border: 1px solid var(--lo-border);
+      box-shadow: var(--lo-shadow-sm);
+
+      @media (max-width: 479px) {
+        padding: 28px 24px;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--lo-text);
+        margin-bottom: 8px;
+      }
+
+      .lo-contact-form-lead {
+        font-size: var(--lo-text-small);
+        color: var(--lo-text-soft);
+        margin-bottom: 28px;
+      }
+    }
+
+    // 사이드 정보 패널
+    .lo-contact-info {
+      .lo-contact-info-card {
+        background: var(--lo-bg-alt);
+        padding: 32px 28px;
+        border-radius: var(--lo-radius-lg);
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--lo-text);
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--lo-border);
+      }
+
+      .lo-contact-info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .lo-contact-info-item {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+
+        .lo-contact-info-icon {
+          flex-shrink: 0;
+          width: 34px;
+          height: 34px;
+          border-radius: 50%;
+          background: #fff;
+          color: var(--lo-accent);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.75;
+          }
+        }
+
+        .lo-contact-info-label {
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          color: var(--lo-text-light);
+          margin-bottom: 2px;
+        }
+
+        .lo-contact-info-value {
+          font-size: var(--lo-text-small);
+          color: var(--lo-text);
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // 지도
+    .lo-contact-map {
+      background: var(--lo-bg-alt);
+      border-radius: var(--lo-radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--lo-border);
+      min-height: 280px;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 280px;
+        border: 0;
+        display: block;
+      }
+    }
+  }
+}

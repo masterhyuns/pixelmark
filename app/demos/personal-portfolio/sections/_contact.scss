@@ -1,0 +1,68 @@
+// ============================================================
+// Contact 섹션 — 미니멀 CTA + 이메일 + SNS
+// ============================================================
+
+.personal-portfolio .pp-contact {
+  text-align: center;
+  padding-bottom: calc(var(--pp-section-gap) + 40px);
+
+  .pp-contact-title {
+    font-family: var(--pp-font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--pp-text);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  .pp-contact-lead {
+    font-size: var(--pp-text-lead);
+    color: var(--pp-text-soft);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pp-contact-email {
+    display: inline-block;
+    font-family: var(--pp-font-display);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 500;
+    color: var(--pp-link-base);
+    padding: 4px 0;
+    margin-bottom: 56px;
+    border-bottom: 1px solid currentColor;
+    transition: color var(--pp-duration-base) var(--pp-ease);
+
+    &:hover {
+      color: var(--pp-link-hover);
+    }
+  }
+
+  .pp-contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 80px;
+
+    a {
+      font-size: var(--pp-text-small);
+      color: var(--pp-text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transition: color var(--pp-duration-quick) var(--pp-ease);
+
+      &:hover {
+        color: var(--pp-text);
+      }
+    }
+  }
+
+  .pp-contact-copy {
+    font-size: var(--pp-text-caption);
+    color: var(--pp-text-mute);
+    letter-spacing: 0.1em;
+  }
+}

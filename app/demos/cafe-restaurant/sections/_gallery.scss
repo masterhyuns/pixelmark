@@ -1,0 +1,87 @@
+// ============================================================
+// Gallery 섹션 — 불규칙 그리드 + clip-path reveal
+// ============================================================
+
+.cafe-restaurant .cr-gallery {
+  background: var(--cr-bg);
+
+  .cr-gallery-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  // 기획서: 마소닉 레이아웃 또는 불규칙 그리드
+  // 여기선 CSS grid + grid-row/grid-column span으로 간단한 불규칙 그리드
+  .cr-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 180px;
+    gap: 12px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 140px;
+    }
+
+    // 각 아이템: 기본 1x1, 특정 아이템만 더 크게
+    > a {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--cr-radius-md);
+      cursor: pointer;
+      // clip-path reveal 초기 상태 (galleryReveal.ts가 is-revealed 토글)
+      clip-path: inset(100% 0 0 0);
+      opacity: 0;
+      transition: clip-path 0.7s var(--cr-ease),
+                  opacity 0.7s var(--cr-ease);
+
+      &.is-revealed {
+        clip-path: inset(0);
+        opacity: 1;
+      }
+
+      &:nth-child(1) { grid-row: span 2; grid-column: span 2; }
+      &:nth-child(4) { grid-row: span 2; }
+      &:nth-child(6) { grid-column: span 2; }
+
+      @media (max-width: 767px) {
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(6) {
+          grid-row: auto;
+          grid-column: auto;
+        }
+        &:nth-child(1) { grid-column: span 2; }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--cr-duration-slow) var(--cr-ease);
+      }
+
+      // 어두운 오버레이 (hover 시 나타남)
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--cr-overlay);
+        opacity: 0;
+        transition: opacity var(--cr-duration-base) var(--cr-ease);
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+
+          &::after {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+}

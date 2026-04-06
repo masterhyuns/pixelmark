@@ -1,0 +1,27 @@
+// ============================================================
+// S-4 Personal Portfolio — SCSS 진입점
+// ============================================================
+//
+// [외부 라이브러리 0개]
+// - Swiper, Lenis, GLightbox 등 어떤 벤더 CSS도 import 하지 않음
+// - 기획서 제약: "순수 SCSS/Vanilla TS만으로 구현"
+//
+// [import 순서]
+// 1. variables — :root + [data-theme="dark"] CSS 변수
+// 2. reset — 스코프 reset
+// 3. base — 타이포/배경
+// 4. layout — 컨테이너/버튼/커스텀커서/다크모드토글
+// 5. demo-chrome — DemoHeaderBar/FloatingHome 색상 (다크모드 대응)
+// 6. sections — 5개 섹션
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/intro";
+@use "sections/about";
+@use "sections/experience";
+@use "sections/works";
+@use "sections/contact";

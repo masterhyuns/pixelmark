@@ -1,0 +1,189 @@
+// ============================================================
+// 사이트 자체 헤더 (법률사무소 네비게이션)
+// ============================================================
+// DemoHeaderBar 아래에 고정. 데모 자체의 상단 navigation.
+
+.law-office {
+  .lo-site-header {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 높이
+    left: 0;
+    right: 0;
+    height: 72px;
+    z-index: 80;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: box-shadow var(--lo-duration-base) var(--lo-ease),
+                border-color var(--lo-duration-base) var(--lo-ease);
+
+    &.is-scrolled {
+      border-bottom-color: var(--lo-border);
+      box-shadow: var(--lo-shadow-sm);
+    }
+
+    .lo-site-header-inner {
+      width: 100%;
+      max-width: var(--lo-container-max);
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 var(--lo-container-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    // 로고 (사무소명)
+    .lo-site-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--lo-accent);
+
+      .lo-site-logo-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: var(--lo-radius-sm);
+        background: var(--lo-accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      .lo-site-logo-text {
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--lo-text);
+      }
+    }
+
+    // 네비게이션
+    .lo-site-nav {
+      display: flex;
+      gap: 36px;
+
+      @media (max-width: 863px) {
+        display: none;
+      }
+
+      a {
+        position: relative;
+        font-size: var(--lo-text-small);
+        font-weight: 500;
+        color: var(--lo-text-soft);
+        padding: 8px 0;
+        transition: color var(--lo-duration-quick) var(--lo-ease);
+
+        &:hover {
+          color: var(--lo-text);
+        }
+
+        // active 상태 (NavLink isActive)
+        &.active {
+          color: var(--lo-accent);
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--lo-accent);
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+
+    // CTA 상담 예약 버튼 (헤더 우측 강조)
+    .lo-site-cta {
+      @media (max-width: 863px) {
+        display: none;
+      }
+    }
+
+    // 햄버거 버튼 (모바일)
+    .lo-site-hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      @media (max-width: 863px) {
+        display: flex;
+      }
+
+      span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--lo-text);
+        border-radius: 1px;
+        transition: transform var(--lo-duration-base) var(--lo-ease),
+                    opacity var(--lo-duration-base) var(--lo-ease);
+      }
+
+      &.is-open {
+        span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      }
+    }
+  }
+
+  // 모바일 드로어
+  .lo-mobile-menu {
+    position: fixed;
+    top: 116px; // DemoHeaderBar(44) + lo-site-header(72)
+    left: 0;
+    right: 0;
+    background: var(--lo-bg);
+    border-top: 1px solid var(--lo-border);
+    padding: 24px var(--lo-container-padding) 32px;
+    z-index: 79;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--lo-duration-base) var(--lo-ease),
+                opacity var(--lo-duration-base) var(--lo-ease);
+
+    @media (min-width: 864px) {
+      display: none;
+    }
+
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: block;
+      padding: 12px 0;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--lo-text);
+      border-bottom: 1px solid var(--lo-border);
+
+      &.active {
+        color: var(--lo-accent);
+      }
+    }
+  }
+}

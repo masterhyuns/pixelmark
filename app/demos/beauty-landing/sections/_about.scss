@@ -1,0 +1,66 @@
+// ============================================================
+// About 섹션 — 좌 텍스트 / 우 이미지 (비대칭 레이아웃)
+// ============================================================
+
+.beauty-landing .bl-about {
+  background: var(--bl-bg);
+
+  .bl-about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 8vw, 120px);
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  // 좌측 텍스트 블록 (스크롤 진입 시 좌→우 페이드인)
+  .bl-about-text {
+    max-width: 480px;
+
+    .bl-about-body {
+      color: var(--bl-text-soft);
+      line-height: 1.9;
+      margin-top: 24px;
+
+      p + p {
+        margin-top: 16px;
+      }
+    }
+
+    .bl-about-sign {
+      margin-top: 40px;
+      font-family: var(--bl-font-serif);
+      font-size: 1.25rem;
+      color: var(--bl-accent);
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // 우측 이미지 블록 (스크롤 진입 시 우→좌 페이드인)
+  .bl-about-image {
+    position: relative;
+
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 2px;
+      box-shadow: var(--bl-shadow-card);
+    }
+
+    // 이미지 뒤 장식 프레임 (로즈골드 얇은 선)
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 24px -24px -24px 24px;
+      border: 1px solid var(--bl-accent);
+      border-radius: 2px;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+}

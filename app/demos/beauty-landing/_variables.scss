@@ -1,0 +1,56 @@
+// ============================================================
+// S-1 Beauty Landing — CSS 변수 (디자인 토큰)
+// ============================================================
+//
+// [왜 SCSS 변수 대신 CSS 변수(:root)인가]
+// - CLAUDE.md 규칙: "var() 활용, SCSS 변수 사용 금지"
+// - 런타임에 동적 접근 가능 (JS 모듈에서 getComputedStyle로 읽을 수 있음)
+// - 다른 데모에서 복사해 쓸 때 SCSS 변수명 충돌 회피
+// - 데모 공통 컴포넌트(DemoHeaderBar 등)의 CSS 변수 override 구조와 일관성
+//
+// [컨셉: 고급스러운 절제]
+// 웜화이트 베이스 + 로즈골드 포인트, 여백 많고 서체 대비 확실.
+
+.beauty-landing {
+  // ----- 컬러 -----
+  --bl-bg: #fafaf8;              // 웜 화이트 (메인 배경)
+  --bl-bg-soft: #f4f0eb;          // 섹션 교차 배경 (About, Features 등)
+  --bl-text: #2c2c2c;             // 소프트 블랙 (본문)
+  --bl-text-soft: #6a6a6a;        // 보조 텍스트
+  --bl-accent: #b08d73;           // 로즈골드 (포인트, 로고, 강조)
+  --bl-accent-dark: #967155;      // 호버 어두운 로즈골드
+  --bl-border: #e8e3dd;           // 옅은 구분선
+  --bl-overlay: rgba(44, 44, 44, 0.08); // 카드 호버 오버레이
+
+  // ----- 서체 -----
+  --bl-font-sans: "Pretendard Variable", "Pretendard", sans-serif;
+  --bl-font-serif: "Cormorant Garamond", "나눔명조", serif;
+
+  // ----- 타입 스케일 -----
+  --bl-text-hero: clamp(3rem, 8vw, 6rem);      // 히어로 브랜드명
+  --bl-text-display: clamp(2rem, 4vw, 3rem);   // 섹션 타이틀
+  --bl-text-body: 1rem;
+  --bl-text-lead: 1.125rem;
+  --bl-text-small: 0.875rem;
+  --bl-line-height: 1.7;
+
+  // ----- 간격 -----
+  --bl-section-gap: clamp(80px, 12vw, 160px);
+  --bl-container-max: 1200px;
+  --bl-container-padding: clamp(24px, 5vw, 48px);
+  --bl-card-gap: 24px;
+
+  // ----- 반경/그림자 -----
+  --bl-radius-sm: 4px;
+  --bl-radius-md: 8px;
+  --bl-radius-lg: 16px;
+  --bl-shadow-card: 0 4px 24px rgba(176, 141, 115, 0.08);
+  --bl-shadow-card-hover: 0 12px 40px rgba(176, 141, 115, 0.18);
+
+  // ----- 트랜지션 -----
+  --bl-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --bl-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --bl-duration-quick: 0.2s;
+  --bl-duration-base: 0.4s;
+  --bl-duration-slow: 0.8s;
+}

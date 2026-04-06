@@ -1,0 +1,60 @@
+// ============================================================
+// S-4 Personal Portfolio — 자체 CSS Reset
+// ============================================================
+// Tailwind preflight 의존 금지, .personal-portfolio 스코프
+
+.personal-portfolio {
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--pp-text);
+    outline-offset: 4px;
+  }
+}
+
+// 커스텀 커서 활성 시 기본 커서 숨김 (PC hover 환경만)
+@media (hover: hover) {
+  :root.pp-cursor-on {
+    cursor: none;
+  }
+  :root.pp-cursor-on .personal-portfolio,
+  :root.pp-cursor-on .personal-portfolio a,
+  :root.pp-cursor-on .personal-portfolio button {
+    cursor: none !important;
+  }
+}

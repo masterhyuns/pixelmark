@@ -1,7 +1,23 @@
 .DS_Store
 .env
+.env.local
 /node_modules/
 
 # React Router
 /.react-router/
 /build/
+
+# IDE / Editor
+/.idea/
+/.vscode/
+*.swp
+
+# OS
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*

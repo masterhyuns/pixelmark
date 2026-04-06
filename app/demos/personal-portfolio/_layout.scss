@@ -1,0 +1,113 @@
+// ============================================================
+// S-4 Personal Portfolio — 공통 레이아웃
+// ============================================================
+
+.personal-portfolio {
+  // 컨테이너: 최대 900px 중앙 정렬 (좁게 모아 시선 집중)
+  .pp-container {
+    width: 100%;
+    max-width: var(--pp-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--pp-container-padding);
+    padding-right: var(--pp-container-padding);
+  }
+
+  section {
+    padding-top: var(--pp-section-gap);
+    padding-bottom: var(--pp-section-gap);
+  }
+
+  // ----- 다크모드 토글 버튼 -----
+  // 우측 상단 고정. DemoHeaderBar(44) + 여유
+  .pp-theme-toggle {
+    position: fixed;
+    top: calc(44px + 16px);
+    right: calc(var(--pp-container-padding) + 16px);
+    z-index: 85;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--pp-bg);
+    border: 1px solid var(--pp-border);
+    color: var(--pp-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--pp-duration-base) var(--pp-ease),
+                border-color var(--pp-duration-base) var(--pp-ease),
+                transform var(--pp-duration-quick) var(--pp-ease);
+
+    &:hover {
+      transform: scale(1.1);
+      border-color: var(--pp-border-strong);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    // 다크모드 시 sun 아이콘, 라이트 시 moon 아이콘 (JS에서 클래스로 제어)
+    .pp-icon-sun { display: none; }
+    .pp-icon-moon { display: block; }
+  }
+
+  // 다크모드일 때 아이콘 전환
+  :root[data-theme="dark"] & .pp-theme-toggle {
+    .pp-icon-sun { display: block; }
+    .pp-icon-moon { display: none; }
+  }
+}
+
+// :root에 붙는 속성이라 .personal-portfolio 스코프 밖에서도 처리 필요
+:root[data-theme="dark"] .personal-portfolio .pp-theme-toggle {
+  .pp-icon-sun { display: block; }
+  .pp-icon-moon { display: none; }
+}
+
+// ----- 커스텀 커서 -----
+.personal-portfolio {
+  // 커서 DOM 요소 스타일은 document.body에 append되므로 .personal-portfolio 하위가 아닐 수 있음
+  // 하지만 일관성을 위해 여기서 정의하고, 모듈은 같은 클래스를 가진 요소를 document.body에 추가
+}
+
+// 전역 커서 스타일 (body 아래 직접 삽입되므로 스코프 밖)
+@media (hover: hover) {
+  .pp-custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #111;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width var(--pp-duration-quick, 0.15s) ease-out,
+                height var(--pp-duration-quick, 0.15s) ease-out,
+                opacity var(--pp-duration-quick, 0.15s) ease-out;
+    will-change: transform, width, height;
+  }
+
+  // hover 가능한 요소 위에서 확대
+  .pp-custom-cursor.is-hovering {
+    width: 40px;
+    height: 40px;
+    background: #fafafa;
+  }
+
+  // 터치 디바이스나 모바일에서는 숨김
+  @media (hover: none), (max-width: 767px) {
+    .pp-custom-cursor {
+      display: none;
+    }
+  }
+}

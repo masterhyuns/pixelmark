@@ -1,0 +1,15 @@
+// ============================================================
+// S-3 Cafe & Restaurant — DemoHeaderBar / DemoFloatingHome 색상 override
+// ============================================================
+// 크림/테라코타 톤으로 데모 chrome이 컨셉과 어우러지게
+
+:root {
+  // 상단 bar: 크림 반투명 + 다크 브라운 텍스트 + 테라코타 경계
+  --demo-bar-bg: rgba(247, 243, 238, 0.9);
+  --demo-bar-text: #3b3028;
+  --demo-bar-border: rgba(196, 125, 78, 0.2);
+
+  // 우하단 원형: 테라코타 배경 + 크림 아이콘
+  --demo-fab-bg: #c47d4e;
+  --demo-fab-icon: #f7f3ee;
+}

@@ -1,0 +1,152 @@
+// ============================================================
+// Menu 섹션 — 카테고리 탭 + 3D 틸트 카드 그리드
+// ============================================================
+
+.cafe-restaurant .cr-menu {
+  background: var(--cr-bg-soft);
+
+  .cr-menu-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  // ----- 카테고리 탭 -----
+  .cr-menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+    position: relative;
+    // relative는 underline absolute 기준점
+
+    .cr-menu-tab {
+      position: relative;
+      padding: 12px 24px;
+      font-size: var(--cr-text-small);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cr-text-soft);
+      cursor: pointer;
+      transition: color var(--cr-duration-quick) var(--cr-ease);
+
+      &:hover {
+        color: var(--cr-text);
+      }
+
+      &.is-active {
+        color: var(--cr-accent);
+        font-weight: 600;
+      }
+    }
+
+    // JS가 계산해 translateX/width를 설정하는 underline
+    .cr-menu-tab-underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: var(--cr-accent);
+      border-radius: 2px;
+      transition: transform var(--cr-duration-base) var(--cr-ease),
+                  width var(--cr-duration-base) var(--cr-ease);
+      will-change: transform, width;
+    }
+  }
+
+  // ----- 메뉴 그리드 -----
+  .cr-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--cr-card-gap);
+    perspective: 1000px; // 3D 틸트용
+
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 639px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // 탭 전환 시 메뉴 그리드 페이드 전환 (JS가 is-switching 클래스 토글)
+  .cr-menu-grid.is-switching {
+    opacity: 0;
+    transition: opacity 0.15s ease-out;
+  }
+
+  // 카테고리 필터링: grid의 data-category와 일치하는 카드만 표시
+  // 각 카테고리별로 일치하지 않는 카드 숨김
+  // 주의: 4개 카테고리를 명시적으로 써야 CSS 선택자가 작동 (attribute 조합)
+  .cr-menu-grid[data-category="coffee"] .cr-menu-card:not([data-item-category="coffee"]),
+  .cr-menu-grid[data-category="dessert"] .cr-menu-card:not([data-item-category="dessert"]),
+  .cr-menu-grid[data-category="brunch"] .cr-menu-card:not([data-item-category="brunch"]),
+  .cr-menu-grid[data-category="drink"] .cr-menu-card:not([data-item-category="drink"]) {
+    display: none;
+  }
+
+  // ----- 메뉴 카드 -----
+  .cr-menu-card {
+    background: var(--cr-card);
+    border-radius: var(--cr-radius-md);
+    overflow: hidden;
+    box-shadow: var(--cr-shadow-card);
+    transition: transform var(--cr-duration-base) var(--cr-ease),
+                box-shadow var(--cr-duration-base) var(--cr-ease);
+    // 3D 틸트 스무스를 위한 힌트
+    will-change: transform;
+    transform-style: preserve-3d;
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: var(--cr-shadow-card-hover);
+      }
+    }
+
+    .cr-menu-card-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--cr-bg-soft);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform var(--cr-duration-slow) var(--cr-ease);
+      }
+    }
+
+    &:hover .cr-menu-card-image img {
+      transform: scale(1.06);
+    }
+
+    .cr-menu-card-body {
+      padding: 20px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cr-menu-card-name {
+      font-family: var(--cr-font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--cr-text);
+    }
+
+    .cr-menu-card-desc {
+      font-size: var(--cr-text-small);
+      color: var(--cr-text-soft);
+      min-height: 2.8em;
+    }
+
+    .cr-menu-card-price {
+      margin-top: 8px;
+      font-family: var(--cr-font-serif);
+      font-size: 1.125rem;
+      color: var(--cr-accent);
+      letter-spacing: 0.02em;
+    }
+  }
+}

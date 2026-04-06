@@ -1,0 +1,93 @@
+// ============================================================
+// 모달 (폼 제출 성공 모달)
+// ============================================================
+
+.law-office {
+  .lo-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 36, 64, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--lo-duration-base) var(--lo-ease);
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .lo-modal {
+    background: #fff;
+    border-radius: var(--lo-radius-lg);
+    padding: 40px 36px 32px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(15, 36, 64, 0.3);
+    transform: translateY(16px) scale(0.96);
+    transition: transform var(--lo-duration-slow) var(--lo-ease);
+  }
+
+  .lo-modal-backdrop.is-open .lo-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .lo-modal-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(107, 142, 91, 0.15); // 올리브 그린 옅게 — 성공 표시
+    color: #4a6d3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  .lo-modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--lo-text);
+    margin-bottom: 10px;
+  }
+
+  .lo-modal-body {
+    font-size: var(--lo-text-small);
+    color: var(--lo-text-soft);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+
+  .lo-modal-close {
+    width: 100%;
+    padding: 14px;
+    background: var(--lo-accent);
+    color: #fff;
+    border-radius: var(--lo-radius-md);
+    font-size: var(--lo-text-small);
+    font-weight: 600;
+    transition: background var(--lo-duration-base) var(--lo-ease);
+
+    &:hover {
+      background: var(--lo-accent-dark);
+    }
+  }
+}

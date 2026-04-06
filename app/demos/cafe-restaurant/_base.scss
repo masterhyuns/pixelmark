@@ -1,0 +1,58 @@
+// ============================================================
+// S-3 Cafe & Restaurant — 기본 타이포/배경
+// ============================================================
+
+.cafe-restaurant {
+  background: var(--cr-bg);
+  color: var(--cr-text);
+  font-family: var(--cr-font-sans);
+  font-size: var(--cr-text-body);
+  line-height: var(--cr-line-height);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+
+  // 세리프 (Playfair Display) — 가게명, 섹션 타이틀
+  .serif {
+    font-family: var(--cr-font-serif);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .section-eyebrow {
+    display: inline-block;
+    font-size: var(--cr-text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--cr-accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: var(--cr-font-serif);
+    font-size: var(--cr-text-display);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--cr-text);
+    margin-bottom: 16px;
+  }
+
+  .section-lead {
+    font-size: var(--cr-text-lead);
+    color: var(--cr-text-soft);
+    line-height: 1.8;
+    max-width: 560px;
+  }
+
+  // 접근성
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

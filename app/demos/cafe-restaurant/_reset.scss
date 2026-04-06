@@ -1,0 +1,49 @@
+// ============================================================
+// S-3 Cafe & Restaurant — 자체 CSS Reset
+// ============================================================
+// Tailwind preflight 의존 금지 (라우트 전환 16~50ms 충돌 회피)
+// 모든 셀렉터는 .cafe-restaurant 스코프 하위에서만 동작
+
+.cafe-restaurant {
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--cr-accent);
+    outline-offset: 2px;
+  }
+}

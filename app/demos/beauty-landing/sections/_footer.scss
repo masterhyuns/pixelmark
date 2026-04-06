@@ -1,0 +1,70 @@
+// ============================================================
+// Footer 섹션 — 로고 + SNS + 저작권
+// ============================================================
+
+.beauty-landing .bl-footer {
+  background: var(--bl-bg);
+  border-top: 1px solid var(--bl-border);
+  padding-top: 80px;
+  padding-bottom: 40px;
+  text-align: center;
+
+  .bl-footer-logo {
+    font-family: var(--bl-font-serif);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--bl-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .bl-footer-tagline {
+    font-size: var(--bl-text-small);
+    color: var(--bl-text-soft);
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+  }
+
+  .bl-footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 48px;
+
+    a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--bl-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bl-text-soft);
+      transition: border-color var(--bl-duration-base) var(--bl-ease),
+                  color var(--bl-duration-base) var(--bl-ease);
+
+      &:hover {
+        border-color: var(--bl-accent);
+        color: var(--bl-accent);
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+    }
+  }
+
+  .bl-footer-copy {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--bl-text-soft);
+    padding-top: 32px;
+    border-top: 1px solid var(--bl-border);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

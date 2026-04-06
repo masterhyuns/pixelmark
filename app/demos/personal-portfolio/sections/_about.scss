@@ -1,0 +1,87 @@
+// ============================================================
+// About 섹션 — 좌 프로필 사진 / 우 소개 + 스킬 태그
+// ============================================================
+
+.personal-portfolio .pp-about {
+  .pp-about-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: clamp(32px, 6vw, 72px);
+    align-items: start;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
+  .pp-about-photo {
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: var(--pp-radius-sm);
+      // 흑백(duotone) 필터 — 미니멀 컨셉 강조
+      filter: grayscale(100%) contrast(1.05);
+      transition: filter var(--pp-duration-slow) var(--pp-ease);
+    }
+
+    @media (hover: hover) {
+      &:hover img {
+        filter: grayscale(0%) contrast(1);
+      }
+    }
+  }
+
+  .pp-about-body {
+    p {
+      font-size: var(--pp-text-body);
+      color: var(--pp-text-soft);
+      line-height: 1.9;
+
+      + p {
+        margin-top: 18px;
+      }
+    }
+
+    // 스킬 태그
+    .pp-skills {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--pp-border);
+
+      .pp-skills-label {
+        font-size: var(--pp-text-caption);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--pp-text-mute);
+        margin-bottom: 16px;
+      }
+
+      .pp-skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .pp-skill {
+        display: inline-block;
+        padding: 6px 14px;
+        background: var(--pp-bg-soft);
+        color: var(--pp-text);
+        font-size: var(--pp-text-caption);
+        letter-spacing: 0.02em;
+        border-radius: var(--pp-radius-md);
+        // stagger 페이드인은 JS가 transition-delay를 inline으로 설정
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.4s var(--pp-ease), transform 0.4s var(--pp-ease);
+
+        &.is-revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,199 @@
+// ============================================================
+// Home 페이지 (Main)
+// ============================================================
+
+.law-office {
+  // ----- Hero -----
+  .lo-home-hero {
+    padding-top: calc(var(--lo-section-gap) + 60px); // 고정 헤더 만큼 여유
+    padding-bottom: var(--lo-section-gap);
+    background: var(--lo-bg-alt);
+
+    .lo-home-hero-inner {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 64px;
+      align-items: center;
+
+      @media (max-width: 1023px) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    .lo-home-hero-text {
+      h1 {
+        font-size: var(--lo-text-hero);
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--lo-text);
+        letter-spacing: -0.01em;
+        margin-bottom: 20px;
+
+        .lo-home-hero-highlight {
+          color: var(--lo-accent);
+        }
+      }
+
+      .lo-home-hero-lead {
+        font-size: var(--lo-text-lead);
+        color: var(--lo-text-soft);
+        line-height: 1.85;
+        margin-bottom: 32px;
+        max-width: 560px;
+      }
+
+      .lo-home-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+
+    .lo-home-hero-image {
+      position: relative;
+
+      img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: var(--lo-radius-lg);
+        box-shadow: var(--lo-shadow-lg);
+      }
+
+      // 경력 뱃지 (이미지 좌하단)
+      .lo-home-hero-badge {
+        position: absolute;
+        left: -16px;
+        bottom: 24px;
+        background: #fff;
+        padding: 18px 24px;
+        border-radius: var(--lo-radius-md);
+        box-shadow: var(--lo-shadow-md);
+
+        .lo-home-hero-badge-value {
+          font-size: 1.75rem;
+          font-weight: 700;
+          color: var(--lo-accent);
+          line-height: 1;
+        }
+
+        .lo-home-hero-badge-label {
+          font-size: 12px;
+          color: var(--lo-text-soft);
+          margin-top: 4px;
+        }
+
+        @media (max-width: 1023px) {
+          left: 16px;
+        }
+      }
+    }
+  }
+
+  // ----- Services 미리보기 -----
+  .lo-home-services {
+    .lo-home-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--lo-card-gap);
+
+      @media (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 479px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  // ----- Stats (숫자 카운트업) -----
+  .lo-home-stats {
+    background: var(--lo-accent);
+    color: #fff;
+
+    .lo-section-title,
+    .lo-section-eyebrow {
+      color: #fff;
+    }
+
+    .lo-section-eyebrow {
+      opacity: 0.7;
+    }
+
+    .lo-home-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+
+      @media (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    .lo-stat-card .lo-stat-value {
+      color: #fff;
+    }
+
+    .lo-stat-card .lo-stat-label {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  // ----- Reviews 미리보기 -----
+  .lo-home-reviews {
+    .lo-home-reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--lo-card-gap);
+
+      @media (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 639px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .lo-home-reviews-more {
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+
+  // ----- Home CTA 배너 -----
+  .lo-home-cta {
+    background: var(--lo-accent);
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    h2 {
+      font-size: var(--lo-text-display);
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    p {
+      font-size: var(--lo-text-lead);
+      opacity: 0.85;
+      margin-bottom: 32px;
+    }
+  }
+
+  // ----- Home 섹션 헤더 중앙 정렬 -----
+  .lo-home-section-header {
+    text-align: center;
+    margin-bottom: 56px;
+
+    .lo-section-lead {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

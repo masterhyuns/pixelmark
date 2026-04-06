@@ -1,0 +1,55 @@
+// ============================================================
+// S-3 Cafe & Restaurant — CSS 변수
+// ============================================================
+//
+// [컨셉: 따뜻하고 아늑함]
+// 크림 베이스 + 테라코타 포인트 + 올리브 강조, 여백 넉넉하고 둥근 모서리 적극 사용.
+
+.cafe-restaurant {
+  // ----- 컬러 -----
+  --cr-bg: #f7f3ee;                 // 크림 (메인 배경)
+  --cr-bg-soft: #ede4d6;            // 섹션 교차 배경
+  --cr-card: #ffffff;               // 카드 배경
+  --cr-text: #3b3028;               // 다크 브라운
+  --cr-text-soft: #75645a;          // 보조 텍스트
+  --cr-accent: #c47d4e;             // 테라코타 (포인트)
+  --cr-accent-dark: #a0653c;        // hover 어두운 테라코타
+  --cr-accent-soft: #e6ddd3;        // 라이트 베이지
+  --cr-highlight: #6b8e5b;          // 올리브 그린 (이벤트 뱃지)
+  --cr-border: #e3d9c9;             // 옅은 구분선
+  --cr-overlay: rgba(59, 48, 40, 0.4);
+
+  // ----- 서체 -----
+  --cr-font-sans: "Pretendard Variable", "Pretendard", sans-serif;
+  --cr-font-serif: "Playfair Display", "Noto Serif KR", serif;
+
+  // ----- 타입 스케일 -----
+  --cr-text-hero: clamp(2.75rem, 7vw, 5rem);
+  --cr-text-display: clamp(1.75rem, 4vw, 2.75rem);
+  --cr-text-body: 0.9375rem;
+  --cr-text-lead: 1.125rem;
+  --cr-text-small: 0.8125rem;
+  --cr-line-height: 1.7;
+
+  // ----- 간격 -----
+  --cr-section-gap: clamp(72px, 11vw, 140px);
+  --cr-container-max: 1200px;
+  --cr-container-padding: clamp(20px, 5vw, 48px);
+  --cr-card-gap: 24px;
+
+  // ----- 반경 (둥근 모서리 적극 사용) -----
+  --cr-radius-sm: 8px;
+  --cr-radius-md: 16px;
+  --cr-radius-lg: 24px;
+  --cr-radius-pill: 999px;
+
+  // ----- 그림자 -----
+  --cr-shadow-card: 0 6px 24px rgba(59, 48, 40, 0.08);
+  --cr-shadow-card-hover: 0 16px 40px rgba(59, 48, 40, 0.16);
+
+  // ----- 트랜지션 -----
+  --cr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --cr-duration-quick: 0.2s;
+  --cr-duration-base: 0.4s;
+  --cr-duration-slow: 0.7s;
+}

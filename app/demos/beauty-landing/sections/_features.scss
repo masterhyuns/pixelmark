@@ -1,0 +1,68 @@
+// ============================================================
+// Features 섹션 — 아이콘 카드 그리드 (2x2, stagger 페이드업)
+// ============================================================
+
+.beauty-landing .bl-features {
+  background: var(--bl-bg);
+
+  .bl-features-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 80px;
+  }
+
+  .bl-features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @media (max-width: 479px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // 특징 카드 (GSAP stagger로 진입 애니메이션)
+  .bl-feature-card {
+    text-align: center;
+    padding: 24px;
+
+    .bl-feature-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--bl-accent);
+      border-radius: 50%;
+      color: var(--bl-accent);
+
+      svg {
+        width: 28px;
+        height: 28px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.5;
+      }
+    }
+
+    .bl-feature-title {
+      font-family: var(--bl-font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--bl-text);
+    }
+
+    .bl-feature-desc {
+      font-size: var(--bl-text-small);
+      color: var(--bl-text-soft);
+      line-height: 1.8;
+    }
+  }
+}

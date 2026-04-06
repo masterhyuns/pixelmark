@@ -1,0 +1,55 @@
+// ============================================================
+// S-4 Personal Portfolio — 기본 타이포/배경
+// ============================================================
+
+.personal-portfolio {
+  background: var(--pp-bg);
+  color: var(--pp-text);
+  font-family: var(--pp-font-sans);
+  font-size: var(--pp-text-body);
+  line-height: var(--pp-line-height);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+
+  // 다크모드 전환 부드럽게 (기획서: CSS 변수 부드럽게 페이드 0.4s)
+  transition: background-color var(--pp-duration-base) var(--pp-ease),
+              color var(--pp-duration-base) var(--pp-ease);
+
+  // 디스플레이 서체 (이름, 타이틀)
+  .pp-display {
+    font-family: var(--pp-font-display);
+    letter-spacing: -0.015em;
+  }
+
+  // 섹션 타이틀
+  .pp-section-title {
+    font-family: var(--pp-font-display);
+    font-size: var(--pp-text-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--pp-text);
+    margin-bottom: 40px;
+    letter-spacing: -0.01em;
+  }
+
+  .pp-section-subtitle {
+    font-size: var(--pp-text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--pp-text-mute);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  // ----- 접근성: reduced motion -----
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

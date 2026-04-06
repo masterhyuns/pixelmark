@@ -1,0 +1,172 @@
+// ============================================================
+// About 페이지 (대표 프로필)
+// ============================================================
+
+.law-office {
+  // ----- 프로필 섹션 -----
+  .lo-about-profile {
+    .lo-about-profile-inner {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 56px;
+      align-items: start;
+
+      @media (max-width: 1023px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+    }
+
+    .lo-about-photo {
+      img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: var(--lo-radius-lg);
+        box-shadow: var(--lo-shadow-md);
+      }
+    }
+
+    .lo-about-info {
+      h2 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 700;
+        color: var(--lo-text);
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .lo-about-role {
+        font-size: var(--lo-text-lead);
+        color: var(--lo-accent);
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+
+      .lo-about-summary {
+        font-size: var(--lo-text-body);
+        color: var(--lo-text-soft);
+        line-height: 1.9;
+        margin-bottom: 32px;
+
+        p + p {
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+
+  // ----- 경력 타임라인 -----
+  .lo-about-timeline {
+    position: relative;
+    padding-left: 24px;
+
+    // 세로선
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 5px;
+      width: 2px;
+      background: var(--lo-border);
+    }
+  }
+
+  .lo-timeline-item {
+    position: relative;
+    padding-bottom: 24px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    // 점
+    &::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: -24px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--lo-accent);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--lo-accent);
+    }
+
+    .lo-timeline-period {
+      font-size: 12px;
+      color: var(--lo-cta);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .lo-timeline-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--lo-text);
+      margin-bottom: 4px;
+    }
+
+    .lo-timeline-desc {
+      font-size: var(--lo-text-small);
+      color: var(--lo-text-soft);
+      line-height: 1.7;
+    }
+  }
+
+  // ----- 인증/자격 섹션 -----
+  .lo-about-credentials {
+    background: var(--lo-bg-alt);
+  }
+
+  .lo-credentials-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    li {
+      background: #fff;
+      padding: 20px;
+      border-radius: var(--lo-radius-md);
+      text-align: center;
+      border: 1px solid var(--lo-border);
+
+      .lo-credential-mark {
+        width: 44px;
+        height: 44px;
+        margin: 0 auto 12px;
+        border-radius: 50%;
+        background: var(--lo-accent-soft);
+        color: var(--lo-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          stroke: currentColor;
+          fill: none;
+          stroke-width: 1.75;
+        }
+      }
+
+      .lo-credential-name {
+        font-size: var(--lo-text-small);
+        font-weight: 600;
+        color: var(--lo-text);
+      }
+    }
+  }
+}

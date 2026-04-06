@@ -1,0 +1,186 @@
+// ============================================================
+// S-3 Cafe & Restaurant — 공통 레이아웃
+// ============================================================
+
+.cafe-restaurant {
+  .container {
+    width: 100%;
+    max-width: var(--cr-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--cr-container-padding);
+    padding-right: var(--cr-container-padding);
+  }
+
+  section {
+    padding-top: var(--cr-section-gap);
+    padding-bottom: var(--cr-section-gap);
+    position: relative;
+  }
+
+  // ----- 상단 네비 (DemoHeaderBar 아래 고정) -----
+  .cr-nav {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 높이만큼 아래
+    left: 0;
+    right: 0;
+    height: 64px;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    transition: background var(--cr-duration-base) var(--cr-ease);
+
+    &.is-scrolled {
+      background: rgba(247, 243, 238, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(59, 48, 40, 0.06);
+    }
+
+    .cr-nav-inner {
+      width: 100%;
+      max-width: var(--cr-container-max);
+      margin: 0 auto;
+      padding: 0 var(--cr-container-padding);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cr-nav-logo {
+      font-family: var(--cr-font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--cr-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .cr-nav-links {
+      display: flex;
+      gap: 32px;
+
+      @media (max-width: 767px) {
+        display: none; // 모바일은 햄버거로 대체
+      }
+
+      a {
+        font-size: var(--cr-text-small);
+        color: var(--cr-text);
+        letter-spacing: 0.05em;
+        transition: color var(--cr-duration-quick) var(--cr-ease);
+
+        &:hover {
+          color: var(--cr-accent);
+        }
+      }
+    }
+
+    // 햄버거 버튼 (모바일)
+    .cr-nav-hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
+      @media (max-width: 767px) {
+        display: flex;
+      }
+
+      span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--cr-text);
+        transition: transform var(--cr-duration-base) var(--cr-ease),
+                    opacity var(--cr-duration-base) var(--cr-ease);
+      }
+
+      &.is-open {
+        span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+      }
+    }
+  }
+
+  // 모바일 드로어
+  .cr-mobile-menu {
+    position: fixed;
+    top: 108px; // DemoHeaderBar(44) + cr-nav(64)
+    left: 0;
+    right: 0;
+    background: var(--cr-bg);
+    border-top: 1px solid var(--cr-border);
+    padding: 24px;
+    z-index: 79;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--cr-duration-base) var(--cr-ease),
+                opacity var(--cr-duration-base) var(--cr-ease);
+
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    a {
+      font-size: 1.25rem;
+      font-family: var(--cr-font-serif);
+      color: var(--cr-text);
+    }
+  }
+
+  // 버튼 공통
+  .cr-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: var(--cr-radius-pill);
+    font-size: var(--cr-text-small);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background var(--cr-duration-base) var(--cr-ease),
+                color var(--cr-duration-base) var(--cr-ease),
+                transform var(--cr-duration-base) var(--cr-ease);
+
+    &--primary {
+      background: var(--cr-accent);
+      color: #fff;
+
+      &:hover {
+        background: var(--cr-accent-dark);
+        transform: translateY(-2px);
+      }
+    }
+
+    &--ghost {
+      background: transparent;
+      color: var(--cr-text);
+      border: 1.5px solid var(--cr-text);
+
+      &:hover {
+        background: var(--cr-text);
+        color: var(--cr-bg);
+      }
+    }
+  }
+}

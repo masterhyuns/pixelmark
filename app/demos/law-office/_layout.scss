@@ -1,0 +1,126 @@
+// ============================================================
+// S-2 Law Office — 공통 레이아웃
+// ============================================================
+
+.law-office {
+  .lo-container {
+    width: 100%;
+    max-width: var(--lo-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--lo-container-padding);
+    padding-right: var(--lo-container-padding);
+  }
+
+  // 페이지 래퍼 (sub-route 전환 페이드용)
+  .lo-page {
+    opacity: 1;
+    transition: opacity var(--lo-duration-base) var(--lo-ease);
+  }
+
+  // pageTransition.ts가 클래스 토글하여 전환 중 opacity 0
+  .lo-page.is-leaving {
+    opacity: 0;
+  }
+
+  // 페이지 헤더 (소개/전문분야/후기/상담예약 페이지 공통 상단)
+  .lo-page-header {
+    background: var(--lo-bg-alt);
+    padding: calc(var(--lo-section-gap) * 0.7) 0 var(--lo-section-gap);
+    text-align: center;
+
+    .lo-page-header-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--lo-cta);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: var(--lo-text-hero);
+      font-weight: 700;
+      color: var(--lo-text);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-size: var(--lo-text-lead);
+      color: var(--lo-text-soft);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  }
+
+  section {
+    padding-top: var(--lo-section-gap);
+    padding-bottom: var(--lo-section-gap);
+
+    // 교차 배경 (기획서: 섹션 배경 교차 화이트 ↔ 라이트그레이)
+    &.lo-section-alt {
+      background: var(--lo-bg-alt);
+    }
+  }
+
+  // 버튼 공통
+  .lo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--lo-radius-md);
+    font-size: var(--lo-text-small);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background var(--lo-duration-base) var(--lo-ease),
+                color var(--lo-duration-base) var(--lo-ease),
+                border-color var(--lo-duration-base) var(--lo-ease),
+                box-shadow var(--lo-duration-base) var(--lo-ease);
+
+    // CTA: 골드브라운 (기획서: 상담 버튼 전용)
+    &--cta {
+      background: var(--lo-cta);
+      color: #fff;
+      box-shadow: var(--lo-shadow-md);
+
+      &:hover {
+        background: var(--lo-cta-dark);
+        box-shadow: var(--lo-shadow-lg);
+      }
+    }
+
+    // Primary: 네이비
+    &--primary {
+      background: var(--lo-accent);
+      color: #fff;
+
+      &:hover {
+        background: var(--lo-accent-dark);
+      }
+    }
+
+    // Ghost: 투명 + 보더
+    &--ghost {
+      background: transparent;
+      color: var(--lo-text);
+      border: 1px solid var(--lo-border-strong);
+
+      &:hover {
+        background: var(--lo-bg-alt);
+      }
+    }
+  }
+
+  // 보조 구분선
+  .lo-divider {
+    border: 0;
+    height: 1px;
+    background: var(--lo-border);
+    margin: 32px 0;
+  }
+}

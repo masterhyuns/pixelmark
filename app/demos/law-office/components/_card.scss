@@ -1,0 +1,202 @@
+// ============================================================
+// 카드 컴포넌트 (전문분야 카드, 실적 숫자 카드, 후기 카드 등)
+// ============================================================
+
+.law-office {
+  // ----- 분야 카드 (Home의 전문분야 미리보기, Services 페이지) -----
+  .lo-service-card {
+    position: relative;
+    background: #fff;
+    padding: 32px 28px;
+    border: 1px solid var(--lo-border);
+    border-radius: var(--lo-radius-lg);
+    box-shadow: var(--lo-shadow-sm);
+    transition: box-shadow var(--lo-duration-base) var(--lo-ease),
+                transform var(--lo-duration-base) var(--lo-ease);
+    overflow: hidden;
+
+    // 좌측 보더 슬라이드 in (hover 시)
+    // 기획서 명시: 좌측 3px 골드브라운 보더가 슬라이드 인 + 그림자 강화
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3px;
+      background: var(--lo-cta);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform var(--lo-duration-base) var(--lo-ease);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: var(--lo-shadow-md);
+        transform: translateY(-4px);
+
+        &::before {
+          transform: scaleY(1);
+        }
+      }
+    }
+
+    .lo-service-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--lo-radius-md);
+      background: var(--lo-accent-soft);
+      color: var(--lo-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      svg {
+        width: 22px;
+        height: 22px;
+        stroke: currentColor;
+        fill: none;
+        stroke-width: 1.75;
+      }
+    }
+
+    .lo-service-card-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--lo-text);
+      margin-bottom: 8px;
+    }
+
+    .lo-service-card-desc {
+      font-size: var(--lo-text-small);
+      color: var(--lo-text-soft);
+      line-height: 1.75;
+    }
+
+    // 상세 페이지 CTA (Services 페이지에서만)
+    .lo-service-card-cta {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--lo-accent);
+      font-weight: 600;
+      transition: gap var(--lo-duration-base) var(--lo-ease);
+    }
+
+    &:hover .lo-service-card-cta {
+      gap: 10px;
+    }
+  }
+
+  // ----- 실적 숫자 카드 (Home) -----
+  .lo-stat-card {
+    text-align: center;
+    padding: 32px 20px;
+
+    .lo-stat-value {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--lo-accent);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .lo-stat-label {
+      font-size: var(--lo-text-small);
+      color: var(--lo-text-soft);
+      font-weight: 500;
+    }
+  }
+
+  // ----- 후기 카드 (Home 미리보기 + Reviews 전체) -----
+  .lo-review-card {
+    background: #fff;
+    padding: 28px;
+    border: 1px solid var(--lo-border);
+    border-radius: var(--lo-radius-lg);
+    transition: box-shadow var(--lo-duration-base) var(--lo-ease),
+                border-color var(--lo-duration-base) var(--lo-ease);
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: var(--lo-shadow-md);
+        border-color: var(--lo-border-strong);
+      }
+    }
+
+    .lo-review-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .lo-review-stars {
+      display: flex;
+      gap: 2px;
+      color: var(--lo-cta);
+
+      svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+    }
+
+    .lo-review-category {
+      display: inline-block;
+      padding: 3px 10px;
+      background: var(--lo-accent-soft);
+      color: var(--lo-accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border-radius: var(--lo-radius-pill);
+    }
+
+    .lo-review-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--lo-text);
+      margin-bottom: 10px;
+    }
+
+    .lo-review-body {
+      font-size: var(--lo-text-small);
+      color: var(--lo-text-soft);
+      line-height: 1.75;
+      margin-bottom: 16px;
+
+      // 리뷰 카드 기본 3줄 제한, 펼침 시 전체 표시
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: max-height var(--lo-duration-slow) var(--lo-ease);
+    }
+
+    &.is-expanded .lo-review-body {
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+
+    .lo-review-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--lo-text-light);
+    }
+
+    .lo-review-toggle {
+      font-size: 12px;
+      color: var(--lo-accent);
+      cursor: pointer;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+// ============================================================
+// S-1 Beauty Landing — 기본 타이포/배경
+// ============================================================
+
+.beauty-landing {
+  background: var(--bl-bg);
+  color: var(--bl-text);
+  font-family: var(--bl-font-sans);
+  font-size: var(--bl-text-body);
+  line-height: var(--bl-line-height);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // 히어로 풀스크린 디자인을 위해 body padding 없음 (DemoHeaderBar는 overlay)
+  min-height: 100vh;
+
+  // 세리프 디스플레이 폰트 (브랜드명, 섹션 타이틀)
+  .serif {
+    font-family: var(--bl-font-serif);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  // 섹션 타이틀 공통 스타일
+  .section-title {
+    font-family: var(--bl-font-serif);
+    font-size: var(--bl-text-display);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bl-text);
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: var(--bl-text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--bl-accent);
+    margin-bottom: 12px;
+  }
+
+  .section-lead {
+    font-size: var(--bl-text-lead);
+    color: var(--bl-text-soft);
+    max-width: 560px;
+  }
+
+  // ----- 접근성: 모션 축소 -----
+  // Lenis, SplitText, 마그네틱 등이 JS에서 같은 분기로 처리되지만,
+  // CSS transition/animation도 함께 비활성화해 일관성 유지
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

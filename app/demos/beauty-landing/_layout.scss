@@ -1,0 +1,120 @@
+// ============================================================
+// S-1 Beauty Landing — 공통 레이아웃
+// ============================================================
+
+.beauty-landing {
+  // 컨테이너: 1200px 최대 너비, 반응형 패딩
+  .container {
+    width: 100%;
+    max-width: var(--bl-container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--bl-container-padding);
+    padding-right: var(--bl-container-padding);
+  }
+
+  // 섹션 공통
+  section {
+    padding-top: var(--bl-section-gap);
+    padding-bottom: var(--bl-section-gap);
+    position: relative;
+  }
+
+  // 상단 네비게이션 (스크롤에 따라 배경 전환)
+  .bl-nav {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 높이만큼 아래
+    left: 0;
+    right: 0;
+    height: 72px;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--bl-container-padding);
+    background: transparent;
+    transition: background var(--bl-duration-base) var(--bl-ease),
+                backdrop-filter var(--bl-duration-base) var(--bl-ease);
+
+    &.is-scrolled {
+      background: rgba(250, 250, 248, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .bl-nav-inner {
+      width: 100%;
+      max-width: var(--bl-container-max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bl-nav-logo {
+      font-family: var(--bl-font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--bl-accent);
+      letter-spacing: 0.05em;
+    }
+
+    .bl-nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+
+      a {
+        font-size: var(--bl-text-small);
+        color: var(--bl-text);
+        letter-spacing: 0.05em;
+        transition: color var(--bl-duration-quick) var(--bl-ease);
+
+        &:hover {
+          color: var(--bl-accent);
+        }
+      }
+    }
+  }
+
+  // 버튼 공통 (마그네틱 적용 대상)
+  .bl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 36px;
+    border-radius: 2px;
+    font-size: var(--bl-text-small);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background var(--bl-duration-base) var(--bl-ease),
+                color var(--bl-duration-base) var(--bl-ease),
+                transform var(--bl-duration-base) var(--bl-ease);
+    will-change: transform;
+
+    &--primary {
+      background: var(--bl-accent);
+      color: #fff;
+
+      &:hover {
+        background: var(--bl-accent-dark);
+      }
+    }
+
+    &--ghost {
+      background: transparent;
+      color: var(--bl-text);
+      border: 1px solid var(--bl-text);
+
+      &:hover {
+        background: var(--bl-text);
+        color: #fff;
+      }
+    }
+  }
+}

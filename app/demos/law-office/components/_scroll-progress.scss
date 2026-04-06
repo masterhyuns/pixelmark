@@ -1,0 +1,24 @@
+// ============================================================
+// 상단 스크롤 진행 라인
+// ============================================================
+// 기획서: 얇은 라인이 좌→우로 차오름 (네이비 컬러), 실시간
+// DemoHeaderBar 바로 아래 위치
+
+.law-office {
+  .lo-scroll-progress {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 바로 아래
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    z-index: 99; // DemoHeaderBar(100)보다 아래, 사이트헤더(80)보다 위
+
+    .lo-scroll-progress-bar {
+      height: 100%;
+      width: 0%; // scrollProgress.ts가 %로 업데이트
+      background: var(--lo-accent);
+      // transition은 걸지 않는다 — 스크롤에 실시간으로 따라가야 자연스러움
+    }
+  }
+}

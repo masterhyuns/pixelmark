@@ -1,0 +1,54 @@
+// ============================================================
+// S-2 Law Office — 자체 CSS Reset
+// ============================================================
+// Tailwind preflight 의존 금지, .law-office 스코프 하위에서만 동작
+
+.law-office {
+  box-sizing: border-box;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul, ol {
+    list-style: none;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  input, textarea, select {
+    font: inherit;
+    color: inherit;
+  }
+
+  // 접근성 포커스 (전문직 사이트는 키보드 네비 중요)
+  :focus-visible {
+    outline: 2px solid var(--lo-accent);
+    outline-offset: 2px;
+  }
+}

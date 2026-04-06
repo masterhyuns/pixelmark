@@ -1,0 +1,90 @@
+// ============================================================
+// Intro 섹션 — 이름 + 한 줄 소개
+// ============================================================
+
+.personal-portfolio .pp-intro {
+  min-height: 100vh;
+  padding-top: calc(var(--pp-section-gap) * 0.5);
+  padding-bottom: calc(var(--pp-section-gap) * 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+
+  .pp-intro-eyebrow {
+    font-size: var(--pp-text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--pp-text-mute);
+    margin-bottom: 32px;
+  }
+
+  .pp-intro-name {
+    font-family: var(--pp-font-display);
+    font-size: var(--pp-text-name);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--pp-text);
+    margin-bottom: 24px;
+    // 타이프라이터가 글자씩 채워넣음 (최소 높이 보장)
+    min-height: 1.1em;
+
+    // 타이프라이터 커서 (|)
+    .pp-typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: var(--pp-text);
+      margin-left: 8px;
+      vertical-align: baseline;
+      transform: translateY(0.05em);
+      // 깜빡임은 JS가 토글하는 클래스로 처리 (타이핑 중엔 깜빡이지 않음)
+      animation: none;
+    }
+
+    .pp-typewriter-cursor.is-blinking {
+      animation: pp-blink 0.8s steps(1) infinite;
+    }
+
+    @keyframes pp-blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+  }
+
+  .pp-intro-title {
+    font-size: var(--pp-text-lead);
+    color: var(--pp-text-soft);
+    max-width: 480px;
+    margin-bottom: 64px;
+  }
+
+  // 스크롤 유도
+  .pp-intro-scroll {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: var(--pp-text-mute);
+    font-size: var(--pp-text-caption);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+
+    svg {
+      width: 14px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.25;
+      animation: pp-scroll-bounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pp-scroll-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+  }
+}
