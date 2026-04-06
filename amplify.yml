@@ -1,36 +1,40 @@
 version: 1
 # ============================================================
-# AWS Amplify Hosting — React Router 7 (SSR) 빌드 설정
+# AWS Amplify Hosting — React Router 7 (Prerender/SSG) 빌드 설정
 # ============================================================
 #
-# [이 파일이 하는 일]
-# - Amplify가 이 앱을 빌드/배포할 때 사용할 명령 정의
-# - React Router 7 SSR은 `build/` 폴더에 client + server 번들을 생성
-# - Amplify는 이 빌드 결과물을 "compute" 환경에서 실행 (Lambda @ Edge 유사)
+# [왜 SSR이 아니라 prerender인가]
+# - Amplify Hosting Gen 1은 Next.js SSR만 자동 감지하고, RR7 SSR은 지원 안 함
+# - 시도 시 "No index.html detected" 오류로 배포 실패
+# - 해결: react-router.config.ts에서 ssr: false + prerender로 전환
+# - prerender는 각 라우트의 HTML을 빌드 시점에 미리 생성 → 정적 호스팅에 완벽
+# - meta/JSON-LD/sitemap.xml 모두 빌드 타임에 HTML에 베이킹됨
 #
-# [React Router 7 SSR 특이사항]
-# - 정적 사이트 생성(SSG)이 아니라 Node 서버를 띄워야 함
-# - `baseDirectory: .` 로 전체 프로젝트를 배포 대상으로 지정
-# - Amplify가 Next.js 자동 감지하듯 RR7을 감지하진 않으므로, 명시적 설정 필수
+# [baseDirectory: build/client]
+# - RR7은 prerender 결과물을 build/client/ 에 저장
+# - 각 라우트별 index.html, 에셋(css/js), sitemap.xml 등이 모두 이 폴더 안에 있음
+# - Amplify는 이 폴더를 정적 사이트로 서빙
 #
-# [환경변수]
-# - 크몽 URL, 이메일, SITE_URL 등은 코드 내 상수로 관리 중 → 필요 시 Amplify 콘솔에서 env 추가
-# - 현재는 별도 env 없이 빌드 가능
+# [SPA 폴백 주의]
+# - prerender는 나열된 경로만 정적 HTML 생성
+# - 나열 안 된 경로(예: /random)는 Amplify에서 404
+# - 필요 시 Amplify 콘솔에서 /<*> → /index.html (200 rewrite) 규칙 추가
+#   (라우트는 모두 prerender로 커버되므로 필수는 아님)
 
 frontend:
   phases:
     preBuild:
       commands:
         # pnpm 전역 설치 후 프로젝트 의존성 설치
-        # (Amplify 기본 이미지에는 pnpm이 없을 수 있음)
+        # (Amplify 기본 이미지에는 pnpm이 없음)
         - npm install -g pnpm@10.28.1
         - pnpm install --frozen-lockfile
     build:
       commands:
         - pnpm run build
   artifacts:
-    # 전체 프로젝트를 배포 대상으로 (server/index.js 실행 필요)
-    baseDirectory: .
+    # prerender 결과: build/client/ 안의 정적 HTML/에셋
+    baseDirectory: build/client
     files:
       - '**/*'
   cache:

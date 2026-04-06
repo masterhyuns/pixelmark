@@ -2,18 +2,32 @@
 
 Pixelmark 포트폴리오 사이트를 AWS Amplify Hosting에 배포하는 순서.
 
-React Router 7은 **SSR(Server-Side Rendering)** 앱이므로 Amplify의 **compute** 환경(Node 서버)을 사용한다. 정적 S3 호스팅만으로는 동작하지 않는다.
+## ⚠️ 중요: SSR이 아니라 **Prerender(SSG)** 모드로 배포
+
+AWS Amplify Hosting Gen 1은 **Next.js SSR만 자동 지원**하고 React Router 7 SSR은 지원하지 않는다.
+시도 시 `"No index.html detected in deploy folder"` 오류로 배포 실패.
+
+**해결책**: `react-router.config.ts`에서 `ssr: false` + `prerender`로 설정해
+빌드 타임에 각 라우트의 정적 HTML을 미리 생성한다. 포트폴리오의 모든 라우트가
+빌드 타임에 알려진 정적 콘텐츠이므로 prerender가 최적.
+
+**prerender가 제공하는 것**
+- 각 라우트별 개별 `index.html` (`/index.html`, `/projects/index.html`, `/demos/beauty-landing/index.html` 등)
+- `meta()` / JSON-LD / sitemap.xml 모두 빌드 타임에 HTML에 베이킹
+- SEO 완벽 — 검색엔진은 라우트별 고유 HTML을 크롤링
+- 클라이언트 라우팅 그대로 유지 (Link 컴포넌트 정상)
+- 데모의 vanilla TS 모듈은 useEffect에서 실행되므로 SSR 유무 무관
 
 ---
 
 ## 사전 준비 체크
 
-- [x] `react-router.config.ts`에 `ssr: true` 설정됨
-- [x] `package.json`에 `"start": "react-router-serve ./build/server/index.js"` 스크립트 있음
+- [x] `react-router.config.ts`에 `ssr: false` + `prerender` 함수 설정됨
 - [x] `package.json`에 `"engines": { "node": ">=20.0.0" }` 명시됨
 - [x] 루트에 `.nvmrc` (Node 20) 존재
-- [x] 루트에 `amplify.yml` 빌드 설정 존재
+- [x] 루트에 `amplify.yml` 빌드 설정 존재 (`baseDirectory: build/client`)
 - [x] Git 저장소: `github.com/masterhyuns/pixelmark`
+- [x] 로컬 빌드 검증: 16개 index.html + sitemap.xml 생성 확인
 
 ---
 
@@ -80,14 +94,17 @@ Amplify가 자동으로 `amplify.yml`을 감지한다.
 - 해결: `.nvmrc`가 루트에 있고 `20`이 적혀있으면 Amplify가 자동 감지
 - 보조: `package.json`의 `engines.node` 확인
 
-### ❌ `SSR not detected` / 정적 사이트로만 배포됨
-- 원인: React Router 7은 Next.js처럼 자동 감지 안 됨
-- 해결: `amplify.yml`의 `baseDirectory: .` (전체 프로젝트)가 필수 → 이미 설정됨
-- 확인: 빌드 로그에서 `build/server/index.js`가 생성됐는지 체크
+### ❌ `No index.html detected in deploy folder`
+- 원인: Amplify가 SSR 앱을 정적 사이트로 감지 + `baseDirectory` 설정 오류
+- 해결:
+  1. `react-router.config.ts`에서 `ssr: false` + `prerender` 사용 중인지 확인
+  2. `amplify.yml`의 `baseDirectory: build/client` 인지 확인
+  3. 로컬에서 `pnpm build` 실행 후 `build/client/index.html`이 생성되는지 확인
 
-### ❌ `ERR_MODULE_NOT_FOUND` at runtime
-- 원인: `package.json`의 `"type": "module"`이 빠짐
-- 해결: 이미 설정되어 있음 (확인 완료)
+### ❌ 특정 경로(/projects/새슬러그)가 404
+- 원인: 새 프로젝트를 추가했는데 `react-router.config.ts`의 prerender 목록에 반영 안 됨
+- 해결: prerender 함수가 `projects` 데이터 기반으로 동적 생성하므로 자동 반영됨.
+  하지만 SPA fallback 없는 경로라면 Amplify 콘솔에서 rewrite 규칙 추가 (§6-1 참고)
 
 ### ❌ `pnpm-lock.yaml changed`
 - 원인: `--frozen-lockfile` 실패 (로컬과 CI의 pnpm 버전 차이)
@@ -95,7 +112,25 @@ Amplify가 자동으로 `amplify.yml`을 감지한다.
 
 ---
 
-## 6. 환경 변수 설정 (선택)
+## 6-1. Amplify 콘솔 — SPA Rewrite 규칙 (권장)
+
+prerender가 알려진 라우트는 모두 커버하지만, 클라이언트 라우팅으로 링크를 이동할 때
+브라우저가 직접 `/demos/beauty-landing` 같은 URL에 접근하면 Amplify가 해당 폴더의
+`index.html`을 찾는다. 정확한 경로는 문제 없지만, 혹시 모를 상황에 대비해 SPA 폴백을 설정해두면 안전하다.
+
+**Amplify 콘솔 → 앱 → 좌측 메뉴 "Rewrites and redirects" → Add rule**
+
+| Source address | Target address | Type |
+|----------------|----------------|------|
+| `</^[^.]+$\|\.(?!(css\|gif\|ico\|jpg\|jpeg\|js\|png\|txt\|svg\|woff\|woff2\|ttf\|map\|json\|webmanifest\|xml)$)([^.]+$)/>` | `/index.html` | `200 (Rewrite)` |
+
+- 위 정규식은 "확장자가 없는 모든 경로"와 "위에 나열된 확장자가 아닌 파일"을 `/index.html`로 리라이트
+- 덕분에 `/projects/new-slug`처럼 prerender 안 된 경로가 와도 SPA가 받아서 처리
+- `.xml` 제외는 `/sitemap.xml` 같은 리소스 파일이 intercept되지 않게 하기 위함
+
+---
+
+## 6-2. 환경 변수 설정 (선택)
 
 현재 코드 내 하드코딩된 값들이 있어 Amplify 환경변수로 빼는 것을 권장:
 
