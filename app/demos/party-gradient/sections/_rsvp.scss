@@ -1,0 +1,138 @@
+// ============================================================
+// RSVP Mock + 모달
+// ============================================================
+
+.party-gradient {
+  .pg-rsvp {
+    text-align: center;
+  }
+
+  .pg-rsvp-card {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 44px 36px;
+  }
+
+  .pg-rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .pg-rsvp-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+    font-family: var(--pg-font-body);
+    font-size: 12px;
+    color: var(--pg-text-soft);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .pg-rsvp-input,
+  .pg-rsvp-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 14px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--pg-text);
+    font-family: var(--pg-font-body);
+    font-size: 14px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .pg-rsvp-input:focus,
+  .pg-rsvp-select:focus {
+    outline: none;
+    border-color: var(--pg-hotpink);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .pg-rsvp-submit {
+    margin-top: 12px;
+  }
+
+  // 모달
+  .pg-rsvp-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(58, 45, 77, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .pg-rsvp-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .pg-rsvp-modal-dialog {
+    width: 100%;
+    max-width: 420px;
+    background: var(--pg-glass-strong);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    padding: 36px 32px;
+    text-align: center;
+    position: relative;
+    transform: translateY(14px);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: var(--pg-shadow);
+  }
+  .pg-rsvp-modal.is-open .pg-rsvp-modal-dialog {
+    transform: translateY(0);
+  }
+  .pg-rsvp-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--pg-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pg-text-soft);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .pg-rsvp-modal-close:hover {
+    background: var(--pg-hotpink);
+    color: #ffffff;
+    border-color: var(--pg-hotpink);
+  }
+  .pg-rsvp-modal-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--pg-hotpink);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .pg-rsvp-modal-title {
+    font-family: var(--pg-font-display);
+    font-size: 26px;
+    color: var(--pg-text);
+    margin-bottom: 8px;
+  }
+  .pg-rsvp-modal-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--pg-text-soft);
+  }
+  .pg-rsvp-modal-desc strong {
+    color: var(--pg-text);
+    font-weight: 600;
+  }
+}

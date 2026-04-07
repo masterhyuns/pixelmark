@@ -39,6 +39,7 @@ import pvHeroUrl from "~/demos/popup-vivid/assets/images/hero/hero-gradient.webp
 import ctHeroUrl from "~/demos/conference-tech/assets/images/home/home-hero.webp"
 import wcHeroUrl from "~/demos/wedding-classic/assets/images/home/home-hero.webp"
 import wbHeroUrl from "~/demos/wedding-bohemian/assets/images/hero/hero-bg.webp"
+import pgHeroUrl from "~/demos/party-gradient/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -407,6 +408,43 @@ export const projects: Project[] = [
       {
         title: "야외 웨딩 특수 안내",
         description: "지하철 대신 셔틀버스 일정, 주차, 드레스 코드(베이지/세이지/크림)까지 야외 가든 웨딩에 필요한 안내를 카드로 정리했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "party-gradient",
+    title: "개인 파티 초대장",
+    subtitle: "파스텔 그라데이션과 글래스모피즘으로 완성한 페미닌 톤 생일 파티 초대장",
+    category: "event",
+    tier: "standard",
+    industry: "개인 파티 / 생일",
+    duration: "1주",
+    order: 11,
+    demoUrl: "/demos/party-gradient",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "backdrop-filter", "Playfair Display"],
+    description:
+      "핑크·블루·퍼플 파스텔 그라데이션을 풀블리드 배경(background-attachment: fixed)으로 깔고, 그 위에 글래스모피즘 카드(backdrop-filter: blur)를 얹은 생일 파티 초대장 데모입니다. Playfair Display 이탤릭을 디스플레이로 써 페미닌하고 트렌디한 톤을 만들었습니다. 시그니처는 드레스코드 4카드(핑크/블루/퍼플/화이트)로, 컬러 칩과 키워드로 분위기를 한눈에 전달합니다. RSVP Mock 폼 + 성공 모달, D-day 카운트다운, 카카오맵까지 6섹션을 단일 라우트에 담았습니다.",
+    thumbnail: pgHeroUrl,
+    highlights: [
+      {
+        title: "풀블리드 파스텔 그라데이션",
+        description: "핑크 → 블루 → 퍼플 3단계 linear-gradient에 background-attachment: fixed를 적용해 스크롤 중에도 고정된 배경 위로 콘텐츠가 흐르는 효과를 만들었습니다.",
+      },
+      {
+        title: "글래스모피즘 카드",
+        description: "backdrop-filter: blur(18px) + 반투명 흰색으로 구성한 글래스 카드를 카운트다운/정보/드레스코드/RSVP 전반에 일관되게 사용했습니다.",
+      },
+      {
+        title: "드레스코드 4카드 (시그니처)",
+        description: "Pink / Blue / Purple / White 4개 드레스코드를 컬러 칩, 이미지, 키워드, 설명으로 구성된 글래스 카드로 제공합니다. hover 시 translateY + 부드러운 그림자가 작동합니다.",
+      },
+      {
+        title: "RSVP Mock 폼 + 성공 모달",
+        description: "이름과 인원수를 받는 Mock 폼. 제출 시 서버 요청 없이 값을 읽어 성공 모달을 띄우고, ESC·백드롭·닫기 버튼 모두 지원합니다.",
+      },
+      {
+        title: "실시간 D-day 카운트다운 + 카카오맵",
+        description: "히어로의 글래스 카운트다운이 1초마다 갱신되고, 정보 섹션에는 카카오맵 iframe이 같은 글래스 톤으로 이어집니다.",
       },
     ],
   },

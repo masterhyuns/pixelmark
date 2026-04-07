@@ -1,0 +1,16 @@
+// ============================================================
+// E-S5 Party Gradient — SCSS 진입점
+// ============================================================
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/hero";
+@use "sections/greeting";
+@use "sections/info";
+@use "sections/dresscode";
+@use "sections/rsvp";
+@use "sections/footer";

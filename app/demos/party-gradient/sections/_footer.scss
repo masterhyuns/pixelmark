@@ -1,0 +1,28 @@
+.party-gradient {
+  .pg-footer {
+    padding: 72px 24px 56px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+  }
+  .pg-footer-thanks {
+    font-family: var(--pg-font-display);
+    font-style: italic;
+    font-size: clamp(36px, 6vw, 56px);
+    color: var(--pg-hotpink);
+    margin-bottom: 10px;
+  }
+  .pg-footer-sub {
+    font-size: 13px;
+    color: var(--pg-text-soft);
+    margin-bottom: 28px;
+  }
+  .pg-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 520px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--pg-text-soft);
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+  }
+}

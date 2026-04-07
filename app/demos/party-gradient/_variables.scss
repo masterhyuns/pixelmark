@@ -1,0 +1,29 @@
+// ============================================================
+// E-S5 Party Gradient — CSS 변수
+// ============================================================
+
+:root {
+  --pg-pink: #ffd6e8;
+  --pg-blue: #d6e5ff;
+  --pg-purple: #e8d6ff;
+  --pg-hotpink: #ff6b9d;
+  --pg-deepblue: #6b8cff;
+  --pg-text: #3a2d4d;
+  --pg-text-soft: #7a6e8c;
+  --pg-border: rgba(58, 45, 77, 0.1);
+  --pg-glass: rgba(255, 255, 255, 0.68);
+  --pg-glass-strong: rgba(255, 255, 255, 0.85);
+  --pg-shadow: 0 20px 60px rgba(255, 107, 157, 0.18);
+
+  --pg-font-display: "Playfair Display", "Pretendard", serif;
+  --pg-font-body: "Pretendard", "Inter", -apple-system, sans-serif;
+
+  --pg-max-width: 1100px;
+  --pg-section-pad-y: 100px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --pg-section-pad-y: 72px;
+  }
+}
