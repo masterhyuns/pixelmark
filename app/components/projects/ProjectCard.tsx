@@ -1,6 +1,8 @@
 import { Link } from "react-router"
-import type { Project, ProjectCategory, ProjectTier } from "~/types/types"
+import type { Project, ProjectCategory } from "~/types/types"
 import { CATEGORY_LABEL, TIER_LABEL } from "~/types/types"
+// TIER_STYLE은 app/utils/tierStyle.ts에서 단일 진실의 원천으로 관리 (지시서 #001 항목 8)
+import { TIER_STYLE } from "~/utils/tierStyle"
 import TechBadge from "./TechBadge"
 
 /**
@@ -18,19 +20,6 @@ const CATEGORY_STYLE: Record<ProjectCategory, string> = {
   fnb: "bg-orange-500/10 text-orange-300 border-orange-400/20",
   event: "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
   personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
-}
-
-/**
- * 등급(tier) 색상 매핑 - 카드 우상단 작은 뱃지용
- *
- * 카테고리와 시각 위계를 다르게 하기 위해 모노톤(STANDARD/DELUXE)
- * + 강조(PREMIUM) 패턴으로 설계.
- */
-const TIER_STYLE: Record<ProjectTier, string> = {
-  // STANDARD는 다크 배경에서 너무 옅어 보이던 문제로 라이트 블루 반투명 + 흰 글씨로 가시성 강화
-  standard: "bg-[#abbdef9c] text-white border-[#abbdef]/50",
-  deluxe: "bg-amber-500/10 text-amber-300 border-amber-400/20",
-  premium: "bg-white/20 text-white border-white/40",
 }
 
 interface ProjectCardProps {

@@ -2,8 +2,10 @@ import { Link } from "react-router"
 import type { Route } from "./+types/projects.$slug"
 import { createProjectMeta, projectJsonLd } from "~/utils/seo"
 import { getProjectBySlug, getRelatedProjects } from "~/data/projects"
-import type { ProjectCategory, ProjectTier } from "~/types/types"
+import type { ProjectCategory } from "~/types/types"
 import { CATEGORY_LABEL, TIER_LABEL } from "~/types/types"
+// TIER_STYLE은 app/utils/tierStyle.ts에서 단일 진실의 원천으로 관리 (지시서 #001 항목 8)
+import { TIER_STYLE } from "~/utils/tierStyle"
 import TechBadge from "~/components/projects/TechBadge"
 import ProjectCard from "~/components/projects/ProjectCard"
 import JsonLd from "~/components/common/JsonLd"
@@ -18,17 +20,6 @@ const CATEGORY_STYLE: Record<ProjectCategory, string> = {
   fnb: "bg-orange-500/10 text-orange-300 border-orange-400/20",
   event: "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
   personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
-}
-
-/**
- * 등급 색상 - 헤더 작은 뱃지용
- */
-const TIER_STYLE: Record<ProjectTier, string> = {
-  // ProjectCard.tsx와 동일 값 유지 (향후 단일 파일로 분리 권장)
-  // STANDARD는 다크 배경에서 너무 옅어 보이던 문제로 라이트 블루 반투명 + 흰 글씨로 가시성 강화
-  standard: "bg-[#abbdef9c] text-white border-[#abbdef]/50",
-  deluxe: "bg-amber-500/10 text-amber-300 border-amber-400/20",
-  premium: "bg-white/20 text-white border-white/40",
 }
 
 export const loader = ({ params }: Route.LoaderArgs) => {
