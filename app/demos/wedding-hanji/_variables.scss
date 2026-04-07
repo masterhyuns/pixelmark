@@ -1,0 +1,20 @@
+:root {
+  --whan-bg: #f5efe0;
+  --whan-bg-soft: #ebe2cc;
+  --whan-text: #2d2416;
+  --whan-text-soft: #6b5e44;
+  --whan-red: #8b1a1a;
+  --whan-green: #5a6b3f;
+  --whan-gold: #b8902f;
+  --whan-border: rgba(45, 36, 22, 0.18);
+
+  --whan-font-display: "Noto Serif KR", "Pretendard", serif;
+  --whan-font-body: "Pretendard", -apple-system, sans-serif;
+
+  --whan-max-width: 1080px;
+  --whan-section-pad-y: 110px;
+}
+
+@media (max-width: 767px) {
+  :root { --whan-section-pad-y: 72px; }
+}

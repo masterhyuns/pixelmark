@@ -1,0 +1,30 @@
+.wedding-hanji {
+  .whan-footer {
+    padding: 80px 24px 56px;
+    text-align: center;
+    border-top: 1px solid var(--whan-border);
+  }
+  .whan-footer-thanks {
+    font-family: var(--whan-font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 6vw, 56px);
+    color: var(--whan-red);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .whan-footer-sub {
+    font-family: var(--whan-font-display);
+    font-size: 14px;
+    color: var(--whan-text-soft);
+    margin-bottom: 32px;
+  }
+  .whan-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--whan-text-soft);
+    padding-top: 22px;
+    border-top: 1px solid var(--whan-border);
+  }
+}

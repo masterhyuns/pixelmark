@@ -45,6 +45,7 @@ import rrHeroUrl from "~/demos/reunion-retro/assets/images/hero/hero.webp"
 import ohHeroUrl from "~/demos/openhouse-arch/assets/images/hero/hero.webp"
 import wcineHeroUrl from "~/demos/wedding-cinematic/assets/images/hero/hero-bg.webp"
 import wmagHeroUrl from "~/demos/wedding-magazine/assets/images/cover/cover.webp"
+import whanHeroUrl from "~/demos/wedding-hanji/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -635,6 +636,43 @@ export const projects: Project[] = [
       {
         title: "Subscribe 카드 + 다크 인버스",
         description: "마지막 RSVP 섹션을 'Subscribe to the Story' 잡지 구독 카드로 표현. 다크 배경에 빨간 RSVP CTA로 인쇄물에서 디지털로 전환되는 느낌을 줍니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-hanji",
+    title: "한지 전통 청첩장",
+    subtitle: "한지 종이 텍스처와 단청, 세로쓰기 한자로 풀어낸 한국 전통 혼례 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "전통혼례 / 한옥 웨딩",
+    duration: "1주",
+    order: 17,
+    demoUrl: "/demos/wedding-hanji",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Noto Serif KR", "writing-mode"],
+    description:
+      "한지 베이지(#F5EFE0) + 먹색(#2D2416) + 단청 적/녹/금 색상으로 한국 전통 혼례 청첩장을 만들었습니다. 시그니처는 히어로의 세로쓰기 한자 이름 — `writing-mode: vertical-rl`과 `text-orientation: upright`로 한자가 위에서 아래로 흐르도록 배치했습니다. 단청 3색 디바이더, 한지 종이 텍스처(CSS radial-gradient), 한자(日/時/分/秒) 카운트다운, 한복/한옥/다례 갤러리, 양가 계좌 카드까지 6섹션을 단일 라우트에 담았습니다.",
+    thumbnail: whanHeroUrl,
+    highlights: [
+      {
+        title: "세로쓰기 한자 이름 (시그니처)",
+        description: "히어로에 신랑신부 한자 이름을 `writing-mode: vertical-rl` + `text-orientation: upright`로 세로 배치. Noto Serif KR로 단정하면서도 격조 있는 인상을 줍니다.",
+      },
+      {
+        title: "단청 3색 디바이더",
+        description: "각 섹션 헤더 아래에 적색·금색·녹색 3색 가는 막대로 단청 색감을 추상화한 디바이더를 배치해 한국 전통 색채를 일관되게 가져갑니다.",
+      },
+      {
+        title: "한지 종이 텍스처 배경",
+        description: "외부 이미지 없이 CSS radial-gradient 3개를 겹쳐 한지 종이의 자연스러운 얼룩을 표현했습니다. 단청 3색의 옅은 톤이 배경에 미세하게 비칩니다.",
+      },
+      {
+        title: "한자 카운트다운 (日時分秒)",
+        description: "결혼식까지 남은 시간을 日(일)/時(시)/分(분)/秒(초) 한자 라벨로 표시. tabular-nums로 떨림을 막고, 한지 단청 톤을 끝까지 유지합니다.",
+      },
+      {
+        title: "한복 / 한옥 / 다례 3프레임 갤러리",
+        description: "한복 의상, 한옥 공간, 다례 장면을 一·二·三 한자 넘버링과 함께 3카드 그리드로 정리. 인물 얼굴 없이 전통 미감을 전달합니다.",
       },
     ],
   },

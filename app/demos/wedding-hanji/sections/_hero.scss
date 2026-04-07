@@ -1,0 +1,106 @@
+.wedding-hanji {
+  .whan-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .whan-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: sepia(0.2);
+  }
+  .whan-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(245, 239, 224, 0.4) 0%, var(--whan-bg) 100%);
+  }
+
+  .whan-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .whan-hero-eyebrow {
+    margin-bottom: 36px;
+  }
+
+  // 세로쓰기 한자 이름
+  .whan-hero-vertical {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .whan-hero-vertical-name {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: var(--whan-font-display);
+    font-weight: 500;
+    font-size: clamp(48px, 8vw, 84px);
+    line-height: 1;
+    color: var(--whan-text);
+    letter-spacing: 0.18em;
+  }
+  .whan-hero-vertical-amp {
+    writing-mode: vertical-rl;
+    font-family: var(--whan-font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--whan-red);
+    align-self: center;
+    line-height: 1;
+  }
+
+  .whan-hero-names-kr {
+    font-family: var(--whan-font-display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 500;
+    color: var(--whan-text);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+  }
+  .whan-hero-names-en {
+    font-family: var(--whan-font-display);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--whan-text-soft);
+    margin-bottom: 36px;
+  }
+
+  // 단청 도장
+  .whan-hero-stamp {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 28px;
+    border: 2px solid var(--whan-red);
+    background: rgba(245, 239, 224, 0.7);
+  }
+  .whan-hero-stamp-label {
+    font-family: var(--whan-font-display);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--whan-red);
+  }
+  .whan-hero-stamp-date {
+    font-family: var(--whan-font-display);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--whan-text);
+    letter-spacing: 0.04em;
+  }
+}

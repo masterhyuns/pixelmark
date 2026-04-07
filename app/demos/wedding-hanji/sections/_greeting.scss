@@ -1,0 +1,60 @@
+.wedding-hanji {
+  .whan-greeting {
+    text-align: center;
+  }
+  .whan-greeting-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 36px;
+    border: 1px solid var(--whan-border);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+  }
+  .whan-greeting-body p {
+    font-family: var(--whan-font-display);
+    font-size: 16px;
+    line-height: 2.05;
+    color: var(--whan-text);
+  }
+  .whan-greeting-body p + p { margin-top: 16px; }
+
+  .whan-greeting-parents {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--whan-border);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--whan-font-display);
+  }
+  .whan-side-label {
+    font-family: var(--whan-font-display);
+    color: var(--whan-red);
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    margin-bottom: 6px;
+  }
+  .whan-side-names {
+    font-size: 14px;
+    color: var(--whan-text);
+    line-height: 1.7;
+  }
+  .whan-side-divider {
+    width: 1px;
+    height: 60px;
+    background: var(--whan-border);
+    justify-self: center;
+  }
+  @media (max-width: 560px) {
+    .whan-greeting-parents {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .whan-side-divider {
+      width: 48px;
+      height: 1px;
+      justify-self: center;
+    }
+  }
+}

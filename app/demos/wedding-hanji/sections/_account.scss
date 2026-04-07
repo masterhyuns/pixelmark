@@ -1,0 +1,65 @@
+.wedding-hanji {
+  .whan-account-groups {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 860px) {
+    .whan-account-groups { grid-template-columns: 1fr 1fr; }
+  }
+
+  .whan-account-group {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--whan-border);
+    padding: 32px 28px 28px;
+  }
+  .whan-account-group-header {
+    text-align: center;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--whan-border);
+  }
+  .whan-account-side-hanja {
+    font-family: var(--whan-font-display);
+    font-size: 22px;
+    color: var(--whan-red);
+    letter-spacing: 0.16em;
+    margin-bottom: 4px;
+  }
+  .whan-account-side-kr {
+    font-family: var(--whan-font-display);
+    font-size: 12px;
+    color: var(--whan-text-soft);
+    letter-spacing: 0.18em;
+  }
+
+  .whan-account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--whan-border);
+  }
+  .whan-account-item:last-child { border-bottom: 0; }
+
+  .whan-account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .whan-account-role {
+    font-family: var(--whan-font-display);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--whan-text-soft);
+  }
+  .whan-account-number {
+    font-size: 14px;
+    color: var(--whan-text);
+  }
+  .whan-account-number strong {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+}
