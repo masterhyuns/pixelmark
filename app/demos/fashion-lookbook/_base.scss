@@ -1,0 +1,53 @@
+.fashion-lookbook {
+  background: var(--flb-bg);
+  color: var(--flb-text);
+  font-family: var(--flb-font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  min-height: 100vh;
+
+  .flb-display {
+    font-family: var(--flb-font-display);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+  .flb-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--flb-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--flb-text);
+  }
+  .flb-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+.fashion-lookbook [data-flb-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.fashion-lookbook [data-flb-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fashion-lookbook [data-flb-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

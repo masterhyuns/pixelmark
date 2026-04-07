@@ -1,0 +1,18 @@
+:root {
+  --flb-bg: #ffffff;
+  --flb-bg-soft: #f5f5f5;
+  --flb-text: #0a0a0a;
+  --flb-text-soft: #666666;
+  --flb-text-muted: #999999;
+  --flb-border: #e5e5e5;
+
+  --flb-font-display: "Inter Tight", "Pretendard", sans-serif;
+  --flb-font-body: "Inter", "Pretendard", -apple-system, sans-serif;
+
+  --flb-max-width: 1280px;
+  --flb-section-pad-y: 120px;
+}
+
+@media (max-width: 767px) {
+  :root { --flb-section-pad-y: 80px; }
+}

@@ -51,6 +51,7 @@ import wpixHeroUrl from "~/demos/wedding-pixel/assets/images/title/title-bg.webp
 import wnewsHeroUrl from "~/demos/wedding-newsprint/assets/images/header/header-bg.webp"
 import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope.webp"
 import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.webp"
+import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -863,6 +864,43 @@ export const projects: Project[] = [
       {
         title: "Happily Ever After RSVP 모달",
         description: "RSVP 폼 제출 시 살구색 좌측 보더가 들어간 'Happily Ever After' 모달이 떠오릅니다. 'your name is now part of the story'라는 손글씨 메시지가 동화책 흐름을 마무리합니다.",
+      },
+    ],
+  },
+  {
+    slug: "fashion-lookbook",
+    title: "패션 브랜드 룩북",
+    subtitle: "Inter Tight 큰 산세리프와 풀스크린 룩북 슬라이더로 완성한 모던 미니멀 패션 브랜드",
+    category: "brand",
+    tier: "standard",
+    industry: "패션 / 의류 브랜드",
+    duration: "1주",
+    order: 23,
+    demoUrl: "/demos/fashion-lookbook",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Inter Tight", "Pointer Events"],
+    description:
+      "화이트 + 블랙의 모노톤 위에 Inter Tight 큰 산세리프를 얹어 모던 미니멀 패션 브랜드 'Noir Atelier'의 SS 26 룩북을 만들었습니다. 시그니처는 풀스크린 룩북 슬라이더 — Pointer Events 기반 드래그/스와이프, 키보드 화살표, 좌우 네비 버튼, 가는 막대 dot 인디케이터, 그리고 큰 카운터까지 외부 라이브러리 없이 직접 구현했습니다. 풀스크린 히어로 + 룩북 5컷 + 컬렉션 정보 비대칭 그리드 + 매장 카드 + grayscale 카카오맵까지 5섹션을 단일 라우트에 담았습니다.",
+    thumbnail: flbHeroUrl,
+    highlights: [
+      {
+        title: "풀스크린 룩북 슬라이더 (시그니처)",
+        description: "Pointer Events로 모바일 스와이프와 PC 드래그를 동시에 지원하는 직접 구현 슬라이더. 22% 임계값 스냅, 키보드 화살표, 좌우 네비 버튼, 가는 막대 dot 인디케이터, 큰 카운터(01/05)까지.",
+      },
+      {
+        title: "Inter Tight 700~900 큰 타이포",
+        description: "히어로 브랜드명에 clamp(56px, 11vw, 168px)의 거대 Inter Tight ExtraBold를 사용해 패션 브랜드 특유의 임팩트를 만들었습니다. -0.04em letter-spacing으로 글자가 빽빽하게 붙어 있습니다.",
+      },
+      {
+        title: "룩 번호 + 캡션 오버레이",
+        description: "각 룩 슬라이드 좌상단에 'LOOK 01' 라벨, 하단에 제목/설명이 어두운 오버레이로 들어갑니다. 룩별 디테일을 사진 위에 직접 표시.",
+      },
+      {
+        title: "비대칭 컬렉션 정보 그리드",
+        description: "Collection 섹션을 좌측 본문 + 우측 메타 시트로 비대칭 배치. Designer / Season / Pieces / Made In 4행 메타 시트가 잡지 같은 정보 위계를 만듭니다.",
+      },
+      {
+        title: "Grayscale 카카오맵 + 매장 카드",
+        description: "Stores 섹션에 1px 블랙 보더 매장 카드 2개와 grayscale 카카오맵을 21:9 와이드 비율로 배치해 흑백 룩북 톤을 끝까지 유지합니다.",
       },
     ],
   },

@@ -92,6 +92,9 @@ export default [
     // E-S18 동화책 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-storybook", "routes/demos/wedding-storybook.tsx"),
 
+    // B-S1 패션 룩북 (단일 라우트, 원페이지)
+    route("demos/fashion-lookbook", "routes/demos/fashion-lookbook.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

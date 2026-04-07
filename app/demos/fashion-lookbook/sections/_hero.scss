@@ -1,0 +1,105 @@
+.fashion-lookbook {
+  .flb-hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    color: #ffffff;
+  }
+  .flb-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55);
+  }
+
+  .flb-hero-top,
+  .flb-hero-center,
+  .flb-hero-bottom {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    width: 100%;
+    max-width: var(--flb-max-width);
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .flb-hero-top,
+    .flb-hero-center,
+    .flb-hero-bottom { padding: 0 48px; }
+  }
+
+  .flb-hero-top {
+    padding-top: 100px;
+    padding-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: var(--flb-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .flb-hero-center {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .flb-hero-tag {
+    font-family: var(--flb-font-display);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .flb-hero-name {
+    font-family: var(--flb-font-display);
+    font-weight: 700;
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .flb-hero-tagline {
+    font-family: var(--flb-font-display);
+    font-style: italic;
+    font-size: clamp(15px, 1.8vw, 20px);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .flb-hero-bottom {
+    padding-top: 18px;
+    padding-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: var(--flb-font-display);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .flb-hero-scroll {
+    font-family: var(--flb-font-display);
+    font-style: italic;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  @media (max-width: 640px) {
+    .flb-hero-top, .flb-hero-bottom {
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+  }
+}

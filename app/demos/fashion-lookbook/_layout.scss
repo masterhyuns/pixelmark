@@ -1,0 +1,30 @@
+.fashion-lookbook {
+  .flb-container {
+    width: 100%;
+    max-width: var(--flb-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .flb-container { padding: 0 48px; }
+  }
+
+  .flb-section {
+    padding-top: var(--flb-section-pad-y);
+    padding-bottom: var(--flb-section-pad-y);
+  }
+
+  .flb-section-rule {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--flb-text);
+    margin-bottom: 56px;
+    font-family: var(--flb-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+}

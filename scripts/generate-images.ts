@@ -370,25 +370,33 @@ interface PromptSection {
   size: { width: number; height: number } | null
 }
 
-/** 프롬프트 모음 파싱: ### N. filename.webp ~ 다음 ### 또는 --- 사이 */
+/** 프롬프트 모음 파싱: ### N. filename.webp / #### filename: 두 패턴 모두 지원 */
 const extractPromptSections = (md: string): PromptSection[] => {
   const sections: PromptSection[] = []
-  // ### 1. `home-hero.webp` (필수) 또는 ### 1. home-hero.webp
-  const headingRe = /###\s+(\d+)\.\s*`?([\w-]+\.webp)`?[^\n]*/g
+  // 패턴 1: "### 1. home-hero.webp" / "### 1. `home-hero.webp`"
+  // 패턴 2: "#### look-01:" (4-hash, 콜론으로 끝, 확장자 없이)
+  // 패턴 2의 경우 .webp를 자동 부착해 매칭
+  const headingRe = /(?:^|\n)(?:###\s+\d+\.\s*`?([\w-]+\.webp)`?[^\n]*|####\s+`?([\w-]+)`?[^\n]*?:)/g
   const matches: Array<{ start: number; filename: string }> = []
   let m: RegExpExecArray | null
   while ((m = headingRe.exec(md)) !== null) {
-    matches.push({ start: m.index + m[0].length, filename: m[2] })
+    let filename: string | null = null
+    if (m[1]) {
+      // 3-hash 패턴: 그대로 사용
+      filename = m[1]
+    } else if (m[2]) {
+      // 4-hash 패턴: 확장자 자동 부착
+      filename = m[2].endsWith(".webp") ? m[2] : `${m[2]}.webp`
+    }
+    if (filename) {
+      matches.push({ start: m.index + m[0].length, filename })
+    }
   }
 
   for (let i = 0; i < matches.length; i++) {
     const start = matches[i].start
-    const end =
-      i + 1 < matches.length
-        ? md.indexOf("###", start) // 안전 fallback
-        : md.length
-    const nextStart = i + 1 < matches.length ? matches[i + 1].start - 1000 : end
-    const sectionEnd = Math.max(start, Math.min(end, nextStart > 0 ? end : end))
+    // 다음 매치 시작 위치 또는 문서 끝까지
+    const sectionEnd = i + 1 < matches.length ? matches[i + 1].start : md.length
     const body = md.slice(start, sectionEnd)
 
     // 첫 fenced code block
