@@ -56,6 +56,7 @@ export default {
       "/demos/wedding-classic/story",
       "/demos/wedding-classic/gallery",
       "/demos/wedding-classic/visit",
+      "/demos/wedding-bohemian",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

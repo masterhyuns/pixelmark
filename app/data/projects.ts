@@ -38,6 +38,7 @@ import bcGrowthUrl from "~/demos/baby-celebration/assets/images/growth/growth-12
 import pvHeroUrl from "~/demos/popup-vivid/assets/images/hero/hero-gradient.webp"
 import ctHeroUrl from "~/demos/conference-tech/assets/images/home/home-hero.webp"
 import wcHeroUrl from "~/demos/wedding-classic/assets/images/home/home-hero.webp"
+import wbHeroUrl from "~/demos/wedding-bohemian/assets/images/hero/hero-bg.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -369,6 +370,43 @@ export const projects: Project[] = [
       {
         title: "오시는 길 + 카카오맵 + 한영 병기 안내",
         description: "호텔 정문 컷, 카카오맵 iframe, 지하철·발렛·셔틀 3카드 안내를 한영 병기로 제공해 외국인 하객도 불편 없이 읽을 수 있도록 구성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-bohemian",
+    title: "보헤미안 자연주의 청첩장",
+    subtitle: "식물 SVG 패럴랙스와 매거진 스프레드로 완성한 야외 가든 웨딩 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "야외 / 가든 웨딩",
+    duration: "1주",
+    order: 10,
+    demoUrl: "/demos/wedding-bohemian",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "SVG", "Caveat", "Cormorant Garamond"],
+    description:
+      "베이지와 세이지 그린, Caveat 손글씨와 Cormorant 세리프를 혼용한 야외 가든 웨딩 청첩장 데모입니다. 시그니처는 직접 그린 식물 SVG(잎·가지·꽃다발·양치류 4종)를 서로 다른 속도로 흘려보내는 패럴랙스 — rAF + passive scroll로 가볍게 구현했습니다. 매거진 스프레드 좌우 페이드인, 살짝 기울어진 사진, 식순 타임라인, 카운트다운, 카카오맵, 드레스 코드까지 5 섹션에 담았습니다.",
+    thumbnail: wbHeroUrl,
+    highlights: [
+      {
+        title: "식물 SVG 패럴랙스 (시그니처)",
+        description: "잎·가지·꽃다발·양치류 4종의 식물 SVG를 직접 그려 저작권 안전하게 사용했습니다. 각 요소에 다른 speed 계수(0.15~0.35)를 부여해 스크롤에 따라 자연스럽게 흐르는 배경 레이어를 만들었습니다.",
+      },
+      {
+        title: "매거진 스프레드 좌우 페이드",
+        description: "IntersectionObserver + data-direction 속성으로 왼쪽 글 / 오른쪽 사진이 반대 방향에서 페이드인됩니다. 짝수/홀수 아이템은 레이아웃도 자동 반전됩니다.",
+      },
+      {
+        title: "손글씨 + 세리프 하이브리드 타이포",
+        description: "Caveat 손글씨(디스플레이/eyebrow) + Cormorant Garamond 세리프(타이틀) + Pretendard(본문)를 혼용해 자연주의 감성을 유지하면서도 가독성을 확보했습니다.",
+      },
+      {
+        title: "기울어진 매거진 사진",
+        description: "홀수/짝수 이미지가 각각 -0.8°/+0.8°로 기울어져 자연스러운 매거진 레이아웃. hover 시 0°로 바르게 펴지는 미세 인터랙션을 추가했습니다.",
+      },
+      {
+        title: "야외 웨딩 특수 안내",
+        description: "지하철 대신 셔틀버스 일정, 주차, 드레스 코드(베이지/세이지/크림)까지 야외 가든 웨딩에 필요한 안내를 카드로 정리했습니다.",
       },
     ],
   },

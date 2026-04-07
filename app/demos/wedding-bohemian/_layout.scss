@@ -1,0 +1,60 @@
+// ============================================================
+// E-S7 Wedding Bohemian — 레이아웃 / 공통
+// ============================================================
+
+.wedding-bohemian {
+  .wb-container {
+    width: 100%;
+    max-width: var(--wb-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+  }
+  @media (min-width: 768px) {
+    .wb-container { padding: 0 40px; }
+  }
+
+  .wb-container--narrow { max-width: 780px; }
+
+  .wb-section {
+    position: relative;
+    padding-top: var(--wb-section-pad-y);
+    padding-bottom: var(--wb-section-pad-y);
+  }
+
+  .wb-section-eyebrow {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .wb-section-title {
+    font-family: var(--wb-font-display);
+    font-weight: 500;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    color: var(--wb-text);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .wb-section-title-kr {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wb-text-soft);
+    margin-bottom: 48px;
+  }
+
+  // 식물 디바이더 (간단 SVG line)
+  .wb-divider {
+    width: 120px;
+    height: 1px;
+    background: var(--wb-sage);
+    opacity: 0.5;
+    margin: 0 auto;
+  }
+}

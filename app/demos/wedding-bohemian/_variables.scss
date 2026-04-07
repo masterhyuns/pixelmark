@@ -1,0 +1,27 @@
+// ============================================================
+// E-S7 Wedding Bohemian — CSS 변수
+// ============================================================
+
+:root {
+  --wb-bg: #faf6ee;
+  --wb-bg-soft: #f2ecdf;
+  --wb-text: #3a3328;
+  --wb-text-soft: #8a7c64;
+  --wb-sage: #7a8f5c;
+  --wb-sage-soft: rgba(122, 143, 92, 0.16);
+  --wb-terracotta: #c49b6e;
+  --wb-border: #e8dcc4;
+
+  --wb-font-script: "Caveat", "Pretendard", cursive;
+  --wb-font-display: "Cormorant Garamond", "Pretendard", serif;
+  --wb-font-body: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --wb-max-width: 1180px;
+  --wb-section-pad-y: 120px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --wb-section-pad-y: 80px;
+  }
+}

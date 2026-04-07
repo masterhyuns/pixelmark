@@ -1,0 +1,95 @@
+// ============================================================
+// Visit — 야외 식장 + 카카오맵 + 안내
+// ============================================================
+
+.wedding-bohemian {
+  .wb-visit {
+    position: relative;
+  }
+
+  .wb-visit-image {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--wb-bg-soft);
+  }
+  .wb-visit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wb-visit-name {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .wb-visit-name-en {
+    font-family: var(--wb-font-display);
+    font-style: italic;
+    font-size: clamp(26px, 3.8vw, 36px);
+    color: var(--wb-sage);
+    margin-bottom: 4px;
+  }
+  .wb-visit-name-kr {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: var(--wb-text-soft);
+    margin-bottom: 6px;
+  }
+  .wb-visit-address {
+    font-size: 13px;
+    color: var(--wb-text);
+  }
+
+  .wb-visit-map {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--wb-border);
+    background: var(--wb-bg-soft);
+    overflow: hidden;
+  }
+  .wb-visit-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .wb-visit-directions {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 768px) {
+    .wb-visit-directions { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .wb-direction-card {
+    padding: 24px 22px;
+    background: var(--wb-bg);
+    border: 1px solid var(--wb-border);
+    text-align: left;
+  }
+  .wb-direction-type {
+    font-family: var(--wb-font-script);
+    font-size: 22px;
+    color: var(--wb-sage);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .wb-direction-type-kr {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wb-text-soft);
+    margin-bottom: 14px;
+  }
+  .wb-direction-desc {
+    font-size: 14px;
+    color: var(--wb-text);
+    line-height: 1.75;
+  }
+}

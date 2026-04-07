@@ -1,0 +1,33 @@
+// ============================================================
+// Footer
+// ============================================================
+
+.wedding-bohemian {
+  .wb-footer {
+    padding: 80px 24px 60px;
+    background: var(--wb-bg-soft);
+    text-align: center;
+    border-top: 1px solid var(--wb-border);
+  }
+  .wb-footer-thanks {
+    font-family: var(--wb-font-script);
+    font-size: clamp(44px, 7vw, 72px);
+    color: var(--wb-sage);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .wb-footer-sub {
+    font-size: 14px;
+    color: var(--wb-text-soft);
+    margin-bottom: 32px;
+  }
+  .wb-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--wb-text-soft);
+    padding-top: 24px;
+    border-top: 1px solid var(--wb-border);
+  }
+}

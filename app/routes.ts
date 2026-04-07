@@ -53,6 +53,9 @@ export default [
     // E-S3 팝업스토어 / 마케팅 캠페인 (단일 라우트, 원페이지)
     route("demos/popup-vivid", "routes/demos/popup-vivid.tsx"),
 
+    // E-S7 보헤미안 자연주의 청첩장 (단일 라우트, 원페이지)
+    route("demos/wedding-bohemian", "routes/demos/wedding-bohemian.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

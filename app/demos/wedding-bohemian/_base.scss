@@ -1,0 +1,74 @@
+// ============================================================
+// E-S7 Wedding Bohemian — 베이스 (Caveat 손글씨 + Cormorant)
+// ============================================================
+
+.wedding-bohemian {
+  background: var(--wb-bg);
+  color: var(--wb-text);
+  font-family: var(--wb-font-body);
+  font-size: 16px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.002em;
+  min-height: 100vh;
+  overflow-x: hidden; // 패럴랙스 요소가 좌우로 벗어날 수 있음
+
+  .wb-script {
+    font-family: var(--wb-font-script);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+  }
+
+  .wb-display {
+    font-family: var(--wb-font-display);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .wb-eyebrow {
+    font-family: var(--wb-font-script);
+    color: var(--wb-sage);
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+  }
+
+  .wb-prose p {
+    color: var(--wb-text);
+    line-height: 2;
+  }
+  .wb-prose p + p { margin-top: 1em; }
+}
+
+// reveal
+.wedding-bohemian [data-wb-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.wedding-bohemian [data-wb-reveal][data-direction="left"] {
+  transform: translateX(-24px);
+}
+.wedding-bohemian [data-wb-reveal][data-direction="right"] {
+  transform: translateX(24px);
+}
+.wedding-bohemian [data-wb-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+// 패럴랙스 요소 성능 힌트
+.wedding-bohemian [data-wb-float] {
+  will-change: transform;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-bohemian [data-wb-reveal] {
+    opacity: 1;
+    transform: none !important;
+    transition: none;
+  }
+}

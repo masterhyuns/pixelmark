@@ -1,0 +1,15 @@
+// ============================================================
+// E-S7 Wedding Bohemian — SCSS 진입점
+// ============================================================
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/hero";
+@use "sections/story";
+@use "sections/ceremony";
+@use "sections/visit";
+@use "sections/footer";

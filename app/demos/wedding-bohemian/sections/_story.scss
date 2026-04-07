@@ -1,0 +1,93 @@
+// ============================================================
+// Story — 매거진 스프레드 (좌 글 / 우 사진)
+// ============================================================
+
+.wedding-bohemian {
+  .wb-story {
+    position: relative;
+  }
+
+  .wb-story-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    position: relative;
+  }
+
+  .wb-story-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (min-width: 880px) {
+    .wb-story-item { grid-template-columns: 1fr 1.05fr; gap: 72px; }
+    .wb-story-item:nth-child(even) .wb-story-text { order: 2; }
+    .wb-story-item:nth-child(even) .wb-story-image { order: 1; }
+  }
+
+  .wb-story-chapter {
+    font-family: var(--wb-font-script);
+    font-size: 26px;
+    color: var(--wb-sage);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .wb-story-chapter-kr {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wb-text-soft);
+    margin-bottom: 22px;
+  }
+  .wb-story-title {
+    font-family: var(--wb-font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(24px, 3.2vw, 32px);
+    line-height: 1.35;
+    color: var(--wb-text);
+    margin-bottom: 18px;
+  }
+  .wb-story-body {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--wb-text);
+  }
+
+  .wb-story-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--wb-bg-soft);
+    transform: rotate(-0.8deg);
+    transition: transform 0.8s ease;
+  }
+  .wb-story-item:nth-child(even) .wb-story-image {
+    transform: rotate(0.8deg);
+  }
+  .wb-story-image:hover {
+    transform: rotate(0deg);
+  }
+  .wb-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // 배경 식물 레이어
+  .wb-story-botanical {
+    position: absolute;
+    color: var(--wb-sage);
+    opacity: 0.22;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .wb-story-botanical-1 { top: 8%; right: -4%; width: 260px; }
+  .wb-story-botanical-2 { bottom: 6%; left: -3%; width: 220px; transform: scaleX(-1); }
+
+  @media (max-width: 767px) {
+    .wb-story-list { gap: 80px; }
+    .wb-story-botanical-1 { width: 160px; }
+    .wb-story-botanical-2 { width: 140px; }
+  }
+}

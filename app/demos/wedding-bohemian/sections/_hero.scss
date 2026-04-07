@@ -1,0 +1,142 @@
+// ============================================================
+// Hero — 야외 자연 풀스크린
+// ============================================================
+
+.wedding-bohemian {
+  .wb-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .wb-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+  }
+  .wb-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(250, 246, 238, 0.4) 0%,
+      rgba(250, 246, 238, 0.72) 60%,
+      var(--wb-bg) 100%
+    );
+  }
+
+  .wb-hero-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .wb-hero-eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .wb-hero-names {
+    font-family: var(--wb-font-script);
+    font-weight: 600;
+    font-size: clamp(56px, 12vw, 128px);
+    line-height: 1;
+    color: var(--wb-text);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .wb-hero-names .wb-hero-and {
+    font-family: var(--wb-font-display);
+    font-style: italic;
+    font-size: 0.4em;
+    color: var(--wb-sage);
+    margin: 0 0.18em;
+    vertical-align: 0.35em;
+  }
+
+  .wb-hero-tagline {
+    font-family: var(--wb-font-display);
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 26px);
+    color: var(--wb-text-soft);
+    margin-bottom: 36px;
+  }
+
+  .wb-hero-date {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 28px;
+    border: 1px solid var(--wb-sage-soft);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+  }
+  .wb-hero-date-en {
+    font-family: var(--wb-font-display);
+    font-size: 15px;
+    letter-spacing: 0.16em;
+    color: var(--wb-text);
+    text-transform: uppercase;
+  }
+  .wb-hero-date-kr {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--wb-text-soft);
+  }
+
+  // 식물 SVG 패럴랙스 레이어
+  .wb-botanical {
+    position: absolute;
+    color: var(--wb-sage);
+    opacity: 0.55;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .wb-botanical-1 { top: 8%; left: -2%; width: 180px; }
+  .wb-botanical-2 { top: 18%; right: -3%; width: 220px; transform: scaleX(-1); }
+  .wb-botanical-3 { bottom: 14%; left: 4%; width: 140px; color: var(--wb-terracotta); opacity: 0.5; }
+  .wb-botanical-4 { bottom: 8%; right: 2%; width: 160px; color: var(--wb-sage); opacity: 0.45; }
+
+  @media (max-width: 640px) {
+    .wb-botanical-1 { width: 120px; }
+    .wb-botanical-2 { width: 140px; }
+    .wb-botanical-3 { width: 90px; }
+    .wb-botanical-4 { width: 100px; }
+  }
+
+  .wb-hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-family: var(--wb-font-script);
+    color: var(--wb-text-soft);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .wb-hero-scroll svg {
+    width: 20px;
+    height: 20px;
+    animation: wb-bounce 1.8s ease-in-out infinite;
+  }
+  @keyframes wb-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(6px); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wb-hero-scroll svg { animation: none; }
+  }
+}
