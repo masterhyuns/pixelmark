@@ -1,0 +1,146 @@
+.wedding-magazine {
+  .wmag-cover {
+    position: relative;
+    min-height: 100vh;
+    background: var(--wmag-paper);
+    overflow: hidden;
+  }
+
+  .wmag-cover-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  .wmag-cover-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(245, 245, 240, 0.3) 0%, rgba(245, 245, 240, 0.7) 100%);
+  }
+
+  .wmag-cover-inner {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 80px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .wmag-cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--wmag-text);
+  }
+  .wmag-cover-masthead {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.06em;
+  }
+  .wmag-cover-issue {
+    text-align: right;
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--wmag-text-soft);
+    text-transform: uppercase;
+  }
+  .wmag-cover-issue strong {
+    display: block;
+    color: var(--wmag-red);
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .wmag-cover-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 64px 0;
+  }
+  .wmag-cover-headline {
+    font-family: var(--wmag-font-body);
+    font-weight: 500;
+    font-size: clamp(13px, 1.4vw, 16px);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--wmag-red);
+  }
+  .wmag-cover-title {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: clamp(80px, 18vw, 240px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--wmag-text);
+  }
+  .wmag-cover-amp {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    color: var(--wmag-red);
+    font-weight: 400;
+  }
+  .wmag-cover-subhead {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 26px);
+    color: var(--wmag-text-soft);
+    max-width: 480px;
+    margin-top: 12px;
+  }
+
+  .wmag-cover-lines {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .wmag-cover-line {
+    font-family: var(--wmag-font-body);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--wmag-text);
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--wmag-text-muted);
+  }
+  .wmag-cover-line strong {
+    color: var(--wmag-red);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .wmag-cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 18px;
+    border-top: 1px solid var(--wmag-text);
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wmag-text-soft);
+  }
+  .wmag-cover-price {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    color: var(--wmag-text);
+    font-size: 14px;
+  }
+  .wmag-cover-barcode {
+    font-family: ui-monospace, monospace;
+    color: var(--wmag-text);
+  }
+
+  @media (max-width: 640px) {
+    .wmag-cover-inner { padding: 80px 24px 36px; }
+    .wmag-cover-top { flex-direction: column; align-items: flex-start; }
+  }
+}

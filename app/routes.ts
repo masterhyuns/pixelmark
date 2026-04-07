@@ -71,6 +71,9 @@ export default [
     // E-S11 영화 포스터 시네마틱 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-cinematic", "routes/demos/wedding-cinematic.tsx"),
 
+    // E-S12 잡지 커버 청첩장 (단일 라우트, 원페이지)
+    route("demos/wedding-magazine", "routes/demos/wedding-magazine.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

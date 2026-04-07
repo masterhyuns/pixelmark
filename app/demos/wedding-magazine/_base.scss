@@ -1,0 +1,53 @@
+.wedding-magazine {
+  background: var(--wmag-bg);
+  color: var(--wmag-text);
+  font-family: var(--wmag-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  min-height: 100vh;
+
+  .wmag-display {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  .wmag-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--wmag-red);
+  }
+  .wmag-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+.wedding-magazine [data-wmag-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.wedding-magazine [data-wmag-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-magazine [data-wmag-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

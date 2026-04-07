@@ -1,0 +1,78 @@
+.wedding-magazine {
+  .wmag-gallery-intro {
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+  .wmag-gallery-intro-title {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 0.95;
+    color: var(--wmag-text);
+    margin-bottom: 14px;
+  }
+  .wmag-gallery-intro-sub {
+    font-family: var(--wmag-font-body);
+    font-size: 14px;
+    color: var(--wmag-text-soft);
+  }
+
+  // 매거진 스프레드 그리드
+  .wmag-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 720px) {
+    .wmag-gallery-grid { grid-template-columns: 1fr 1fr; gap: 48px 32px; }
+  }
+
+  .wmag-gallery-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .wmag-gallery-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--wmag-paper);
+  }
+  .wmag-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  .wmag-gallery-item:hover .wmag-gallery-image img {
+    transform: scale(1.03);
+  }
+
+  .wmag-gallery-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--wmag-text);
+  }
+  .wmag-gallery-num {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--wmag-red);
+    line-height: 1;
+  }
+  .wmag-gallery-title {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--wmag-text);
+    margin-bottom: 4px;
+  }
+  .wmag-gallery-caption {
+    font-family: var(--wmag-font-body);
+    font-size: 12px;
+    color: var(--wmag-text-soft);
+    letter-spacing: 0.04em;
+  }
+}

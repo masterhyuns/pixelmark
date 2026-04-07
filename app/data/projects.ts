@@ -44,6 +44,7 @@ import wvHeroUrl from "~/demos/wedding-vivid/assets/images/hero/hero.webp"
 import rrHeroUrl from "~/demos/reunion-retro/assets/images/hero/hero.webp"
 import ohHeroUrl from "~/demos/openhouse-arch/assets/images/hero/hero.webp"
 import wcineHeroUrl from "~/demos/wedding-cinematic/assets/images/hero/hero-bg.webp"
+import wmagHeroUrl from "~/demos/wedding-magazine/assets/images/cover/cover.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -597,6 +598,43 @@ export const projects: Project[] = [
       {
         title: "시네마틱 D-day + 그레이스케일 카카오맵",
         description: "Showtime 섹션에 골드 카운트다운과 grayscale(60%) 처리한 카카오맵을 배치해 시네마틱 톤을 끝까지 유지합니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-magazine",
+    title: "잡지 커버 청첩장",
+    subtitle: "VOGUE 스타일 매거진 커버와 에디토리얼 컬럼 레이아웃으로 풀어낸 시크 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 16,
+    demoUrl: "/demos/wedding-magazine",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Bodoni Moda", "CSS Columns"],
+    description:
+      "Bodoni Moda 세리프 디스플레이와 Inter 본문, 화이트 + 블랙 + VOGUE 레드 + 페이퍼 베이지로 잡지 커버 같은 청첩장을 만들었습니다. 시그니처는 풀페이지 매거진 커버 — 마스트헤드, 큰 타이포 신랑신부 이름, EXCLUSIVE/INSIDE/PLUS cover lines, 가격(PRICELESS)과 바코드까지 잡지 표지의 시각 코드를 그대로 옮겼습니다. 에디토리얼 컬럼 레이아웃(CSS columns + 골드 드롭캡), 페이지 번호 마커, 4프레임 photo editorial까지 6섹션을 단일 라우트에 담았습니다.",
+    thumbnail: wmagHeroUrl,
+    highlights: [
+      {
+        title: "매거진 커버 (시그니처)",
+        description: "마스트헤드(PIXELMARK EDITORIAL) + ISSUE No.01 + 큰 BODONI 타이포 신랑신부 이름 + 'EXCLUSIVE / INSIDE / PLUS' cover lines + PRICELESS 가격 + 바코드까지, VOGUE/ELLE 표지의 시각 코드를 그대로 옮겼습니다.",
+      },
+      {
+        title: "CSS columns 에디토리얼",
+        description: "에디토리얼 본문에 CSS columns를 적용해 잡지 컬럼 레이아웃을 만들고, 첫 단락 첫 글자에 큰 빨간 드롭캡을 적용했습니다. 헤드라인은 column-span: all로 양 컬럼을 가로지릅니다.",
+      },
+      {
+        title: "페이지 번호 마커",
+        description: "각 섹션 상단에 'PAGE 02 / EDITORIAL / ISSUE No.01' 형식의 페이지 번호 마커를 두어 잡지 페이지를 넘기는 듯한 흐름을 만들었습니다.",
+      },
+      {
+        title: "4프레임 photo editorial 그리드",
+        description: "에디토리얼 사진을 № 01~04 매거진 넘버링과 함께 2×2 그리드로 배치. hover 시 미세 줌이 작동하고, 각 항목엔 작은 캡션이 들어갑니다.",
+      },
+      {
+        title: "Subscribe 카드 + 다크 인버스",
+        description: "마지막 RSVP 섹션을 'Subscribe to the Story' 잡지 구독 카드로 표현. 다크 배경에 빨간 RSVP CTA로 인쇄물에서 디지털로 전환되는 느낌을 줍니다.",
       },
     ],
   },

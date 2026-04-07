@@ -1,0 +1,42 @@
+.wedding-magazine {
+  .wmag-container {
+    width: 100%;
+    max-width: var(--wmag-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .wmag-container { padding: 0 48px; }
+  }
+
+  .wmag-section {
+    padding-top: var(--wmag-section-pad-y);
+    padding-bottom: var(--wmag-section-pad-y);
+  }
+
+  // 매거진 페이지 번호 + 섹션 헤더
+  .wmag-page-marker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--wmag-text);
+    margin-bottom: 56px;
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .wmag-page-marker-num {
+    color: var(--wmag-red);
+    font-weight: 600;
+  }
+  .wmag-page-marker-title {
+    color: var(--wmag-text);
+    font-weight: 600;
+  }
+  .wmag-page-marker-issue {
+    color: var(--wmag-text-soft);
+    font-style: italic;
+  }
+}

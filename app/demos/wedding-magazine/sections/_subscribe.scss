@@ -1,0 +1,82 @@
+.wedding-magazine {
+  .wmag-subscribe {
+    background: var(--wmag-text);
+    color: var(--wmag-bg);
+  }
+  .wmag-subscribe-card {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .wmag-subscribe-eyebrow {
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--wmag-red);
+    margin-bottom: 18px;
+  }
+  .wmag-subscribe-title {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.95;
+    color: var(--wmag-bg);
+    margin-bottom: 16px;
+  }
+  .wmag-subscribe-sub {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 36px;
+  }
+  .wmag-subscribe-info {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .wmag-subscribe-info-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    text-align: left;
+  }
+  .wmag-subscribe-info-label {
+    font-family: var(--wmag-font-body);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    width: 100px;
+  }
+  .wmag-subscribe-info-value {
+    font-family: var(--wmag-font-display);
+    font-size: 18px;
+    color: var(--wmag-bg);
+    letter-spacing: 0.04em;
+  }
+
+  .wmag-subscribe-rsvp {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--wmag-red);
+    color: var(--wmag-bg);
+    font-family: var(--wmag-font-body);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background 0.2s ease;
+  }
+  .wmag-subscribe-rsvp:hover {
+    background: var(--wmag-bg);
+    color: var(--wmag-text);
+  }
+}

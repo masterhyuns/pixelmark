@@ -1,0 +1,65 @@
+.wedding-magazine {
+  .wmag-editorial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 900px) {
+    .wmag-editorial-grid { grid-template-columns: 220px 1fr; gap: 80px; }
+  }
+
+  .wmag-editorial-aside {
+    border-top: 2px solid var(--wmag-text);
+    padding-top: 18px;
+  }
+  .wmag-editorial-byline {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--wmag-text);
+    margin-bottom: 6px;
+  }
+  .wmag-editorial-date {
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--wmag-text-soft);
+    text-transform: uppercase;
+  }
+
+  .wmag-editorial-body {
+    column-count: 1;
+    column-gap: 40px;
+  }
+  @media (min-width: 720px) {
+    .wmag-editorial-body { column-count: 2; }
+  }
+
+  .wmag-editorial-headline {
+    font-family: var(--wmag-font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--wmag-text);
+    margin-bottom: 24px;
+    column-span: all;
+  }
+  .wmag-editorial-body p {
+    font-family: var(--wmag-font-body);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--wmag-text);
+    margin-bottom: 14px;
+    break-inside: avoid;
+  }
+  .wmag-editorial-body p:first-of-type::first-letter {
+    font-family: var(--wmag-font-display);
+    font-size: 4.2em;
+    line-height: 0.9;
+    float: left;
+    color: var(--wmag-red);
+    padding-right: 8px;
+    padding-top: 6px;
+  }
+}

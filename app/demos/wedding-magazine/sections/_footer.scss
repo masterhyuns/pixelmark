@@ -1,0 +1,31 @@
+.wedding-magazine {
+  .wmag-footer {
+    padding: 60px 24px 48px;
+    border-top: 2px solid var(--wmag-text);
+    text-align: center;
+  }
+  .wmag-footer-mast {
+    font-family: var(--wmag-font-display);
+    font-style: italic;
+    font-size: clamp(36px, 6vw, 56px);
+    color: var(--wmag-text);
+    margin-bottom: 12px;
+  }
+  .wmag-footer-issue {
+    font-family: var(--wmag-font-body);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wmag-text-soft);
+    margin-bottom: 28px;
+  }
+  .wmag-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 580px;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--wmag-text-muted);
+    padding-top: 22px;
+    border-top: 1px solid var(--wmag-text-muted);
+  }
+}
