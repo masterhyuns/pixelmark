@@ -1,0 +1,30 @@
+.wedding-pixel {
+  .wpix-footer {
+    padding: 80px 24px 56px;
+    text-align: center;
+  }
+  .wpix-footer-end {
+    font-family: var(--wpix-font-pixel);
+    font-size: clamp(28px, 5vw, 44px);
+    color: var(--wpix-yellow);
+    margin-bottom: 14px;
+    text-shadow: 4px 4px 0 var(--wpix-red);
+  }
+  .wpix-footer-credits {
+    font-family: var(--wpix-font-pixel);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--wpix-text-soft);
+    margin-bottom: 32px;
+  }
+  .wpix-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 580px;
+    font-family: var(--wpix-font-body);
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--wpix-text-soft);
+    padding-top: 24px;
+    border-top: 2px dashed var(--wpix-border);
+  }
+}

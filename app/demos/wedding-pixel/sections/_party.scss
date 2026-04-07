@@ -1,0 +1,68 @@
+.wedding-pixel {
+  // PARTY 멤버 카드 (캐릭터 시트 형태)
+  .wpix-party-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 720px) {
+    .wpix-party-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .wpix-party-card {
+    background: var(--wpix-bg-soft);
+    border: 4px solid var(--wpix-cream);
+    box-shadow: 6px 6px 0 var(--wpix-bg);
+    overflow: hidden;
+  }
+  .wpix-party-image {
+    aspect-ratio: 1 / 1;
+    background: var(--wpix-bg);
+    overflow: hidden;
+    border-bottom: 4px solid var(--wpix-cream);
+  }
+  .wpix-party-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+  .wpix-party-body {
+    padding: 18px 20px 22px;
+  }
+  .wpix-party-class {
+    font-family: var(--wpix-font-pixel);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--wpix-yellow);
+    margin-bottom: 6px;
+  }
+  .wpix-party-name {
+    font-family: var(--wpix-font-pixel);
+    font-size: 14px;
+    color: var(--wpix-cream);
+    margin-bottom: 10px;
+  }
+  .wpix-party-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--wpix-font-pixel);
+    font-size: 9px;
+    color: var(--wpix-text-soft);
+    margin-bottom: 4px;
+  }
+  .wpix-party-stat-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--wpix-border);
+    position: relative;
+  }
+  .wpix-party-stat-bar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--wpix-green);
+    width: var(--wpix-stat, 80%);
+  }
+}

@@ -1,0 +1,57 @@
+.wedding-pixel {
+  background: var(--wpix-bg);
+  color: var(--wpix-text);
+  font-family: var(--wpix-font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  min-height: 100vh;
+
+  // 미세한 픽셀 grid 배경 (CSS만)
+  background-image:
+    linear-gradient(rgba(255, 180, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 180, 0, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+
+  .wpix-pixel {
+    font-family: var(--wpix-font-pixel);
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+
+  // 게임 라벨 (HUD 스타일)
+  .wpix-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--wpix-font-pixel);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--wpix-yellow);
+    text-transform: uppercase;
+  }
+  .wpix-eyebrow::before {
+    content: "▶";
+    color: var(--wpix-yellow);
+  }
+}
+
+.wedding-pixel [data-wpix-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s steps(8), transform 0.5s steps(8);
+}
+.wedding-pixel [data-wpix-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-pixel [data-wpix-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

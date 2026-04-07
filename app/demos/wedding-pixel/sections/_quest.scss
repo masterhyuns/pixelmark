@@ -1,0 +1,80 @@
+.wedding-pixel {
+  .wpix-quest-card {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .wpix-quest-name {
+    font-family: var(--wpix-font-pixel);
+    font-size: 16px;
+    color: var(--wpix-yellow);
+    margin-bottom: 18px;
+    line-height: 1.4;
+  }
+  .wpix-quest-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--wpix-border);
+    align-items: baseline;
+  }
+  .wpix-quest-row:last-child { border-bottom: 0; }
+  .wpix-quest-label {
+    font-family: var(--wpix-font-pixel);
+    font-size: 10px;
+    color: var(--wpix-green);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .wpix-quest-value {
+    font-family: var(--wpix-font-body);
+    font-size: 14px;
+    color: var(--wpix-cream);
+  }
+  .wpix-quest-value strong {
+    color: var(--wpix-yellow);
+  }
+
+  // 카운트다운
+  .wpix-countdown {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .wpix-countdown-cell {
+    background: var(--wpix-bg);
+    border: 3px solid var(--wpix-cream);
+    padding: 14px 8px;
+    text-align: center;
+  }
+  .wpix-countdown-num {
+    font-family: var(--wpix-font-pixel);
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--wpix-yellow);
+    line-height: 1;
+    font-feature-settings: "tnum";
+  }
+  .wpix-countdown-label {
+    margin-top: 6px;
+    font-family: var(--wpix-font-pixel);
+    font-size: 8px;
+    letter-spacing: 0.16em;
+    color: var(--wpix-text-soft);
+  }
+
+  // 맵
+  .wpix-quest-map {
+    margin-top: 28px;
+    aspect-ratio: 16 / 10;
+    border: 4px solid var(--wpix-cream);
+    box-shadow: 6px 6px 0 var(--wpix-bg);
+    overflow: hidden;
+  }
+  .wpix-quest-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: hue-rotate(220deg) saturate(0.8) brightness(0.85);
+  }
+}

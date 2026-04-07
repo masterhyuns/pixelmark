@@ -1,0 +1,23 @@
+:root {
+  --wpix-bg: #0f0f1e;
+  --wpix-bg-soft: #1a1a2e;
+  --wpix-cream: #f0e8d0;
+  --wpix-yellow: #ffb400;
+  --wpix-red: #e63946;
+  --wpix-green: #06d6a0;
+  --wpix-blue: #4361ee;
+  --wpix-text: #f0e8d0;
+  --wpix-text-soft: #8e8da6;
+  --wpix-border: #2d2d44;
+
+  --wpix-font-pixel: "Press Start 2P", "Galmuri11", monospace;
+  --wpix-font-body: "Galmuri11", "Pretendard", monospace;
+  --wpix-font-prose: "Pretendard", -apple-system, sans-serif;
+
+  --wpix-max-width: 1100px;
+  --wpix-section-pad-y: 100px;
+}
+
+@media (max-width: 767px) {
+  :root { --wpix-section-pad-y: 64px; }
+}

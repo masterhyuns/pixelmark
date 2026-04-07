@@ -55,6 +55,7 @@ const STATIC_ROUTES: Array<{ path: string; priority: string; changefreq: string 
   { path: "/demos/wedding-magazine", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-hanji", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-vinyl", priority: "0.7", changefreq: "monthly" },
+  { path: "/demos/wedding-pixel", priority: "0.7", changefreq: "monthly" },
 
   // S-2 law-office는 멀티페이지 구조 → 5개 sub-route 모두 노출
   { path: "/demos/law-office", priority: "0.7", changefreq: "monthly" },

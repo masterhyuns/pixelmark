@@ -47,6 +47,7 @@ import wcineHeroUrl from "~/demos/wedding-cinematic/assets/images/hero/hero-bg.w
 import wmagHeroUrl from "~/demos/wedding-magazine/assets/images/cover/cover.webp"
 import whanHeroUrl from "~/demos/wedding-hanji/assets/images/hero/hero.webp"
 import wvnyHeroUrl from "~/demos/wedding-vinyl/assets/images/hero/album-cover.webp"
+import wpixHeroUrl from "~/demos/wedding-pixel/assets/images/title/title-bg.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -711,6 +712,43 @@ export const projects: Project[] = [
       {
         title: "Release Party 정보 + 골드 카운트다운",
         description: "결혼식을 'Release Party'로 표현. 골드 보더 인포 카드 + 시네마틱 카운트다운 + sepia 카카오맵으로 빈티지 톤을 끝까지 유지합니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-pixel",
+    title: "게임 청첩장",
+    subtitle: "8비트 픽셀 + 게임 UI로 청첩장을 한 편의 RPG처럼 풀어낸 트렌디 차별화 데모",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 19,
+    demoUrl: "/demos/wedding-pixel",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Press Start 2P", "image-rendering"],
+    description:
+      "다크 네이비 + 크림 + 옐로/레드/그린의 8비트 게임 팔레트와 Press Start 2P 픽셀 폰트로, 청첩장을 한 편의 RPG처럼 풀어낸 트렌디 차별화 데모입니다. 시그니처는 PRESS START 깜빡임이 있는 게임 타이틀 화면과 글자가 한 자씩 타이핑되는 게임 대화창. STAGE 01 STORY → STAGE 02 QUEST → STAGE 03 PARTY → STAGE 04 REWARD → CONTINUE? RSVP 6 스테이지로 청첩장 정보를 게임 컨셉으로 재구성했습니다. 'GAME CLEAR' 모달과 픽셀 카드 보더(4px + 8px shadow)까지 끝까지 게이머 톤을 유지합니다.",
+    thumbnail: wpixHeroUrl,
+    highlights: [
+      {
+        title: "픽셀 타이틀 화면 + PRESS START",
+        description: "Press Start 2P 픽셀 폰트, 6px 빨간 도트 그림자 타이포, P1/P2 캐릭터 슬롯, 1.4초 깜빡임 PRESS START 텍스트로 8비트 게임 타이틀 화면을 그대로 옮겼습니다.",
+      },
+      {
+        title: "게임 대화창 typing 효과 (시그니처)",
+        description: "STAGE 01 Story 섹션의 6라인 대화가 진입 시 35ms 간격으로 한 글자씩 타이핑됩니다. 진행 중인 라인엔 깜빡이는 ▌커서가 표시되고, 다음 라인은 600ms 텀 후 시작.",
+      },
+      {
+        title: "FINAL QUEST 카드 + 픽셀 카운트다운",
+        description: "결혼식을 FINAL QUEST로 표현. Date / Location / Objective / Reward / Difficulty 5행 + 4셀 픽셀 카운트다운 + hue-rotate된 카카오맵으로 RPG 퀘스트 시트 톤을 만들었습니다.",
+      },
+      {
+        title: "PARTY 멤버 카드 (HP/MP 게이지)",
+        description: "신랑/신부/식장을 RPG 파티 멤버로 표현. CLASS 라벨 + LV.30 + HP/MP 게이지 바까지 게임 캐릭터 시트 그대로 모방했습니다.",
+      },
+      {
+        title: "GAME CLEAR 모달 + 픽셀 버튼",
+        description: "RSVP는 'CONTINUE? JOIN THE QUEST' 폼. 픽셀 보더 + 4px shadow 버튼이 클릭 시 살짝 눌리는 transform 효과로 8비트 버튼 감각을 재현했습니다. 제출 시 ★ GAME CLEAR ★ 모달이 떠오릅니다.",
       },
     ],
   },

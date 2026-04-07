@@ -1,0 +1,49 @@
+.wedding-pixel {
+  // 게임 대화창
+  .wpix-dialogue {
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--wpix-bg-soft);
+    border: 4px solid var(--wpix-cream);
+    box-shadow: 8px 8px 0 var(--wpix-bg);
+    padding: 28px 30px 32px;
+  }
+  .wpix-dialogue-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--wpix-border);
+    min-height: 56px;
+    font-family: var(--wpix-font-body);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--wpix-text);
+  }
+  .wpix-dialogue-line:last-child { border-bottom: 0; }
+
+  .wpix-dialogue-speaker {
+    flex-shrink: 0;
+    width: 56px;
+    font-family: var(--wpix-font-pixel);
+    font-size: 11px;
+    color: var(--wpix-yellow);
+    padding-top: 4px;
+  }
+  .wpix-dialogue-speaker.kai { color: var(--wpix-green); }
+
+  .wpix-dialogue-text {
+    flex: 1;
+    min-height: 24px;
+  }
+  .wpix-dialogue-text.is-typing::after {
+    content: "▌";
+    color: var(--wpix-yellow);
+    margin-left: 2px;
+    animation: wpix-cursor 0.6s steps(1, end) infinite;
+  }
+  @keyframes wpix-cursor {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+}

@@ -1,0 +1,52 @@
+.wedding-pixel {
+  // REWARD: 보물상자 카드 (계좌)
+  .wpix-reward-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 720px) {
+    .wpix-reward-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .wpix-reward-chest {
+    background: var(--wpix-bg-soft);
+    border: 4px solid var(--wpix-yellow);
+    box-shadow: 6px 6px 0 var(--wpix-bg);
+    padding: 28px 28px 32px;
+    text-align: center;
+  }
+  .wpix-reward-icon {
+    font-family: var(--wpix-font-pixel);
+    font-size: 42px;
+    color: var(--wpix-yellow);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .wpix-reward-name {
+    font-family: var(--wpix-font-pixel);
+    font-size: 13px;
+    color: var(--wpix-cream);
+    margin-bottom: 4px;
+    letter-spacing: 0.06em;
+  }
+  .wpix-reward-side {
+    font-family: var(--wpix-font-body);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--wpix-text-soft);
+    margin-bottom: 18px;
+  }
+  .wpix-reward-bank {
+    font-family: var(--wpix-font-pixel);
+    font-size: 10px;
+    color: var(--wpix-yellow);
+    margin-bottom: 4px;
+  }
+  .wpix-reward-number {
+    font-family: var(--wpix-font-body);
+    font-size: 13px;
+    color: var(--wpix-cream);
+    font-feature-settings: "tnum";
+  }
+}

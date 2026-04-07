@@ -1,0 +1,100 @@
+.wedding-pixel {
+  .wpix-title {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    overflow: hidden;
+  }
+  .wpix-title-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+    opacity: 0.4;
+  }
+  .wpix-title-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 15, 30, 0.6) 0%, var(--wpix-bg) 100%);
+  }
+
+  .wpix-title-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+  }
+
+  .wpix-title-studio {
+    font-family: var(--wpix-font-pixel);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--wpix-yellow);
+    margin-bottom: 36px;
+  }
+
+  .wpix-title-name {
+    font-family: var(--wpix-font-pixel);
+    font-size: clamp(36px, 8vw, 76px);
+    line-height: 1.2;
+    color: var(--wpix-cream);
+    text-shadow: 6px 6px 0 var(--wpix-red);
+    margin-bottom: 24px;
+    letter-spacing: 0.04em;
+  }
+  .wpix-title-sub {
+    font-family: var(--wpix-font-pixel);
+    font-size: clamp(11px, 1.4vw, 14px);
+    color: var(--wpix-yellow);
+    margin-bottom: 48px;
+    letter-spacing: 0.16em;
+  }
+
+  .wpix-title-players {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .wpix-title-player {
+    padding: 14px 24px;
+    border: 3px solid var(--wpix-cream);
+    background: var(--wpix-bg-soft);
+    box-shadow: 4px 4px 0 var(--wpix-bg);
+  }
+  .wpix-title-player-code {
+    font-family: var(--wpix-font-pixel);
+    font-size: 9px;
+    color: var(--wpix-yellow);
+    margin-bottom: 6px;
+    letter-spacing: 0.12em;
+  }
+  .wpix-title-player-name {
+    font-family: var(--wpix-font-pixel);
+    font-size: 16px;
+    color: var(--wpix-cream);
+    letter-spacing: 0.04em;
+  }
+
+  .wpix-title-press {
+    font-family: var(--wpix-font-pixel);
+    font-size: 13px;
+    color: var(--wpix-cream);
+    letter-spacing: 0.16em;
+    animation: wpix-blink 1.4s steps(1, end) infinite;
+  }
+  @keyframes wpix-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wpix-title-press { animation: none; }
+  }
+}
