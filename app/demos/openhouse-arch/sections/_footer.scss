@@ -1,0 +1,33 @@
+.openhouse-arch {
+  .oh-footer {
+    padding: 80px 24px 56px;
+    border-top: 1px solid var(--oh-text);
+    text-align: center;
+  }
+  .oh-footer-thanks {
+    font-family: var(--oh-font-display);
+    font-weight: 500;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--oh-text);
+    margin-bottom: 14px;
+  }
+  .oh-footer-sub {
+    font-family: var(--oh-font-display);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--oh-text-soft);
+    margin-bottom: 32px;
+  }
+  .oh-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--oh-text-soft);
+    padding-top: 24px;
+    border-top: 1px solid var(--oh-border);
+  }
+}

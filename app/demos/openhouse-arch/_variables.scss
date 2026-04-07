@@ -1,0 +1,18 @@
+:root {
+  --oh-bg: #fafafa;
+  --oh-bg-soft: #f0eeea;
+  --oh-text: #1a1a1a;
+  --oh-text-soft: #6a6a6a;
+  --oh-gray: #8b8680;
+  --oh-border: #e5e3df;
+
+  --oh-font-display: "Space Grotesk", "Pretendard", sans-serif;
+  --oh-font-body: "Inter", "Pretendard", -apple-system, sans-serif;
+
+  --oh-max-width: 1280px;
+  --oh-section-pad-y: 120px;
+}
+
+@media (max-width: 767px) {
+  :root { --oh-section-pad-y: 80px; }
+}

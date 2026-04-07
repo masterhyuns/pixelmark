@@ -42,6 +42,7 @@ import wbHeroUrl from "~/demos/wedding-bohemian/assets/images/hero/hero-bg.webp"
 import pgHeroUrl from "~/demos/party-gradient/assets/images/hero/hero.webp"
 import wvHeroUrl from "~/demos/wedding-vivid/assets/images/hero/hero.webp"
 import rrHeroUrl from "~/demos/reunion-retro/assets/images/hero/hero.webp"
+import ohHeroUrl from "~/demos/openhouse-arch/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -521,6 +522,43 @@ export const projects: Project[] = [
       {
         title: "RSVP Mock + 빈티지 스탬프 모달",
         description: "참석 여부 + 인원 Mock 폼. 제출 시 -1° 기울어진 빈티지 종이 모달이 떠오르며 'RECEIVED' 빈티지 스탬프 라벨과 함께 안내합니다.",
+      },
+    ],
+  },
+  {
+    slug: "openhouse-arch",
+    title: "오픈하우스 초대장",
+    subtitle: "미니멀 아키텍처 모노톤과 그레이스케일 공간 그리드로 완성한 스튜디오 오픈하우스",
+    category: "event",
+    tier: "standard",
+    industry: "건축 / 스튜디오 오프닝",
+    duration: "1주",
+    order: 14,
+    demoUrl: "/demos/openhouse-arch",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Space Grotesk", "Inter"],
+    description:
+      "Studio Norra 가상 스튜디오의 3일간 오픈하우스 초대장 데모입니다. Space Grotesk + Inter를 모노톤 위에 배치한 미니멀 아키텍처 톤으로, 섹션마다 큰 번호(01/02/03/04)와 가는 보더로 매거진 같은 정보 위계를 만들었습니다. 시그니처는 공간 카드 그리드(Entrance/Main Hall/Meeting Room) 3개로, 그레이스케일 사진이 hover 시 컬러가 복원됩니다. 시간대 선택 RSVP Mock 폼, 카카오맵까지 5섹션을 단일 라우트에 담았습니다.",
+    thumbnail: ohHeroUrl,
+    highlights: [
+      {
+        title: "공간 카드 그리드 (시그니처)",
+        description: "Entrance / Main Hall / Meeting Room 3개 공간을 4:5 비율 사진과 코드/한영 병기 라벨로 정리. 평소엔 grayscale(15%) 살짝 흐리게, hover 시 grayscale(0)로 컬러가 복원되며 미세 줌이 동시에 작동합니다.",
+      },
+      {
+        title: "번호 + 보더 매거진 헤더",
+        description: "각 섹션 헤더에 큰 번호(01~04)와 1px 블랙 보더를 두어 매거진 페이지 같은 정보 위계를 만듭니다. 한영 병기 부제목은 작은 모노스페이스로 처리.",
+      },
+      {
+        title: "시간대 선택 RSVP",
+        description: "5개 시간대(14:00~19:00) 토글 버튼 + 이름 입력 폼. 클릭 시 활성 칩이 블랙 인버스로 바뀌고, 제출 시 모달이 선택한 시간대를 함께 표시합니다.",
+      },
+      {
+        title: "다크 인포 카드 + 카카오맵",
+        description: "Schedule / Hours / Venue 3행을 다크 인버스 카드로 묶어 미니멀 톤 안에서 정보 밀도를 높였습니다. 우측에는 4:3 카카오맵을 배치.",
+      },
+      {
+        title: "Space Grotesk 디스플레이 타이포",
+        description: "Space Grotesk Medium을 디스플레이 전반에 사용하고, Inter를 본문에 배치해 건축 잡지 같은 톤을 유지합니다.",
       },
     ],
   },
