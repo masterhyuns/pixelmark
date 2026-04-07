@@ -1,0 +1,70 @@
+.wedding-vinyl {
+  .wvny-tracks {
+    background: var(--wvny-bg);
+  }
+
+  .wvny-tracks-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  @media (min-width: 880px) {
+    .wvny-tracks-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+  }
+
+  .wvny-tracks-side {
+    background: var(--wvny-bg-soft);
+    border: 1px solid var(--wvny-border);
+    padding: 32px 32px 28px;
+  }
+
+  .wvny-tracks-side-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--wvny-border);
+  }
+  .wvny-tracks-side-label {
+    font-family: var(--wvny-font-display);
+    font-size: 38px;
+    color: var(--wvny-gold);
+    line-height: 1;
+  }
+  .wvny-tracks-side-name {
+    font-family: var(--wvny-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wvny-text-soft);
+  }
+
+  .wvny-track-row {
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    gap: 16px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--wvny-border);
+  }
+  .wvny-track-row:last-child { border-bottom: 0; }
+  .wvny-track-num {
+    font-family: var(--wvny-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--wvny-gold);
+  }
+  .wvny-track-title {
+    font-family: var(--wvny-font-display);
+    font-size: 17px;
+    color: var(--wvny-cream);
+    line-height: 1.2;
+  }
+  .wvny-track-duration {
+    font-family: var(--wvny-font-mono);
+    font-size: 12px;
+    color: var(--wvny-text-soft);
+    font-feature-settings: "tnum";
+  }
+}

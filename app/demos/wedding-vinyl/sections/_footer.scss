@@ -1,0 +1,32 @@
+.wedding-vinyl {
+  .wvny-footer {
+    padding: 80px 24px 56px;
+    text-align: center;
+    border-top: 1px solid var(--wvny-border);
+  }
+  .wvny-footer-thanks {
+    font-family: var(--wvny-font-display);
+    font-style: italic;
+    font-size: clamp(40px, 6vw, 64px);
+    color: var(--wvny-gold);
+    margin-bottom: 14px;
+    line-height: 0.95;
+  }
+  .wvny-footer-sub {
+    font-family: var(--wvny-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wvny-text-soft);
+    margin-bottom: 32px;
+  }
+  .wvny-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 580px;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--wvny-text-muted);
+    padding-top: 24px;
+    border-top: 1px solid var(--wvny-border);
+  }
+}

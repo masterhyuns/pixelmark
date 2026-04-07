@@ -77,6 +77,9 @@ export default [
     // E-S13 한지 전통 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-hanji", "routes/demos/wedding-hanji.tsx"),
 
+    // E-S14 LP 청첩장 (단일 라우트, 원페이지)
+    route("demos/wedding-vinyl", "routes/demos/wedding-vinyl.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

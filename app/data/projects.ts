@@ -46,6 +46,7 @@ import ohHeroUrl from "~/demos/openhouse-arch/assets/images/hero/hero.webp"
 import wcineHeroUrl from "~/demos/wedding-cinematic/assets/images/hero/hero-bg.webp"
 import wmagHeroUrl from "~/demos/wedding-magazine/assets/images/cover/cover.webp"
 import whanHeroUrl from "~/demos/wedding-hanji/assets/images/hero/hero.webp"
+import wvnyHeroUrl from "~/demos/wedding-vinyl/assets/images/hero/album-cover.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -673,6 +674,43 @@ export const projects: Project[] = [
       {
         title: "한복 / 한옥 / 다례 3프레임 갤러리",
         description: "한복 의상, 한옥 공간, 다례 장면을 一·二·三 한자 넘버링과 함께 3카드 그리드로 정리. 인물 얼굴 없이 전통 미감을 전달합니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-vinyl",
+    title: "LP 청첩장",
+    subtitle: "회전하는 LP 디스크와 A/B면 트랙리스트로 청첩장을 음반 한 장처럼 풀어낸 빈티지 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 18,
+    demoUrl: "/demos/wedding-vinyl",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Antic Didone", "CSS animation"],
+    description:
+      "다크 블랙과 크림 + 빈티지 골드/레드로 LP 음반 같은 청첩장을 만들었습니다. 시그니처는 히어로의 회전하는 LP 디스크 — CSS infinite spin으로 18초 한 사이클씩 돌고, 가운데 spindle hole까지 디테일을 살렸습니다. A면(Save the Date / How We Met / First Dance...)과 B면(Promise / Walking Home / The Ceremony...) 5트랙씩 가상 곡명으로 청첩장 정보를 표현하고, Antic Didone 세리프와 JetBrains Mono를 결합해 LP 슬리브 인쇄물 같은 톤을 냈습니다. 6 섹션을 단일 라우트에 담았습니다.",
+    thumbnail: wvnyHeroUrl,
+    highlights: [
+      {
+        title: "회전하는 LP 디스크 (시그니처)",
+        description: "히어로에 LP 디스크 + 앨범 슬리브 더블 레이어. 디스크는 CSS @keyframes로 18초 한 사이클씩 무한 회전, 가운데 spindle hole과 깊은 그림자로 실제 LP 같은 입체감을 만들었습니다. prefers-reduced-motion 시 정지.",
+      },
+      {
+        title: "A면 / B면 트랙리스트",
+        description: "Side A 5곡(Save the Date, How We Met, First Dance...) + Side B 5곡(Promise, Walking Home, The Ceremony...)으로 청첩장의 모든 정보를 가상 곡명과 러닝타임으로 표현했습니다.",
+      },
+      {
+        title: "Liner Notes 카드",
+        description: "LP 슬리브 안쪽에 적힌 짧은 글처럼, 골드 이탤릭 인용구와 본문 두 단락으로 인사글을 매거진 톤으로 풀어냈습니다.",
+      },
+      {
+        title: "B-Roll 갤러리 (턴테이블/카세트/헤드폰)",
+        description: "음악 감성 사물 3컷을 sepia 필터와 함께 바이올린 같은 카드 그리드로 배치. 각 카드엔 № 01~03 모노스페이스 라벨이 들어갑니다.",
+      },
+      {
+        title: "Release Party 정보 + 골드 카운트다운",
+        description: "결혼식을 'Release Party'로 표현. 골드 보더 인포 카드 + 시네마틱 카운트다운 + sepia 카카오맵으로 빈티지 톤을 끝까지 유지합니다.",
       },
     ],
   },

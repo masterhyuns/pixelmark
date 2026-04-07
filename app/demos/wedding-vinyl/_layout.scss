@@ -1,0 +1,36 @@
+.wedding-vinyl {
+  .wvny-container {
+    width: 100%;
+    max-width: var(--wvny-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .wvny-container { padding: 0 40px; }
+  }
+
+  .wvny-section {
+    padding-top: var(--wvny-section-pad-y);
+    padding-bottom: var(--wvny-section-pad-y);
+  }
+
+  .wvny-section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .wvny-section-eyebrow { margin-bottom: 18px; }
+  .wvny-section-title {
+    font-family: var(--wvny-font-display);
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--wvny-cream);
+    line-height: 0.95;
+    margin-bottom: 8px;
+  }
+  .wvny-section-title-sub {
+    font-family: var(--wvny-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wvny-text-muted);
+  }
+}

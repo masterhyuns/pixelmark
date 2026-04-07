@@ -1,0 +1,23 @@
+:root {
+  --wvny-bg: #1a1410;
+  --wvny-bg-soft: #221b14;
+  --wvny-cream: #f5e8c8;
+  --wvny-cream-soft: #ddd0a8;
+  --wvny-gold: #d4a574;
+  --wvny-red: #8b2c20;
+  --wvny-text: #f5e8c8;
+  --wvny-text-soft: #b3a484;
+  --wvny-text-muted: #6b5e44;
+  --wvny-border: #3a2f24;
+
+  --wvny-font-display: "Antic Didone", "Cormorant Garamond", serif;
+  --wvny-font-body: "Inter", "Pretendard", sans-serif;
+  --wvny-font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --wvny-max-width: 1200px;
+  --wvny-section-pad-y: 110px;
+}
+
+@media (max-width: 767px) {
+  :root { --wvny-section-pad-y: 72px; }
+}
