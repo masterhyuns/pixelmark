@@ -1,0 +1,82 @@
+.wedding-vivid {
+  .wv-container {
+    width: 100%;
+    max-width: var(--wv-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .wv-container { padding: 0 40px; }
+  }
+
+  .wv-section {
+    padding-top: var(--wv-section-pad-y);
+    padding-bottom: var(--wv-section-pad-y);
+  }
+
+  .wv-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .wv-section-title {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: clamp(44px, 6vw, 88px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--wv-text);
+    text-transform: uppercase;
+  }
+  .wv-section-title-kr {
+    font-family: var(--wv-font-body);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wv-text-soft);
+  }
+
+  .wv-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 28px;
+    background: var(--wv-text);
+    color: var(--wv-bg);
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 2px solid var(--wv-text);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .wv-btn:hover {
+    background: var(--wv-red);
+    border-color: var(--wv-red);
+  }
+
+  .wv-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 16px);
+    padding: 12px 22px;
+    background: var(--wv-text);
+    color: var(--wv-bg);
+    font-family: var(--wv-font-display);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+  }
+  .wv-toast.is-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

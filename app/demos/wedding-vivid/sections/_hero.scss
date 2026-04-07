@@ -1,0 +1,131 @@
+.wedding-vivid {
+  .wv-hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  // 컬러블록 배경 — 3개 블록
+  .wv-hero-blocks {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+    grid-template-rows: 1fr;
+    z-index: 0;
+  }
+  .wv-hero-block {
+    position: relative;
+    overflow: hidden;
+  }
+  .wv-hero-block--red { background: var(--wv-red); }
+  .wv-hero-block--yellow { background: var(--wv-yellow); }
+  .wv-hero-block--blue { background: var(--wv-blue); }
+
+  .wv-hero-block-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: luminosity;
+    opacity: 0.55;
+  }
+
+  .wv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 140px 32px 48px;
+    pointer-events: none;
+  }
+
+  .wv-hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffffff;
+    mix-blend-mode: difference;
+  }
+
+  .wv-hero-center {
+    text-align: center;
+  }
+  .wv-hero-names {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: clamp(72px, 16vw, 220px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    mix-blend-mode: difference;
+    text-transform: uppercase;
+  }
+  .wv-hero-names-sub {
+    font-family: var(--wv-font-display);
+    font-size: clamp(14px, 1.8vw, 20px);
+    letter-spacing: 0.24em;
+    color: #ffffff;
+    mix-blend-mode: difference;
+    text-transform: uppercase;
+    margin-top: 18px;
+  }
+
+  .wv-hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: var(--wv-font-display);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ffffff;
+    mix-blend-mode: difference;
+  }
+
+  // 카운트다운 (우측 하단, 화이트 블록)
+  .wv-hero-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #111;
+    padding: 1px;
+  }
+  .wv-hero-countdown-cell {
+    background: var(--wv-bg);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 58px;
+  }
+  .wv-hero-countdown-num {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1;
+    color: var(--wv-text);
+    font-variant-numeric: tabular-nums;
+  }
+  .wv-hero-countdown-label {
+    margin-top: 4px;
+    font-family: var(--wv-font-display);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    color: var(--wv-text-soft);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 767px) {
+    .wv-hero-overlay { padding: 120px 20px 32px; }
+    .wv-hero-top, .wv-hero-bottom { flex-direction: column; gap: 10px; }
+    .wv-hero-blocks { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr; }
+  }
+}

@@ -1,0 +1,22 @@
+:root {
+  --wv-bg: #ffffff;
+  --wv-bg-soft: #f5f5f5;
+  --wv-text: #0a0a0a;
+  --wv-text-soft: #666666;
+  --wv-red: #ff5252;
+  --wv-yellow: #ffd600;
+  --wv-blue: #2962ff;
+  --wv-border: #111111;
+
+  --wv-font-display: "Archivo Black", "Pretendard", sans-serif;
+  --wv-font-body: "Inter", "Pretendard", -apple-system, sans-serif;
+
+  --wv-max-width: 1200px;
+  --wv-section-pad-y: 120px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --wv-section-pad-y: 72px;
+  }
+}

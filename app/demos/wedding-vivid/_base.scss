@@ -1,0 +1,63 @@
+.wedding-vivid {
+  background: var(--wv-bg);
+  color: var(--wv-text);
+  font-family: var(--wv-font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  min-height: 100vh;
+
+  .wv-display {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  .wv-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wv-red);
+  }
+  .wv-eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 3px;
+    background: currentColor;
+  }
+
+  .wv-prose p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--wv-text);
+  }
+  .wv-prose p + p { margin-top: 1em; }
+}
+
+// reveal
+.wedding-vivid [data-wv-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.wedding-vivid [data-wv-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-vivid [data-wv-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

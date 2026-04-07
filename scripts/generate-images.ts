@@ -185,51 +185,132 @@ interface TableRow {
   priority: Priority
 }
 
-/** 이미지 표 파싱 */
-const extractTable = (md: string): TableRow[] => {
+/**
+ * 슬러그를 개발지시서.md에서 추출.
+ * 5컬럼 짧은 포맷(`파일 | 위치`)의 이미지.md는 저장 위치가 `assets/images/...` 로만
+ * 시작하므로 슬러그를 따로 알아야 `app/demos/<slug>/` 프리픽스를 붙일 수 있다.
+ */
+const extractSlugFromDevDoc = (imageMdPath: string): string | null => {
+  const devPath = path.join(path.dirname(imageMdPath), "개발지시서.md")
+  if (!fs.existsSync(devPath)) return null
+  const content = fs.readFileSync(devPath, "utf8")
+  const m = /\*\*슬러그\*\*\s*:\s*`([\w-]+)`/.exec(content)
+  return m ? m[1] : null
+}
+
+/**
+ * 범위 문법 지원:
+ *   idx: "2~5", filename: "gallery-01~04.webp"
+ *   → [{2, gallery-01.webp}, {3, gallery-02.webp}, {4, gallery-03.webp}, {5, gallery-04.webp}]
+ * 제로 패딩은 원본 숫자 폭에서 추론.
+ */
+interface ExpandedEntry {
+  idx: number
+  filename: string
+}
+const expandRange = (idxCell: string, nameCell: string): ExpandedEntry[] | null => {
+  const idxM = /^(\d+)\s*~\s*(\d+)$/.exec(idxCell)
+  if (!idxM) return null
+  const nameM = /^([\w-]+?)-(\d+)\s*~\s*(\d+)\.webp$/.exec(nameCell)
+  if (!nameM) return null
+
+  const iStart = Number(idxM[1])
+  const iEnd = Number(idxM[2])
+  const [, prefix, nStartStr, nEndStr] = nameM
+  const nStart = Number(nStartStr)
+  const nEnd = Number(nEndStr)
+  const padWidth = nStartStr.length
+  if (iEnd - iStart !== nEnd - nStart) return null // 개수 불일치
+
+  const out: ExpandedEntry[] = []
+  for (let i = 0; i <= iEnd - iStart; i++) {
+    const num = String(nStart + i).padStart(padWidth, "0")
+    out.push({ idx: iStart + i, filename: `${prefix}-${num}.webp` })
+  }
+  return out
+}
+
+/**
+ * 이미지 표 파싱 — 두 포맷 지원
+ *  - Long  (6열): # | 용도 | 파일명 | 저장 위치 | 사이즈 | 우선순위
+ *  - Short (5열): # | 파일 | 위치 | 사이즈 | 우선순위
+ * Short 포맷은 `위치` 앞에 `app/demos/<slug>/` 프리픽스를 자동 삽입.
+ * `idx`가 범위("2~5") 이고 파일명도 범위("gallery-01~04.webp") 이면 자동 expand.
+ */
+const extractTable = (md: string, slug: string | null): TableRow[] => {
   const lines = md.split("\n")
-  const headerIdx = lines.findIndex(
-    (l) => /\|\s*#\s*\|/.test(l) && /파일명/.test(l) && /저장\s*위치/.test(l)
-  )
+
+  // 헤더 위치 + 포맷 감지
+  let headerIdx = -1
+  let isShort = false
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i]
+    if (!/\|\s*#\s*\|/.test(l)) continue
+    if (/파일명/.test(l) && /저장\s*위치/.test(l)) {
+      headerIdx = i
+      isShort = false
+      break
+    }
+    if (/\|\s*파일\s*\|/.test(l) && /\|\s*위치\s*\|/.test(l)) {
+      headerIdx = i
+      isShort = true
+      break
+    }
+  }
   if (headerIdx === -1) return []
 
-  // 구분선(---) 다음부터 테이블 행으로 간주
   const rows: TableRow[] = []
   let prevDir = ""
+
   for (let i = headerIdx + 2; i < lines.length; i++) {
     const line = lines[i]
-    if (!/^\s*\|/.test(line)) break // 표 종료
+    if (!/^\s*\|/.test(line)) break
     const cells = line
       .split("|")
       .slice(1, -1)
       .map((s) => s.trim())
-    if (cells.length < 6) continue
 
-    const [idxCell, descCell, nameCell, dirCell, sizeCell, prioCell] = cells
+    const minCells = isShort ? 5 : 6
+    if (cells.length < minCells) continue
 
-    const idx = Number(idxCell)
-    if (Number.isNaN(idx)) continue
+    let idxCell: string
+    let descCell: string
+    let nameCell: string
+    let dirCell: string
+    let sizeCell: string
+    let prioCell: string
 
-    // 파일명 (백틱 제거)
-    const filename = nameCell.replace(/[`]/g, "").trim()
-    if (!/^[\w-]+\.webp$/.test(filename)) {
-      console.warn(`⚠ 표에서 파일명 형식 오류 스킵: "${filename}"`)
-      continue
+    if (isShort) {
+      ;[idxCell, nameCell, dirCell, sizeCell, prioCell] = cells
+      descCell = ""
+    } else {
+      ;[idxCell, descCell, nameCell, dirCell, sizeCell, prioCell] = cells
     }
 
-    // 저장 위치 (백틱 제거, "동"이면 이전 행 상속)
+    // 저장 위치 (백틱 제거, "동" 이면 이전 행 상속)
     let dir = dirCell.replace(/[`]/g, "").trim()
     if (dir === "동") dir = prevDir
     if (!dir) {
-      console.warn(`⚠ 저장 위치 누락 (#${idx} ${filename}) 스킵`)
+      console.warn(`⚠ 저장 위치 누락 (#${idxCell}) 스킵`)
       continue
     }
     prevDir = dir
 
+    // Short 포맷이면 슬러그 기반 프리픽스 삽입
+    if (isShort && !dir.startsWith("app/demos/")) {
+      if (!slug) {
+        console.warn(`⚠ 슬러그 추출 실패 — 개발지시서.md 확인 필요 (#${idxCell}) 스킵`)
+        continue
+      }
+      // 이미 "assets/..." 로 시작하면 그대로 prepend
+      const stripped = dir.replace(/^\/+/, "")
+      dir = `app/demos/${slug}/${stripped}`
+    }
+
     // 사이즈
     const sizeM = /(\d+)\s*[×x]\s*(\d+)/.exec(sizeCell)
     if (!sizeM) {
-      console.warn(`⚠ 사이즈 파싱 실패 (#${idx} ${filename}) 스킵`)
+      console.warn(`⚠ 사이즈 파싱 실패 (#${idxCell}) 스킵`)
       continue
     }
     const width = Number(sizeM[1])
@@ -241,10 +322,38 @@ const extractTable = (md: string): TableRow[] => {
     else if (prioCell.includes("🟡")) priority = "recommended"
     else if (prioCell.includes("🟢")) priority = "optional"
 
+    // 파일명 (백틱 제거)
+    const rawName = nameCell.replace(/[`]/g, "").trim()
+
+    // 범위 문법 체크
+    const expanded = expandRange(idxCell.trim(), rawName)
+    if (expanded) {
+      for (const ent of expanded) {
+        rows.push({
+          index: ent.idx,
+          description: descCell,
+          filename: ent.filename,
+          outputDir: dir,
+          width,
+          height,
+          priority,
+        })
+      }
+      continue
+    }
+
+    // 단일 행
+    const idx = Number(idxCell)
+    if (Number.isNaN(idx)) continue
+    if (!/^[\w-]+\.webp$/.test(rawName)) {
+      console.warn(`⚠ 파일명 형식 오류 스킵: "${rawName}"`)
+      continue
+    }
+
     rows.push({
       index: idx,
       description: descCell,
-      filename,
+      filename: rawName,
       outputDir: dir,
       width,
       height,
@@ -332,15 +441,19 @@ const composePrompt = (commonTone: string | null, jobPrompt: string): string => 
 const parseImageDoc = (filePath: string): ParsedImageDoc => {
   const md = fs.readFileSync(filePath, "utf8")
   const commonTone = extractCommonTone(md)
-  const rows = extractTable(md)
+
+  // 슬러그는 개발지시서.md에서 먼저 추출(Short 포맷 대응).
+  // 실패해도 Long 포맷이면 첫 행 저장 위치로 역추출 가능.
+  const slugFromDev = extractSlugFromDevDoc(filePath)
+  const rows = extractTable(md, slugFromDev)
   const sections = extractPromptSections(md)
 
   if (rows.length === 0) fail("표 파싱 결과 0건. 이미지.md 구조를 확인하세요.")
 
-  // slug는 첫 행에서 추출
+  // slug: 개발지시서에서 먼저, 실패 시 첫 행 저장 위치에서 fallback
   const firstDir = rows[0].outputDir
-  const slug = validateAndExtractSlug(firstDir)
-  if (!slug) fail(`저장 위치가 규격에 맞지 않음: "${firstDir}"`)
+  const slug = slugFromDev ?? validateAndExtractSlug(firstDir)
+  if (!slug) fail(`슬러그를 확인할 수 없음 (개발지시서.md와 저장 위치 둘 다 실패): "${firstDir}"`)
 
   const demoFolder = path.basename(path.dirname(filePath))
 

@@ -1,0 +1,71 @@
+.wedding-vivid {
+  .wv-venue {
+    background: var(--wv-yellow);
+  }
+  .wv-venue .wv-eyebrow { color: var(--wv-red); }
+  .wv-venue .wv-section-title { color: var(--wv-text); }
+
+  .wv-venue-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  @media (min-width: 960px) {
+    .wv-venue-grid { grid-template-columns: 1fr 1.4fr; gap: 32px; }
+  }
+
+  .wv-venue-info {
+    padding: 36px 32px;
+    background: var(--wv-text);
+    color: var(--wv-bg);
+  }
+  .wv-venue-date {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+    color: var(--wv-yellow);
+    text-transform: uppercase;
+  }
+  .wv-venue-day {
+    font-family: var(--wv-font-display);
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .wv-venue-name {
+    font-family: var(--wv-font-display);
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .wv-venue-name-kr {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+  }
+  .wv-venue-address {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 4px;
+  }
+
+  .wv-venue-map {
+    background: var(--wv-bg);
+    border: 2px solid var(--wv-text);
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+  .wv-venue-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

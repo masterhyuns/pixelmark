@@ -1,0 +1,34 @@
+.wedding-vivid {
+  .wv-footer {
+    background: var(--wv-red);
+    color: var(--wv-bg);
+    padding: 80px 24px 56px;
+    text-align: center;
+  }
+  .wv-footer-thanks {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 120px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .wv-footer-sub {
+    font-family: var(--wv-font-display);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 36px;
+  }
+  .wv-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 11px;
+    line-height: 1.8;
+    opacity: 0.72;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}

@@ -1,0 +1,89 @@
+.wedding-vivid {
+  .wv-account-groups {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 860px) {
+    .wv-account-groups { grid-template-columns: 1fr 1fr; }
+  }
+
+  .wv-account-group {
+    background: var(--wv-bg-soft);
+    border: 2px solid var(--wv-text);
+    padding: 32px 28px 28px;
+  }
+  .wv-account-group-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--wv-text);
+  }
+  .wv-account-group-label {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--wv-text);
+  }
+  .wv-account-group-label-kr {
+    font-family: var(--wv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wv-text-soft);
+  }
+
+  .wv-account-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(10, 10, 10, 0.15);
+  }
+  .wv-account-item:last-child { border-bottom: 0; }
+
+  .wv-account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .wv-account-role {
+    font-family: var(--wv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wv-text-soft);
+  }
+  .wv-account-number {
+    font-family: var(--wv-font-body);
+    font-size: 14px;
+    color: var(--wv-text);
+    font-variant-numeric: tabular-nums;
+  }
+  .wv-account-number strong {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  .wv-account-copy {
+    padding: 8px 14px;
+    font-family: var(--wv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 2px solid var(--wv-text);
+    background: var(--wv-bg);
+    color: var(--wv-text);
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+  }
+  .wv-account-copy:hover {
+    background: var(--wv-text);
+    color: var(--wv-bg);
+  }
+}

@@ -40,6 +40,7 @@ import ctHeroUrl from "~/demos/conference-tech/assets/images/home/home-hero.webp
 import wcHeroUrl from "~/demos/wedding-classic/assets/images/home/home-hero.webp"
 import wbHeroUrl from "~/demos/wedding-bohemian/assets/images/hero/hero-bg.webp"
 import pgHeroUrl from "~/demos/party-gradient/assets/images/hero/hero.webp"
+import wvHeroUrl from "~/demos/wedding-vivid/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -445,6 +446,43 @@ export const projects: Project[] = [
       {
         title: "실시간 D-day 카운트다운 + 카카오맵",
         description: "히어로의 글래스 카운트다운이 1초마다 갱신되고, 정보 섹션에는 카카오맵 iframe이 같은 글래스 톤으로 이어집니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-vivid",
+    title: "모던 컬러풀 청첩장",
+    subtitle: "RED / YELLOW / BLUE 컬러블록과 Archivo Black으로 완성한 MZ 커플용 볼드 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "MZ 커플 / 결혼식",
+    duration: "1주",
+    order: 12,
+    demoUrl: "/demos/wedding-vivid",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Archivo Black", "CSS Grid"],
+    description:
+      "레드·옐로·블루 3색 컬러블록을 히어로 전체에 풀블리드로 깔고, 큰 Archivo Black 타이포에 mix-blend-mode: difference를 적용해 배경 색이 바뀌어도 텍스트가 선명하게 읽히도록 설계한 MZ 커플 청첩장 데모입니다. 섹션마다 배경이 흰색 → 블랙 → 옐로 → 블루 → 레드로 바뀌며 매거진 컬러블록 인상을 줍니다. RSVP Mock 폼, 계좌 복사 버튼, D-day 카운트다운, 카카오맵까지 7섹션을 단일 라우트에 담았습니다.",
+    thumbnail: wvHeroUrl,
+    highlights: [
+      {
+        title: "3분할 컬러블록 히어로 (RYB)",
+        description: "히어로를 Red / Yellow / Blue 3개 block으로 나누고 그 위에 mix-blend-mode: difference로 큰 타이포를 얹어, 배경 색과 무관하게 텍스트가 자동 반전되어 읽힙니다.",
+      },
+      {
+        title: "섹션 단위 컬러블록 매거진",
+        description: "Greeting(블랙) / Gallery(화이트) / Venue(옐로) / RSVP(블루) / Account(화이트) / Footer(레드) — 섹션이 바뀔 때마다 배경과 액센트 색이 바뀌어 매거진 컬러블록 느낌을 줍니다.",
+      },
+      {
+        title: "RSVP Mock 폼 + 성공 모달",
+        description: "블루 섹션 위에 투명 인풋 + 옐로 CTA로 구성된 폼. 제출 시 옐로 모달이 떠오르고 ESC·백드롭·닫기 버튼 모두 지원합니다.",
+      },
+      {
+        title: "계좌 복사 + 토스트",
+        description: "양가 계좌 카드에 'Copy' 버튼을 두고 navigator.clipboard + textarea fallback으로 모든 환경에서 복사되도록 구성. 복사 후 하단 토스트로 피드백합니다.",
+      },
+      {
+        title: "D-day 카운트다운 (히어로 하단)",
+        description: "히어로 우측 하단에 4셀 카운트다운을 배치하고, 1초마다 갱신합니다. tabular-nums로 떨림을 막았습니다.",
       },
     ],
   },

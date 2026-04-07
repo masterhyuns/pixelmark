@@ -1,0 +1,122 @@
+.wedding-vivid {
+  .wv-rsvp {
+    background: var(--wv-blue);
+    color: var(--wv-bg);
+  }
+  .wv-rsvp .wv-section-title { color: var(--wv-bg); }
+  .wv-rsvp .wv-section-title-kr { color: rgba(255, 255, 255, 0.7); }
+  .wv-rsvp .wv-eyebrow { color: var(--wv-yellow); }
+
+  .wv-rsvp-form {
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .wv-rsvp-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--wv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .wv-rsvp-input,
+  .wv-rsvp-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 14px 18px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: var(--wv-bg);
+    font-family: var(--wv-font-body);
+    font-size: 15px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  .wv-rsvp-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+  .wv-rsvp-input:focus,
+  .wv-rsvp-select:focus {
+    outline: none;
+    border-color: var(--wv-yellow);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .wv-rsvp-submit {
+    margin-top: 8px;
+    background: var(--wv-yellow);
+    color: var(--wv-text);
+    border-color: var(--wv-yellow);
+    cursor: pointer;
+  }
+  .wv-rsvp-submit:hover {
+    background: var(--wv-red);
+    border-color: var(--wv-red);
+    color: #ffffff;
+  }
+
+  // 모달
+  .wv-rsvp-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .wv-rsvp-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .wv-rsvp-modal-dialog {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 36px;
+    background: var(--wv-yellow);
+    color: var(--wv-text);
+    position: relative;
+    border: 2px solid var(--wv-text);
+    transform: translateY(14px);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-align: center;
+  }
+  .wv-rsvp-modal.is-open .wv-rsvp-modal-dialog {
+    transform: translateY(0);
+  }
+  .wv-rsvp-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--wv-text);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wv-text);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .wv-rsvp-modal-close:hover {
+    background: var(--wv-red);
+    color: #ffffff;
+    border-color: var(--wv-red);
+  }
+  .wv-rsvp-modal-title {
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 0.9;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .wv-rsvp-modal-desc {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+}

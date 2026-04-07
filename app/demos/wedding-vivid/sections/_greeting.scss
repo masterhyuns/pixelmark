@@ -1,0 +1,28 @@
+.wedding-vivid {
+  .wv-greeting {
+    background: var(--wv-text);
+    color: var(--wv-bg);
+  }
+  .wv-greeting .wv-section-title { color: var(--wv-bg); }
+  .wv-greeting .wv-section-title-kr { color: rgba(255, 255, 255, 0.5); }
+  .wv-greeting .wv-eyebrow { color: var(--wv-yellow); }
+  .wv-greeting .wv-prose p { color: rgba(255, 255, 255, 0.88); }
+
+  .wv-greeting-body {
+    max-width: 640px;
+  }
+
+  .wv-greeting-signature {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    font-family: var(--wv-font-display);
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--wv-bg);
+  }
+  .wv-greeting-signature span:first-child { color: var(--wv-yellow); }
+  .wv-greeting-signature span:last-child { color: var(--wv-red); }
+}
