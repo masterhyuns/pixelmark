@@ -1,0 +1,123 @@
+// ============================================================
+// Visit — 오시는 길
+// ============================================================
+
+.wedding-classic {
+  .wc-visit {
+    padding-top: calc(44px + var(--wc-header-h) + 40px);
+    padding-bottom: var(--wc-section-pad-y);
+  }
+
+  .wc-visit-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 56px;
+  }
+
+  .wc-visit-image {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: var(--wc-bg-soft);
+    border: 1px solid var(--wc-border);
+  }
+  .wc-visit-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wc-visit-info {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+  .wc-visit-name {
+    font-family: var(--wc-font-display);
+    font-size: clamp(28px, 3.8vw, 40px);
+    color: var(--wc-navy);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .wc-visit-name-kr {
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--wc-text-soft);
+    margin-bottom: 22px;
+  }
+  .wc-visit-hall {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--wc-gold);
+    margin-bottom: 6px;
+  }
+  .wc-visit-address {
+    font-size: 14px;
+    color: var(--wc-text);
+    margin-bottom: 4px;
+  }
+  .wc-visit-address-kr {
+    font-size: 12px;
+    color: var(--wc-text-soft);
+  }
+
+  .wc-visit-map {
+    max-width: 960px;
+    margin: 0 auto 56px;
+    aspect-ratio: 16 / 9;
+    background: var(--wc-bg-soft);
+    border: 1px solid var(--wc-border);
+    overflow: hidden;
+  }
+  .wc-visit-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .wc-visit-directions {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 768px) {
+    .wc-visit-directions { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .wc-direction-card {
+    padding: 24px 22px;
+    border: 1px solid var(--wc-border);
+    background: var(--wc-bg);
+    text-align: center;
+  }
+  .wc-direction-type {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    color: var(--wc-gold);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .wc-direction-type-kr {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--wc-text-soft);
+    margin-bottom: 14px;
+  }
+  .wc-direction-desc {
+    font-size: 13px;
+    color: var(--wc-text);
+    line-height: 1.7;
+    margin-bottom: 6px;
+  }
+  .wc-direction-desc-kr {
+    font-size: 12px;
+    color: var(--wc-text-soft);
+    line-height: 1.7;
+  }
+}

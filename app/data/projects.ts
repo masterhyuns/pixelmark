@@ -37,6 +37,7 @@ import wmGalleryUrl from "~/demos/wedding-minimal/assets/images/gallery/gallery-
 import bcGrowthUrl from "~/demos/baby-celebration/assets/images/growth/growth-12m.webp"
 import pvHeroUrl from "~/demos/popup-vivid/assets/images/hero/hero-gradient.webp"
 import ctHeroUrl from "~/demos/conference-tech/assets/images/home/home-hero.webp"
+import wcHeroUrl from "~/demos/wedding-classic/assets/images/home/home-hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -331,6 +332,43 @@ export const projects: Project[] = [
       {
         title: "정보 밀도 높은 일정표",
         description: "이틀에 걸친 세션을 시간/제목/스피커/트랙 4열 그리드로 정리했습니다. 키노트는 좌측 보더로 강조하고, 휴식 시간은 자동으로 dim 처리됩니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-classic",
+    title: "클래식 럭셔리 청첩장",
+    subtitle: "네이비와 골드, 큰 세리프와 한영 병기로 완성한 호텔 웨딩 멀티페이지 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "호텔 웨딩 / 청첩장",
+    duration: "1주",
+    order: 9,
+    demoUrl: "/demos/wedding-classic",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Swiper.js", "Cormorant Garamond"],
+    description:
+      "네이비와 골드, Cormorant Garamond 세리프로 완성한 호텔 웨딩 청첩장 데모입니다. 홈 / 스토리 / 갤러리 / 오시는 길 4개 sub-route를 부모 layout 한 곳에서 SCSS와 헤더·푸터를 공유하도록 구성했고, 한영 병기 인사글과 챕터로 격조 있는 감성을 전달합니다. 갤러리는 Swiper 기반 풀스크린 캐러셀(키보드·페이지네이션·loop)을 직접 초기화했습니다.",
+    thumbnail: wcHeroUrl,
+    highlights: [
+      {
+        title: "멀티페이지 + 공유 layout",
+        description: "React Router 7의 중첩 layout으로 4개 sub-route가 동일한 헤더·푸터·SCSS를 공유합니다. 페이지 이동 시 CSS 재로드 없이 부드러운 페이드로 전환됩니다.",
+      },
+      {
+        title: "한영 병기 타이포",
+        description: "Cormorant Garamond 세리프를 디스플레이, Pretendard를 한글 본문으로 배치해 영문과 한글이 한 흐름으로 읽히도록 설계했습니다. 외국인 친구 초청이 필요한 커플을 위한 구조입니다.",
+      },
+      {
+        title: "Swiper 풀스크린 갤러리",
+        description: "Swiper v12 vanilla 모드로 직접 초기화한 풀스크린 캐러셀. 키보드 화살표, 커스텀 네비 버튼, 페이지네이션 도트, loop, 실시간 카운터까지 지원합니다.",
+      },
+      {
+        title: "실시간 D-day 카운트다운",
+        description: "히어로의 4셀 카운트다운이 1초마다 갱신됩니다. 골드 액센트와 세리프 타이포로 격조 있는 외형을 유지합니다.",
+      },
+      {
+        title: "오시는 길 + 카카오맵 + 한영 병기 안내",
+        description: "호텔 정문 컷, 카카오맵 iframe, 지하철·발렛·셔틀 3카드 안내를 한영 병기로 제공해 외국인 하객도 불편 없이 읽을 수 있도록 구성했습니다.",
       },
     ],
   },

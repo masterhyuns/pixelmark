@@ -52,6 +52,10 @@ export default {
       "/demos/conference-tech",
       "/demos/conference-tech/speakers",
       "/demos/conference-tech/schedule",
+      "/demos/wedding-classic",
+      "/demos/wedding-classic/story",
+      "/demos/wedding-classic/gallery",
+      "/demos/wedding-classic/visit",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

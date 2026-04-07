@@ -1,0 +1,39 @@
+// ============================================================
+// D-day 카운트다운 (홈 페이지용)
+// ============================================================
+
+.wedding-classic {
+  .wc-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 24px 0;
+    border-top: 1px solid var(--wc-gold-soft);
+    border-bottom: 1px solid var(--wc-gold-soft);
+  }
+  .wc-countdown-cell {
+    text-align: center;
+    border-right: 1px solid var(--wc-border);
+  }
+  .wc-countdown-cell:last-child { border-right: 0; }
+
+  .wc-countdown-num {
+    font-family: var(--wc-font-display);
+    font-weight: 500;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1;
+    color: var(--wc-navy);
+    font-variant-numeric: tabular-nums;
+  }
+  .wc-countdown-label {
+    margin-top: 6px;
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wc-gold);
+  }
+}

@@ -1,0 +1,47 @@
+// ============================================================
+// 사이트 푸터
+// ============================================================
+
+.wedding-classic {
+  .wc-site-footer {
+    padding: 72px 24px 56px;
+    background: var(--wc-bg-soft);
+    border-top: 1px solid var(--wc-border);
+    text-align: center;
+  }
+  .wc-site-footer-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .wc-footer-thanks {
+    font-family: var(--wc-font-display);
+    font-size: 32px;
+    color: var(--wc-navy);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .wc-footer-thanks-kr {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--wc-text-soft);
+    margin-bottom: 28px;
+  }
+  .wc-footer-copy {
+    font-family: var(--wc-font-display);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--wc-text-soft);
+    margin-bottom: 20px;
+  }
+
+  .wc-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 560px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--wc-text-soft);
+    padding-top: 22px;
+    border-top: 1px solid var(--wc-border);
+  }
+}

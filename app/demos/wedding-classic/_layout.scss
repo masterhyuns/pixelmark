@@ -1,0 +1,56 @@
+// ============================================================
+// E-S6 Wedding Classic — 레이아웃 / 공통
+// ============================================================
+
+.wedding-classic {
+  .wc-container {
+    width: 100%;
+    max-width: var(--wc-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .wc-container { padding: 0 40px; }
+  }
+
+  .wc-container--narrow {
+    max-width: 760px;
+  }
+
+  .wc-section {
+    padding-top: var(--wc-section-pad-y);
+    padding-bottom: var(--wc-section-pad-y);
+  }
+
+  .wc-section-title {
+    font-family: var(--wc-font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--wc-navy);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .wc-section-title-kr {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--wc-text-soft);
+    margin-bottom: 24px;
+  }
+
+  // 골드 가는 디바이더
+  .wc-divider {
+    width: 1px;
+    height: 56px;
+    background: var(--wc-gold);
+    margin: 0 auto;
+    opacity: 0.7;
+  }
+  .wc-divider--horizontal {
+    width: 56px;
+    height: 1px;
+  }
+}

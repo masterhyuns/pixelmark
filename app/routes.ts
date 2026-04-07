@@ -60,6 +60,14 @@ export default [
       route("demos/conference-tech/schedule", "routes/demos/conference-tech.schedule.tsx"),
     ]),
 
+    // E-S6 클래식 럭셔리 청첩장 (멀티페이지: 부모 layout + 4 sub-route)
+    layout("routes/demos/_wedding-classic.tsx", [
+      route("demos/wedding-classic", "routes/demos/wedding-classic._index.tsx"),
+      route("demos/wedding-classic/story", "routes/demos/wedding-classic.story.tsx"),
+      route("demos/wedding-classic/gallery", "routes/demos/wedding-classic.gallery.tsx"),
+      route("demos/wedding-classic/visit", "routes/demos/wedding-classic.visit.tsx"),
+    ]),
+
     // S-2 법률사무소 (멀티페이지: 부모 layout + 5개 sub-route)
     // 부모 layout이 SCSS와 공통 모듈(nav, scrollProgress, floatingButton)을 담당.
     layout("routes/demos/_law-office.tsx", [

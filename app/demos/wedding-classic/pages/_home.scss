@@ -1,0 +1,107 @@
+// ============================================================
+// Home — 풀스크린 히어로 + Save the Date
+// ============================================================
+
+.wedding-classic {
+  .wc-home {
+    background: var(--wc-bg);
+  }
+
+  .wc-home-hero {
+    position: relative;
+    min-height: calc(100vh - 44px - var(--wc-header-h));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px 24px 80px;
+    text-align: center;
+  }
+  .wc-home-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+  }
+  .wc-home-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.78) 100%
+    );
+  }
+
+  .wc-home-hero-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .wc-home-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .wc-home-save {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--wc-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .wc-home-names {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--wc-font-display);
+    font-weight: 500;
+    color: var(--wc-navy);
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+  .wc-home-names-name {
+    font-size: clamp(44px, 8vw, 88px);
+    letter-spacing: 0.04em;
+  }
+  .wc-home-names-and {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--wc-gold);
+  }
+
+  .wc-home-date {
+    font-family: var(--wc-font-display);
+    font-size: clamp(16px, 1.8vw, 20px);
+    letter-spacing: 0.18em;
+    color: var(--wc-navy);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .wc-home-date-kr {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--wc-text-soft);
+    margin-bottom: 40px;
+  }
+
+  .wc-home-venue {
+    font-family: var(--wc-font-display);
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--wc-navy);
+    margin-top: 56px;
+  }
+  .wc-home-venue-kr {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--wc-text-soft);
+    margin-top: 4px;
+  }
+}

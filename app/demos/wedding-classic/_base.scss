@@ -1,0 +1,81 @@
+// ============================================================
+// E-S6 Wedding Classic — 베이스 (Cormorant 세리프 + Pretendard)
+// ============================================================
+
+.wedding-classic {
+  background: var(--wc-bg);
+  color: var(--wc-text);
+  font-family: var(--wc-font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  min-height: 100vh;
+
+  .wc-display {
+    font-family: var(--wc-font-display);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .wc-italic {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  // 작은 디스플레이 라벨
+  .wc-eyebrow {
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    color: var(--wc-gold);
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  // 한글 라벨 (eyebrow 보조)
+  .wc-eyebrow-kr {
+    font-family: var(--wc-font-body);
+    font-size: 11px;
+    color: var(--wc-text-soft);
+    letter-spacing: 0.18em;
+    text-transform: none;
+    margin-top: 4px;
+  }
+
+  .wc-prose p {
+    color: var(--wc-text);
+    line-height: 1.95;
+  }
+  .wc-prose p + p { margin-top: 1em; }
+}
+
+// reveal
+.wedding-classic [data-wc-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.wedding-classic [data-wc-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-classic [data-wc-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// 페이지 전환 페이드
+.wedding-classic .wc-page {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+.wedding-classic .wc-page.is-leaving {
+  opacity: 0;
+}

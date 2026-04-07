@@ -1,0 +1,86 @@
+// ============================================================
+// 사이트 헤더 (멀티페이지 네비)
+// ============================================================
+
+.wedding-classic {
+  .wc-site-header {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 아래
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: var(--wc-header-h);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--wc-border);
+  }
+
+  .wc-site-header-inner {
+    height: 100%;
+    width: 100%;
+    max-width: var(--wc-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  @media (min-width: 768px) {
+    .wc-site-header-inner { padding: 0 40px; }
+  }
+
+  .wc-site-logo {
+    font-family: var(--wc-font-display);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: var(--wc-navy);
+  }
+
+  .wc-site-nav {
+    display: none;
+    align-items: center;
+    gap: 40px;
+  }
+  @media (min-width: 768px) {
+    .wc-site-nav { display: inline-flex; }
+  }
+
+  .wc-site-nav a {
+    position: relative;
+    font-family: var(--wc-font-display);
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--wc-text);
+    transition: color 0.2s ease;
+    padding: 4px 0;
+  }
+  .wc-site-nav a:hover { color: var(--wc-navy); }
+  .wc-site-nav a.active {
+    color: var(--wc-navy);
+  }
+  .wc-site-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 1px;
+    background: var(--wc-gold);
+  }
+
+  // 모바일에서 헤더는 단순 — 로고 + 현재 페이지만
+  .wc-site-current {
+    display: inline-flex;
+    font-family: var(--wc-font-display);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--wc-gold);
+    text-transform: uppercase;
+  }
+  @media (min-width: 768px) {
+    .wc-site-current { display: none; }
+  }
+}

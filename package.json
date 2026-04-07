@@ -6,7 +6,8 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "gen-images": "tsx scripts/generate-images.ts"
   },
   "engines": {
     "node": ">=20.0.0"
@@ -27,13 +28,18 @@
     "swiper": "^12.1.3"
   },
   "devDependencies": {
+    "@fal-ai/client": "^1.9.5",
     "@react-router/dev": "7.14.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "dotenv": "^17.4.1",
+    "gray-matter": "^4.0.3",
     "sass": "^1.99.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^8.0.3"
   }

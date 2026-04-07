@@ -1,0 +1,110 @@
+// ============================================================
+// Gallery — 풀스크린 캐러셀 (Swiper)
+// ============================================================
+
+.wedding-classic {
+  .wc-gallery {
+    padding-top: calc(44px + var(--wc-header-h) + 40px);
+    padding-bottom: var(--wc-section-pad-y);
+  }
+
+  .wc-gallery-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+
+  // Swiper 컨테이너
+  .wc-gallery-swiper {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .wc-swiper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    background: var(--wc-bg-soft);
+  }
+  .wc-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wc-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  // 좌우 네비 버튼
+  .wc-swiper-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 52px;
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--wc-border);
+    color: var(--wc-navy);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .wc-swiper-button:hover {
+    background: var(--wc-navy);
+    color: #ffffff;
+    border-color: var(--wc-navy);
+  }
+  .wc-swiper-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  .wc-swiper-button svg { width: 18px; height: 18px; }
+  .wc-swiper-prev { left: 24px; }
+  .wc-swiper-next { right: 24px; }
+
+  @media (max-width: 640px) {
+    .wc-swiper-button { width: 40px; height: 40px; }
+    .wc-swiper-prev { left: 12px; }
+    .wc-swiper-next { right: 12px; }
+  }
+
+  // 페이지네이션
+  .wc-swiper-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .wc-swiper-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--wc-border);
+    border-radius: 50%;
+    transition: background 0.3s ease, width 0.3s ease;
+    opacity: 1;
+  }
+  .wc-swiper-pagination .swiper-pagination-bullet-active {
+    width: 28px;
+    border-radius: 999px;
+    background: var(--wc-gold);
+  }
+
+  .wc-gallery-counter {
+    text-align: center;
+    margin-top: 20px;
+    font-family: var(--wc-font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--wc-text-soft);
+  }
+}
