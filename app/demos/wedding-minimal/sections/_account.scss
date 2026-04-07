@@ -1,0 +1,79 @@
+// ============================================================
+// Account — 마음 전하실 곳
+// ============================================================
+
+.wedding-minimal {
+  .wm-account-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 640px) {
+    .wm-account-groups {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .wm-account-side-title {
+    font-family: var(--wm-font-display);
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+    color: var(--wm-accent);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--wm-border);
+  }
+
+  .wm-account-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .wm-account-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--wm-border);
+  }
+  .wm-account-item:last-child { border-bottom: 0; }
+
+  .wm-account-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .wm-account-role {
+    font-size: 12px;
+    color: var(--wm-text-soft);
+    letter-spacing: 0.06em;
+  }
+  .wm-account-copy {
+    font-family: var(--wm-font-display);
+    font-size: 12px;
+    color: var(--wm-accent);
+    border: 1px solid var(--wm-accent-soft);
+    padding: 4px 12px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+    letter-spacing: 0.06em;
+  }
+  .wm-account-copy:hover {
+    background: var(--wm-accent);
+    color: var(--wm-bg);
+  }
+  .wm-account-bank {
+    font-size: 14px;
+    color: var(--wm-text);
+  }
+  .wm-account-bank strong {
+    font-weight: 600;
+    margin-right: 4px;
+  }
+}

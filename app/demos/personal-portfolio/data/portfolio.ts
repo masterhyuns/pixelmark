@@ -12,10 +12,10 @@
  */
 
 // 작업물 썸네일 (모달 내 상세 이미지도 같이 쓰임)
-import work1Url from "../assets/images/works/work-1-orbit-finance.jpg"
-import work2Url from "../assets/images/works/work-2-meadow-journal.jpg"
-import work3Url from "../assets/images/works/work-3-terra-studio.jpg"
-import work4Url from "../assets/images/works/work-4-harbor-bookshop.jpg"
+import work1Url from "../assets/images/works/work-1-orbit-finance.webp"
+import work2Url from "../assets/images/works/work-2-meadow-journal.webp"
+import work3Url from "../assets/images/works/work-3-terra-studio.webp"
+import work4Url from "../assets/images/works/work-4-harbor-bookshop.webp"
 
 export interface Work {
   id: string

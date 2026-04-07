@@ -113,6 +113,12 @@ export const PAGE_META = {
       "프로젝트 문의는 크몽을 통해 안전하게 진행하세요. 견적부터 납품까지 체계적으로 관리합니다.",
     canonicalPath: "/contact",
   },
+  premium: {
+    title: "PREMIUM 맞춤 서비스",
+    description:
+      "회원/결제/어드민까지. 풀스택 + 운영을 비즈니스에 맞게 설계·구축·운영하는 Pixelmark PREMIUM 맞춤 서비스 안내.",
+    canonicalPath: "/services/premium",
+  },
 } as const
 
 /* ================================================

@@ -1,0 +1,56 @@
+// ============================================================
+// E-S2 Baby Celebration — 레이아웃 / 공통 컴포넌트
+// ============================================================
+
+.baby-celebration {
+  .bc-container {
+    width: 100%;
+    max-width: var(--bc-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .bc-container { padding: 0 32px; }
+  }
+
+  .bc-section {
+    padding-top: var(--bc-section-pad-y);
+    padding-bottom: var(--bc-section-pad-y);
+  }
+
+  .bc-section-eyebrow {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .bc-section-title {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--bc-text);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  @media (min-width: 768px) {
+    .bc-section-title { font-size: 36px; }
+  }
+
+  .bc-divider {
+    width: 48px;
+    height: 3px;
+    background: var(--bc-pink);
+    border-radius: 999px;
+    margin: 0 auto 40px;
+  }
+
+  // 카드 공통
+  .bc-card {
+    background: var(--bc-bg);
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius);
+    padding: 20px;
+    box-shadow: var(--bc-shadow);
+  }
+}

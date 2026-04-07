@@ -1,0 +1,36 @@
+// ============================================================
+// Footer — 마무리 인사 + 데모 명시
+// ============================================================
+
+.wedding-minimal {
+  .wm-footer {
+    text-align: center;
+    padding: 80px 24px 60px;
+    border-top: 1px solid var(--wm-border);
+    background: var(--wm-bg-soft);
+  }
+
+  .wm-footer-thanks {
+    font-family: var(--wm-font-display);
+    font-size: 24px;
+    color: var(--wm-text);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .wm-footer-sub {
+    font-size: 13px;
+    color: var(--wm-text-soft);
+    letter-spacing: 0.04em;
+    margin-bottom: 32px;
+  }
+  .wm-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 520px;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--wm-text-soft);
+    letter-spacing: 0.02em;
+    padding-top: 24px;
+    border-top: 1px solid var(--wm-border);
+  }
+}

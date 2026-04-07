@@ -1,0 +1,61 @@
+// ============================================================
+// E-S1 Wedding Minimal — 타이포 / 본문 베이스
+// ============================================================
+
+.wedding-minimal {
+  background: var(--wm-bg);
+  color: var(--wm-text);
+  font-family: var(--wm-font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+  min-height: 100vh;
+
+  // 디스플레이 타이포 (영문 세리프)
+  .wm-display {
+    font-family: var(--wm-font-display);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  // 작은 캡션 / eyebrow
+  .wm-eyebrow {
+    font-family: var(--wm-font-display);
+    font-style: italic;
+    color: var(--wm-accent);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  // 본문 단락 공통
+  .wm-prose p {
+    color: var(--wm-text);
+    line-height: 1.95;
+  }
+
+  .wm-prose p + p {
+    margin-top: 1em;
+  }
+}
+
+// data-wm-reveal — 스크롤 진입 페이드인 (scrollReveal 모듈과 연동)
+.wedding-minimal [data-wm-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.wedding-minimal [data-wm-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-minimal [data-wm-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

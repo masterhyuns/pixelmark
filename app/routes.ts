@@ -28,6 +28,7 @@ export default [
     route("projects/:slug", "routes/projects.$slug.tsx"),
     route("about", "routes/about.tsx"),
     route("contact", "routes/contact.tsx"),
+    route("services/premium", "routes/services.premium.tsx"),
   ]),
 
   // ============================================================
@@ -42,6 +43,12 @@ export default [
 
     // S-4 개인 포트폴리오 (단일 라우트, 원페이지, 외부 라이브러리 0개)
     route("demos/personal-portfolio", "routes/demos/personal-portfolio.tsx"),
+
+    // E-S1 미니멀 화이트 청첩장 (단일 라우트, 원페이지)
+    route("demos/wedding-minimal", "routes/demos/wedding-minimal.tsx"),
+
+    // E-S2 돌잔치/백일 초대장 (단일 라우트, 원페이지)
+    route("demos/baby-celebration", "routes/demos/baby-celebration.tsx"),
 
     // S-2 법률사무소 (멀티페이지: 부모 layout + 5개 sub-route)
     // 부모 layout이 SCSS와 공통 모듈(nav, scrollProgress, floatingButton)을 담당.

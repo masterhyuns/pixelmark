@@ -1,0 +1,34 @@
+// ============================================================
+// Footer
+// ============================================================
+
+.baby-celebration {
+  .bc-footer {
+    text-align: center;
+    padding: 80px 24px 60px;
+    border-top: 1px solid var(--bc-border);
+    background: var(--bc-bg-soft);
+  }
+  .bc-footer-thanks {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--bc-pink);
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .bc-footer-sub {
+    font-size: 14px;
+    color: var(--bc-text);
+    margin-bottom: 32px;
+  }
+  .bc-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 520px;
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--bc-text-soft);
+    padding-top: 24px;
+    border-top: 1px solid var(--bc-border);
+  }
+}

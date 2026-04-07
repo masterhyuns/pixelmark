@@ -110,11 +110,6 @@ export interface Project {
    * /public/images/projects/ 기준 상대 경로 또는 외부 URL
    */
   thumbnail: string
-  /**
-   * 상세 페이지용 스크린샷 이미지 배열
-   * 순서대로 표시된다
-   */
-  images: string[]
   /** 데모 링크 (없으면 undefined) */
   demoUrl?: string
   /** 업종 (예: 뷰티/화장품, 법률, 외식업) */
@@ -142,6 +137,8 @@ export interface ServiceItem {
   tags: string[]
   /** Lucide 아이콘 컴포넌트 (예: Code2, Layers). 렌더 시 <service.icon /> 으로 사용 */
   icon: LucideIcon
+  /** 클릭 시 이동할 내부 경로(있을 때만 카드가 Link로 감싸짐) */
+  link?: string
 }
 
 /** 기술 스택 그룹 타입 */

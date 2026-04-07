@@ -1,0 +1,133 @@
+// ============================================================
+// Intro — 풀스크린 인트로 (이름 + 날짜 + 스크롤 화살표)
+// ============================================================
+
+.wedding-minimal {
+  .wm-intro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    overflow: hidden;
+  }
+
+  .wm-intro-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.18;
+    z-index: 0;
+  }
+
+  .wm-intro-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, var(--wm-bg) 0%, rgba(250, 250, 248, 0.5) 50%, var(--wm-bg) 100%);
+  }
+
+  .wm-intro-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .wm-intro-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .wm-intro-names {
+    font-family: var(--wm-font-display);
+    font-weight: 500;
+    font-size: clamp(40px, 9vw, 76px);
+    line-height: 1.1;
+    color: var(--wm-text);
+    letter-spacing: 0.06em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .wm-intro-and {
+    font-style: italic;
+    font-size: 0.7em;
+    color: var(--wm-accent);
+    margin: 4px 0;
+  }
+
+  // 타이프라이터
+  .wm-typewriter {
+    display: inline-flex;
+    align-items: baseline;
+  }
+  .wm-typewriter-text {
+    display: inline-block;
+    white-space: pre;
+  }
+  .wm-typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.9em;
+    background: var(--wm-accent);
+    margin-left: 4px;
+    transform: translateY(0.05em);
+    opacity: 1;
+  }
+  .wm-typewriter-cursor.is-blinking {
+    animation: wm-blink 1.05s steps(1, end) infinite;
+  }
+  @keyframes wm-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .wm-intro-date {
+    margin-top: 36px;
+    font-family: var(--wm-font-display);
+    font-size: 18px;
+    letter-spacing: 0.32em;
+    color: var(--wm-text);
+    text-transform: uppercase;
+  }
+  .wm-intro-venue {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--wm-text-soft);
+    letter-spacing: 0.12em;
+  }
+
+  .wm-intro-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--wm-text-soft);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .wm-intro-scroll svg {
+    width: 14px;
+    height: 22px;
+    animation: wm-scroll-bounce 1.6s ease-in-out infinite;
+  }
+  @keyframes wm-scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(6px); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wm-intro-scroll svg { animation: none; }
+    .wm-typewriter-cursor.is-blinking { animation: none; }
+  }
+}

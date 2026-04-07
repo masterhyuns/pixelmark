@@ -1,0 +1,148 @@
+// ============================================================
+// Intro — 풀스크린 파스텔 그라데이션
+// ============================================================
+
+.baby-celebration {
+  .bc-intro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 100px;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--bc-bg) 0%, var(--bc-pink-soft) 100%);
+  }
+
+  .bc-intro-decor {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    z-index: 0;
+  }
+  .bc-intro-decor::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 248, 244, 0.6) 0%, rgba(255, 248, 244, 0.85) 100%);
+  }
+
+  .bc-intro-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bc-intro-eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .bc-intro-name {
+    font-family: var(--bc-font-display);
+    font-weight: 700;
+    font-size: clamp(40px, 9vw, 68px);
+    color: var(--bc-text);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .bc-intro-name strong {
+    color: var(--bc-pink);
+    font-weight: 700;
+  }
+
+  .bc-intro-sub {
+    font-family: var(--bc-font-display);
+    font-size: 18px;
+    color: var(--bc-text-soft);
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+  }
+
+  .bc-intro-parents {
+    font-size: 14px;
+    color: var(--bc-text);
+    margin-bottom: 20px;
+  }
+  .bc-intro-parents strong {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    color: var(--bc-text);
+    margin: 0 4px;
+  }
+
+  .bc-intro-date-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--bc-pink-soft);
+    border-radius: 999px;
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    color: var(--bc-text);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(6px);
+  }
+  .bc-intro-date-pill svg {
+    width: 16px;
+    height: 16px;
+    color: var(--bc-pink);
+  }
+
+  // 둥둥 떠다니는 데코 SVG
+  .bc-intro-float {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    color: var(--bc-pink);
+    opacity: 0.7;
+    z-index: 1;
+  }
+  .bc-intro-float-1 { top: 14%; left: 12%; }
+  .bc-intro-float-2 { top: 22%; right: 10%; color: var(--bc-peach); }
+  .bc-intro-float-3 { bottom: 22%; left: 10%; color: var(--bc-gold); width: 40px; height: 40px; }
+  .bc-intro-float-4 { bottom: 18%; right: 14%; color: var(--bc-pink); width: 48px; height: 48px; }
+
+  @media (max-width: 640px) {
+    .bc-intro-float { width: 42px; height: 42px; }
+    .bc-intro-float-1 { top: 12%; left: 6%; }
+    .bc-intro-float-2 { top: 16%; right: 6%; }
+    .bc-intro-float-3 { bottom: 16%; left: 8%; width: 32px; height: 32px; }
+    .bc-intro-float-4 { bottom: 14%; right: 8%; width: 36px; height: 36px; }
+  }
+
+  .bc-intro-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--bc-text-soft);
+    font-family: var(--bc-font-display);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .bc-intro-scroll svg {
+    width: 16px;
+    height: 22px;
+    animation: bc-scroll-bounce 1.6s ease-in-out infinite;
+  }
+  @keyframes bc-scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50% { transform: translateY(6px); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bc-intro-scroll svg { animation: none; }
+  }
+}

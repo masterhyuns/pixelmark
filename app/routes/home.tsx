@@ -221,29 +221,41 @@ export default function Home() {
           </div>
 
           <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <div
-                key={service.name}
-                className="service-card-item p-6 rounded-xl bg-[#111111] border border-white/5 hover:border-white/10 transition-colors duration-300"
-              >
-                {/* Lucide 아이콘 컴포넌트를 데이터에서 꺼내 렌더. size/strokeWidth로 정밀 제어 */}
-                <div className="mb-4 text-[#2563eb]" aria-hidden="true">
-                  <service.icon size={32} strokeWidth={1.75} />
+            {services.map((service) => {
+              /**
+               * 서비스 카드 본문.
+               * service.link가 있으면 Link로 감싸 카드 전체 클릭 가능 (PREMIUM 안내 페이지 등).
+               * 없으면 기존처럼 정적 div로 렌더 → 데이터 주도 분기로 home.tsx에 하드코딩 없음.
+               * GSAP 셀렉터 .service-card-item 위치는 그대로 유지해 애니메이션 영향 없음.
+               */
+              const inner = (
+                <div className="service-card-item p-6 rounded-xl bg-[#111111] border border-white/5 hover:border-white/10 transition-colors duration-300 h-full">
+                  {/* Lucide 아이콘 컴포넌트를 데이터에서 꺼내 렌더. size/strokeWidth로 정밀 제어 */}
+                  <div className="mb-4 text-[#2563eb]" aria-hidden="true">
+                    <service.icon size={32} strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">{service.name}</h3>
+                  <p className="text-[#666666] text-sm leading-relaxed mb-5">{service.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {service.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 rounded text-xs text-[#aaaaaa] bg-white/5 border border-white/5"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{service.name}</h3>
-                <p className="text-[#666666] text-sm leading-relaxed mb-5">{service.description}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {service.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded text-xs text-[#aaaaaa] bg-white/5 border border-white/5"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              )
+              return service.link ? (
+                <Link key={service.name} to={service.link} className="block">
+                  {inner}
+                </Link>
+              ) : (
+                <div key={service.name}>{inner}</div>
+              )
+            })}
           </div>
         </div>
       </section>

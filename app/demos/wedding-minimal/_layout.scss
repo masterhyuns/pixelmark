@@ -1,0 +1,78 @@
+// ============================================================
+// E-S1 Wedding Minimal — 레이아웃 / 공통 컴포넌트
+// ============================================================
+//
+// [핵심 원칙]
+// - max-width 680px 중앙 정렬 (청첩장은 모바일 우선이지만 PC에서도 좁은 폭 유지)
+// - 좌우 패딩 24px (모바일) ~ 32px (PC)
+// - 섹션 간 큰 여백
+
+.wedding-minimal {
+  .wm-container {
+    width: 100%;
+    max-width: var(--wm-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  @media (min-width: 768px) {
+    .wm-container { padding: 0 32px; }
+  }
+
+  // 섹션 공통 패딩
+  .wm-section {
+    padding-top: var(--wm-section-pad-y);
+    padding-bottom: var(--wm-section-pad-y);
+  }
+
+  // 가는 디바이더 라인 (섹션 사이 절제된 구분)
+  .wm-divider {
+    width: 1px;
+    height: 60px;
+    background: var(--wm-border);
+    margin: 0 auto;
+  }
+
+  // 섹션 타이틀 (디스플레이 세리프)
+  .wm-section-title {
+    font-family: var(--wm-font-display);
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--wm-text);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+
+  .wm-section-eyebrow {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .wm-section-title { font-size: 38px; }
+  }
+
+  // 토스트 (계좌 복사 결과)
+  .wm-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 16px);
+    padding: 12px 22px;
+    background: var(--wm-text);
+    color: var(--wm-bg);
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    box-shadow: var(--wm-shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+  }
+  .wm-toast.is-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

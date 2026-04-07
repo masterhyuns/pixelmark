@@ -1,0 +1,148 @@
+// ============================================================
+// Growth — 성장 타임라인 슬라이더 ⭐ 시그니처
+// ============================================================
+
+.baby-celebration {
+  .bc-growth {
+    background: linear-gradient(180deg, var(--bc-bg) 0%, var(--bc-bg-soft) 100%);
+  }
+
+  .bc-growth-slider {
+    position: relative;
+    outline: none;
+  }
+
+  // 좌우 PC 버튼
+  .bc-growth-prev,
+  .bc-growth-next {
+    position: absolute;
+    top: 42%;
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--bc-text);
+    box-shadow: var(--bc-shadow);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .bc-growth-prev { left: -8px; }
+  .bc-growth-next { right: -8px; }
+  .bc-growth-prev:hover:not(:disabled),
+  .bc-growth-next:hover:not(:disabled) {
+    transform: scale(1.08);
+    background: var(--bc-pink);
+    color: #ffffff;
+  }
+  .bc-growth-prev:disabled,
+  .bc-growth-next:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .bc-growth-prev svg,
+  .bc-growth-next svg { width: 18px; height: 18px; }
+
+  @media (min-width: 1024px) {
+    .bc-growth-prev,
+    .bc-growth-next { display: inline-flex; }
+  }
+
+  // 뷰포트 / 트랙
+  .bc-growth-viewport {
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+    padding: 12px 4px 32px;
+  }
+  .bc-growth-slider.is-dragging .bc-growth-viewport {
+    cursor: grabbing;
+  }
+
+  .bc-growth-track {
+    display: flex;
+    gap: 24px;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .bc-growth-card {
+    flex: 0 0 80%;
+    background: #ffffff;
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--bc-shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 640px) { .bc-growth-card { flex-basis: 60%; } }
+  @media (min-width: 1024px) { .bc-growth-card { flex-basis: 45%; gap: 28px; } }
+
+  .bc-growth-card-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bc-bg-soft);
+  }
+  .bc-growth-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .bc-growth-card-body {
+    padding: 22px 22px 28px;
+    text-align: center;
+  }
+  .bc-growth-card-month {
+    display: inline-block;
+    padding: 4px 14px;
+    background: var(--bc-pink-soft);
+    color: var(--bc-text);
+    border-radius: 999px;
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .bc-growth-card-title {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--bc-text);
+    margin-bottom: 8px;
+  }
+  .bc-growth-card-caption {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--bc-text-soft);
+  }
+
+  // 인디케이터
+  .bc-growth-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .bc-growth-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bc-pink-soft);
+    transition: width 0.3s ease, background 0.3s ease;
+    border: 0;
+    padding: 0;
+  }
+  .bc-growth-dot.is-active {
+    width: 28px;
+    border-radius: 999px;
+    background: var(--bc-pink);
+  }
+}

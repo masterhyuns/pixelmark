@@ -1,0 +1,112 @@
+// ============================================================
+// Details — 결혼식 정보 (날짜/장소/카운트다운/지도/오시는 길)
+// ============================================================
+
+.wedding-minimal {
+  .wm-details {
+    text-align: center;
+  }
+
+  .wm-details-date {
+    font-family: var(--wm-font-display);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--wm-text);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .wm-details-time {
+    font-size: 14px;
+    color: var(--wm-text-soft);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .wm-details-venue {
+    font-size: 16px;
+    color: var(--wm-text);
+    margin-bottom: 4px;
+  }
+  .wm-details-address {
+    font-size: 13px;
+    color: var(--wm-text-soft);
+    margin-bottom: 40px;
+  }
+
+  // 카운트다운
+  .wm-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 0 auto 48px;
+    max-width: 440px;
+    padding: 24px 16px;
+    border-top: 1px solid var(--wm-border);
+    border-bottom: 1px solid var(--wm-border);
+  }
+  .wm-countdown-cell {
+    text-align: center;
+  }
+  .wm-countdown-num {
+    font-family: var(--wm-font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--wm-text);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .wm-countdown-label {
+    margin-top: 6px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wm-text-soft);
+  }
+
+  // 지도
+  .wm-map {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--wm-bg-soft);
+    border: 1px solid var(--wm-border);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .wm-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  // 오시는 길
+  .wm-directions {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .wm-direction-item {
+    padding: 16px 20px;
+    border: 1px solid var(--wm-border);
+    background: var(--wm-bg);
+  }
+  .wm-direction-type {
+    font-family: var(--wm-font-display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--wm-accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .wm-direction-desc {
+    font-size: 14px;
+    color: var(--wm-text);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 520px) {
+    .wm-details-date { font-size: 24px; }
+    .wm-countdown-num { font-size: 26px; }
+  }
+}

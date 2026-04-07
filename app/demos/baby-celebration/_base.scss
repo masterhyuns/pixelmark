@@ -1,0 +1,71 @@
+// ============================================================
+// E-S2 Baby Celebration — 베이스 (타이포 / 페이드 / 둥둥 keyframes)
+// ============================================================
+
+.baby-celebration {
+  background: var(--bc-bg);
+  color: var(--bc-text);
+  font-family: var(--bc-font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  min-height: 100vh;
+
+  .bc-display {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  // 작은 디스플레이 라벨
+  .bc-eyebrow {
+    font-family: var(--bc-font-display);
+    font-weight: 500;
+    color: var(--bc-pink);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .bc-prose p {
+    color: var(--bc-text);
+    line-height: 1.9;
+  }
+  .bc-prose p + p { margin-top: 1em; }
+}
+
+// 스크롤 reveal
+.baby-celebration [data-bc-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.baby-celebration [data-bc-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// 둥둥 떠오르는 모션 (floatingDecor 모듈이 .is-floating 부여)
+@keyframes bc-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.baby-celebration [data-bc-float].is-floating {
+  animation: bc-float var(--bc-float-duration, 5s) ease-in-out infinite;
+  animation-delay: var(--bc-float-delay, 0s);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .baby-celebration [data-bc-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .baby-celebration [data-bc-float].is-floating {
+    animation: none;
+  }
+}

@@ -1,0 +1,79 @@
+// ============================================================
+// Story — 우리 이야기 (좌우 교차 챕터)
+// ============================================================
+
+.wedding-minimal {
+  .wm-story {
+    background: var(--wm-bg);
+  }
+
+  .wm-story-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .wm-story-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .wm-story-item:nth-child(even) .wm-story-text {
+    order: 2;
+  }
+  .wm-story-item:nth-child(even) .wm-story-image {
+    order: 1;
+  }
+
+  .wm-story-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--wm-bg-soft);
+    border-radius: 2px;
+  }
+  .wm-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+  }
+  .wm-story-item:hover .wm-story-image img {
+    transform: scale(1.04);
+  }
+
+  .wm-story-chapter {
+    font-family: var(--wm-font-display);
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wm-accent);
+    margin-bottom: 12px;
+  }
+  .wm-story-title {
+    font-family: var(--wm-font-display);
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--wm-text);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .wm-story-body {
+    color: var(--wm-text);
+    font-size: 15px;
+    line-height: 1.95;
+  }
+
+  @media (max-width: 767px) {
+    .wm-story-list { gap: 56px; }
+    .wm-story-item {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .wm-story-item:nth-child(even) .wm-story-text { order: 0; }
+    .wm-story-item:nth-child(even) .wm-story-image { order: 0; }
+    .wm-story-image { aspect-ratio: 4 / 3; }
+    .wm-story-title { font-size: 22px; }
+  }
+}

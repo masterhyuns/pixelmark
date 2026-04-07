@@ -1,0 +1,16 @@
+// ============================================================
+// E-S2 Baby Celebration — SCSS 진입점
+// ============================================================
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/intro";
+@use "sections/greeting";
+@use "sections/growth";
+@use "sections/details";
+@use "sections/gift";
+@use "sections/footer";

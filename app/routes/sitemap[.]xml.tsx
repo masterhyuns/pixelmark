@@ -30,11 +30,14 @@ const STATIC_ROUTES: Array<{ path: string; priority: string; changefreq: string 
   { path: "/projects", priority: "0.9", changefreq: "weekly" },
   { path: "/about", priority: "0.7", changefreq: "monthly" },
   { path: "/contact", priority: "0.6", changefreq: "monthly" },
+  { path: "/services/premium", priority: "0.8", changefreq: "monthly" },
 
   // 데모 라우트 (Pixelmark의 실제 퍼블리싱 결과물)
   { path: "/demos/beauty-landing", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/cafe-restaurant", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/personal-portfolio", priority: "0.7", changefreq: "monthly" },
+  { path: "/demos/wedding-minimal", priority: "0.7", changefreq: "monthly" },
+  { path: "/demos/baby-celebration", priority: "0.7", changefreq: "monthly" },
 
   // S-2 law-office는 멀티페이지 구조 → 5개 sub-route 모두 노출
   { path: "/demos/law-office", priority: "0.7", changefreq: "monthly" },

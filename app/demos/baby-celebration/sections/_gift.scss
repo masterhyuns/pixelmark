@@ -1,0 +1,55 @@
+// ============================================================
+// Gift — 답례품 카드
+// ============================================================
+
+.baby-celebration {
+  .bc-gift-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 640px) {
+    .bc-gift-grid { grid-template-columns: 1fr; }
+  }
+
+  .bc-gift-card {
+    background: #ffffff;
+    border: 1px solid var(--bc-border);
+    border-radius: var(--bc-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--bc-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .bc-gift-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 22px 60px rgba(255, 182, 182, 0.25);
+  }
+
+  .bc-gift-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bc-bg-soft);
+  }
+  .bc-gift-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bc-gift-body {
+    padding: 18px 20px 22px;
+    text-align: center;
+  }
+  .bc-gift-title {
+    font-family: var(--bc-font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--bc-text);
+    margin-bottom: 6px;
+  }
+  .bc-gift-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--bc-text-soft);
+  }
+}

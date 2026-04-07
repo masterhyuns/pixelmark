@@ -12,7 +12,7 @@ import { initWorkPreview } from "~/demos/personal-portfolio/modules/workPreview"
 import { initScrollReveal } from "~/demos/personal-portfolio/modules/scrollReveal"
 import { works, skills, career } from "~/demos/personal-portfolio/data/portfolio"
 // About 섹션 프로필 사진 (Vite asset import)
-import profileUrl from "~/demos/personal-portfolio/assets/images/about/profile.jpg"
+import profileUrl from "~/demos/personal-portfolio/assets/images/about/profile.webp"
 
 /**
  * S-4 Personal Portfolio — 미니멀 개인 포트폴리오 데모

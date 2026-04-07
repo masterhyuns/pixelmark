@@ -40,11 +40,14 @@ export default {
       "/projects",
       "/about",
       "/contact",
+      "/services/premium",
 
       // 데모 라우트 (S-1, S-3, S-4 — 단일 라우트)
       "/demos/beauty-landing",
       "/demos/cafe-restaurant",
       "/demos/personal-portfolio",
+      "/demos/wedding-minimal",
+      "/demos/baby-celebration",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

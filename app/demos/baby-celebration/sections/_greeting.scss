@@ -1,0 +1,44 @@
+// ============================================================
+// Greeting — 부모 인사
+// ============================================================
+
+.baby-celebration {
+  .bc-greeting {
+    text-align: center;
+  }
+  .bc-greeting-body p {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--bc-text);
+  }
+  .bc-greeting-body p + p {
+    margin-top: 14px;
+  }
+
+  .bc-greeting-info {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 40px;
+    padding: 22px 32px;
+    background: var(--bc-bg-soft);
+    border-radius: var(--bc-radius);
+    border: 1px solid var(--bc-border);
+  }
+  .bc-greeting-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 14px;
+  }
+  .bc-greeting-info-label {
+    font-family: var(--bc-font-display);
+    color: var(--bc-text-soft);
+    font-weight: 500;
+  }
+  .bc-greeting-info-value {
+    font-family: var(--bc-font-display);
+    color: var(--bc-text);
+    font-weight: 600;
+  }
+}

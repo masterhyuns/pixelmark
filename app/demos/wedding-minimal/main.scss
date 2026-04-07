@@ -1,0 +1,25 @@
+// ============================================================
+// E-S1 Wedding Minimal — SCSS 진입점
+// ============================================================
+//
+// [import 순서]
+// 1. variables — :root CSS 변수
+// 2. reset — .wedding-minimal 스코프 reset
+// 3. base — 타이포/배경
+// 4. layout — 컨테이너/섹션/토스트
+// 5. demo-chrome — DemoHeaderBar/FloatingHome 색상 override
+// 6. sections — 7개 섹션
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/intro";
+@use "sections/greeting";
+@use "sections/story";
+@use "sections/gallery";
+@use "sections/details";
+@use "sections/account";
+@use "sections/footer";
