@@ -1,0 +1,38 @@
+// ============================================================
+// E-S3 Popup Vivid — 레이아웃 / 공통
+// ============================================================
+
+.popup-vivid {
+  .pv-container {
+    width: 100%;
+    max-width: var(--pv-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .pv-container { padding: 0 40px; }
+  }
+
+  .pv-section {
+    padding-top: var(--pv-section-pad-y);
+    padding-bottom: var(--pv-section-pad-y);
+  }
+
+  .pv-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 64px;
+    max-width: 760px;
+  }
+
+  .pv-section-title {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--pv-text);
+    text-transform: uppercase;
+  }
+}

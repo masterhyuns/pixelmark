@@ -1,0 +1,15 @@
+// ============================================================
+// E-S3 Popup Vivid — SCSS 진입점
+// ============================================================
+
+@use "variables";
+@use "reset";
+@use "base";
+@use "layout";
+@use "demo-chrome";
+
+@use "sections/hero";
+@use "sections/concept";
+@use "sections/brands";
+@use "sections/info";
+@use "sections/footer";

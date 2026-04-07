@@ -1,0 +1,205 @@
+// ============================================================
+// Hero — 풀스크린 비비드 그라데이션 + 거대 카운트다운
+// ============================================================
+
+.popup-vivid {
+  .pv-hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    isolation: isolate; // mix-blend 격리
+  }
+
+  // 그라데이션 배경 (gradientAnim 모듈이 --pv-hero-hue 갱신)
+  .pv-hero-bg {
+    position: absolute;
+    inset: -10%;
+    z-index: 0;
+    background: linear-gradient(
+      135deg,
+      var(--pv-pink) 0%,
+      var(--pv-orange) 45%,
+      var(--pv-yellow) 100%
+    );
+    filter: hue-rotate(var(--pv-hero-hue, 0deg)) saturate(1.15);
+    will-change: filter;
+  }
+
+  // 텍스처용 webp 오버레이 (mix-blend로 살짝 얹음)
+  .pv-hero-texture {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: overlay;
+    opacity: 0.55;
+  }
+
+  .pv-hero-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at top left, rgba(255, 255, 255, 0.18), transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.18), transparent 55%);
+  }
+
+  .pv-hero-inner {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 120px 24px 60px;
+    width: 100%;
+    max-width: var(--pv-max-width);
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+    .pv-hero-inner { padding: 140px 40px 80px; }
+  }
+
+  .pv-hero-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  .pv-hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .pv-hero-pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    animation: pv-pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pv-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .pv-hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: right;
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.92;
+  }
+
+  // 거대 캠페인 타이포 (3행)
+  .pv-hero-title {
+    font-family: var(--pv-font-display);
+    font-weight: 900;
+    font-size: clamp(58px, 14vw, 200px);
+    line-height: 0.85;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 28px;
+  }
+  .pv-hero-title span {
+    display: block;
+  }
+  .pv-hero-title span:nth-child(2) {
+    padding-left: clamp(20px, 8vw, 120px);
+  }
+  .pv-hero-title span:nth-child(3) {
+    padding-left: clamp(40px, 16vw, 240px);
+  }
+
+  .pv-hero-slogan {
+    font-family: var(--pv-font-display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(18px, 2.4vw, 28px);
+    margin-bottom: 12px;
+    opacity: 0.95;
+  }
+  .pv-hero-tagline {
+    max-width: 540px;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 56px;
+  }
+
+  // 거대 카운트다운
+  .pv-hero-countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 16px 0;
+  }
+  .pv-hero-countdown-cell {
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .pv-hero-countdown-cell:last-child { border-right: 0; }
+
+  .pv-hero-countdown-num {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: clamp(48px, 12vw, 168px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+  }
+  .pv-hero-countdown-label {
+    margin-top: 8px;
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .pv-hero-bottom {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--pv-font-display);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  @media (max-width: 640px) {
+    .pv-hero-bottom { flex-direction: column; gap: 6px; align-items: center; text-align: center; }
+    .pv-hero-meta { text-align: left; }
+  }
+}

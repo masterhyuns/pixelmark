@@ -1,0 +1,39 @@
+// ============================================================
+// Footer
+// ============================================================
+
+.popup-vivid {
+  .pv-footer {
+    background: var(--pv-text);
+    color: #ffffff;
+    padding: 80px 24px 60px;
+    text-align: center;
+  }
+  .pv-footer-thanks {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: clamp(40px, 7vw, 88px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    background: linear-gradient(90deg, var(--pv-pink), var(--pv-orange), var(--pv-yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .pv-footer-sub {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 36px;
+  }
+  .pv-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 11px;
+    line-height: 1.7;
+    opacity: 0.6;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}

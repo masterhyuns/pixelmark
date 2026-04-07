@@ -35,6 +35,7 @@ import crHeroUrl from "~/demos/cafe-restaurant/assets/hero/hero-bg.webp"
 import ppWork1Url from "~/demos/personal-portfolio/assets/images/works/work-1-orbit-finance.webp"
 import wmGalleryUrl from "~/demos/wedding-minimal/assets/images/gallery/gallery-main.webp"
 import bcGrowthUrl from "~/demos/baby-celebration/assets/images/growth/growth-12m.webp"
+import pvHeroUrl from "~/demos/popup-vivid/assets/images/hero/hero-gradient.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -255,6 +256,43 @@ export const projects: Project[] = [
       {
         title: "모바일 우선 반응형",
         description: "초대장 사용자의 90% 이상이 모바일이라는 점을 반영해 max-width 720px 중앙 정렬을 기본으로, 카드 폭과 카운트다운/지도 비율을 모바일 가독성에 맞춰 조정했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "popup-vivid",
+    title: "팝업스토어 / 마케팅 캠페인",
+    subtitle: "비비드 그라데이션과 거대 카운트다운으로 임팩트를 살린 단기 캠페인 안내 페이지",
+    category: "event",
+    tier: "standard",
+    industry: "팝업스토어 / 캠페인",
+    duration: "1주",
+    order: 7,
+    demoUrl: "/demos/popup-vivid",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Inter Tight", "rAF"],
+    description:
+      "비비드 핑크·오렌지·옐로우 그라데이션과 Inter Tight 큰 산세리프로 구성한 트렌디 캠페인 안내 페이지 데모입니다. 풀스크린 히어로의 그라데이션은 60초 사이클로 천천히 hue가 회전하며, 거대 D-day 카운트다운이 1초마다 갱신됩니다. 컨셉, 입점 브랜드 카드 그리드, 일정·장소 정보, 카카오맵, SNS 해시태그까지 5개 섹션을 단일 라우트에 담았습니다.",
+    thumbnail: pvHeroUrl,
+    highlights: [
+      {
+        title: "비비드 그라데이션 히어로",
+        description: "핑크·오렌지·옐로우 linear-gradient에 hue-rotate CSS 변수를 rAF로 60초 사이클 회전시켜 정적 이미지 없이 살아 있는 배경을 만들었습니다. prefers-reduced-motion 사용자에겐 자동으로 정지합니다.",
+      },
+      {
+        title: "거대 D-day 카운트다운",
+        description: "캠페인 시작까지 남은 일/시/분/초를 1초마다 갱신합니다. 숫자는 clamp로 모바일에서도 임팩트를 유지하고, tabular-nums로 떨림을 막았습니다.",
+      },
+      {
+        title: "컨셉 비주얼 + 비대칭 레이아웃",
+        description: "텍스트와 이미지의 1 : 1.2 비대칭 그리드와 \"VOL.01\" 핑크 칩으로 캠페인 시즌성을 강조했습니다. 이미지 hover 시 미세 줌으로 생동감을 더했습니다.",
+      },
+      {
+        title: "입점 브랜드 카드 그리드",
+        description: "3개 가상 브랜드 카드에 색상 액센트 띠를 inline CSS 변수로 주입해 동일 컴포넌트로 다양한 톤을 표현했습니다. hover 시 translateY와 그림자가 함께 작동합니다.",
+      },
+      {
+        title: "정보 섹션 + 카카오맵 + 해시태그",
+        description: "Schedule / Hours / Venue 3행 정보 표, 카카오맵 iframe, SNS 해시태그 칩까지 캠페인 안내에 필요한 모든 요소를 한 섹션에 정리했습니다.",
       },
     ],
   },

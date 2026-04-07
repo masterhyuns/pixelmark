@@ -1,0 +1,86 @@
+// ============================================================
+// Brands — 입점 브랜드 카드 그리드
+// ============================================================
+
+.popup-vivid {
+  .pv-brands {
+    background: var(--pv-bg-soft);
+  }
+
+  .pv-brands-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 768px) {
+    .pv-brands-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .pv-brand-card {
+    position: relative;
+    background: var(--pv-bg);
+    border: 1px solid var(--pv-border);
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .pv-brand-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.1);
+  }
+
+  // 상단 색상 띠 (브랜드별 액센트 — inline style로 var 주입)
+  .pv-brand-card::before {
+    content: "";
+    display: block;
+    height: 6px;
+    background: var(--pv-brand-color, var(--pv-pink));
+  }
+
+  .pv-brand-image {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--pv-bg-soft);
+  }
+  .pv-brand-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .pv-brand-card:hover .pv-brand-image img {
+    transform: scale(1.04);
+  }
+
+  .pv-brand-body {
+    padding: 22px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .pv-brand-code {
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--pv-brand-color, var(--pv-pink));
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pv-brand-name {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--pv-text);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .pv-brand-desc {
+    color: var(--pv-text-soft);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}

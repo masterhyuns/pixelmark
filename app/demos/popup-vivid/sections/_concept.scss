@@ -1,0 +1,76 @@
+// ============================================================
+// Concept — 비대칭 2열 (텍스트 + 큰 이미지)
+// ============================================================
+
+.popup-vivid {
+  .pv-concept {
+    background: var(--pv-bg);
+  }
+
+  .pv-concept-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px;
+    align-items: end;
+  }
+  @media (min-width: 1024px) {
+    .pv-concept-grid {
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+    }
+  }
+
+  .pv-concept-body {
+    max-width: 480px;
+  }
+  .pv-concept-title {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--pv-text);
+    margin: 16px 0 28px;
+  }
+  .pv-concept-paragraphs p {
+    color: var(--pv-text-soft);
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .pv-concept-paragraphs p + p { margin-top: 14px; }
+
+  .pv-concept-image {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--pv-bg-soft);
+    border-radius: 4px;
+  }
+  @media (min-width: 1024px) {
+    .pv-concept-image { aspect-ratio: 5 / 6; }
+  }
+  .pv-concept-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.4s ease;
+  }
+  .pv-concept-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .pv-concept-image::after {
+    content: "VOL.01";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    background: var(--pv-pink);
+    color: #ffffff;
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    border-radius: 999px;
+  }
+}

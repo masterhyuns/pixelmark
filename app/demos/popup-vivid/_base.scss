@@ -1,0 +1,66 @@
+// ============================================================
+// E-S3 Popup Vivid — 베이스 (Inter Tight 타이포 / 페이드)
+// ============================================================
+
+.popup-vivid {
+  background: var(--pv-bg);
+  color: var(--pv-text);
+  font-family: var(--pv-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0;
+  min-height: 100vh;
+
+  .pv-display {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+
+  .pv-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    color: var(--pv-pink);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pv-eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background: var(--pv-pink);
+  }
+
+  .pv-prose p {
+    color: var(--pv-text);
+    line-height: 1.75;
+  }
+  .pv-prose p + p { margin-top: 1em; }
+}
+
+// 스크롤 reveal
+.popup-vivid [data-pv-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.popup-vivid [data-pv-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popup-vivid [data-pv-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
