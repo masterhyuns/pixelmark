@@ -1,0 +1,21 @@
+:root {
+  --wcine-bg: #0a0a0a;
+  --wcine-bg-soft: #141414;
+  --wcine-text: #f5f5f5;
+  --wcine-text-soft: #888888;
+  --wcine-text-muted: #555555;
+  --wcine-gold: #d4af37;
+  --wcine-red: #c9302c;
+  --wcine-border: #2a2a2a;
+
+  --wcine-font-display: "Bebas Neue", "Anton", "Pretendard", sans-serif;
+  --wcine-font-body: "Pretendard", -apple-system, sans-serif;
+  --wcine-font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --wcine-max-width: 1180px;
+  --wcine-section-pad-y: 120px;
+}
+
+@media (max-width: 767px) {
+  :root { --wcine-section-pad-y: 80px; }
+}

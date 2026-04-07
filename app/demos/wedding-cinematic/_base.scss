@@ -1,0 +1,77 @@
+.wedding-cinematic {
+  background: var(--wcine-bg);
+  color: var(--wcine-text);
+  font-family: var(--wcine-font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  min-height: 100vh;
+
+  .wcine-display {
+    font-family: var(--wcine-font-display);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 0.92;
+  }
+  .wcine-mono {
+    font-family: var(--wcine-font-mono);
+    font-feature-settings: "tnum";
+  }
+
+  .wcine-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--wcine-font-display);
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    color: var(--wcine-gold);
+  }
+  .wcine-eyebrow::before,
+  .wcine-eyebrow::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .wcine-prose p {
+    color: var(--wcine-text);
+    font-family: var(--wcine-font-body);
+    line-height: 1.95;
+  }
+  .wcine-prose p + p { margin-top: 1em; }
+}
+
+// 단계별 reveal (히어로용)
+.wedding-cinematic [data-wcine-reveal-step] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.wedding-cinematic [data-wcine-reveal-step].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// 일반 reveal
+.wedding-cinematic [data-wcine-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.wedding-cinematic [data-wcine-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-cinematic [data-wcine-reveal-step],
+  .wedding-cinematic [data-wcine-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

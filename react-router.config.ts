@@ -61,6 +61,7 @@ export default {
       "/demos/wedding-vivid",
       "/demos/reunion-retro",
       "/demos/openhouse-arch",
+      "/demos/wedding-cinematic",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

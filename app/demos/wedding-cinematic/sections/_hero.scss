@@ -1,0 +1,108 @@
+.wedding-cinematic {
+  .wcine-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    overflow: hidden;
+  }
+  .wcine-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.45) contrast(1.1);
+  }
+  .wcine-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at center, transparent 20%, rgba(10, 10, 10, 0.85) 100%),
+      linear-gradient(180deg, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.95) 100%);
+  }
+
+  // 미세한 필름 grain
+  .wcine-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 25% 35%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 75% 65%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+  }
+
+  .wcine-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 920px;
+  }
+
+  .wcine-hero-presents {
+    font-family: var(--wcine-font-display);
+    font-size: clamp(13px, 1.6vw, 18px);
+    letter-spacing: 0.42em;
+    color: var(--wcine-gold);
+    margin-bottom: 60px;
+  }
+
+  .wcine-hero-title {
+    font-family: var(--wcine-font-display);
+    font-weight: 400;
+    font-size: clamp(56px, 11vw, 144px);
+    line-height: 0.92;
+    letter-spacing: 0.02em;
+    color: var(--wcine-text);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .wcine-hero-subtitle {
+    font-family: var(--wcine-font-display);
+    font-size: clamp(16px, 1.8vw, 22px);
+    letter-spacing: 0.12em;
+    color: var(--wcine-text-soft);
+    margin-bottom: 36px;
+  }
+  .wcine-hero-tagline {
+    font-family: var(--wcine-font-body);
+    font-style: italic;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--wcine-text);
+    max-width: 480px;
+    margin: 0 auto 56px;
+    opacity: 0.85;
+  }
+
+  .wcine-hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 22px;
+    border: 1px solid var(--wcine-border);
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(6px);
+    font-family: var(--wcine-font-display);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--wcine-text);
+  }
+  .wcine-hero-rating-icon {
+    color: var(--wcine-red);
+    font-size: 14px;
+  }
+
+  .wcine-hero-release {
+    margin-top: 64px;
+    font-family: var(--wcine-font-display);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: var(--wcine-gold);
+  }
+}

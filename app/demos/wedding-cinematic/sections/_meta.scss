@@ -1,0 +1,41 @@
+.wedding-cinematic {
+  .wcine-meta {
+    background: var(--wcine-bg);
+  }
+  .wcine-meta-sheet {
+    max-width: 720px;
+    margin: 0 auto;
+    border-top: 1px solid var(--wcine-gold);
+    border-bottom: 1px solid var(--wcine-gold);
+    padding: 8px 0;
+  }
+  .wcine-meta-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+    padding: 18px 8px;
+    border-bottom: 1px dashed var(--wcine-border);
+    align-items: baseline;
+  }
+  .wcine-meta-row:last-child { border-bottom: 0; }
+
+  .wcine-meta-label {
+    font-family: var(--wcine-font-display);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--wcine-gold);
+    text-transform: uppercase;
+  }
+  .wcine-meta-value {
+    font-family: var(--wcine-font-display);
+    font-size: clamp(20px, 2.4vw, 28px);
+    letter-spacing: 0.04em;
+    color: var(--wcine-text);
+  }
+  @media (max-width: 600px) {
+    .wcine-meta-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+}

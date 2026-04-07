@@ -43,6 +43,7 @@ import pgHeroUrl from "~/demos/party-gradient/assets/images/hero/hero.webp"
 import wvHeroUrl from "~/demos/wedding-vivid/assets/images/hero/hero.webp"
 import rrHeroUrl from "~/demos/reunion-retro/assets/images/hero/hero.webp"
 import ohHeroUrl from "~/demos/openhouse-arch/assets/images/hero/hero.webp"
+import wcineHeroUrl from "~/demos/wedding-cinematic/assets/images/hero/hero-bg.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -559,6 +560,43 @@ export const projects: Project[] = [
       {
         title: "Space Grotesk 디스플레이 타이포",
         description: "Space Grotesk Medium을 디스플레이 전반에 사용하고, Inter를 본문에 배치해 건축 잡지 같은 톤을 유지합니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-cinematic",
+    title: "영화 포스터 청첩장",
+    subtitle: "시네마틱 다크 톤과 영화 메타데이터·엔딩 크레딧으로 풀어낸 트렌디 차별화 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 15,
+    demoUrl: "/demos/wedding-cinematic",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Bebas Neue", "JetBrains Mono"],
+    description:
+      "딥 블랙과 시네마틱 골드 위에 Bebas Neue 큰 타이포로 만든 영화 포스터 청첩장 데모입니다. 가상 영화사 'PIXELMARK PICTURES PRESENTS'로 시작해 신랑신부 이름이 영화 제목처럼 등장하고, 영화 예고편 스타일로 단계별 reveal됩니다. 영화 메타데이터 시트(Director/Starring/Genre/Runtime), 영화 엔딩 크레딧 자동 스크롤(hover 일시정지), 시놉시스 드롭캡, 시네마틱 D-day까지 6섹션을 단일 라우트에 담았습니다.",
+    thumbnail: wcineHeroUrl,
+    highlights: [
+      {
+        title: "영화 예고편 스타일 단계별 reveal",
+        description: "히어로 텍스트가 6단계로 시간차 reveal됩니다. 'PRESENTS' → 제목 → 부제 → 태그라인 → 등급 → 개봉일 순서로 cumulative 딜레이(0/600/1400/2200ms...)가 적용됩니다.",
+      },
+      {
+        title: "영화 메타데이터 시트",
+        description: "Director / Starring / Genre / Runtime / Rating / Studio 6행 정보 시트. 골드 보더와 모노스페이스 라벨로 IMDB 페이지 같은 톤을 만들었습니다.",
+      },
+      {
+        title: "엔딩 크레딧 자동 스크롤 (시그니처)",
+        description: "32초 사이클로 위→아래 흐르는 영화 엔딩 크레딧. mask-image로 위/아래 페이드, hover 시 animation-play-state: paused로 일시정지. 마지막은 'FIN.' 골드 마크로 마무리.",
+      },
+      {
+        title: "시놉시스 드롭캡",
+        description: "각 시놉시스 문단의 첫 글자를 큰 골드 드롭캡으로 처리해 잡지 같은 톤을 더했습니다.",
+      },
+      {
+        title: "시네마틱 D-day + 그레이스케일 카카오맵",
+        description: "Showtime 섹션에 골드 카운트다운과 grayscale(60%) 처리한 카카오맵을 배치해 시네마틱 톤을 끝까지 유지합니다.",
       },
     ],
   },

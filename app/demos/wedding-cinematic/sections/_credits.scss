@@ -1,0 +1,80 @@
+// 시그니처: 영화 엔딩 크레딧 자동 스크롤
+.wedding-cinematic {
+  .wcine-credits {
+    background: var(--wcine-bg);
+  }
+
+  .wcine-credits-stage {
+    max-width: 760px;
+    margin: 0 auto;
+    height: 460px;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid var(--wcine-border);
+    border-bottom: 1px solid var(--wcine-border);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  }
+
+  .wcine-credits-track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    text-align: center;
+    will-change: transform;
+  }
+  .wcine-credits-track.is-rolling {
+    animation: wcine-credits 32s linear forwards;
+  }
+  .wcine-credits-track.is-static {
+    top: 0;
+    animation: none;
+  }
+  .wcine-credits-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes wcine-credits {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+  }
+
+  .wcine-credit-row {
+    padding: 18px 0;
+  }
+  .wcine-credit-role {
+    display: block;
+    font-family: var(--wcine-font-display);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    color: var(--wcine-gold);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .wcine-credit-name {
+    font-family: var(--wcine-font-display);
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: var(--wcine-text);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+
+  // 'FIN.' 마지막 마크
+  .wcine-credits-end {
+    margin-top: 36px;
+    font-family: var(--wcine-font-display);
+    font-size: 80px;
+    letter-spacing: 0.16em;
+    color: var(--wcine-gold);
+  }
+
+  .wcine-credits-hint {
+    margin-top: 16px;
+    text-align: center;
+    font-family: var(--wcine-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--wcine-text-muted);
+    text-transform: uppercase;
+  }
+}
