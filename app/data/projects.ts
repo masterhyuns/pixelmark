@@ -41,6 +41,7 @@ import wcHeroUrl from "~/demos/wedding-classic/assets/images/home/home-hero.webp
 import wbHeroUrl from "~/demos/wedding-bohemian/assets/images/hero/hero-bg.webp"
 import pgHeroUrl from "~/demos/party-gradient/assets/images/hero/hero.webp"
 import wvHeroUrl from "~/demos/wedding-vivid/assets/images/hero/hero.webp"
+import rrHeroUrl from "~/demos/reunion-retro/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -483,6 +484,43 @@ export const projects: Project[] = [
       {
         title: "D-day 카운트다운 (히어로 하단)",
         description: "히어로 우측 하단에 4셀 카운트다운을 배치하고, 1초마다 갱신합니다. tabular-nums로 떨림을 막았습니다.",
+      },
+    ],
+  },
+  {
+    slug: "reunion-retro",
+    title: "동창회 초대장",
+    subtitle: "타자기 폰트와 세피아 톤으로 완성한 빈티지 레트로 동창회 초대장",
+    category: "event",
+    tier: "standard",
+    industry: "동창회 / 모임",
+    duration: "1주",
+    order: 13,
+    demoUrl: "/demos/reunion-retro",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Special Elite", "Lora"],
+    description:
+      "Special Elite 타자기 폰트와 Lora 세리프, 크림/브라운/빈티지 레드 색상으로 빈티지 레트로 동창회 초대장을 만들었습니다. 시그니처는 '20년을 4프레임으로' 추억 타임라인 — 2005/2010/2015/2020 4개 마일스톤을 좌우 교차 레이아웃으로 배치하고 모든 사진에 sepia 필터를 적용해 빈티지 인상을 강화했습니다. 빈티지 스탬프형 D-day, 종이 텍스처 배경, RSVP Mock 폼까지 6섹션을 단일 라우트에 담았습니다.",
+    thumbnail: rrHeroUrl,
+    highlights: [
+      {
+        title: "추억 타임라인 (시그니처)",
+        description: "2005/2010/2015/2020 4개 연도 카드를 중앙선 기준 좌우 교차로 배치. 각 카드는 연도 / 한글 제목 / 영문 제목 / 본문으로 구성되고 사진에는 sepia 필터가 들어갑니다. 진입 시 좌우에서 슬라이드인.",
+      },
+      {
+        title: "타자기 + 세리프 하이브리드",
+        description: "Special Elite(타자기)를 디스플레이/eyebrow/D-day, Lora(세리프)를 본문에 배치해 빈티지 신문 같은 톤을 만들었습니다.",
+      },
+      {
+        title: "빈티지 스탬프 D-day",
+        description: "히어로 하단의 D-day는 -2° 기울어진 빈티지 스탬프 박스 안에 4셀 카운트다운으로 표현. 2px 솔리드 빈티지 레드 보더로 인쇄물 느낌을 살렸습니다.",
+      },
+      {
+        title: "종이 텍스처 배경",
+        description: "옅은 brown radial-gradient 두 개를 겹쳐 종이 위에 인쇄된 듯한 미세 텍스처를 만들었습니다. 외부 이미지 없이 CSS만으로 처리.",
+      },
+      {
+        title: "RSVP Mock + 빈티지 스탬프 모달",
+        description: "참석 여부 + 인원 Mock 폼. 제출 시 -1° 기울어진 빈티지 종이 모달이 떠오르며 'RECEIVED' 빈티지 스탬프 라벨과 함께 안내합니다.",
       },
     ],
   },

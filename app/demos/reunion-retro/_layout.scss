@@ -1,0 +1,63 @@
+.reunion-retro {
+  .rr-container {
+    width: 100%;
+    max-width: var(--rr-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .rr-container { padding: 0 40px; }
+  }
+
+  .rr-section {
+    padding-top: var(--rr-section-pad-y);
+    padding-bottom: var(--rr-section-pad-y);
+  }
+
+  .rr-section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .rr-section-eyebrow { margin-bottom: 16px; }
+  .rr-section-title {
+    font-family: var(--rr-font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    color: var(--rr-text);
+    margin-bottom: 12px;
+  }
+  .rr-section-sub {
+    font-family: var(--rr-font-serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--rr-text-soft);
+  }
+
+  .rr-divider {
+    width: 80px;
+    height: 1px;
+    background: var(--rr-brown);
+    margin: 0 auto;
+    opacity: 0.4;
+  }
+
+  .rr-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    font-family: var(--rr-font-display);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--rr-text);
+    color: var(--rr-bg);
+    border: 1px solid var(--rr-text);
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .rr-btn:hover {
+    background: var(--rr-red);
+    border-color: var(--rr-red);
+  }
+}

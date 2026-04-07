@@ -1,0 +1,119 @@
+// 시그니처: 추억 타임라인
+.reunion-retro {
+  .rr-timeline {
+    background: var(--rr-bg-soft);
+  }
+
+  .rr-timeline-list {
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  // 중앙선
+  .rr-timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--rr-brown);
+    opacity: 0.3;
+    transform: translateX(-50%);
+  }
+  @media (max-width: 767px) {
+    .rr-timeline-list::before {
+      left: 24px;
+    }
+  }
+
+  .rr-timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .rr-timeline-item:last-child { margin-bottom: 0; }
+
+  // 점
+  .rr-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 32px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--rr-red);
+    border: 3px solid var(--rr-bg-soft);
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .rr-timeline-card {
+    background: var(--rr-paper);
+    border: 1px solid var(--rr-border);
+    padding: 24px 26px;
+    box-shadow: 0 6px 20px rgba(44, 36, 22, 0.08);
+  }
+  .rr-timeline-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--rr-bg);
+    border: 1px solid var(--rr-border);
+  }
+  .rr-timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.35) contrast(1.05) saturate(0.85);
+  }
+
+  .rr-timeline-year {
+    font-family: var(--rr-font-display);
+    font-size: 32px;
+    line-height: 1;
+    color: var(--rr-red);
+    margin-bottom: 6px;
+  }
+  .rr-timeline-title {
+    font-family: var(--rr-font-display);
+    font-size: 18px;
+    color: var(--rr-text);
+    margin-bottom: 4px;
+  }
+  .rr-timeline-title-en {
+    font-family: var(--rr-font-serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--rr-text-soft);
+    margin-bottom: 12px;
+  }
+  .rr-timeline-body {
+    font-family: var(--rr-font-serif);
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--rr-text);
+  }
+
+  // 좌우 교차: 짝수 인덱스는 왼쪽 카드 · 오른쪽 이미지, 홀수는 반대
+  .rr-timeline-item:nth-child(even) .rr-timeline-card { order: 2; }
+  .rr-timeline-item:nth-child(even) .rr-timeline-image { order: 1; }
+
+  @media (max-width: 767px) {
+    .rr-timeline-item {
+      grid-template-columns: 1fr;
+      padding-left: 56px;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .rr-timeline-item::before {
+      left: 24px;
+    }
+    .rr-timeline-item:nth-child(even) .rr-timeline-card,
+    .rr-timeline-item:nth-child(even) .rr-timeline-image {
+      order: unset;
+    }
+  }
+}

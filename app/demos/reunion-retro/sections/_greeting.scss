@@ -1,0 +1,19 @@
+.reunion-retro {
+  .rr-greeting {
+    text-align: center;
+  }
+  .rr-greeting-body {
+    max-width: 660px;
+    margin: 0 auto;
+  }
+  .rr-greeting-body p {
+    font-family: var(--rr-font-serif);
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 2;
+    color: var(--rr-text);
+  }
+  .rr-greeting-body p + p {
+    margin-top: 16px;
+  }
+}

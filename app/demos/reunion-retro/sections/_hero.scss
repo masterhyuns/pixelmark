@@ -1,0 +1,107 @@
+.reunion-retro {
+  .rr-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .rr-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.4) contrast(1.05) saturate(0.85);
+    opacity: 0.55;
+  }
+  .rr-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(245, 230, 211, 0.5) 0%, var(--rr-bg) 100%);
+  }
+
+  .rr-hero-inner {
+    position: relative;
+    z-index: 2;
+  }
+  .rr-hero-eyebrow {
+    margin-bottom: 28px;
+  }
+  .rr-hero-title {
+    font-family: var(--rr-font-display);
+    font-size: clamp(44px, 8vw, 88px);
+    line-height: 1.05;
+    color: var(--rr-text);
+    margin-bottom: 14px;
+    letter-spacing: 0;
+  }
+  .rr-hero-school {
+    font-family: var(--rr-font-serif);
+    font-style: italic;
+    font-size: clamp(18px, 2.2vw, 24px);
+    color: var(--rr-brown);
+    margin-bottom: 8px;
+  }
+  .rr-hero-school-kr {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rr-text-soft);
+    margin-bottom: 36px;
+  }
+  .rr-hero-slogan {
+    font-family: var(--rr-font-serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--rr-text);
+    max-width: 540px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  // 빈티지 스탬프 D-day
+  .rr-hero-stamp {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 18px 30px;
+    border: 2px solid var(--rr-red);
+    background: rgba(245, 230, 211, 0.7);
+    transform: rotate(-2deg);
+  }
+  .rr-hero-stamp-label {
+    font-family: var(--rr-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--rr-red);
+    text-transform: uppercase;
+  }
+  .rr-hero-countdown {
+    display: inline-flex;
+    gap: 18px;
+    font-family: var(--rr-font-display);
+    color: var(--rr-text);
+  }
+  .rr-hero-cd-cell {
+    text-align: center;
+  }
+  .rr-hero-cd-num {
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .rr-hero-cd-label {
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rr-text-soft);
+    margin-top: 4px;
+  }
+}

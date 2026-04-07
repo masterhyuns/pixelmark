@@ -1,0 +1,21 @@
+:root {
+  --rr-bg: #f5e6d3;
+  --rr-bg-soft: #ebdcc2;
+  --rr-paper: #faf0dd;
+  --rr-text: #2c2416;
+  --rr-text-soft: #6b5a42;
+  --rr-brown: #8b4513;
+  --rr-red: #c9302c;
+  --rr-border: rgba(44, 36, 22, 0.2);
+
+  --rr-font-display: "Special Elite", "Pretendard", monospace;
+  --rr-font-serif: "Lora", "Pretendard", serif;
+  --rr-font-body: "Pretendard", -apple-system, sans-serif;
+
+  --rr-max-width: 1080px;
+  --rr-section-pad-y: 100px;
+}
+
+@media (max-width: 767px) {
+  :root { --rr-section-pad-y: 64px; }
+}

@@ -1,0 +1,113 @@
+.reunion-retro {
+  .rr-rsvp {
+    background: var(--rr-bg-soft);
+  }
+  .rr-rsvp-form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--rr-paper);
+    border: 1px solid var(--rr-border);
+    padding: 32px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(44, 36, 22, 0.08);
+  }
+  .rr-rsvp-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--rr-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--rr-text-soft);
+  }
+  .rr-rsvp-input,
+  .rr-rsvp-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 12px 16px;
+    border: 1px solid var(--rr-border);
+    background: var(--rr-bg);
+    color: var(--rr-text);
+    font-family: var(--rr-font-serif);
+    font-size: 15px;
+    transition: border-color 0.2s ease;
+  }
+  .rr-rsvp-input:focus,
+  .rr-rsvp-select:focus {
+    outline: none;
+    border-color: var(--rr-red);
+  }
+  .rr-rsvp-submit {
+    margin-top: 8px;
+  }
+
+  // 모달
+  .rr-rsvp-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(44, 36, 22, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .rr-rsvp-modal.is-open { opacity: 1; pointer-events: auto; }
+  .rr-rsvp-modal-dialog {
+    width: 100%;
+    max-width: 400px;
+    background: var(--rr-paper);
+    border: 2px solid var(--rr-text);
+    padding: 36px 32px;
+    text-align: center;
+    position: relative;
+    transform: translateY(14px) rotate(-1deg);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .rr-rsvp-modal.is-open .rr-rsvp-modal-dialog {
+    transform: translateY(0) rotate(-1deg);
+  }
+  .rr-rsvp-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--rr-border);
+    background: transparent;
+    color: var(--rr-text);
+  }
+  .rr-rsvp-modal-stamp {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 2px solid var(--rr-red);
+    color: var(--rr-red);
+    font-family: var(--rr-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    transform: rotate(-3deg);
+  }
+  .rr-rsvp-modal-title {
+    font-family: var(--rr-font-display);
+    font-size: 26px;
+    color: var(--rr-text);
+    margin-bottom: 10px;
+  }
+  .rr-rsvp-modal-desc {
+    font-family: var(--rr-font-serif);
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--rr-text-soft);
+  }
+  .rr-rsvp-modal-desc strong {
+    color: var(--rr-text);
+  }
+}

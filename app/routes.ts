@@ -62,6 +62,9 @@ export default [
     // E-S8 모던 컬러풀 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-vivid", "routes/demos/wedding-vivid.tsx"),
 
+    // E-S9 동창회 (단일 라우트, 원페이지)
+    route("demos/reunion-retro", "routes/demos/reunion-retro.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

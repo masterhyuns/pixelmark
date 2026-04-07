@@ -1,0 +1,74 @@
+.reunion-retro {
+  background: var(--rr-bg);
+  color: var(--rr-text);
+  font-family: var(--rr-font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  min-height: 100vh;
+  // 미세한 종이 텍스처(레이디얼 노이즈)
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.05) 0%, transparent 40%);
+
+  .rr-typewriter {
+    font-family: var(--rr-font-display);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .rr-serif {
+    font-family: var(--rr-font-serif);
+    font-weight: 400;
+  }
+
+  .rr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rr-font-display);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rr-red);
+  }
+  .rr-eyebrow::before,
+  .rr-eyebrow::after {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .rr-prose p {
+    font-family: var(--rr-font-serif);
+    color: var(--rr-text);
+    line-height: 1.95;
+  }
+  .rr-prose p + p { margin-top: 1em; }
+}
+
+.reunion-retro [data-rr-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.reunion-retro [data-rr-reveal][data-direction="left"] {
+  transform: translateX(-32px);
+}
+.reunion-retro [data-rr-reveal][data-direction="right"] {
+  transform: translateX(32px);
+}
+.reunion-retro [data-rr-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reunion-retro [data-rr-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
