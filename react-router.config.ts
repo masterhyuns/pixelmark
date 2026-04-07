@@ -49,6 +49,9 @@ export default {
       "/demos/wedding-minimal",
       "/demos/baby-celebration",
       "/demos/popup-vivid",
+      "/demos/conference-tech",
+      "/demos/conference-tech/speakers",
+      "/demos/conference-tech/schedule",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

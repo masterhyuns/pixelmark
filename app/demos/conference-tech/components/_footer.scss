@@ -1,0 +1,83 @@
+// ============================================================
+// 푸터
+// ============================================================
+
+.conference-tech {
+  .ct-site-footer {
+    border-top: 1px solid var(--ct-border);
+    background: var(--ct-bg-elev);
+    padding: 56px 24px 36px;
+  }
+  .ct-site-footer-inner {
+    width: 100%;
+    max-width: var(--ct-max-width);
+    margin: 0 auto;
+  }
+
+  .ct-footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--ct-border);
+  }
+  @media (min-width: 768px) {
+    .ct-footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
+  }
+
+  .ct-footer-brand {
+    font-family: var(--ct-font-mono);
+  }
+  .ct-footer-brand-logo {
+    color: var(--ct-text);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .ct-footer-brand-logo .ct-prompt { color: var(--ct-accent); }
+  .ct-footer-brand-tag {
+    color: var(--ct-text-soft);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .ct-footer-col h4 {
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ct-text-muted);
+    margin-bottom: 14px;
+  }
+  .ct-footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ct-footer-col a,
+  .ct-footer-col p {
+    font-size: 13px;
+    color: var(--ct-text-soft);
+    transition: color 0.2s ease;
+  }
+  .ct-footer-col a:hover { color: var(--ct-accent); }
+
+  .ct-footer-bottom {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+  }
+  .ct-footer-copy {
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    color: var(--ct-text-muted);
+  }
+  .ct-footer-disclaimer {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ct-text-muted);
+    max-width: 720px;
+  }
+}

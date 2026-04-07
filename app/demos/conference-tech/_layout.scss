@@ -1,0 +1,78 @@
+// ============================================================
+// E-S4 Conference Tech — 레이아웃 / 공통
+// ============================================================
+
+.conference-tech {
+  .ct-container {
+    width: 100%;
+    max-width: var(--ct-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .ct-container { padding: 0 40px; }
+  }
+
+  .ct-section {
+    padding-top: var(--ct-section-pad-y);
+    padding-bottom: var(--ct-section-pad-y);
+  }
+
+  .ct-section-header {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 56px;
+    max-width: 720px;
+  }
+
+  .ct-section-title {
+    font-family: var(--ct-font-mono);
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ct-text);
+  }
+  .ct-section-title .ct-comment {
+    color: var(--ct-text-muted);
+    font-weight: 400;
+  }
+
+  .ct-section-desc {
+    color: var(--ct-text-soft);
+    font-size: 14px;
+    line-height: 1.75;
+    max-width: 600px;
+  }
+
+  // 버튼
+  .ct-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-family: var(--ct-font-mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    border: 1px solid var(--ct-border-strong);
+    color: var(--ct-text);
+    background: var(--ct-bg-elev);
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .ct-btn:hover {
+    border-color: var(--ct-accent);
+    color: var(--ct-accent);
+  }
+  .ct-btn--primary {
+    background: var(--ct-accent);
+    border-color: var(--ct-accent);
+    color: #0b1220;
+  }
+  .ct-btn--primary:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+  }
+}

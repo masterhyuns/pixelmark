@@ -1,0 +1,81 @@
+// ============================================================
+// 헤더 + 모바일 네비
+// ============================================================
+
+.conference-tech {
+  .ct-site-header {
+    position: fixed;
+    top: 44px; // DemoHeaderBar 높이 아래
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: var(--ct-header-h);
+    background: rgba(15, 20, 25, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--ct-border);
+  }
+  .ct-site-header-inner {
+    height: 100%;
+    width: 100%;
+    max-width: var(--ct-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  @media (min-width: 768px) {
+    .ct-site-header-inner { padding: 0 40px; }
+  }
+
+  .ct-site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--ct-font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: var(--ct-text);
+  }
+  .ct-site-logo .ct-prompt {
+    color: var(--ct-accent);
+  }
+
+  .ct-site-nav {
+    display: none;
+    align-items: center;
+    gap: 32px;
+  }
+  .ct-site-nav a {
+    font-family: var(--ct-font-mono);
+    font-size: 13px;
+    color: var(--ct-text-soft);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .ct-site-nav a:hover { color: var(--ct-text); }
+  .ct-site-nav a.active {
+    color: var(--ct-accent);
+  }
+  .ct-site-nav a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -22px;
+    height: 2px;
+    background: var(--ct-accent);
+  }
+  @media (min-width: 768px) {
+    .ct-site-nav { display: inline-flex; }
+  }
+
+  .ct-site-cta {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    .ct-site-cta { display: inline-flex; }
+  }
+}

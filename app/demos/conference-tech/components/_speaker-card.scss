@@ -1,0 +1,124 @@
+// ============================================================
+// 스피커 카드
+// ============================================================
+
+.conference-tech {
+  .ct-speakers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .ct-speakers-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .ct-speakers-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .ct-speaker-card {
+    position: relative;
+    background: var(--ct-bg-elev);
+    border: 1px solid var(--ct-border);
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .ct-speaker-card:hover {
+    border-color: var(--ct-track-color, var(--ct-accent));
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--ct-track-color, var(--ct-accent)) inset;
+  }
+  .ct-speaker-card.is-hidden {
+    display: none;
+  }
+
+  // 좌상단 코드 라벨
+  .ct-speaker-code {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    font-family: var(--ct-font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--ct-text-muted);
+    padding: 4px 8px;
+    background: rgba(15, 20, 25, 0.7);
+    border: 1px solid var(--ct-border);
+  }
+
+  // 우상단 트랙 칩
+  .ct-speaker-track {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    font-family: var(--ct-font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    color: var(--ct-track-color, var(--ct-accent));
+    border: 1px solid var(--ct-track-color, var(--ct-accent));
+    background: rgba(15, 20, 25, 0.7);
+  }
+
+  // 실루엣 영역
+  .ct-speaker-thumb {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--ct-bg-soft) 0%, var(--ct-bg) 100%);
+  }
+  .ct-speaker-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    mix-blend-mode: luminosity;
+    filter: contrast(1.05);
+    transition: opacity 0.4s ease, transform 0.6s ease;
+  }
+  .ct-speaker-card:hover .ct-speaker-thumb img {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+  .ct-speaker-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(15, 20, 25, 0.85) 100%);
+    pointer-events: none;
+  }
+
+  .ct-speaker-body {
+    padding: 18px 20px 22px;
+  }
+  .ct-speaker-name {
+    font-family: var(--ct-font-mono);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    color: var(--ct-text);
+    margin-bottom: 4px;
+  }
+  .ct-speaker-role {
+    font-size: 12px;
+    color: var(--ct-text-soft);
+    line-height: 1.6;
+  }
+  .ct-speaker-topic {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--ct-border);
+    font-size: 12px;
+    color: var(--ct-text-soft);
+    line-height: 1.5;
+  }
+  .ct-speaker-topic strong {
+    color: var(--ct-text);
+    font-weight: 600;
+  }
+}

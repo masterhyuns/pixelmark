@@ -1,0 +1,113 @@
+// ============================================================
+// 스피커 모달
+// ============================================================
+
+.conference-tech {
+  .ct-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(8, 12, 16, 0.78);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .ct-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .ct-modal-dialog {
+    width: 100%;
+    max-width: 540px;
+    background: var(--ct-bg-elev);
+    border: 1px solid var(--ct-border-strong);
+    padding: 36px 32px 32px;
+    position: relative;
+    transform: translateY(16px);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .ct-modal.is-open .ct-modal-dialog {
+    transform: translateY(0);
+  }
+
+  .ct-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ct-text-soft);
+    border: 1px solid var(--ct-border);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .ct-modal-close:hover {
+    color: var(--ct-accent);
+    border-color: var(--ct-accent);
+  }
+  .ct-modal-close svg { width: 14px; height: 14px; }
+
+  .ct-modal-code {
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--ct-text-muted);
+    margin-bottom: 8px;
+  }
+  .ct-modal-name {
+    font-family: var(--ct-font-mono);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--ct-text);
+    margin-bottom: 4px;
+  }
+  .ct-modal-role {
+    font-size: 13px;
+    color: var(--ct-text-soft);
+    margin-bottom: 16px;
+  }
+  .ct-modal-track {
+    display: inline-block;
+    font-family: var(--ct-font-mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    color: var(--ct-track-color, var(--ct-accent));
+    border: 1px solid var(--ct-track-color, var(--ct-accent));
+    margin-bottom: 22px;
+  }
+  .ct-modal-section-label {
+    font-family: var(--ct-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ct-text-muted);
+    margin-bottom: 6px;
+  }
+  .ct-modal-topic {
+    font-family: var(--ct-font-mono);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ct-text);
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    background: var(--ct-bg-soft);
+    border: 1px solid var(--ct-border);
+  }
+  .ct-modal-bio {
+    font-size: 13px;
+    color: var(--ct-text-soft);
+    line-height: 1.75;
+  }
+}

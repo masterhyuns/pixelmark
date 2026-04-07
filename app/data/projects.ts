@@ -36,6 +36,7 @@ import ppWork1Url from "~/demos/personal-portfolio/assets/images/works/work-1-or
 import wmGalleryUrl from "~/demos/wedding-minimal/assets/images/gallery/gallery-main.webp"
 import bcGrowthUrl from "~/demos/baby-celebration/assets/images/growth/growth-12m.webp"
 import pvHeroUrl from "~/demos/popup-vivid/assets/images/hero/hero-gradient.webp"
+import ctHeroUrl from "~/demos/conference-tech/assets/images/home/home-hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -293,6 +294,43 @@ export const projects: Project[] = [
       {
         title: "정보 섹션 + 카카오맵 + 해시태그",
         description: "Schedule / Hours / Venue 3행 정보 표, 카카오맵 iframe, SNS 해시태그 칩까지 캠페인 안내에 필요한 모든 요소를 한 섹션에 정리했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "conference-tech",
+    title: "테크 컨퍼런스 / B2B 행사",
+    subtitle: "다크 테크 톤과 모노스페이스 타이포로 정보 밀도를 살린 멀티페이지 컨퍼런스 안내",
+    category: "event",
+    tier: "standard",
+    industry: "B2B 행사 / 컨퍼런스",
+    duration: "1주",
+    order: 8,
+    demoUrl: "/demos/conference-tech",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "JetBrains Mono", "IntersectionObserver"],
+    description:
+      "딥 다크 배경 위에 JetBrains Mono 모노스페이스 타이포를 얹은 가상 컨퍼런스 안내 데모입니다. 홈/스피커/일정 3개 sub-route를 부모 layout 한 곳에서 SCSS와 chrome을 공유하도록 구성했고, 페이지 전환 시 부드러운 페이드만으로 즉시 이동합니다. 8명 가상 스피커 카드 그리드, 트랙별 필터, 카드 클릭 모달(포커스 트랩 + ESC), 트랙 색상으로 강조되는 이틀짜리 일정표까지 정보 밀도가 높은 페이지 디자인 능력을 보여줍니다.",
+    thumbnail: ctHeroUrl,
+    highlights: [
+      {
+        title: "멀티페이지 + 부모 layout 공유",
+        description: "React Router 7의 중첩 layout으로 홈/스피커/일정 3 sub-route가 동일한 chrome과 SCSS를 공유합니다. sub-route 이동 시 CSS 재로드 없이 즉시 전환됩니다.",
+      },
+      {
+        title: "거대 D-day 카운트다운",
+        description: "홈 히어로의 큰 모노스페이스 카운트다운이 1초마다 갱신됩니다. tabular-nums로 떨림을 막고, 음수 방어 처리를 포함합니다.",
+      },
+      {
+        title: "스피커 카드 + 모달 (포커스 트랩 + ESC)",
+        description: "8명 스피커 카드 클릭 시 단일 모달이 dataset에서 정보를 읽어 내용이 교체됩니다. 백드롭 클릭, 닫기 버튼, ESC 키 모두 지원하고 트리거로 포커스가 복귀합니다.",
+      },
+      {
+        title: "트랙별 필터 (스피커 + 일정 공통)",
+        description: "단일 trackFilter 모듈이 [data-ct-filter-target] 그룹과 [data-ct-filterable] 요소를 매칭해 양쪽 페이지에서 동일하게 동작합니다. 트랙별 색상이 inline CSS 변수로 주입됩니다.",
+      },
+      {
+        title: "정보 밀도 높은 일정표",
+        description: "이틀에 걸친 세션을 시간/제목/스피커/트랙 4열 그리드로 정리했습니다. 키노트는 좌측 보더로 강조하고, 휴식 시간은 자동으로 dim 처리됩니다.",
       },
     ],
   },

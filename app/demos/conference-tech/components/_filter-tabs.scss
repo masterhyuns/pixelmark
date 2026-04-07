@@ -1,0 +1,35 @@
+// ============================================================
+// 트랙 필터 탭
+// ============================================================
+
+.conference-tech {
+  .ct-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .ct-filter-tab {
+    font-family: var(--ct-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ct-text-soft);
+    padding: 8px 16px;
+    border: 1px solid var(--ct-border);
+    background: var(--ct-bg-elev);
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+  .ct-filter-tab:hover {
+    color: var(--ct-text);
+    border-color: var(--ct-border-strong);
+  }
+  .ct-filter-tab.is-active {
+    color: var(--ct-bg);
+    background: var(--ct-accent);
+    border-color: var(--ct-accent);
+  }
+  .ct-filter-tab .ct-comment {
+    color: inherit;
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,37 @@
+// ============================================================
+// E-S4 Conference Tech — CSS 변수
+// ============================================================
+//
+// 다크 + 블루 액센트 + JetBrains Mono
+// scss 변수 금지(CLAUDE.md), var()만 사용
+
+:root {
+  --ct-bg: #0f1419;
+  --ct-bg-elev: #151b22;
+  --ct-bg-soft: #1c232c;
+  --ct-text: #e5e7eb;
+  --ct-text-soft: #9ca3af;
+  --ct-text-muted: #6b7280;
+  --ct-border: #232c37;
+  --ct-border-strong: #2f3a48;
+
+  --ct-accent: #3b82f6;
+  --ct-accent-soft: rgba(59, 130, 246, 0.18);
+  --ct-green: #22c55e;
+  --ct-purple: #a855f7;
+  --ct-orange: #f97316;
+
+  --ct-font-mono: "JetBrains Mono", "IBM Plex Mono", "Pretendard", ui-monospace, monospace;
+  --ct-font-body: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ct-max-width: 1240px;
+  --ct-section-pad-y: 100px;
+  --ct-header-h: 64px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --ct-section-pad-y: 64px;
+    --ct-header-h: 56px;
+  }
+}
