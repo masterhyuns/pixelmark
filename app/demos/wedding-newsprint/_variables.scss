@@ -1,0 +1,21 @@
+:root {
+  --wnews-bg: #f4f1e8;
+  --wnews-bg-soft: #ebe6d4;
+  --wnews-paper: #faf6e8;
+  --wnews-text: #1a1a1a;
+  --wnews-text-soft: #5a5a5a;
+  --wnews-text-muted: #888888;
+  --wnews-red: #8b0000;
+  --wnews-border: #1a1a1a;
+
+  --wnews-font-display: "Old Standard TT", "Cormorant Garamond", serif;
+  --wnews-font-serif: "Source Serif Pro", "Lora", serif;
+  --wnews-font-body: "Pretendard", -apple-system, sans-serif;
+
+  --wnews-max-width: 1180px;
+  --wnews-section-pad-y: 80px;
+}
+
+@media (max-width: 767px) {
+  :root { --wnews-section-pad-y: 56px; }
+}

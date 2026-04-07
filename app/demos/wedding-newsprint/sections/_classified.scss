@@ -1,0 +1,84 @@
+.wedding-newsprint {
+  .wnews-classified-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  @media (min-width: 720px) {
+    .wnews-classified-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .wnews-classified-card {
+    padding: 20px 22px;
+    border: 1px dashed var(--wnews-border);
+  }
+  .wnews-classified-label {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--wnews-text);
+    color: var(--wnews-bg);
+    font-family: var(--wnews-font-display);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    margin-bottom: 14px;
+  }
+  .wnews-classified-title {
+    font-family: var(--wnews-font-display);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+    color: var(--wnews-text);
+    margin-bottom: 10px;
+  }
+  .wnews-classified-desc {
+    font-family: var(--wnews-font-serif);
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--wnews-text-soft);
+  }
+
+  // 계좌 분류광고
+  .wnews-accounts {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 3px double var(--wnews-border);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  @media (min-width: 720px) {
+    .wnews-accounts { grid-template-columns: 1fr 1fr; }
+  }
+  .wnews-account {
+    padding: 18px 22px;
+    border: 1px solid var(--wnews-border);
+    background: var(--wnews-paper);
+    text-align: center;
+  }
+  .wnews-account-side {
+    font-family: var(--wnews-font-display);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--wnews-red);
+    margin-bottom: 8px;
+  }
+  .wnews-account-role {
+    font-family: var(--wnews-font-display);
+    font-size: 18px;
+    color: var(--wnews-text);
+    margin-bottom: 6px;
+  }
+  .wnews-account-bank {
+    font-family: var(--wnews-font-serif);
+    font-size: 14px;
+    color: var(--wnews-text);
+  }
+  .wnews-account-number {
+    font-family: var(--wnews-font-serif);
+    font-size: 13px;
+    color: var(--wnews-text-soft);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+}
