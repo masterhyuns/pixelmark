@@ -88,6 +88,10 @@
     border-radius: 50%;
     background: #111;
     pointer-events: none;
+    // mix-blend-mode: difference
+    // 배경색과 abs 차이로 색을 계산 → 배경이 밝으면 어둡게, 어두우면 밝게 보임
+    // 단, 커서 색이 배경과 비슷하면 차이가 0이 되어 안 보임
+    // → 테마별로 커서 기본색을 반대로 설정해야 두 모드 모두 잘 보임
     mix-blend-mode: difference;
     z-index: 9999;
     transform: translate(-50%, -50%);
@@ -102,6 +106,17 @@
     width: 40px;
     height: 40px;
     background: #fafafa;
+  }
+
+  // ----- 다크 모드 대응 -----
+  // 라이트 모드에서는 검정 커서(#111) + difference → 밝은 배경에서 반전되어 보임
+  // 다크 모드에서는 흰 커서(#fafafa) + difference → 어두운 배경에서 반전되어 보임
+  // hover 시 색도 서로 뒤집어야 확대 효과가 자연스럽게 동작
+  :root[data-theme="dark"] .pp-custom-cursor {
+    background: #fafafa;
+  }
+  :root[data-theme="dark"] .pp-custom-cursor.is-hovering {
+    background: #111111;
   }
 
   // 터치 디바이스나 모바일에서는 숨김

@@ -13,8 +13,8 @@ import { reviews } from "~/demos/law-office/data/content"
  */
 
 export const meta: Route.MetaFunction = () => [
-  { title: "후기 | 정우 법률사무소 — Pixelmark Demo" },
-  { name: "description", content: "실제 의뢰인들의 상담 및 수임 후기." },
+  { title: "후기 | Aurea 법률사무소 — Pixelmark Demo" },
+  { name: "description", content: "Aurea 법률사무소 상담·수임 후기. 모든 후기와 의뢰인 이름은 가상입니다. (Pixelmark 디자인 데모)" },
 ]
 
 export default function LawOfficeReviews() {

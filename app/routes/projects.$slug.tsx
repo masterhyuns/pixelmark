@@ -2,10 +2,34 @@ import { Link } from "react-router"
 import type { Route } from "./+types/projects.$slug"
 import { createProjectMeta, projectJsonLd } from "~/utils/seo"
 import { getProjectBySlug, getRelatedProjects } from "~/data/projects"
-import { CATEGORY_LABEL } from "~/types/types"
+import type { ProjectCategory, ProjectTier } from "~/types/types"
+import { CATEGORY_LABEL, TIER_LABEL } from "~/types/types"
 import TechBadge from "~/components/projects/TechBadge"
 import ProjectCard from "~/components/projects/ProjectCard"
 import JsonLd from "~/components/common/JsonLd"
+
+/**
+ * 카테고리(주제/업종) 색상 - 헤더 메인 라벨용
+ * ProjectCard와 동일한 매핑을 사용해 시각 통일성 유지
+ */
+const CATEGORY_STYLE: Record<ProjectCategory, string> = {
+  brand: "bg-pink-500/10 text-pink-300 border-pink-400/20",
+  professional: "bg-blue-500/10 text-blue-300 border-blue-400/20",
+  fnb: "bg-orange-500/10 text-orange-300 border-orange-400/20",
+  event: "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
+  personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
+}
+
+/**
+ * 등급 색상 - 헤더 작은 뱃지용
+ */
+const TIER_STYLE: Record<ProjectTier, string> = {
+  // ProjectCard.tsx와 동일 값 유지 (향후 단일 파일로 분리 권장)
+  // STANDARD는 다크 배경에서 너무 옅어 보이던 문제로 라이트 블루 반투명 + 흰 글씨로 가시성 강화
+  standard: "bg-[#abbdef9c] text-white border-[#abbdef]/50",
+  deluxe: "bg-amber-500/10 text-amber-300 border-amber-400/20",
+  premium: "bg-white/20 text-white border-white/40",
+}
 
 export const loader = ({ params }: Route.LoaderArgs) => {
   const project = getProjectBySlug(params.slug ?? "")
@@ -16,21 +40,22 @@ export const loader = ({ params }: Route.LoaderArgs) => {
   return { project, related }
 }
 
-export const meta: Route.MetaFunction<typeof loader> = ({ data }) => {
-  if (!data) return [{ title: "Not Found" }]
-  return createProjectMeta(data.project)
+/**
+ * 메타 태그 생성
+ *
+ * Route.MetaFunction은 RR7에서 generic이 아니므로
+ * data를 명시적으로 loader 반환 타입으로 단언한다.
+ */
+export const meta: Route.MetaFunction = ({ data }) => {
+  const typed = data as Awaited<ReturnType<typeof loader>> | undefined
+  if (!typed) return [{ title: "Not Found" }]
+  return createProjectMeta(typed.project)
 }
 
 const KMONG_URL = "https://kmong.com" // 실제 크몽 프로필 URL로 교체
 
 export default function ProjectDetail({ loaderData }: Route.ComponentProps) {
   const { project, related } = loaderData
-
-  const categoryStyle = {
-    standard: "bg-[#f0fdf4]/10 text-[#4ade80] border-[#4ade80]/20",
-    deluxe: "bg-[#eff6ff]/10 text-[#60a5fa] border-[#60a5fa]/20",
-    premium: "bg-[#fdf4ff]/10 text-[#c084fc] border-[#c084fc]/20",
-  }[project.category]
 
   return (
     <div className="pt-16">
@@ -55,10 +80,16 @@ export default function ProjectDetail({ loaderData }: Route.ComponentProps) {
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="flex-1">
-              {/* 카테고리 배지 */}
-              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border mb-4 ${categoryStyle}`}>
-                {CATEGORY_LABEL[project.category]}
-              </span>
+              {/* 카테고리 + 등급 뱃지 (메인 라벨 + 패키지 시그널)
+                  카테고리는 채도 있는 컬러로 시선 잡고, 등급은 모노톤으로 보조 표시 */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${CATEGORY_STYLE[project.category]}`}>
+                  {CATEGORY_LABEL[project.category]}
+                </span>
+                <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider border ${TIER_STYLE[project.tier]}`}>
+                  {TIER_LABEL[project.tier]}
+                </span>
+              </div>
 
               {/* 제목 */}
               <h1 className="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-white mb-3 leading-tight">
@@ -85,6 +116,10 @@ export default function ProjectDetail({ loaderData }: Route.ComponentProps) {
                   <div className="flex justify-between text-sm">
                     <dt className="text-[#666666]">카테고리</dt>
                     <dd className="text-white font-medium">{CATEGORY_LABEL[project.category]}</dd>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <dt className="text-[#666666]">패키지 등급</dt>
+                    <dd className="text-white font-medium">{TIER_LABEL[project.tier]}</dd>
                   </div>
                   <div className="flex justify-between text-sm">
                     <dt className="text-[#666666]">업종</dt>

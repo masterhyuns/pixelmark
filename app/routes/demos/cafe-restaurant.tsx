@@ -12,6 +12,10 @@ import { initGalleryReveal } from "~/demos/cafe-restaurant/modules/galleryReveal
 import { initScrollAnimation } from "~/demos/cafe-restaurant/modules/scrollAnimation"
 import { initHeroZoom } from "~/demos/cafe-restaurant/modules/heroZoom"
 import { CATEGORIES, menuItems, galleryImages, notices } from "~/demos/cafe-restaurant/data/menu"
+// 히어로 + About 섹션 이미지 (Vite asset import)
+import heroBgUrl from "~/demos/cafe-restaurant/assets/hero/hero-bg.webp"
+import aboutMainUrl from "~/demos/cafe-restaurant/assets/about/about-main.webp"
+import aboutSubUrl from "~/demos/cafe-restaurant/assets/about/about-sub.webp"
 
 /**
  * S-3 Cafe & Restaurant — 외식업 감성 원페이지 데모
@@ -42,7 +46,7 @@ export const meta: Route.MetaFunction = () => [
   {
     name: "description",
     content:
-      "따뜻한 카페/레스토랑 소개 사이트 데모. 감성 비주얼, 메뉴/갤러리 UI, 카카오맵 연동 샘플.",
+      "따뜻한 카페/레스토랑 소개 사이트 가상 디자인 데모. 감성 비주얼·메뉴/갤러리 UI·카카오맵 연동 샘플. (매장·메뉴는 모두 가상)",
   },
 ]
 
@@ -126,10 +130,7 @@ export default function CafeRestaurantDemo() {
       <section id="top" className="cr-hero">
         <div
           className="cr-hero-bg"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1920&h=1280&fit=crop')",
-          }}
+          style={{ backgroundImage: `url(${heroBgUrl})` }}
           aria-hidden="true"
         />
         <div className="cr-hero-overlay" aria-hidden="true" />
@@ -160,16 +161,16 @@ export default function CafeRestaurantDemo() {
             <div className="cr-about-images">
               <div className="cr-about-img cr-about-img--main">
                 <img
-                  src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&h=800&fit=crop"
-                  alt="Ember & Oak 내부 전경"
+                  src={aboutMainUrl}
+                  alt="Ember & Oak 내부 전경 (가상)"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
               <div className="cr-about-img cr-about-img--sub">
                 <img
-                  src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?w=600&h=600&fit=crop"
-                  alt="바 카운터"
+                  src={aboutSubUrl}
+                  alt="바 카운터 (가상)"
                   loading="lazy"
                   decoding="async"
                 />
@@ -417,7 +418,7 @@ export default function CafeRestaurantDemo() {
           </div>
 
           <p className="cr-footer-copy">
-            이 페이지는 Pixelmark 포트폴리오 데모입니다. 실제 매장·브랜드와 무관합니다.
+            Pixelmark 디자인 데모입니다. 브랜드명·인물·제품·후기는 모두 가상입니다.
             <br />© {new Date().getFullYear()} Pixelmark. All rights reserved.
           </p>
         </div>

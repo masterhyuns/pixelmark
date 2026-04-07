@@ -4,11 +4,22 @@
  * [왜 하드코딩인가]
  * - 데모 사이트이므로 CMS/DB 연동 불필요
  * - JSX 인라인으로 쓰면 라우트 파일이 비대해지므로 별도 파일 분리
- * - Unsplash 이미지 사용 (기획서 제약: 무료 소스만)
  *
- * [카테고리]
- * 가상의 브랜드 "Lumière" (프랑스어 "빛") 기준 4개 제품 라인업.
+ * [이미지 import 방식]
+ * - app 하위 assets/ 경로의 정적 이미지를 Vite가 빌드 시 hash URL로 변환
+ * - vite/client 타입이 webp/jpg 기본 지원 (tsconfig types 참고)
+ * - public 이 아닌 app 내부라 외부에서 직접 접근 불가, 반드시 import
+ *
+ * [가상 브랜드]
+ * "Lumière" (프랑스어 "빛") — 라틴어 기반이라 실존 브랜드 겹침 위험 낮음.
+ * 모든 제품명·가격·후기는 100% 가상이며 실제 상품과 무관.
  */
+
+// 제품 이미지 (정적 import → Vite가 해시 URL로 번들)
+import p1Image from "../assets/images/products/p1-radiance-glow.webp"
+import p2Image from "../assets/images/products/p2-velvet-touch.webp"
+import p3Image from "../assets/images/products/p3-pure-essence.webp"
+import p4Image from "../assets/images/products/p4-silk-mask.webp"
 
 export interface Product {
   id: string
@@ -27,7 +38,7 @@ export const products: Product[] = [
     name: "Radiance Glow",
     description: "비타민 C가 빛을 머금은 유리알 광채 세럼",
     price: "₩58,000",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=720&h=900&fit=crop",
+    image: p1Image,
   },
   {
     id: "p2",
@@ -35,7 +46,7 @@ export const products: Product[] = [
     name: "Velvet Touch",
     description: "수분과 유분의 완벽한 균형, 벨벳 터치 크림",
     price: "₩72,000",
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=720&h=900&fit=crop",
+    image: p2Image,
   },
   {
     id: "p3",
@@ -43,7 +54,7 @@ export const products: Product[] = [
     name: "Pure Essence",
     description: "순수한 식물 성분이 담긴 기초 에센스",
     price: "₩65,000",
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=720&h=900&fit=crop",
+    image: p3Image,
   },
   {
     id: "p4",
@@ -51,7 +62,7 @@ export const products: Product[] = [
     name: "Silk Mask",
     description: "실크 단백질 함유, 15분의 집중 진정 마스크",
     price: "₩38,000",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=720&h=900&fit=crop",
+    image: p4Image,
   },
 ]
 

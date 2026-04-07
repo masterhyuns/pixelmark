@@ -8,11 +8,19 @@ import type { FilterCategory } from "~/types/types"
 
 export const meta: Route.MetaFunction = () => createMeta(PAGE_META.projects)
 
+/**
+ * 필터 탭 - 카테고리(주제/업종) 기준
+ *
+ * 고객 시점의 분류로, 자기 사업 분야 사례를 빠르게 찾도록 한다.
+ * 가격 등급(STANDARD/DELUXE/PREMIUM)은 카드 우상단 뱃지에서 별도 표시.
+ */
 const FILTER_TABS: { value: FilterCategory; label: string }[] = [
   { value: "all", label: "전체" },
-  { value: "standard", label: "퍼블리싱" },
-  { value: "deluxe", label: "프론트엔드" },
-  { value: "premium", label: "풀스택" },
+  { value: "brand", label: "브랜드" },
+  { value: "professional", label: "전문 서비스" },
+  { value: "fnb", label: "매장·F&B" },
+  { value: "event", label: "이벤트" },
+  { value: "personal", label: "개인" },
 ]
 
 export default function ProjectsIndex() {

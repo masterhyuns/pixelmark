@@ -1,7 +1,37 @@
 import { Link } from "react-router"
-import type { Project } from "~/types/types"
-import { CATEGORY_LABEL } from "~/types/types"
+import type { Project, ProjectCategory, ProjectTier } from "~/types/types"
+import { CATEGORY_LABEL, TIER_LABEL } from "~/types/types"
 import TechBadge from "./TechBadge"
+
+/**
+ * 카테고리(주제/업종) 색상 매핑 - 카드 좌상단 메인 라벨용
+ *
+ * 다크 테마(#0a0a0a 배경) 위에서 잘 보이도록 채도/명도를 조정.
+ * 디자인가이드의 라이트 모드 색상을 다크 모드용으로 변환:
+ * - 배경: 색상/10 (옅은 틴트)
+ * - 텍스트: 색상-300 또는 -400 (밝은 톤)
+ * - 보더: 색상/20
+ */
+const CATEGORY_STYLE: Record<ProjectCategory, string> = {
+  brand: "bg-pink-500/10 text-pink-300 border-pink-400/20",
+  professional: "bg-blue-500/10 text-blue-300 border-blue-400/20",
+  fnb: "bg-orange-500/10 text-orange-300 border-orange-400/20",
+  event: "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
+  personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
+}
+
+/**
+ * 등급(tier) 색상 매핑 - 카드 우상단 작은 뱃지용
+ *
+ * 카테고리와 시각 위계를 다르게 하기 위해 모노톤(STANDARD/DELUXE)
+ * + 강조(PREMIUM) 패턴으로 설계.
+ */
+const TIER_STYLE: Record<ProjectTier, string> = {
+  // STANDARD는 다크 배경에서 너무 옅어 보이던 문제로 라이트 블루 반투명 + 흰 글씨로 가시성 강화
+  standard: "bg-[#abbdef9c] text-white border-[#abbdef]/50",
+  deluxe: "bg-amber-500/10 text-amber-300 border-amber-400/20",
+  premium: "bg-white/20 text-white border-white/40",
+}
 
 interface ProjectCardProps {
   project: Project
@@ -24,13 +54,7 @@ interface ProjectCardProps {
  * - decoding="async"로 메인 스레드 블로킹 방지
  */
 const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
-  const { slug, title, subtitle, category, techStack, thumbnail, industry, duration } = project
-
-  const categoryStyle = {
-    standard: "bg-[#f0fdf4]/10 text-[#4ade80] border-[#4ade80]/20",
-    deluxe: "bg-[#eff6ff]/10 text-[#60a5fa] border-[#60a5fa]/20",
-    premium: "bg-[#fdf4ff]/10 text-[#c084fc] border-[#c084fc]/20",
-  }[category]
+  const { slug, title, subtitle, category, tier, techStack, thumbnail, industry, duration } = project
 
   return (
     <Link
@@ -49,11 +73,17 @@ const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
           decoding="async"
           fetchPriority={priority ? "high" : "auto"}
         />
-        {/* 카테고리 배지 */}
+        {/* 카테고리 배지 (좌상단, 메인 라벨 - 큰 시각 비중) */}
         <span
-          className={`absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${categoryStyle}`}
+          className={`absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${CATEGORY_STYLE[category]}`}
         >
           {CATEGORY_LABEL[category]}
+        </span>
+        {/* 등급 뱃지 (우상단, 패키지 시그널 - 작은 시각 비중) */}
+        <span
+          className={`absolute top-3 right-3 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider border ${TIER_STYLE[tier]}`}
+        >
+          {TIER_LABEL[tier]}
         </span>
       </div>
 

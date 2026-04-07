@@ -1,29 +1,78 @@
+import {
+  Code2,
+  Component,
+  Layers,
+  MessageCircle,
+  CheckCircle2,
+  Sparkles,
+  Zap,
+} from "lucide-react"
 import type { Project, ServiceItem, TechGroup, StrengthItem, ProcessStep, StatItem } from "~/types/types"
 
 /**
  * 포트폴리오 프로젝트 데이터
- * 실제 스크린샷은 개발 완료 후 /public/images/projects/에 교체 예정
- * 현재는 placeholder 이미지 사용
+ *
+ * [썸네일/상세 이미지 전략]
+ * 각 프로젝트의 썸네일과 상세 이미지는 **해당 데모 폴더의 실제 에셋**을 재사용한다.
+ * Vite가 같은 파일을 한 번만 번들링하므로 중복 다운로드 없음.
+ *
+ * [왜 데모 asset을 재사용하는가]
+ * - 사용자가 목록 → 상세 → 실제 데모로 이어질 때 비주얼 일관성 확보
+ * - Unsplash 외부 의존 제거
+ * - 데모에 배치된 모든 이미지(특히 S-2 office-interior, S-4 work-detail)를 활용
+ *
+ * [원칙 해석]
+ * CLAUDE.md의 "데모 폴더 import 금지"는 데모끼리 혹은 데모가 메인을 참조하지 말라는 것.
+ * 메인이 데모 asset(리소스)만 참조하는 건 데모의 이식성/독립성을 해치지 않는다.
  */
+
+// ============================================================
+// S-1 beauty-landing — 화장품 브랜드 랜딩
+// ============================================================
+import blHeroUrl from "~/demos/beauty-landing/assets/images/hero/hero-bg.webp"
+import blAboutUrl from "~/demos/beauty-landing/assets/images/about/about-main.webp"
+import blProduct1Url from "~/demos/beauty-landing/assets/images/products/p1-radiance-glow.webp"
+import blProduct2Url from "~/demos/beauty-landing/assets/images/products/p2-velvet-touch.webp"
+
+// ============================================================
+// S-2 law-office — 법률사무소 (사용 안 하던 office-interior 이미지 활용)
+// ============================================================
+import loHeroUrl from "~/demos/law-office/assets/images/hero/home-hero.webp"
+import loLawyerUrl from "~/demos/law-office/assets/images/about/about-lawyer.webp"
+import loInterior1Url from "~/demos/law-office/assets/images/about/office-interior-1.webp"
+import loInterior2Url from "~/demos/law-office/assets/images/about/office-interior-2.webp"
+
+// ============================================================
+// S-3 cafe-restaurant — 카페/레스토랑
+// ============================================================
+import crHeroUrl from "~/demos/cafe-restaurant/assets/hero/hero-bg.webp"
+import crAboutUrl from "~/demos/cafe-restaurant/assets/about/about-main.webp"
+import crGallery1Url from "~/demos/cafe-restaurant/assets/gallery/gallery-01-interior.webp"
+import crGallery4Url from "~/demos/cafe-restaurant/assets/gallery/gallery-04-dessert.webp"
+
+// ============================================================
+// S-4 personal-portfolio — 개인 포트폴리오 (사용 안 하던 work-detail-1 활용)
+// ============================================================
+import ppWork1Url from "~/demos/personal-portfolio/assets/images/works/work-1-orbit-finance.jpg"
+import ppWork2Url from "~/demos/personal-portfolio/assets/images/works/work-2-meadow-journal.jpg"
+import ppWork3Url from "~/demos/personal-portfolio/assets/images/works/work-3-terra-studio.jpg"
+import ppWorkDetailUrl from "~/demos/personal-portfolio/assets/images/works/work-detail-1.jpg"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
     title: "브랜드/화장품 랜딩페이지",
     subtitle: "고급스러운 비주얼과 스크롤 애니메이션으로 브랜드 감성을 전달하는 원페이지 랜딩",
-    category: "standard",
+    category: "brand",
+    tier: "standard",
     industry: "뷰티/화장품",
-    duration: "2주",
+    duration: "1주",
     order: 1,
     demoUrl: "/demos/beauty-landing",
     techStack: ["HTML5", "CSS3", "SCSS", "Vanilla JS", "GSAP", "Swiper.js"],
     description:
       "화장품 브랜드 런칭을 위한 감성적인 랜딩페이지입니다. 풀스크린 패럴랙스 히어로, 가로 드래그 슬라이더, 스크롤 진입 애니메이션 등 고급스러운 비주얼 인터랙션을 순수 퍼블리싱 기술로 구현했습니다. 로즈골드 톤의 컬러 시스템과 절제된 여백으로 제품이 돋보이는 레이아웃을 설계했습니다.",
-    thumbnail: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=760&h=475&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&h=750&fit=crop",
-    ],
+    thumbnail: blHeroUrl,
+    images: [blHeroUrl, blAboutUrl, blProduct1Url, blProduct2Url],
     highlights: [
       {
         title: "풀스크린 패럴랙스 히어로",
@@ -51,20 +100,17 @@ export const projects: Project[] = [
     slug: "law-office",
     title: "법률사무소/병원 소개 사이트",
     subtitle: "신뢰감 있는 정보 구조와 상담 전환 설계에 집중한 전문직 멀티페이지 사이트",
-    category: "standard",
+    category: "professional",
+    tier: "standard",
     industry: "법률/의료",
-    duration: "3주",
+    duration: "1주",
     order: 2,
     demoUrl: "/demos/law-office",
     techStack: ["HTML5", "CSS3", "SCSS", "Vanilla JS", "Kakao Map API"],
     description:
       "법률사무소·병원 등 전문직을 위한 신뢰감 중심의 소개 사이트입니다. 5개 페이지(메인/소개/전문분야/후기/상담예약)로 구성되며, 숫자 카운트업 애니메이션, 아코디언 전문분야, 상담 폼 밸리데이션, 지도 임베드, 플로팅 상담 버튼까지 실제 운영 수준의 기능을 갖췄습니다. 네이비와 골드 브라운 컬러로 전문성과 신뢰를 동시에 전달합니다.",
-    thumbnail: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=760&h=475&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200&h=750&fit=crop",
-    ],
+    thumbnail: loHeroUrl,
+    images: [loHeroUrl, loLawyerUrl, loInterior1Url, loInterior2Url],
     highlights: [
       {
         title: "숫자 카운트업 애니메이션",
@@ -92,20 +138,17 @@ export const projects: Project[] = [
     slug: "cafe-restaurant",
     title: "카페/레스토랑 소개 사이트",
     subtitle: "따뜻한 감성 비주얼과 메뉴/갤러리 인터랙션이 돋보이는 외식업 원페이지 사이트",
-    category: "standard",
+    category: "fnb",
+    tier: "standard",
     industry: "외식업/카페",
-    duration: "2주",
+    duration: "1주",
     order: 3,
     demoUrl: "/demos/cafe-restaurant",
     techStack: ["HTML5", "CSS3", "SCSS", "Vanilla JS", "Swiper.js", "GLightbox"],
     description:
       "카페·레스토랑을 위한 감성적인 소개 사이트입니다. 크림&테라코타 컬러 시스템, 메뉴 탭 전환, 마소닉 갤러리 + 라이트박스, 지도 임베드 등 외식업 홈페이지에 필요한 모든 요소를 담았습니다. 사진이 주인공이 되도록 여백을 넉넉히 사용하고 비대칭 레이아웃으로 역동적인 구성을 연출했습니다.",
-    thumbnail: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=760&h=475&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=1200&h=750&fit=crop",
-    ],
+    thumbnail: crHeroUrl,
+    images: [crHeroUrl, crAboutUrl, crGallery1Url, crGallery4Url],
     highlights: [
       {
         title: "메뉴 탭 전환 인터랙션",
@@ -133,7 +176,8 @@ export const projects: Project[] = [
     slug: "personal-portfolio",
     title: "포트폴리오/이력서 사이트",
     subtitle: "타이포그래피와 여백으로 완성하는 미니멀 개인 포트폴리오 원페이지 사이트",
-    category: "standard",
+    category: "personal",
+    tier: "standard",
     industry: "개인/프리랜서",
     duration: "1주",
     order: 4,
@@ -141,12 +185,8 @@ export const projects: Project[] = [
     techStack: ["HTML5", "CSS3", "SCSS", "Vanilla JS"],
     description:
       "디자이너·개발자·프리랜서를 위한 미니멀 포트폴리오 사이트입니다. 외부 라이브러리 없이 순수 HTML/CSS/JS만으로 구현하여 10KB 이하의 초경량 JS를 달성했습니다. 타이프라이터 이름 효과, 좌우 교차 타임라인, 작업물 모달, 스킬 태그 stagger 애니메이션까지 절제된 코드로 세련된 결과물을 만들어냈습니다.",
-    thumbnail: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=760&h=475&fit=crop",
-    images: [
-      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=750&fit=crop",
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=750&fit=crop",
-    ],
+    thumbnail: ppWork1Url,
+    images: [ppWork1Url, ppWork2Url, ppWork3Url, ppWorkDetailUrl],
     highlights: [
       {
         title: "타이프라이터 효과",
@@ -197,13 +237,13 @@ export const services: ServiceItem[] = [
     name: "웹 퍼블리싱",
     description: "디자인 시안을 정밀하게 구현하는 HTML/CSS/JS 퍼블리싱. 픽셀 퍼펙트한 마크업과 크로스 브라우저 대응을 기본으로 합니다.",
     tags: ["HTML5", "CSS3/SCSS", "Vanilla JS", "GSAP", "반응형"],
-    icon: "◈",
+    icon: Code2, // 코드 브래킷 - 마크업 실력
   },
   {
     name: "프론트엔드 개발",
     description: "React 기반 컴포넌트 설계부터 상태관리, API 연동까지. 유지보수 가능한 코드 구조와 성능 최적화를 함께 제공합니다.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "API 연동"],
-    icon: "◉",
+    icon: Component, // 컴포넌트 박스 - React 컴포넌트 시각화
   },
   {
     name: "풀스택 개발",
@@ -214,7 +254,7 @@ export const services: ServiceItem[] = [
      * - 카드 레이아웃 유지를 위해 7개 이하로 제한
      */
     tags: ["Node.js", "NestJS", "PostgreSQL", "Prisma", "JWT/OAuth", "AWS", "Docker"],
-    icon: "◎",
+    icon: Layers, // 레이어 - 프론트+백엔드 스택을 쌓는 이미지
   },
 ]
 
@@ -293,22 +333,22 @@ export const techGroups: TechGroup[] = [
 
 export const strengths: StrengthItem[] = [
   {
-    icon: "◈",
+    icon: MessageCircle, // 대화 아이콘 - 소통 강조
     title: "정확한 소통",
     description: "요구사항을 꼼꼼히 파악하고, 진행 상황을 명확하게 공유합니다. 의사결정이 필요한 부분은 반드시 확인 후 진행합니다.",
   },
   {
-    icon: "◉",
+    icon: CheckCircle2, // 체크 원형 - 검증/품질 보증
     title: "일관된 품질",
     description: "크고 작은 프로젝트 모두 동일한 기준으로 작업합니다. 코드 컨벤션, 반응형, 크로스 브라우저 대응은 기본입니다.",
   },
   {
-    icon: "◎",
+    icon: Sparkles, // 반짝임 - 새로운/최신 기술
     title: "최신 기술 적용",
     description: "업계 표준 기술과 검증된 라이브러리를 선별해 사용합니다. 유행보다는 프로젝트에 가장 적합한 기술을 선택합니다.",
   },
   {
-    icon: "●",
+    icon: Zap, // 번개 - 빠른 속도
     title: "빠른 대응",
     description: "문의와 수정 요청에 신속하게 답변합니다. 크몽의 안전거래 시스템을 통해 견적부터 납품, 사후 수정까지 투명하게 진행합니다.",
   },

@@ -98,8 +98,8 @@ export default function LawOfficeLayout() {
       <header className="lo-site-header">
         <div className="lo-site-header-inner">
           <NavLink to="/demos/law-office" className="lo-site-logo" end>
-            <span className="lo-site-logo-mark">정</span>
-            <span className="lo-site-logo-text">정우 법률사무소</span>
+            <span className="lo-site-logo-mark">A</span>
+            <span className="lo-site-logo-text">Aurea 법률사무소</span>
           </NavLink>
 
           <nav className="lo-site-nav" aria-label="주 메뉴">
@@ -153,7 +153,7 @@ export default function LawOfficeLayout() {
         <div className="lo-site-footer-inner">
           <div className="lo-site-footer-top">
             <div className="lo-footer-brand">
-              <p className="lo-footer-logo">정우 법률사무소</p>
+              <p className="lo-footer-logo">Aurea 법률사무소</p>
               <p className="lo-footer-tagline">
                 민사·형사·가사·부동산 전문
                 <br />
@@ -184,17 +184,17 @@ export default function LawOfficeLayout() {
               <h4>위치</h4>
               <ul>
                 <li><p>서울시 서초구 서초대로 123</p></li>
-                <li><p>정우빌딩 5층</p></li>
+                <li><p>Aurea빌딩 5층</p></li>
               </ul>
             </div>
           </div>
 
           <div className="lo-site-footer-bottom">
             <p className="lo-footer-copy">
-              © {new Date().getFullYear()} 정우 법률사무소. All rights reserved.
+              © {new Date().getFullYear()} Aurea 법률사무소 (가상). All rights reserved.
             </p>
             <p className="lo-footer-note">
-              이 페이지는 Pixelmark 포트폴리오 데모입니다. 실제 법률사무소·변호사와 무관합니다.
+              Pixelmark 디자인 데모입니다. 브랜드명·인물·제품·후기는 모두 가상입니다.
             </p>
           </div>
         </div>

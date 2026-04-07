@@ -60,7 +60,7 @@ export default function About() {
         <div className="container">
           <p className="text-[#2563eb] text-sm font-semibold uppercase tracking-wider mb-3">About</p>
           <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold text-white mb-4">팀 소개</h1>
-          <p className="text-[#aaaaaa] text-base md:text-lg max-w-xl leading-relaxed">
+          <p className="text-[#aaaaaa] text-base md:text-lg leading-relaxed">
             퍼블리싱부터 풀스택까지. 새롭게 시작하는 2인 개발팀 Pixelmark를 소개합니다.
           </p>
         </div>
@@ -82,7 +82,10 @@ export default function About() {
                 key={item.title}
                 className="strength-item p-6 rounded-xl bg-[#111111] border border-white/5 hover:border-white/10 transition-colors duration-300"
               >
-                <div className="text-2xl mb-4 text-[#2563eb]" aria-hidden="true">{item.icon}</div>
+                {/* Lucide 아이콘 컴포넌트 렌더 */}
+                <div className="mb-4 text-[#2563eb]" aria-hidden="true">
+                  <item.icon size={28} strokeWidth={1.75} />
+                </div>
                 <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
                 <p className="text-[#666666] text-sm leading-relaxed">{item.description}</p>
               </div>
@@ -125,7 +128,7 @@ export default function About() {
       {/* ===== CTA ===== */}
       <section className="py-24 bg-[#0d0d0d] border-t border-white/5">
         <div className="container text-center">
-          <h2 className="text-2xl font-bold text-white mb-3">함께 만들어볼까요?</h2>
+          <h2 className="text-3xl font-bold text-white mb-3">함께 만들어볼까요?</h2>
           <p className="text-[#666666] mb-8">크몽을 통해 안전하게 시작하세요.</p>
           <a
             href={KMONG_URL}

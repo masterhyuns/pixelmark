@@ -17,8 +17,8 @@ import { services } from "~/demos/law-office/data/content"
  */
 
 export const meta: Route.MetaFunction = () => [
-  { title: "전문 분야 | 정우 법률사무소 — Pixelmark Demo" },
-  { name: "description", content: "민사·형사·가사·부동산 각 분야별 상세 안내." },
+  { title: "전문 분야 | Aurea 법률사무소 — Pixelmark Demo" },
+  { name: "description", content: "Aurea 법률사무소의 민사·형사·가사·부동산 각 분야별 상세 안내. 가상 브랜드 디자인 데모입니다." },
 ]
 
 export default function LawOfficeServices() {

@@ -65,7 +65,7 @@ const Header = () => {
                 to={to}
                 end={to === "/"}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors duration-150 relative py-1 ${
+                  `text-base font-medium transition-colors duration-150 relative py-1 ${
                     isActive
                       ? "text-white after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#2563eb] after:rounded-full"
                       : "text-[#aaaaaa] hover:text-white"
@@ -153,7 +153,7 @@ const Header = () => {
                       to={to}
                       end={to === "/"}
                       className={({ isActive }) =>
-                        `block text-2xl font-semibold py-3 px-4 rounded-xl transition-colors duration-150 ${
+                        `block text-lg font-semibold py-3 px-4 rounded-xl transition-colors duration-150 ${
                           isActive
                             ? "text-white bg-white/5"
                             : "text-[#aaaaaa] hover:text-white hover:bg-white/5"

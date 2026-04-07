@@ -11,6 +11,8 @@ import { initWorkModal } from "~/demos/personal-portfolio/modules/workModal"
 import { initWorkPreview } from "~/demos/personal-portfolio/modules/workPreview"
 import { initScrollReveal } from "~/demos/personal-portfolio/modules/scrollReveal"
 import { works, skills, career } from "~/demos/personal-portfolio/data/portfolio"
+// About 섹션 프로필 사진 (Vite asset import)
+import profileUrl from "~/demos/personal-portfolio/assets/images/about/profile.jpg"
 
 /**
  * S-4 Personal Portfolio — 미니멀 개인 포트폴리오 데모
@@ -42,7 +44,7 @@ export const meta: Route.MetaFunction = () => [
   { title: "S-4 Personal Portfolio — Pixelmark Portfolio Demo" },
   {
     name: "description",
-    content: "미니멀 개인 포트폴리오/이력서 사이트 데모. 외부 라이브러리 0개로 구현한 타이포 중심 디자인.",
+    content: "미니멀 개인 포트폴리오/이력서 사이트 가상 디자인 데모. 외부 라이브러리 0개로 구현한 타이포 중심 디자인. (인물·작업물은 모두 가상)",
   },
 ]
 
@@ -110,7 +112,7 @@ export default function PersonalPortfolioDemo() {
       <section className="pp-intro">
         <p className="pp-intro-eyebrow">Hello, I&apos;m</p>
         <h1 className="pp-intro-name" data-typewriter>
-          <span className="pp-typewriter-text" data-text="Sion Park" />
+          <span className="pp-typewriter-text" data-text="Mira Kalon" />
           <span className="pp-typewriter-cursor" />
         </h1>
         <p className="pp-intro-title">
@@ -138,8 +140,8 @@ export default function PersonalPortfolioDemo() {
           <div className="pp-about-inner">
             <div className="pp-about-photo">
               <img
-                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=560&h=560&fit=crop"
-                alt="Sion Park 프로필 사진"
+                src={profileUrl}
+                alt="Mira Kalon 프로필 사진 (가상)"
                 loading="lazy"
               />
             </div>
@@ -285,8 +287,8 @@ export default function PersonalPortfolioDemo() {
             편하게 연락 주세요.
           </p>
 
-          <a href="mailto:hello@sionpark.design" className="pp-contact-email">
-            hello@sionpark.design
+          <a href="mailto:hello@mirakalon.design" className="pp-contact-email">
+            hello@mirakalon.design
           </a>
 
           <div className="pp-contact-socials">
@@ -305,7 +307,7 @@ export default function PersonalPortfolioDemo() {
           </div>
 
           <p className="pp-contact-copy">
-            © {new Date().getFullYear()} Sion Park — Pixelmark Portfolio Demo
+            © {new Date().getFullYear()} Pixelmark 디자인 데모입니다. 브랜드명·인물·제품·후기는 모두 가상입니다.
           </p>
         </div>
       </section>

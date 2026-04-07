@@ -3,6 +3,8 @@ import { Link } from "react-router"
 import type { Route } from "./+types/law-office._index"
 import { initCountUp } from "~/demos/law-office/modules/countUp"
 import { services, stats, reviews } from "~/demos/law-office/data/content"
+// 히어로 이미지 (가상 대표 변호사, Vite asset import)
+import homeHeroUrl from "~/demos/law-office/assets/images/hero/home-hero.webp"
 
 /**
  * S-2 Law Office — 메인 페이지
@@ -20,8 +22,8 @@ import { services, stats, reviews } from "~/demos/law-office/data/content"
  */
 
 export const meta: Route.MetaFunction = () => [
-  { title: "정우 법률사무소 — 민사·형사·가사·부동산 전문 | Pixelmark Demo" },
-  { name: "description", content: "15년 경력의 정우 법률사무소. 무료 상담으로 시작하세요." },
+  { title: "Aurea 법률사무소 — 민사·형사·가사·부동산 전문 | Pixelmark Demo" },
+  { name: "description", content: "Aurea 법률사무소 디자인 데모. 브랜드·인물은 모두 가상입니다. (Pixelmark Portfolio Demo)" },
 ]
 
 export default function LawOfficeHome() {
@@ -44,7 +46,7 @@ export default function LawOfficeHome() {
         <div className="lo-container">
           <div className="lo-home-hero-inner">
             <div className="lo-home-hero-text">
-              <span className="lo-section-eyebrow">정우 법률사무소</span>
+              <span className="lo-section-eyebrow">Aurea 법률사무소</span>
               <h1>
                 신뢰할 수 있는
                 <br />
@@ -66,8 +68,8 @@ export default function LawOfficeHome() {
 
             <div className="lo-home-hero-image">
               <img
-                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=1000&fit=crop"
-                alt="정우 법률사무소 대표 변호사"
+                src={homeHeroUrl}
+                alt="Aurea 법률사무소 대표 변호사 (가상)"
                 loading="eager"
               />
               <div className="lo-home-hero-badge">
@@ -86,7 +88,7 @@ export default function LawOfficeHome() {
             <p className="lo-section-eyebrow">Services</p>
             <h2 className="lo-section-title">전문 분야</h2>
             <p className="lo-section-lead">
-              정우 법률사무소는 네 가지 분야에서 깊이 있는 법률 자문과 소송 수행을 제공합니다.
+              Aurea 법률사무소는 네 가지 분야에서 깊이 있는 법률 자문과 소송 수행을 제공합니다.
             </p>
           </div>
 
@@ -113,7 +115,7 @@ export default function LawOfficeHome() {
         <div className="lo-container">
           <div className="lo-home-section-header">
             <p className="lo-section-eyebrow">Numbers</p>
-            <h2 className="lo-section-title">숫자로 보는 정우 법률사무소</h2>
+            <h2 className="lo-section-title">숫자로 보는 Aurea 법률사무소</h2>
           </div>
 
           <div className="lo-home-stats-grid">

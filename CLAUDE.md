@@ -1,5 +1,16 @@
 # Pixelmark 포트폴리오 사이트 프로젝트
 
+> **⚠️ 데모 작업 전 필수 — 안전성 컨벤션**
+>
+> 모든 데모는 가상 브랜드/이미지/저작권 안전성 컨벤션을 따른다.
+> 신규 데모 작업이나 기존 데모 수정 시 **반드시** 아래 컨벤션 문서의 체크리스트를 거친다.
+>
+> 📖 [`../Documents/portfolio/데모-명칭-이미지-컨벤션.md`](../Documents/portfolio/데모-명칭-이미지-컨벤션.md)
+>
+> 데모별 상세 작업(명칭 정리/이미지 교체)은 각 데모의 `Documents/기획/S-X.../개발지시서.md` 와 `이미지.md` 참조.
+
+
+
 ## 프로젝트 개요
 
 **Pixelmark**(퍼블리셔 + 풀스택 개발자 2인 팀)의 기술력을 증명하는 포트폴리오 웹사이트.
@@ -43,6 +54,77 @@
 | S-2 법률사무소/병원 | `law-office` | **신뢰감, 정보 중심** | `../Documents/기획/S-2_법률사무소_병원/기획서.md` | `../Documents/기획/S-2_법률사무소_병원/개발지시서.md` |
 | S-3 카페/레스토랑 | `cafe-restaurant` | **따뜻하고 아늑함** | `../Documents/기획/S-3_카페_레스토랑/기획서.md` | `../Documents/기획/S-3_카페_레스토랑/개발지시서.md` |
 | S-4 개인 포트폴리오/이력서 | `personal-portfolio` | **절제, 타이포 중심** | `../Documents/기획/S-4_포트폴리오_이력서/기획서.md` | `../Documents/기획/S-4_포트폴리오_이력서/개발지시서.md` |
+
+---
+
+## 카테고리 / 등급 매트릭스
+
+데모는 두 차원으로 분류한다. **둘은 직교**한다 — 같은 카테고리에 여러 등급이 존재할 수 있다.
+
+### 카테고리 (category) — 5종, 고객 시점 분류
+
+`/projects` 페이지의 필터 메인 축. 고객이 자기 사업 분야 사례를 빠르게 찾도록 한다.
+
+| 슬러그 | 한글 라벨 | 톤 | 예시 업종 |
+|--------|----------|----|---------|
+| `brand` | 브랜드 / 제품 | 핑크 | 화장품, 패션, 식품, 가구 |
+| `professional` | 전문 서비스 | 블루 | 법률, 의료, 세무, 노무, 컨설팅 |
+| `fnb` | 매장 / F&B | 오렌지 | 카페, 레스토랑, 베이커리, 펍 |
+| `event` | 이벤트 / 캠페인 | 인디고 | 청첩장, 행사, 팝업 스토어, 컨퍼런스 |
+| `personal` | 개인 / 크리에이터 | 그린 | 포트폴리오, 이력서, 디자이너, 강사 |
+
+### 등급 (tier) — 3종, 작업 깊이 분류
+
+카드 **우상단 작은 뱃지**로만 노출. 가격 시그널 역할.
+
+| 슬러그 | 라벨 | 의미 | 백엔드 |
+|--------|------|------|--------|
+| `standard` | STANDARD | 퍼블리싱 (정적 마크업 + CSS + 기본 인터랙션) | 없음 |
+| `deluxe` | DELUXE | 프론트엔드 (동적 상호작용, 폼, 상태 관리, 라이브러리) | 없음 또는 Mock |
+| `premium` | PREMIUM | 풀스택 (백엔드 / DB / 인증 / 결제 / 어드민) | **필요** |
+
+### 매트릭스 현황 (2026-04 기준)
+
+5 카테고리 × 3 등급 = 15칸 중 **4칸 채워짐** (모두 STANDARD).
+
+| 카테고리 \ 등급 | STANDARD | DELUXE | PREMIUM |
+|---------------|---------|--------|---------|
+| **brand** (브랜드 / 제품) | ✅ S-1 화장품 | ⬜ | ⬜ |
+| **professional** (전문 서비스) | ✅ S-2 법률사무소 | ⬜ | ⬜ |
+| **fnb** (매장 / F&B) | ✅ S-3 카페 | ⬜ | ⬜ |
+| **event** (이벤트 / 캠페인) | ⬜ | ⬜ | ⬜ |
+| **personal** (개인 / 크리에이터) | ✅ S-4 포트폴리오 | ⬜ | ⬜ |
+
+향후 카테고리당 여러 데모를 추가하면서 매트릭스를 채워나간다. 어떤 칸을 우선 채울지는 별도 세션에서 결정.
+
+### 백엔드 전략 (PREMIUM 등급용)
+
+PREMIUM 데모는 백엔드가 필요하다 (회원, DB, 결제, 어드민 등).
+**구체 인프라(Supabase / 자체 서버 / Firebase 등) 결정은 PREMIUM 데모 작업 시점에 한다.** 현재는 `Project.backend` 인터페이스만 정의되어 있고 데이터는 비어있음.
+
+검토 옵션 (참고):
+- Supabase: PostgreSQL 기반 BaaS, 무료 티어 넉넉, 운영 부담 0
+- Firebase: NoSQL 기반 BaaS, 더 빠른 셋업
+- AWS Amplify Backend: 메인 사이트 배포와 동일 생태계
+- 자체 서버 (Hono/Fastify + Postgres): 완전 통제, 운영 부담
+
+이 결정은 첫 PREMIUM 데모를 만들 때 진행한다.
+
+### 데이터 구조 (`Project` 인터페이스)
+
+```ts
+interface Project {
+  slug: string
+  title: string
+  category: ProjectCategory  // 'brand' | 'professional' | 'fnb' | 'event' | 'personal'
+  tier: ProjectTier          // 'standard' | 'deluxe' | 'premium'
+  techStack: string[]
+  // ...
+  backend?: ProjectBackend   // PREMIUM 전용 옵션 필드
+}
+```
+
+`app/types/types.ts` 가 단일 진실의 원천이다. 카테고리/등급/백엔드 구조 변경 시 항상 이 파일을 먼저 수정.
 
 ---
 
@@ -322,6 +404,15 @@ React Router 7 + Vite는 **라우트 모듈이 import한 CSS를 자동으로 rou
 ## 데모별 인터랙션 강도 가이드 (반드시 준수)
 
 각 데모는 컨셉이 다르므로 **인터랙션 강도와 종류가 다르다**. "트렌디 = 화려함"이 아니다.
+
+### 데모 카테고리/등급 매핑
+
+| 데모 | 카테고리 | 등급 |
+|------|---------|------|
+| S-1 화장품 (`beauty-landing`) | `brand` (브랜드 / 제품) | `standard` |
+| S-2 법률사무소 (`law-office`) | `professional` (전문 서비스) | `standard` |
+| S-3 카페 (`cafe-restaurant`) | `fnb` (매장 / F&B) | `standard` |
+| S-4 개인 포트폴리오 (`personal-portfolio`) | `personal` (개인 / 크리에이터) | `standard` |
 
 ### S-1 화장품 — "고급스러운 절제"
 - **허용**: Lenis 모멘텀 스크롤, SplitText 글자 단위 reveal(직접 구현), 마그네틱 CTA(8px 이하), 히어로 마우스 spotlight

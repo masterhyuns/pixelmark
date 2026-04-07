@@ -141,9 +141,9 @@ export default function Home() {
             모두 맡겨주세요
           </h1>
 
-          {/* 서브 카피 - 납품 건수 등 검증 불가 수치 대신 "역량 범위"만 언급 */}
+          {/* 서브 카피 - 한 업종에 국한되지 않는 카테고리 폭을 강조 */}
           <p className="hero-anim text-[#aaaaaa] text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            화장품 랜딩페이지부터 React 풀스택까지.<br />
+            브랜딩 사이트부터 풀스택 서비스까지.<br />
             디자인 의도를 정확히 구현하고, 납기와 소통으로 증명합니다.
           </p>
 
@@ -226,7 +226,10 @@ export default function Home() {
                 key={service.name}
                 className="service-card-item p-6 rounded-xl bg-[#111111] border border-white/5 hover:border-white/10 transition-colors duration-300"
               >
-                <div className="text-3xl mb-4 text-[#2563eb]" aria-hidden="true">{service.icon}</div>
+                {/* Lucide 아이콘 컴포넌트를 데이터에서 꺼내 렌더. size/strokeWidth로 정밀 제어 */}
+                <div className="mb-4 text-[#2563eb]" aria-hidden="true">
+                  <service.icon size={32} strokeWidth={1.75} />
+                </div>
                 <h3 className="text-white font-semibold text-lg mb-2">{service.name}</h3>
                 <p className="text-[#666666] text-sm leading-relaxed mb-5">{service.description}</p>
                 <div className="flex flex-wrap gap-1.5">

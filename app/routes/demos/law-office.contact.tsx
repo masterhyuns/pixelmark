@@ -15,8 +15,8 @@ import { initModal } from "~/demos/law-office/modules/modal"
  */
 
 export const meta: Route.MetaFunction = () => [
-  { title: "상담 예약 | 정우 법률사무소 — Pixelmark Demo" },
-  { name: "description", content: "정우 법률사무소 무료 상담 예약. 첫 상담은 무료입니다." },
+  { title: "상담 예약 | Aurea 법률사무소 — Pixelmark Demo" },
+  { name: "description", content: "Aurea 법률사무소 상담 예약 디자인 데모. 가상 브랜드이며 실제 상담을 접수하지 않습니다." },
 ]
 
 export default function LawOfficeContact() {
@@ -199,7 +199,7 @@ export default function LawOfficeContact() {
                     <div>
                       <p className="lo-contact-info-label">주소</p>
                       <p className="lo-contact-info-value">
-                        서울시 서초구 서초대로 123<br />정우빌딩 5층
+                        서울시 서초구 서초대로 123<br />Aurea빌딩 5층
                       </p>
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export default function LawOfficeContact() {
               <div className="lo-contact-map">
                 <iframe
                   src="https://map.kakao.com/?urlX=502600&urlY=1106500&urlLevel=3&itemId=&q=%EC%84%9C%EC%B4%88%EB%8F%99"
-                  title="정우 법률사무소 위치"
+                  title="Aurea 법률사무소 위치 (가상)"
                   loading="lazy"
                 />
               </div>

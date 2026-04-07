@@ -1,5 +1,7 @@
 import type { Route } from "./+types/law-office.about"
 import { career } from "~/demos/law-office/data/content"
+// 대표 변호사 프로필 이미지 (가상, Vite asset import)
+import aboutLawyerUrl from "~/demos/law-office/assets/images/about/about-lawyer.webp"
 
 /**
  * S-2 Law Office — 소개 페이지
@@ -11,8 +13,8 @@ import { career } from "~/demos/law-office/data/content"
  */
 
 export const meta: Route.MetaFunction = () => [
-  { title: "소개 | 정우 법률사무소 — Pixelmark Demo" },
-  { name: "description", content: "정우 법률사무소 대표 변호사와 사무소 안내." },
+  { title: "소개 | Aurea 법률사무소 — Pixelmark Demo" },
+  { name: "description", content: "Aurea 법률사무소 대표 변호사와 사무소 안내. 가상 브랜드 디자인 데모입니다." },
 ]
 
 export default function LawOfficeAbout() {
@@ -23,7 +25,7 @@ export default function LawOfficeAbout() {
         <div className="lo-container">
           <p className="lo-page-header-eyebrow">About</p>
           <h1>의뢰인의 편에 서는 법률 파트너</h1>
-          <p>정우 법률사무소의 이야기를 소개합니다.</p>
+          <p>Aurea 법률사무소의 이야기를 소개합니다.</p>
         </div>
       </div>
 
@@ -33,19 +35,19 @@ export default function LawOfficeAbout() {
           <div className="lo-about-profile-inner">
             <div className="lo-about-photo">
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=680&h=900&fit=crop"
-                alt="정우 변호사"
+                src={aboutLawyerUrl}
+                alt="Aurea Han 변호사 (가상)"
                 loading="eager"
               />
             </div>
 
             <div className="lo-about-info">
-              <h2>정 우</h2>
+              <h2>Aurea Han</h2>
               <p className="lo-about-role">대표 변호사</p>
 
               <div className="lo-about-summary">
                 <p>
-                  안녕하세요, 정우 법률사무소 대표 변호사 정우입니다. 법률은 어렵고 멀게
+                  안녕하세요, Aurea 법률사무소 대표 변호사 Aurea Han입니다. 법률은 어렵고 멀게
                   느껴지지만, 저는 의뢰인의 언어로 설명하고 의뢰인의 입장에서 해결책을
                   찾는 것을 원칙으로 삼습니다.
                 </p>

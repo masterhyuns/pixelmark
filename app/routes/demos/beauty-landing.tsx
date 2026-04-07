@@ -15,6 +15,9 @@ import { initReviewCarousel } from "~/demos/beauty-landing/modules/reviewCarouse
 import { initScrollAnimation } from "~/demos/beauty-landing/modules/scrollAnimation"
 import { initNav } from "~/demos/beauty-landing/modules/nav"
 import { products, features, reviews } from "~/demos/beauty-landing/data/products"
+// 히어로 배경 + about 이미지 (Vite asset import)
+import heroBgUrl from "~/demos/beauty-landing/assets/images/hero/hero-bg.webp"
+import aboutMainUrl from "~/demos/beauty-landing/assets/images/about/about-main.webp"
 
 /**
  * S-1 Beauty Landing — 화장품 브랜드 랜딩 데모
@@ -41,7 +44,7 @@ export const meta: Route.MetaFunction = () => [
   {
     name: "description",
     content:
-      "고급스러운 화장품 브랜드 랜딩 페이지 데모. Pixelmark의 비주얼 퍼블리싱과 스크롤 애니메이션 구현 샘플.",
+      "고급스러운 화장품 브랜드 랜딩 페이지 가상 디자인 데모. Pixelmark의 비주얼 퍼블리싱·스크롤 애니메이션 샘플. (브랜드·제품은 모두 가상)",
   },
 ]
 
@@ -125,10 +128,7 @@ export default function BeautyLandingDemo() {
         {/* 배경 이미지 (패럴랙스 대상) */}
         <div
           className="bl-hero-bg"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1920&h=1280&fit=crop')",
-          }}
+          style={{ backgroundImage: `url(${heroBgUrl})` }}
           aria-hidden="true"
         />
         {/* 어두운 그라디언트 오버레이 */}
@@ -203,8 +203,8 @@ export default function BeautyLandingDemo() {
             </div>
             <div className="bl-about-image">
               <img
-                src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&h=1000&fit=crop"
-                alt="Lumière 브랜드 제품 이미지"
+                src={aboutMainUrl}
+                alt="Lumière 브랜드 제품 이미지 (가상)"
                 loading="lazy"
                 decoding="async"
               />
@@ -344,7 +344,7 @@ export default function BeautyLandingDemo() {
           </div>
 
           <p className="bl-footer-copy">
-            이 페이지는 Pixelmark 포트폴리오 데모입니다. 실제 브랜드·제품과 무관합니다.
+            Pixelmark 디자인 데모입니다. 브랜드명·인물·제품·후기는 모두 가상입니다.
             <br />© {new Date().getFullYear()} Pixelmark. All rights reserved.
           </p>
         </div>

@@ -1,10 +1,21 @@
 /**
- * S-4 Personal Portfolio — 가상 디자이너/개발자 데이터
+ * S-4 Personal Portfolio — 가상 디자이너 데이터
  *
- * [가상 인물] "Sion Park" — 서울 기반 프로덕트 디자이너
- * - 미니멀 포트폴리오 레퍼런스 톤 유지
- * - 4개 작업물, 10개 스킬, 4개 경력
+ * [가상 인물]
+ * "Mira Kalon" — 서울 기반의 가상 프로덕트 디자이너.
+ * 흔한 한국식 이름 대신 합성 외국식 이름으로 실존 리스크 회피.
+ * 모든 작업물·경력·스킬은 100% 가상이며 실제 인물/회사와 무관.
+ *
+ * [이미지 import 방식]
+ * `app/demos/personal-portfolio/assets/images/` 하위 정적 파일을 Vite가 해시 URL로 번들.
+ * public/이 아닌 app/ 내부라 반드시 import.
  */
+
+// 작업물 썸네일 (모달 내 상세 이미지도 같이 쓰임)
+import work1Url from "../assets/images/works/work-1-orbit-finance.jpg"
+import work2Url from "../assets/images/works/work-2-meadow-journal.jpg"
+import work3Url from "../assets/images/works/work-3-terra-studio.jpg"
+import work4Url from "../assets/images/works/work-4-harbor-bookshop.jpg"
 
 export interface Work {
   id: string
@@ -23,7 +34,7 @@ export const works: Work[] = [
     title: "Orbit Finance",
     category: "Mobile App",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1616077167599-cd33ebbc2567?w=1200&h=900&fit=crop",
+    image: work1Url,
     description:
       "개인 투자자를 위한 자산 관리 앱 리디자인 프로젝트. 복잡한 데이터를 직관적으로 보여주는 정보 시각화에 집중했습니다.",
     tools: ["Figma", "Principle", "After Effects"],
@@ -34,7 +45,7 @@ export const works: Work[] = [
     title: "Meadow Journal",
     category: "Web · Branding",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b8?w=1200&h=900&fit=crop",
+    image: work2Url,
     description:
       "자연에서 영감을 받은 라이프스타일 매거진의 브랜드 시스템과 웹사이트. 타이포그래피가 주인공이 되는 에디토리얼 레이아웃.",
     tools: ["Figma", "Webflow", "Illustrator"],
@@ -45,7 +56,7 @@ export const works: Work[] = [
     title: "Terra Studio",
     category: "Identity",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1200&h=900&fit=crop",
+    image: work3Url,
     description:
       "건축 스튜디오의 리브랜딩. 미니멀한 로고와 정갈한 인쇄물 체계를 설계했습니다. 스튜디오 사이트까지 이어지는 일관된 경험.",
     tools: ["Illustrator", "InDesign", "Figma"],
@@ -56,7 +67,7 @@ export const works: Work[] = [
     title: "Harbor Bookshop",
     category: "E-commerce",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200&h=900&fit=crop",
+    image: work4Url,
     description:
       "독립 서점의 온라인 스토어. 책의 촉감과 공간감을 디지털로 옮기기 위해 여백과 활자에 집중한 UI를 만들었습니다.",
     tools: ["Figma", "Shopify", "Notion"],
