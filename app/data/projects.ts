@@ -50,6 +50,7 @@ import wvnyHeroUrl from "~/demos/wedding-vinyl/assets/images/hero/album-cover.we
 import wpixHeroUrl from "~/demos/wedding-pixel/assets/images/title/title-bg.webp"
 import wnewsHeroUrl from "~/demos/wedding-newsprint/assets/images/header/header-bg.webp"
 import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope.webp"
+import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -825,6 +826,43 @@ export const projects: Project[] = [
       {
         title: "우표 도장 + sepia 카카오맵",
         description: "Destination 섹션에 'POSTED MAY 04 2026' 도장 마크와 sepia 처리된 카카오맵으로 빈티지 우편 톤을 끝까지 유지합니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-storybook",
+    title: "동화책 청첩장",
+    subtitle: "동화책 표지와 챕터 스프레드, 손글씨 본문으로 풀어낸 따뜻한 그림책 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 22,
+    demoUrl: "/demos/wedding-storybook",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Caveat", "Fraunces"],
+    description:
+      "크림 + 브라운 + 살구 + 세이지의 동화책 팔레트와 Caveat 손글씨 + Fraunces 세리프로, 청첩장을 한 권의 그림책처럼 풀어낸 데모입니다. 시그니처는 첫 화면의 동화책 표지(8px 살구 좌측 보더 + 깊은 그림자) — 제목 / 저자 / Once upon a time… 태그라인까지 진짜 책 표지 그대로입니다. 챕터 I/II는 좌우 스프레드(텍스트 + 일러스트)로 페이지 가운데에 fold 그림자가 들어가고, 짝수 챕터는 자동으로 좌우가 반전됩니다. Happily Ever After RSVP 모달까지 6 챕터를 단일 라우트에 담았습니다.",
+    thumbnail: wbookHeroUrl,
+    highlights: [
+      {
+        title: "동화책 표지 (시그니처)",
+        description: "8px 살구 좌측 보더와 깊은 그림자(0 32px 80px)를 가진 책 표지 카드. 출판사명(Pixelmark Storybooks) + 일러스트 + 큰 세리프 제목 + 손글씨 저자 + 'Once upon a time...' 태그라인까지, 그림책 표지의 시각 코드를 그대로 옮겼습니다.",
+      },
+      {
+        title: "챕터 좌우 스프레드 + fold 그림자",
+        description: "각 챕터를 텍스트 페이지 + 이미지 페이지의 좌우 스프레드로 구성. 페이지 가운데(text 페이지의 가까운 쪽 가장자리)에 linear-gradient fold 그림자를 주어 진짜 펼친 책 같은 입체감을 만들었습니다.",
+      },
+      {
+        title: "짝수 챕터 좌우 반전",
+        description: ".wbook-chapter-spread--reverse 클래스로 짝수 챕터는 이미지/텍스트 위치가 자동 반전되어, 페이지를 넘기는 듯한 리듬감을 줍니다.",
+      },
+      {
+        title: "Caveat 손글씨 본문 + Fraunces 디스플레이",
+        description: "챕터 본문은 Caveat 손글씨로 22px 큰 사이즈 작성, 챕터 제목과 정보 카드는 Fraunces 디스플레이 세리프로 배치해 손글씨와 인쇄물의 질감을 함께 살렸습니다.",
+      },
+      {
+        title: "Happily Ever After RSVP 모달",
+        description: "RSVP 폼 제출 시 살구색 좌측 보더가 들어간 'Happily Ever After' 모달이 떠오릅니다. 'your name is now part of the story'라는 손글씨 메시지가 동화책 흐름을 마무리합니다.",
       },
     ],
   },

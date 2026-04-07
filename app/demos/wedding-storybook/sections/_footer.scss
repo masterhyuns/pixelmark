@@ -1,0 +1,30 @@
+.wedding-storybook {
+  .wbook-footer {
+    padding: 80px 24px 56px;
+    text-align: center;
+    border-top: 1px solid var(--wbook-border);
+  }
+  .wbook-footer-end {
+    font-family: var(--wbook-font-script);
+    font-size: clamp(48px, 8vw, 76px);
+    color: var(--wbook-apricot);
+    margin-bottom: 14px;
+    line-height: 0.95;
+  }
+  .wbook-footer-sub {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wbook-text-soft);
+    margin-bottom: 32px;
+  }
+  .wbook-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 580px;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--wbook-text-soft);
+    padding-top: 22px;
+    border-top: 1px solid var(--wbook-border);
+  }
+}

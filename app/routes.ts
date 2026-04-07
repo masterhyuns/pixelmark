@@ -89,6 +89,9 @@ export default [
     // E-S17 우편 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-postal", "routes/demos/wedding-postal.tsx"),
 
+    // E-S18 동화책 청첩장 (단일 라우트, 원페이지)
+    route("demos/wedding-storybook", "routes/demos/wedding-storybook.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

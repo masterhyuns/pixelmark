@@ -1,0 +1,66 @@
+.wedding-storybook {
+  .wbook-venue {
+    background: var(--wbook-bg);
+  }
+  .wbook-venue-card {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    padding: 44px 40px;
+    background: var(--wbook-paper);
+    border: 1px solid var(--wbook-border);
+    box-shadow: 0 18px 44px rgba(91, 70, 54, 0.12);
+    text-align: center;
+  }
+  .wbook-venue-eyebrow {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wbook-apricot);
+    margin-bottom: 12px;
+  }
+  .wbook-venue-date {
+    font-family: var(--wbook-font-script);
+    font-size: clamp(34px, 5vw, 48px);
+    color: var(--wbook-text);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .wbook-venue-time {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--wbook-sage);
+    margin-bottom: 24px;
+  }
+  .wbook-venue-name {
+    font-family: var(--wbook-font-display);
+    font-size: 18px;
+    color: var(--wbook-text);
+    margin-bottom: 4px;
+  }
+  .wbook-venue-name-kr {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--wbook-text-soft);
+    margin-bottom: 6px;
+  }
+  .wbook-venue-address {
+    font-size: 13px;
+    color: var(--wbook-text-soft);
+  }
+
+  .wbook-venue-map {
+    max-width: 880px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--wbook-border);
+    overflow: hidden;
+    background: var(--wbook-paper);
+  }
+  .wbook-venue-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

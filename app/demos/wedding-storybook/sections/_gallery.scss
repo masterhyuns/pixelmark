@@ -1,0 +1,49 @@
+.wedding-storybook {
+  .wbook-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 720px) {
+    .wbook-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .wbook-gallery-card {
+    background: var(--wbook-paper);
+    border: 1px solid var(--wbook-border);
+    box-shadow: 0 14px 32px rgba(91, 70, 54, 0.12);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .wbook-gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px rgba(91, 70, 54, 0.2);
+  }
+  .wbook-gallery-image {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--wbook-bg-soft);
+  }
+  .wbook-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .wbook-gallery-body {
+    padding: 18px 22px 22px;
+    border-top: 1px solid var(--wbook-border);
+  }
+  .wbook-gallery-num {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--wbook-apricot);
+    margin-bottom: 4px;
+  }
+  .wbook-gallery-caption {
+    font-family: var(--wbook-font-script);
+    font-size: 20px;
+    color: var(--wbook-text);
+  }
+}

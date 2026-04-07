@@ -1,0 +1,161 @@
+.wedding-storybook {
+  .wbook-rsvp {
+    background: var(--wbook-bg-soft);
+  }
+  .wbook-rsvp-form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--wbook-paper);
+    border: 1px solid var(--wbook-border);
+    padding: 40px 40px 44px;
+    text-align: center;
+    box-shadow: 0 18px 44px rgba(91, 70, 54, 0.12);
+  }
+  .wbook-rsvp-label {
+    display: block;
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wbook-text-soft);
+    margin-bottom: 14px;
+  }
+  .wbook-rsvp-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--wbook-border);
+    background: var(--wbook-bg);
+    color: var(--wbook-text);
+    font-family: var(--wbook-font-script);
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+  .wbook-rsvp-input:focus {
+    outline: none;
+    border-color: var(--wbook-apricot);
+  }
+  .wbook-rsvp-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: var(--wbook-apricot);
+    color: var(--wbook-paper);
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 15px;
+    border: 1px solid var(--wbook-apricot);
+    transition: background 0.2s ease;
+  }
+  .wbook-rsvp-submit:hover {
+    background: var(--wbook-text);
+    border-color: var(--wbook-text);
+  }
+
+  // 모달
+  .wbook-rsvp-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(91, 70, 54, 0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .wbook-rsvp-modal.is-open { opacity: 1; pointer-events: auto; }
+  .wbook-rsvp-modal-dialog {
+    width: 100%;
+    max-width: 440px;
+    padding: 44px 40px;
+    background: var(--wbook-paper);
+    border: 1px solid var(--wbook-border);
+    border-left: 6px solid var(--wbook-apricot);
+    text-align: center;
+    position: relative;
+    transform: translateY(14px);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 24px 60px rgba(91, 70, 54, 0.3);
+  }
+  .wbook-rsvp-modal.is-open .wbook-rsvp-modal-dialog {
+    transform: translateY(0);
+  }
+  .wbook-rsvp-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--wbook-border);
+    color: var(--wbook-text-soft);
+  }
+  .wbook-rsvp-modal-eyebrow {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wbook-apricot);
+    margin-bottom: 14px;
+  }
+  .wbook-rsvp-modal-title {
+    font-family: var(--wbook-font-script);
+    font-size: 38px;
+    color: var(--wbook-text);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .wbook-rsvp-modal-desc {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--wbook-text);
+  }
+  .wbook-rsvp-modal-name {
+    color: var(--wbook-apricot);
+    font-weight: 600;
+  }
+
+  // 계좌
+  .wbook-accounts {
+    max-width: 720px;
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  @media (min-width: 720px) {
+    .wbook-accounts { grid-template-columns: 1fr 1fr; }
+  }
+  .wbook-account {
+    background: var(--wbook-paper);
+    border: 1px solid var(--wbook-border);
+    padding: 22px 24px;
+    text-align: center;
+  }
+  .wbook-account-side {
+    font-family: var(--wbook-font-display);
+    font-style: italic;
+    font-size: 12px;
+    color: var(--wbook-apricot);
+    margin-bottom: 6px;
+  }
+  .wbook-account-role {
+    font-family: var(--wbook-font-script);
+    font-size: 22px;
+    color: var(--wbook-text);
+    margin-bottom: 6px;
+  }
+  .wbook-account-bank {
+    font-size: 13px;
+    color: var(--wbook-text);
+  }
+  .wbook-account-number {
+    font-size: 12px;
+    color: var(--wbook-text-soft);
+    margin-top: 2px;
+  }
+}
