@@ -1,0 +1,61 @@
+.wedding-postal {
+  background: var(--wpost-bg);
+  color: var(--wpost-text);
+  font-family: var(--wpost-font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.005em;
+  min-height: 100vh;
+
+  // 종이 텍스처
+  background-image:
+    radial-gradient(circle at 25% 30%, rgba(200, 16, 46, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(31, 78, 140, 0.025) 0%, transparent 50%);
+
+  .wpost-script {
+    font-family: var(--wpost-font-script);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .wpost-display {
+    font-family: var(--wpost-font-display);
+    font-weight: 500;
+  }
+  .wpost-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--wpost-red);
+    letter-spacing: 0.04em;
+  }
+  .wpost-eyebrow::before,
+  .wpost-eyebrow::after {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+.wedding-postal [data-wpost-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+.wedding-postal [data-wpost-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-postal [data-wpost-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

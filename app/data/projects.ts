@@ -49,6 +49,7 @@ import whanHeroUrl from "~/demos/wedding-hanji/assets/images/hero/hero.webp"
 import wvnyHeroUrl from "~/demos/wedding-vinyl/assets/images/hero/album-cover.webp"
 import wpixHeroUrl from "~/demos/wedding-pixel/assets/images/title/title-bg.webp"
 import wnewsHeroUrl from "~/demos/wedding-newsprint/assets/images/header/header-bg.webp"
+import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -787,6 +788,43 @@ export const projects: Project[] = [
       {
         title: "WANTED/FOR SALE/LOST 분류광고",
         description: "Page 05 Classified 섹션에 'WANTED: 조용한 오후를 좋아하는 손님', 'FOR SALE: 두 마음', 'LOST: Henry'라는 위트 있는 가상 분류광고 3개와 신랑·신부 계좌 광고 2개를 배치했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "wedding-postal",
+    title: "우편 청첩장",
+    subtitle: "봉투가 열리며 손글씨 편지가 미끄러져 나오는 빈티지 항공우편 청첩장",
+    category: "event",
+    tier: "standard",
+    industry: "결혼식 / 청첩장",
+    duration: "1주",
+    order: 21,
+    demoUrl: "/demos/wedding-postal",
+    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Caveat", "transform-style"],
+    description:
+      "크라프트 베이지 + 잉크 + 우표 빨강 + 항공우편 블루 4색으로 빈티지 항공우편 청첩장을 만들었습니다. 시그니처는 봉투 오픈 인터랙션 — 페이지 진입 1.2초 후 봉투 flap이 자동으로 위로 회전(rotateX 180°)하고 안에서 손글씨 편지가 슬라이드업으로 미끄러져 나옵니다. 클릭 시 다시 접거나 펼 수 있습니다. Caveat 손글씨 편지 본문, 4개 도시 빈티지 엽서 카드(Provence/Lisbon/Kyoto/Seoul), 우표 도장과 sepia 카카오맵까지 5섹션을 단일 라우트에 담았습니다.",
+    thumbnail: wpostHeroUrl,
+    highlights: [
+      {
+        title: "봉투 오픈 인터랙션 (시그니처)",
+        description: "rotateX 180°로 봉투 flap이 자동 열리고, 편지가 translateY로 슬라이드업합니다. 클릭으로 토글 가능. perspective + cubic-bezier easing으로 입체감을 살렸습니다.",
+      },
+      {
+        title: "항공우편 빨강·파랑 보더",
+        description: "border-image의 repeating-linear-gradient로 PAR AVION 항공우편 봉투 특유의 빨강·파랑 줄무늬 보더를 CSS만으로 구현했습니다.",
+      },
+      {
+        title: "Caveat 손글씨 편지 본문",
+        description: "Letter 섹션 전체를 Caveat 손글씨 폰트로 작성. 시작/끝에 빨강·파랑 줄무늬가 있는 카드 안에 4문단 편지와 손글씨 서명을 담았습니다.",
+      },
+      {
+        title: "도시 엽서 4프레임 (살짝 기울임)",
+        description: "Provence / Lisbon / Kyoto / Seoul 네 도시 엽서를 ±1° 기울어진 카드로 배치. hover 시 0°로 펴지고, 우표 도장 원형 마크와 손글씨 캡션이 들어갑니다.",
+      },
+      {
+        title: "우표 도장 + sepia 카카오맵",
+        description: "Destination 섹션에 'POSTED MAY 04 2026' 도장 마크와 sepia 처리된 카카오맵으로 빈티지 우편 톤을 끝까지 유지합니다.",
       },
     ],
   },

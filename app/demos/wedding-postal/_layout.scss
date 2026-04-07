@@ -1,0 +1,52 @@
+.wedding-postal {
+  .wpost-container {
+    width: 100%;
+    max-width: var(--wpost-max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .wpost-container { padding: 0 40px; }
+  }
+
+  .wpost-section {
+    padding-top: var(--wpost-section-pad-y);
+    padding-bottom: var(--wpost-section-pad-y);
+  }
+
+  .wpost-section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .wpost-section-eyebrow { margin-bottom: 16px; }
+  .wpost-section-title {
+    font-family: var(--wpost-font-script);
+    font-weight: 600;
+    font-size: clamp(40px, 6vw, 60px);
+    color: var(--wpost-text);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .wpost-section-title-sub {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wpost-text-soft);
+  }
+
+  // 항공우편 빨강·파랑 보더
+  .wpost-airmail-border {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--wpost-red) 0,
+      var(--wpost-red) 10px,
+      transparent 10px,
+      transparent 20px,
+      var(--wpost-blue) 20px,
+      var(--wpost-blue) 30px,
+      transparent 30px,
+      transparent 40px
+    );
+    height: 6px;
+  }
+}

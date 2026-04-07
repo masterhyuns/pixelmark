@@ -1,0 +1,82 @@
+.wedding-postal {
+  .wpost-postcards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 720px) {
+    .wpost-postcards-grid { grid-template-columns: 1fr 1fr; gap: 40px 32px; }
+  }
+
+  .wpost-postcard {
+    position: relative;
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    box-shadow: 0 14px 36px rgba(45, 38, 28, 0.14);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .wpost-postcard:nth-child(odd) { transform: rotate(-1deg); }
+  .wpost-postcard:nth-child(even) { transform: rotate(1deg); }
+  .wpost-postcard:hover {
+    transform: rotate(0deg);
+    box-shadow: 0 22px 50px rgba(45, 38, 28, 0.2);
+  }
+
+  .wpost-postcard-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--wpost-bg-soft);
+  }
+  .wpost-postcard-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.2) contrast(1.05);
+  }
+
+  .wpost-postcard-meta {
+    padding: 18px 22px 22px;
+    border-top: 1px solid var(--wpost-border);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .wpost-postcard-num {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--wpost-red);
+    line-height: 1;
+  }
+  .wpost-postcard-city {
+    font-family: var(--wpost-font-script);
+    font-size: 22px;
+    color: var(--wpost-text);
+    line-height: 1;
+  }
+  .wpost-postmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--wpost-red);
+    color: var(--wpost-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--wpost-font-display);
+    font-size: 9px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    transform: rotate(-12deg);
+    opacity: 0.85;
+  }
+  .wpost-postcard-caption {
+    grid-column: 1 / -1;
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--wpost-text-soft);
+    margin-top: 4px;
+  }
+}

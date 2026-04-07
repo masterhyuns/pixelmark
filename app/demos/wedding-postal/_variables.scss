@@ -1,0 +1,21 @@
+:root {
+  --wpost-bg: #f5ebd7;
+  --wpost-bg-soft: #ebe0c2;
+  --wpost-paper: #faf3df;
+  --wpost-text: #2d261c;
+  --wpost-text-soft: #6b5d44;
+  --wpost-red: #c8102e;
+  --wpost-blue: #1f4e8c;
+  --wpost-border: rgba(45, 38, 28, 0.18);
+
+  --wpost-font-script: "Caveat", "Pretendard", cursive;
+  --wpost-font-display: "Cormorant Garamond", serif;
+  --wpost-font-body: "Pretendard", -apple-system, sans-serif;
+
+  --wpost-max-width: 1100px;
+  --wpost-section-pad-y: 100px;
+}
+
+@media (max-width: 767px) {
+  :root { --wpost-section-pad-y: 64px; }
+}

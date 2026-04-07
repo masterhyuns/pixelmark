@@ -1,0 +1,30 @@
+.wedding-postal {
+  .wpost-footer {
+    padding: 80px 24px 56px;
+    text-align: center;
+    border-top: 1px solid var(--wpost-border);
+  }
+  .wpost-footer-thanks {
+    font-family: var(--wpost-font-script);
+    font-size: clamp(40px, 6vw, 64px);
+    color: var(--wpost-red);
+    margin-bottom: 14px;
+    line-height: 0.95;
+  }
+  .wpost-footer-sub {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wpost-text-soft);
+    margin-bottom: 32px;
+  }
+  .wpost-footer-disclaimer {
+    margin: 0 auto;
+    max-width: 580px;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--wpost-text-soft);
+    padding-top: 24px;
+    border-top: 1px solid var(--wpost-border);
+  }
+}

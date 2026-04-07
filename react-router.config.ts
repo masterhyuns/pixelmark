@@ -67,6 +67,7 @@ export default {
       "/demos/wedding-vinyl",
       "/demos/wedding-pixel",
       "/demos/wedding-newsprint",
+      "/demos/wedding-postal",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

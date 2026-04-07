@@ -1,0 +1,59 @@
+.wedding-postal {
+  .wpost-letter-section {
+    background: var(--wpost-bg);
+  }
+
+  .wpost-letter-card {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 56px 64px;
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    box-shadow: 0 20px 60px rgba(45, 38, 28, 0.12);
+    position: relative;
+  }
+  .wpost-letter-card::before,
+  .wpost-letter-card::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 6px;
+  }
+  .wpost-letter-card::before {
+    top: 0;
+    background-image: repeating-linear-gradient(45deg, var(--wpost-red) 0 12px, var(--wpost-blue) 12px 24px);
+  }
+  .wpost-letter-card::after {
+    bottom: 0;
+    background-image: repeating-linear-gradient(45deg, var(--wpost-red) 0 12px, var(--wpost-blue) 12px 24px);
+  }
+
+  .wpost-letter-greeting-big {
+    font-family: var(--wpost-font-script);
+    font-size: clamp(36px, 5vw, 52px);
+    color: var(--wpost-text);
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+  .wpost-letter-body p {
+    font-family: var(--wpost-font-script);
+    font-size: 21px;
+    line-height: 1.85;
+    color: var(--wpost-text);
+  }
+  .wpost-letter-body p + p {
+    margin-top: 14px;
+  }
+  .wpost-letter-signature {
+    margin-top: 28px;
+    text-align: right;
+    font-family: var(--wpost-font-script);
+    font-size: 28px;
+    color: var(--wpost-red);
+  }
+
+  @media (max-width: 600px) {
+    .wpost-letter-card { padding: 40px 28px 48px; }
+  }
+}

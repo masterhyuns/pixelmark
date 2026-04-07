@@ -1,0 +1,177 @@
+.wedding-postal {
+  .wpost-envelope-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+  }
+
+  // 봉투 (스큐오모피즘)
+  .wpost-envelope {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 7 / 5;
+    cursor: pointer;
+    perspective: 1200px;
+  }
+
+  .wpost-envelope-body {
+    position: absolute;
+    inset: 0;
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    box-shadow: 0 20px 60px rgba(45, 38, 28, 0.18);
+    overflow: hidden;
+  }
+  .wpost-envelope-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 6px solid transparent;
+    border-image: repeating-linear-gradient(
+      45deg,
+      var(--wpost-red) 0 12px,
+      var(--wpost-blue) 12px 24px
+    ) 6;
+    pointer-events: none;
+  }
+
+  // 발신/수신
+  .wpost-envelope-addresses {
+    position: absolute;
+    inset: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  .wpost-envelope-addr {
+    font-family: var(--wpost-font-script);
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--wpost-text);
+  }
+  .wpost-envelope-addr-label {
+    font-family: var(--wpost-font-display);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wpost-red);
+    margin-bottom: 4px;
+  }
+  .wpost-envelope-addr--to {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  // 우표
+  .wpost-stamp {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 86px;
+    height: 96px;
+    background: var(--wpost-bg);
+    border: 2px dashed var(--wpost-red);
+    padding: 6px;
+    transform: rotate(2deg);
+    z-index: 2;
+  }
+  .wpost-stamp-inner {
+    width: 100%;
+    height: 100%;
+    background: var(--wpost-blue);
+    color: var(--wpost-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6px;
+  }
+  .wpost-stamp-mark {
+    font-family: var(--wpost-font-display);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .wpost-stamp-icon {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 26px;
+    color: var(--wpost-bg);
+    line-height: 1;
+  }
+
+  // 봉투 flap
+  .wpost-envelope-flap {
+    position: absolute;
+    inset: 0 0 50% 0;
+    background: var(--wpost-bg-soft);
+    border-bottom: 1px solid var(--wpost-border);
+    transform-origin: top center;
+    transform: rotateX(0);
+    transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 3;
+  }
+  .wpost-envelope-flap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, transparent 49%, var(--wpost-border) 50%, transparent 51%) bottom left / 50% 100% no-repeat,
+      linear-gradient(225deg, transparent 49%, var(--wpost-border) 50%, transparent 51%) bottom right / 50% 100% no-repeat;
+  }
+  .wpost-envelope.is-open .wpost-envelope-flap {
+    transform: rotateX(180deg);
+  }
+
+  // 편지지 (slide-up)
+  .wpost-letter {
+    position: absolute;
+    inset: 0;
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    padding: 30px 32px 28px;
+    transform: translateY(0) scale(0.96);
+    opacity: 0.7;
+    transition: transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s, opacity 0.6s ease 0.3s;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .wpost-envelope.is-open .wpost-letter {
+    transform: translateY(-72%) scale(1);
+    opacity: 1;
+  }
+  .wpost-letter-line {
+    height: 1px;
+    background: var(--wpost-border);
+    margin-bottom: 12px;
+  }
+  .wpost-letter-greeting {
+    font-family: var(--wpost-font-script);
+    font-size: 24px;
+    color: var(--wpost-text);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .wpost-letter-tease {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--wpost-text-soft);
+  }
+
+  .wpost-envelope-hint {
+    margin-top: 32px;
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wpost-text-soft);
+  }
+}

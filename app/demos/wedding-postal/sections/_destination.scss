@@ -1,0 +1,92 @@
+.wedding-postal {
+  .wpost-destination {
+    background: var(--wpost-bg-soft);
+  }
+  .wpost-destination-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 880px) {
+    .wpost-destination-grid { grid-template-columns: 1fr 1.4fr; }
+  }
+
+  .wpost-destination-card {
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    padding: 32px 30px;
+    position: relative;
+  }
+  .wpost-destination-stamp {
+    position: absolute;
+    top: -12px;
+    right: 24px;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 3px solid var(--wpost-red);
+    color: var(--wpost-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--wpost-font-display);
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    background: var(--wpost-paper);
+    transform: rotate(-6deg);
+  }
+  .wpost-destination-eyebrow {
+    font-family: var(--wpost-font-display);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--wpost-red);
+    margin-bottom: 12px;
+  }
+  .wpost-destination-name {
+    font-family: var(--wpost-font-script);
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--wpost-text);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .wpost-destination-name-kr {
+    font-family: var(--wpost-font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--wpost-text-soft);
+    margin-bottom: 22px;
+  }
+  .wpost-destination-row {
+    padding: 12px 0;
+    border-top: 1px dashed var(--wpost-border);
+  }
+  .wpost-destination-row-label {
+    font-family: var(--wpost-font-display);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--wpost-blue);
+    margin-bottom: 4px;
+  }
+  .wpost-destination-row-value {
+    font-family: var(--wpost-font-display);
+    font-size: 16px;
+    color: var(--wpost-text);
+  }
+
+  .wpost-destination-map {
+    background: var(--wpost-paper);
+    border: 1px solid var(--wpost-border);
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+  }
+  .wpost-destination-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: sepia(0.3) brightness(0.95);
+  }
+}
