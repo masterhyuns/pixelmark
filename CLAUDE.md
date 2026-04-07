@@ -9,6 +9,12 @@
 >
 > 데모별 상세 작업(명칭 정리/이미지 교체)은 각 데모의 `Documents/기획/S-X.../개발지시서.md` 와 `이미지.md` 참조.
 
+> **📌 PREMIUM 정의 (중요)**
+>
+> PREMIUM은 데모가 아닌 **맞춤 서비스 옵션**입니다. 데모는 STANDARD/DELUXE에만 만들고, PREMIUM은 `/services/premium` 페이지에서 개별 상담으로 안내합니다.
+>
+> 상세: [`../Documents/portfolio/premium-서비스-안내.md`](../Documents/portfolio/premium-서비스-안내.md)
+
 
 
 ## 프로젝트 개요

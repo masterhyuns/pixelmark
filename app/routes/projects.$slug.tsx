@@ -165,31 +165,6 @@ export default function ProjectDetail({ loaderData }: Route.ComponentProps) {
         </div>
       </div>
 
-      {/* ===== 스크린샷 ===== */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="text-xl font-semibold text-white mb-8">스크린샷</h2>
-          <div className="space-y-4">
-            {project.images.map((src, i) => (
-              <div key={i} className="rounded-xl overflow-hidden border border-white/5">
-                {/* width/height 명시로 CLS 방지
-                    첫 이미지만 eager + high priority (상세 페이지 LCP) */}
-                <img
-                  src={src}
-                  alt={`${project.title} 스크린샷 ${i + 1}`}
-                  width={1200}
-                  height={750}
-                  className="w-full h-auto object-cover"
-                  loading={i === 0 ? "eager" : "lazy"}
-                  decoding="async"
-                  fetchPriority={i === 0 ? "high" : "auto"}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== 프로젝트 설명 ===== */}
       <section className="py-16 bg-[#0d0d0d]">
         <div className="container">
