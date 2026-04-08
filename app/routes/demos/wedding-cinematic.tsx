@@ -78,8 +78,8 @@ export default function WeddingCinematic() {
         <div className="wcine-hero-inner">
           <p className="wcine-hero-presents" data-wcine-reveal-step="0">{movie.presents}</p>
           <h1 className="wcine-hero-title" data-wcine-reveal-step="1">{movie.title}</h1>
-          <p className="wcine-hero-subtitle" data-wcine-reveal-step="2">{movie.subtitle}</p>
-          <p className="wcine-hero-tagline" data-wcine-reveal-step="3">"{movie.tagline}"</p>
+          <p className="wcine-hero-subtitle" data-wcine-reveal-step="2">— {movie.titleKr} —</p>
+          <p className="wcine-hero-tagline" data-wcine-reveal-step="3">"{movie.taglineKr}"</p>
           <span className="wcine-hero-rating" data-wcine-reveal-step="4">
             <span className="wcine-hero-rating-icon">❤</span>
             {movie.rating}
@@ -101,7 +101,7 @@ export default function WeddingCinematic() {
           <div className="wcine-meta-sheet" data-wcine-reveal>
             {movieMeta.map((row) => (
               <div key={row.label} className="wcine-meta-row">
-                <span className="wcine-meta-label">{row.label}</span>
+                <span className="wcine-meta-label">{row.label} · {row.labelKr}</span>
                 <span className="wcine-meta-value">{row.value}</span>
               </div>
             ))}
@@ -136,7 +136,7 @@ export default function WeddingCinematic() {
             <div className="wcine-credits-track">
               {credits.map((c, i) => (
                 <div key={i} className="wcine-credit-row">
-                  <span className="wcine-credit-role">{c.role}</span>
+                  <span className="wcine-credit-role">{c.role} · {c.roleKr}</span>
                   <p className="wcine-credit-name">{c.name}</p>
                 </div>
               ))}
@@ -158,17 +158,17 @@ export default function WeddingCinematic() {
 
           <div className="wcine-showtime-grid" data-wcine-reveal>
             <div className="wcine-showtime-info">
-              <p className="wcine-showtime-label">Now Showing At</p>
+              <p className="wcine-showtime-label">Now Showing At · 상영관</p>
               <p className="wcine-showtime-theater">{showtime.theater}</p>
-              <p className="wcine-showtime-theater-kr">{showtime.theaterKr}</p>
+              <p className="wcine-showtime-theater-kr">{showtime.theaterEn}</p>
 
               <div className="wcine-showtime-row">
-                <p className="wcine-showtime-row-label">Release Date</p>
-                <p className="wcine-showtime-row-value">{`${monthShort} ${date.getDate()}, ${yyyy} · 16:00`}</p>
+                <p className="wcine-showtime-row-label">개봉일 · Release Date</p>
+                <p className="wcine-showtime-row-value">{`${yyyy}년 ${date.getMonth() + 1}월 ${date.getDate()}일 (${["일","월","화","수","목","금","토"][date.getDay()]}) 오후 4시`}</p>
               </div>
               <div className="wcine-showtime-row">
-                <p className="wcine-showtime-row-label">Address</p>
-                <p className="wcine-showtime-row-value">{showtime.addressKr}</p>
+                <p className="wcine-showtime-row-label">주소 · Address</p>
+                <p className="wcine-showtime-row-value">{showtime.address}</p>
               </div>
 
               <div className="wcine-countdown" data-wcine-countdown data-target={date.toISOString()} aria-label="개봉까지 남은 시간">
