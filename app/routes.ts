@@ -131,6 +131,14 @@ export default [
       route("demos/coach-warm/contact", "routes/demos/coach-warm.contact.tsx"),
     ]),
 
+    // P-S1 병원/의원 Lumen Medical Clinic (멀티페이지: 부모 layout + 4 sub-route)
+    layout("routes/demos/_medical-clean.tsx", [
+      route("demos/medical-clean", "routes/demos/medical-clean._index.tsx"),
+      route("demos/medical-clean/departments", "routes/demos/medical-clean.departments.tsx"),
+      route("demos/medical-clean/staff", "routes/demos/medical-clean.staff.tsx"),
+      route("demos/medical-clean/reservation", "routes/demos/medical-clean.reservation.tsx"),
+    ]),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

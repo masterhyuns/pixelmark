@@ -60,6 +60,7 @@ import fdmHeroUrl from "~/demos/finedining-mono/assets/images/hero/hero.webp"
 import pmnHeroUrl from "~/demos/photographer-mono/assets/images/intro/intro-main.webp"
 import ilvHeroUrl from "~/demos/illustrator-vivid/assets/images/hero/hero.webp"
 import cwmHeroUrl from "~/demos/coach-warm/assets/images/about/hero.webp"
+import mclHeroUrl from "~/demos/medical-clean/assets/images/home/home-hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1205,6 +1206,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "스튜디오명·프로그램 영문 타이틀·섹션 헤딩 등 디스플레이는 영문 OK, 코치 약력 / 활동 분야 설명 / 강의 메타 / 후기 / 문의 폼 라벨 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "medical-clean",
+    title: "병원 / 의원 사이트",
+    subtitle: "퓨어 화이트 + 소프트 민트 액센트로 완성한 1차 진료 의원 멀티페이지(4) 데모",
+    category: "professional",
+    tier: "standard",
+    industry: "병원 / 의원 / 클리닉",
+    duration: "1주",
+    order: 32,
+    demoUrl: "/demos/medical-clean",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "React Router 7", "Inter", "IntersectionObserver"],
+    description:
+      "가상 'Lumen Medical Clinic'의 4-페이지 의원 사이트 데모입니다. 부모 layout이 SCSS와 사이트 chrome / scrollReveal / 페이드 전환을 한 번에 묶고, 그 아래 홈 / 진료 과목 / 의료진 / 예약 안내 4개 sub-route가 이어집니다. 퓨어 화이트(#FFFFFF) + 다크 네이비(#1A2A3A) + 소프트 민트(#5BAFB0) 3색만으로 신뢰감 있는 메디컬 톤을 구성했습니다. 의료법 안전성 — 의료진 얼굴 / 시술 사례 / 효과 표시 일체 없음.",
+    thumbnail: mclHeroUrl,
+    highlights: [
+      {
+        title: "부모 layout + 4 sub-route 페이드 전환",
+        description: "_medical-clean.tsx 부모가 SCSS · 사이트 헤더(고정 + CTA 버튼) · 푸터 · scrollReveal · sub-route 페이드를 모두 담당. 4개 페이지(홈 / 진료과목 / 의료진 / 예약 안내) 간 즉시 페이드 전환됩니다.",
+      },
+      {
+        title: "Why Lumen 4-Feature 카드 + 진료 과목 좌측 보더 hover",
+        description: "홈은 '긴 진료 시간 / 정직한 검사 / 재방문 알림 / 투명한 비용' 4-feature 카드를 4-column으로 배치. 진료 과목 카드는 hover 시 좌측 3px 보더가 회색 → 민트로 바뀌며 민트 그림자가 떠오릅니다.",
+      },
+      {
+        title: "의료진 학력/경력 분리 + 손/심볼 이미지 (의료법 안전)",
+        description: "원장 소개는 얼굴이 들어가지 않은 손/청진기 심볼 이미지 + 학력 / 경력 dashed-row 테이블 + 본문 3문단으로 구성. 모든 내용이 가상이며 의료광고 규제(시술 사례 / 효과 표시) 일체 없음.",
+      },
+      {
+        title: "진료 시간 / 주차 / 위치 카드 + 카카오맵",
+        description: "예약 안내 페이지는 진료 시간 + 주차 안내 카드 / 주소 + 전화 + 카카오톡 채널 카드 2-column + 21:9 카카오맵. 모든 정보가 한국 손님이 가장 먼저 확인하는 정보부터 위계 있게 배치되었습니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "의원명·진료 과목 영문 라벨·섹션 헤딩 등 디스플레이는 영문 OK, 진료 안내 / 의원 철학 / 원장 약력 / 진료 시간 / 주차 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },

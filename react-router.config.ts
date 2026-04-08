@@ -84,6 +84,10 @@ export default {
       "/demos/coach-warm",
       "/demos/coach-warm/programs",
       "/demos/coach-warm/contact",
+      "/demos/medical-clean",
+      "/demos/medical-clean/departments",
+      "/demos/medical-clean/staff",
+      "/demos/medical-clean/reservation",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",
