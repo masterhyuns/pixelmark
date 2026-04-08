@@ -108,6 +108,13 @@ export default [
     // F-S1 베이커리 Maison Crème (단일 라우트, 원페이지)
     route("demos/bakery-pastel", "routes/demos/bakery-pastel.tsx"),
 
+    // F-S2 와인바 Verres Noirs (멀티페이지: 부모 layout + 3 sub-route)
+    layout("routes/demos/_winebar-darklux.tsx", [
+      route("demos/winebar-darklux", "routes/demos/winebar-darklux._index.tsx"),
+      route("demos/winebar-darklux/menu", "routes/demos/winebar-darklux.menu.tsx"),
+      route("demos/winebar-darklux/reservation", "routes/demos/winebar-darklux.reservation.tsx"),
+    ]),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

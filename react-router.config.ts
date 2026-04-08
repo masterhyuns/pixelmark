@@ -75,6 +75,9 @@ export default {
       "/demos/food-magazine/story",
       "/demos/living-modern",
       "/demos/bakery-pastel",
+      "/demos/winebar-darklux",
+      "/demos/winebar-darklux/menu",
+      "/demos/winebar-darklux/reservation",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

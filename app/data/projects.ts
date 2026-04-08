@@ -55,6 +55,7 @@ import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp
 import fmagHeroUrl from "~/demos/food-magazine/assets/images/home/home-hero.webp"
 import lvmHeroUrl from "~/demos/living-modern/assets/images/hero/hero.webp"
 import bpHeroUrl from "~/demos/bakery-pastel/assets/images/hero/hero-bg.webp"
+import wbdHeroUrl from "~/demos/winebar-darklux/assets/images/home/home-hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1015,6 +1016,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "브랜드명·시그니처 영문 메뉴명·섹션 헤딩 등 디스플레이는 영문 OK, 본문 / 메뉴 설명 / 가격 / 매장 안내 / 영업시간 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "winebar-darklux",
+    title: "와인바 / 펍 다크 럭셔리",
+    subtitle: "딥 블랙 + 시네마틱 골드 + 와인 레드로 완성한 어른의 멀티페이지 와인바 데모",
+    category: "fnb",
+    tier: "standard",
+    industry: "와인바 / 펍",
+    duration: "1주",
+    order: 27,
+    demoUrl: "/demos/winebar-darklux",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "React Router 7", "Cormorant Garamond"],
+    description:
+      "한남동 지하의 가상 와인바 'Verres Noirs'의 멀티페이지 데모입니다. 부모 layout이 SCSS와 사이트 chrome / 스크롤 reveal / 메뉴 탭 모듈을 한 번에 묶고, 그 아래 홈 / 메뉴 / 예약 안내 3개 sub-route가 페이드 전환으로 이어집니다. 딥 블랙(#0F0A0A) + 시네마틱 골드(#D4AF37) + 와인 레드(#722F37) 3색 팔레트와 Cormorant Garamond 이탤릭 디스플레이로 어른의 다크 럭셔리 톤을 끝까지 유지합니다.",
+    thumbnail: wbdHeroUrl,
+    highlights: [
+      {
+        title: "부모 layout + 3 sub-route 페이드 전환",
+        description: "_winebar-darklux.tsx 부모가 SCSS · scrollReveal · 메뉴 탭 모듈을 모두 담당하고, useLocation으로 sub-route 변경을 감지해 .wbd-page에 .is-leaving을 잠깐 부여 → opacity transition으로 부드럽게 페이드합니다.",
+      },
+      {
+        title: "메뉴 탭 underline 슬라이드 (시그니처)",
+        description: "Wine / Cocktail / Snack 카테고리 탭은 클릭 시 해당 패널이 fadeIn으로 교체되고, 활성 탭의 골드 underline이 width 0 → 100%로 0.35s ease 슬라이드 됩니다. 외부 라이브러리 없이 vanilla TS 모듈로 직접 구현.",
+      },
+      {
+        title: "Cormorant Garamond 이탤릭 골드 히어로 + 22s zoom",
+        description: "히어로 브랜드명을 clamp(56px, 10vw, 144px)의 Cormorant 이탤릭 골드로 얹고, 어두운 매장 배경은 22초에 걸쳐 1.08 → 1.16 스케일로 천천히 호흡합니다. shadow 30px로 골드를 더 또렷이 띄웁니다.",
+      },
+      {
+        title: "Dashed 라인 와인 리스트 + 시그니처 추천",
+        description: "메뉴 항목은 잡지 와인 리스트처럼 dashed 1px 라인으로 구분되고, 가격은 별도 우측 컬럼에 골드 색으로 표기합니다. 페이지 마지막에는 1px 골드 보더 카드로 시그니처 페어링 추천을 강조합니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "브랜드명·메뉴 영문명·섹션 헤딩 등 디스플레이는 영문, 메뉴 설명 / 인사글 / 예약 정책 / 영업시간 / 드레스 코드 / 푸터 disclaimer는 모두 한국어 메인으로 작성해 한국 손님이 가장 중요한 정보를 그대로 읽을 수 있게 했습니다.",
       },
     ],
   },
