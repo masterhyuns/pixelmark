@@ -102,6 +102,9 @@ export default [
       route("demos/food-magazine/story", "routes/demos/food-magazine.story.tsx"),
     ]),
 
+    // B-S3 가구/리빙 Maison Brisé (단일 라우트, 원페이지)
+    route("demos/living-modern", "routes/demos/living-modern.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

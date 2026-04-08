@@ -53,6 +53,7 @@ import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope
 import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.webp"
 import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp"
 import fmagHeroUrl from "~/demos/food-magazine/assets/images/home/home-hero.webp"
+import lvmHeroUrl from "~/demos/living-modern/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -939,6 +940,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "브랜드명 / 슬로건 / 챕터 라벨 등 디스플레이는 영문으로 유지하면서, 본문 / 제품 설명 / 농장 이야기 / 매장 안내는 모두 한국어를 메인으로 작성해 한국 손님이 정보를 그대로 읽을 수 있게 했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "living-modern",
+    title: "가구/리빙 브랜드 카탈로그",
+    subtitle: "베이지 + 우드 + 세이지의 모던 자연주의로 완성한 가구 브랜드 매거진형 카탈로그",
+    category: "brand",
+    tier: "standard",
+    industry: "가구 / 리빙 브랜드",
+    duration: "1주",
+    order: 25,
+    demoUrl: "/demos/living-modern",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "Cormorant Garamond", "Intersection Observer"],
+    description:
+      "강원도 작은 농장이 아닌 한남 쇼룸에서 시작되는 가상 가구 브랜드 'Maison Brisé'의 카탈로그입니다. 풀스크린 인테리어 히어로 → 룸별 매거진 비대칭 그리드 → 시즌 컬렉션 카드 → 한남 쇼룸 안내까지 5섹션 원페이지로 묶었습니다. Cormorant Garamond 디스플레이 이탤릭과 베이지(#F4F0E8) + 다크우드(#2D261C) + 세이지(#7B8B6F) + 캐러멜 우드(#8C7B5E) 4색 팔레트로 모던 자연주의 톤을 일관되게 유지합니다.",
+    thumbnail: lvmHeroUrl,
+    highlights: [
+      {
+        title: "룸별 매거진 비대칭 그리드 (시그니처)",
+        description: "거실/침실/주방 3개 룸을 메인 사진(4:3, 1.4fr) + 디테일 사진(1:1, 0.8fr) 비대칭 그리드로 배치하고, :nth-child(even)으로 짝수번 룸은 자동으로 좌우가 반전됩니다. 매거진 스프레드 같은 리듬을 만듭니다.",
+      },
+      {
+        title: "Cormorant Garamond 이탤릭 히어로 + 8s zoom",
+        description: "히어로 브랜드명에 clamp(56px, 9vw, 132px)의 Cormorant Garamond 이탤릭을 얹고, 배경 인테리어 사진은 1.06 → 1.0 스케일을 8초에 걸쳐 천천히 풀어 시네마틱한 첫 인상을 줍니다.",
+      },
+      {
+        title: "Collection 카드 hover 그림자 + 가격 액센트",
+        description: "시즌 컬렉션 4점 카드는 hover 시 24px / 64px 부드러운 그림자가 생기고 4px 위로 떠오릅니다. 하단 메타에는 가구 사이즈와 함께 캐러멜 색의 가격 표기를 분리해 카탈로그 정보 위계를 명확히 했습니다.",
+      },
+      {
+        title: "Grayscale 카카오맵 + 한남 쇼룸 카드",
+        description: "쇼룸 섹션은 화이트 카드(주소·운영시간·전화·방문 안내) + filter:grayscale(0.5) 카카오맵 2-column 구성으로, 흑백톤을 끝까지 유지하면서 매장 정보를 깔끔하게 노출합니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "브랜드명·슬로건·룸 라벨 등 디스플레이는 영문으로 유지하고, 룸 캡션·컬렉션 본문·쇼룸 안내·푸터 disclaimer는 모두 한국어 메인으로 작성해 한국 손님이 정보를 그대로 읽을 수 있게 했습니다.",
       },
     ],
   },

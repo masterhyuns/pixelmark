@@ -1,0 +1,468 @@
+/**
+ * B-S3 Living Modern — Maison Brisé
+ *
+ * 컨셉: 모던 우드 / 차분 / 자연주의
+ * 컬러: 베이지(#F4F0E8) + 다크우드(#2D261C) + 세이지(#7B8B6F) + 캐러멜(#8C7B5E)
+ * 폰트: Cormorant Garamond + Inter
+ */
+
+:root {
+  --lvm-bg: #f4f0e8;
+  --lvm-bg-2: #ebe4d4;
+  --lvm-card: #ffffff;
+  --lvm-text: #2d261c;
+  --lvm-text-soft: #6a5d4a;
+  --lvm-text-mute: #b3a58c;
+  --lvm-rule: #ddd1ba;
+  --lvm-sage: #7b8b6f;
+  --lvm-caramel: #8c7b5e;
+
+  --lvm-display: "Cormorant Garamond", "Times New Roman", serif;
+  --lvm-body: "Inter", "Pretendard", system-ui, sans-serif;
+
+  --demo-bar-bg: rgba(244, 240, 232, 0.92);
+  --demo-bar-text: #2d261c;
+  --demo-bar-border: rgba(123, 139, 111, 0.3);
+  --demo-fab-bg: #2d261c;
+  --demo-fab-icon: #f4f0e8;
+}
+
+.living-modern,
+.living-modern *,
+.living-modern *::before,
+.living-modern *::after { box-sizing: border-box; }
+
+.living-modern {
+  margin: 0;
+  background: var(--lvm-bg);
+  color: var(--lvm-text);
+  font-family: var(--lvm-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.living-modern h1,.living-modern h2,.living-modern h3,.living-modern h4,
+.living-modern p,.living-modern ul,.living-modern figure { margin: 0; padding: 0; }
+.living-modern ul { list-style: none; }
+.living-modern a { color: inherit; text-decoration: none; }
+.living-modern img { display: block; max-width: 100%; height: auto; }
+.living-modern button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
+
+body { background: var(--lvm-bg); }
+
+.lvm-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 767px) { .lvm-container { padding: 0 20px; } }
+
+.lvm-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--lvm-sage);
+  font-weight: 500;
+}
+
+[data-lvm-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+[data-lvm-reveal].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-lvm-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== Hero ===== */
+.lvm-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+}
+.lvm-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.lvm-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  animation: lvm-hero-zoom 8s ease forwards;
+}
+@keyframes lvm-hero-zoom { to { transform: scale(1); } }
+.lvm-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(45,38,28,0.15) 0%, rgba(45,38,28,0.55) 100%);
+}
+.lvm-hero-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 120px 0 64px;
+  color: #fff;
+}
+.lvm-hero-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.lvm-hero-center {
+  max-width: 720px;
+}
+.lvm-hero-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #f4f0e8;
+  opacity: 0.9;
+}
+.lvm-hero-name {
+  font-family: var(--lvm-display);
+  font-weight: 500;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+.lvm-hero-tagline {
+  margin-top: 18px;
+  font-family: var(--lvm-display);
+  font-size: 26px;
+  font-style: italic;
+  opacity: 0.95;
+}
+.lvm-hero-body {
+  margin-top: 28px;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.85;
+  opacity: 0.92;
+}
+.lvm-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ===== Section common ===== */
+.lvm-section {
+  padding: 140px 0;
+}
+@media (max-width: 767px) { .lvm-section { padding: 96px 0; } }
+.lvm-section-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+  padding-bottom: 32px;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--lvm-rule);
+}
+.lvm-section-title {
+  font-family: var(--lvm-display);
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+}
+.lvm-section-meta {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lvm-text-mute);
+  text-align: right;
+}
+
+/* ===== Rooms — 매거진 비대칭 그리드 (시그니처) ===== */
+.lvm-rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+.lvm-room {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  grid-template-rows: auto;
+  gap: 32px;
+  align-items: end;
+}
+.lvm-room:nth-child(even) {
+  grid-template-columns: 0.8fr 1.4fr;
+}
+.lvm-room:nth-child(even) .lvm-room-main { order: 2; }
+@media (max-width: 1023px) {
+  .lvm-room,
+  .lvm-room:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .lvm-room:nth-child(even) .lvm-room-main { order: initial; }
+}
+.lvm-room-main {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lvm-bg-2);
+}
+.lvm-room-main img,
+.lvm-room-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.lvm-room-main:hover img,
+.lvm-room-detail:hover img { transform: scale(1.03); }
+.lvm-room-detail {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--lvm-bg-2);
+}
+.lvm-room-info {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 24px;
+  align-items: baseline;
+}
+.lvm-room-code {
+  font-family: var(--lvm-display);
+  font-style: italic;
+  font-size: 36px;
+  color: var(--lvm-caramel);
+  font-weight: 500;
+}
+.lvm-room-name {
+  font-family: var(--lvm-display);
+  font-size: 32px;
+  font-weight: 500;
+}
+.lvm-room-name-kr {
+  font-size: 13px;
+  color: var(--lvm-sage);
+  letter-spacing: 0.1em;
+}
+.lvm-room-caption {
+  grid-column: 2 / -1;
+  margin-top: 6px;
+  color: var(--lvm-text-soft);
+  font-size: 14px;
+  max-width: 460px;
+}
+
+/* ===== Collection ===== */
+.lvm-collection {
+  background: var(--lvm-bg-2);
+}
+.lvm-collection-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  margin-bottom: 72px;
+}
+@media (max-width: 1023px) { .lvm-collection-intro { grid-template-columns: 1fr; gap: 24px; } }
+.lvm-collection-title {
+  font-family: var(--lvm-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5.5vw, 72px);
+  line-height: 1;
+  white-space: pre-line;
+  letter-spacing: -0.01em;
+  margin-top: 12px;
+}
+.lvm-collection-body {
+  font-size: 16px;
+  color: var(--lvm-text-soft);
+  max-width: 480px;
+  align-self: end;
+}
+
+.lvm-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 40px;
+}
+@media (max-width: 767px) { .lvm-collection-grid { grid-template-columns: 1fr; gap: 56px; } }
+.lvm-collection-card {
+  background: var(--lvm-card);
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.lvm-collection-card:hover {
+  box-shadow: 0 24px 64px -28px rgba(45, 38, 28, 0.35);
+  border-color: var(--lvm-rule);
+  transform: translateY(-4px);
+}
+.lvm-collection-card-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--lvm-bg);
+}
+.lvm-collection-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.lvm-collection-card:hover .lvm-collection-card-image img { transform: scale(1.04); }
+.lvm-collection-card-body {
+  padding: 28px 32px 32px;
+}
+.lvm-collection-card-num {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--lvm-sage);
+  margin-bottom: 8px;
+}
+.lvm-collection-card-title {
+  font-family: var(--lvm-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.lvm-collection-card-title-kr {
+  font-size: 13px;
+  color: var(--lvm-text-mute);
+  margin-top: 4px;
+}
+.lvm-collection-card-caption {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--lvm-text-soft);
+}
+.lvm-collection-card-meta {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--lvm-rule);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--lvm-text-soft);
+}
+.lvm-collection-card-price { color: var(--lvm-caramel); font-weight: 500; }
+
+/* ===== Showroom ===== */
+.lvm-showroom-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+  align-items: stretch;
+}
+@media (max-width: 1023px) { .lvm-showroom-grid { grid-template-columns: 1fr; } }
+.lvm-showroom-card {
+  background: var(--lvm-card);
+  padding: 48px 40px;
+  border: 1px solid var(--lvm-rule);
+}
+.lvm-showroom-name {
+  font-family: var(--lvm-display);
+  font-size: 28px;
+  font-weight: 500;
+}
+.lvm-showroom-name-en {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lvm-text-mute);
+  margin-top: 6px;
+}
+.lvm-showroom-row {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--lvm-text-soft);
+}
+.lvm-showroom-row strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lvm-sage);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.lvm-showroom-notice {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--lvm-rule);
+  font-size: 14px;
+  color: var(--lvm-text-soft);
+  line-height: 1.7;
+}
+.lvm-showroom-map {
+  border: 1px solid var(--lvm-rule);
+  overflow: hidden;
+  min-height: 420px;
+}
+.lvm-showroom-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 0;
+  filter: grayscale(0.5);
+}
+
+/* ===== Footer ===== */
+.lvm-footer {
+  background: var(--lvm-text);
+  color: #e9dfc8;
+  padding: 80px 0 56px;
+}
+.lvm-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+}
+@media (max-width: 767px) { .lvm-footer-grid { grid-template-columns: 1fr; } }
+.lvm-footer-name {
+  font-family: var(--lvm-display);
+  font-size: clamp(40px, 6vw, 64px);
+  font-style: italic;
+  line-height: 1;
+}
+.lvm-footer-tag {
+  margin-top: 10px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.lvm-footer-meta {
+  text-align: right;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+@media (max-width: 767px) { .lvm-footer-meta { text-align: left; } }
+.lvm-footer-disclaimer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(233, 223, 200, 0.18);
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.7;
+}
