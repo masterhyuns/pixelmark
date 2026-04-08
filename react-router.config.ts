@@ -81,6 +81,9 @@ export default {
       "/demos/finedining-mono",
       "/demos/photographer-mono",
       "/demos/illustrator-vivid",
+      "/demos/coach-warm",
+      "/demos/coach-warm/programs",
+      "/demos/coach-warm/contact",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",

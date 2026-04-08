@@ -124,6 +124,13 @@ export default [
     // PE-S2 일러스트레이터 Yara Lume (단일 라우트, 원페이지)
     route("demos/illustrator-vivid", "routes/demos/illustrator-vivid.tsx"),
 
+    // PE-S3 강사/코치 Aevi Studio (멀티페이지: 부모 layout + 3 sub-route)
+    layout("routes/demos/_coach-warm.tsx", [
+      route("demos/coach-warm", "routes/demos/coach-warm._index.tsx"),
+      route("demos/coach-warm/programs", "routes/demos/coach-warm.programs.tsx"),
+      route("demos/coach-warm/contact", "routes/demos/coach-warm.contact.tsx"),
+    ]),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

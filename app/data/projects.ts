@@ -59,6 +59,7 @@ import wbdHeroUrl from "~/demos/winebar-darklux/assets/images/home/home-hero.web
 import fdmHeroUrl from "~/demos/finedining-mono/assets/images/hero/hero.webp"
 import pmnHeroUrl from "~/demos/photographer-mono/assets/images/intro/intro-main.webp"
 import ilvHeroUrl from "~/demos/illustrator-vivid/assets/images/hero/hero.webp"
+import cwmHeroUrl from "~/demos/coach-warm/assets/images/about/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1167,6 +1168,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "작가명·작품 영문 타이틀·섹션 헤딩은 영문 OK, 작가 소개 / 작품 캡션 / 의뢰 분야 / 프로세스 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "coach-warm",
+    title: "강사 / 코치 퍼스널 브랜드",
+    subtitle: "베이지 + 코랄 워밍 톤으로 완성한 코칭 스튜디오 멀티페이지(소개 / 강의 / 문의)",
+    category: "personal",
+    tier: "standard",
+    industry: "강사 / 코치 / 컨설턴트",
+    duration: "1주",
+    order: 31,
+    demoUrl: "/demos/coach-warm",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "React Router 7", "Cormorant Garamond", "Mock Form"],
+    description:
+      "가상 코칭 스튜디오 'Aevi Studio' (코치 한소연, 가상)의 멀티페이지 데모입니다. 부모 layout이 SCSS와 사이트 chrome / scrollReveal을 한 번에 묶고, 그 아래 소개 / 강의 / 문의 3개 sub-route가 페이드 전환으로 이어집니다. 베이지(#FBF7F2) + 다크 우드(#2D2A26) + 코랄(#E8896C) + 캐러멜 우드(#B89678) 4색만으로 신뢰감 있는 워밍 톤을 만들었습니다.",
+    thumbnail: cwmHeroUrl,
+    highlights: [
+      {
+        title: "부모 layout + 3 sub-route 페이드 전환",
+        description: "_coach-warm.tsx 부모가 SCSS · 사이트 헤더 · scrollReveal · 푸터를 모두 담당하고, useLocation으로 sub-route 변경마다 .cwm-page에 .is-leaving을 잠깐 부여 → opacity transition으로 부드럽게 페이드합니다.",
+      },
+      {
+        title: "Programs 4-카탈로그 + Reviews 가상 후기 카드 (시그니처)",
+        description: "강의 페이지는 4개 가상 프로그램 카탈로그(이미지 + 기간 / 대상 / 가격 메타 + 캐러멜 가격 라인) + 코랄 4px left-border 가상 후기 카드 3개로 신뢰 시그널을 완성합니다.",
+      },
+      {
+        title: "Cormorant Garamond 이탤릭 + 코랄 액센트",
+        description: "히어로 스튜디오명 clamp(48px, 8vw, 112px)의 Cormorant 이탤릭, 모든 eyebrow와 강조 라인은 코랄(#E8896C). 본문은 Inter로 가독성을 유지해 신뢰감 있는 워밍 톤을 만듭니다.",
+      },
+      {
+        title: "Mock 문의 폼 + 일정/위치 카드",
+        description: "Contact 페이지는 라운드 8px 입력 필드 4종(이름 / 이메일 / 관심 프로그램 select / 메시지)과 검정 → 코랄 hover 버튼을 가진 폼 + 운영 시간 / 주소 / 이메일 / 인스타 정보 카드 + 카카오맵을 한 화면에 묶었습니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "스튜디오명·프로그램 영문 타이틀·섹션 헤딩 등 디스플레이는 영문 OK, 코치 약력 / 활동 분야 설명 / 강의 메타 / 후기 / 문의 폼 라벨 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },
