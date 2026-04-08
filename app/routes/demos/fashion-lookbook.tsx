@@ -177,9 +177,9 @@ export default function FashionLookbook() {
           <div className="flb-stores-grid" data-flb-reveal>
             {stores.map((store) => (
               <article key={store.name} className="flb-store-card">
-                <h3 className="flb-store-name">{store.name}</h3>
-                <p className="flb-store-address">{store.address}</p>
-                <p className="flb-store-address-kr">{store.addressKr}</p>
+                <h3 className="flb-store-name">{store.nameEn}</h3>
+                <p className="flb-store-address">{store.name}</p>
+                <p className="flb-store-address-kr">{store.address}</p>
                 <p className="flb-store-hours">— {store.hours} —</p>
               </article>
             ))}
