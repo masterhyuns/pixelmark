@@ -89,7 +89,8 @@ export default function ConferenceSchedule() {
                 >
                   <span className="ct-schedule-time">{session.time}</span>
                   <div className="ct-schedule-body">
-                    <p className="ct-schedule-title">{session.title}</p>
+                    <p className="ct-schedule-title">{session.titleKr}</p>
+                    <p className="ct-schedule-title-en">{session.title}</p>
                     {session.speaker && (
                       <p className="ct-schedule-speaker">/ {session.speaker}</p>
                     )}
