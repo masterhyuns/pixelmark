@@ -1,0 +1,417 @@
+/**
+ * F-S3 Fine Dining Mono — Restaurant Solène
+ * 모노톤 시크 / 큰 사진 / 충분한 여백
+ */
+
+:root {
+  --fdm-bg: #f8f8f6;
+  --fdm-bg-2: #efefec;
+  --fdm-text: #0f0f0f;
+  --fdm-text-soft: #555;
+  --fdm-text-mute: #999;
+  --fdm-accent: #8b7355;
+  --fdm-rule: #d8d6cf;
+
+  --fdm-display: "Cormorant Garamond", "Times New Roman", serif;
+  --fdm-body: "Inter", "Pretendard", system-ui, sans-serif;
+
+  --demo-bar-bg: rgba(248, 248, 246, 0.92);
+  --demo-bar-text: #0f0f0f;
+  --demo-bar-border: rgba(15, 15, 15, 0.18);
+  --demo-fab-bg: #0f0f0f;
+  --demo-fab-icon: #f8f8f6;
+}
+
+.finedining-mono,
+.finedining-mono *,
+.finedining-mono *::before,
+.finedining-mono *::after { box-sizing: border-box; }
+
+.finedining-mono {
+  margin: 0;
+  background: var(--fdm-bg);
+  color: var(--fdm-text);
+  font-family: var(--fdm-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+.finedining-mono h1,.finedining-mono h2,.finedining-mono h3,.finedining-mono h4,
+.finedining-mono p,.finedining-mono ul { margin: 0; padding: 0; }
+.finedining-mono ul { list-style: none; }
+.finedining-mono a { color: inherit; text-decoration: none; }
+.finedining-mono img { display: block; max-width: 100%; height: auto; }
+
+body { background: var(--fdm-bg); }
+
+.fdm-container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 767px) { .fdm-container { padding: 0 20px; } }
+
+.fdm-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--fdm-accent);
+  font-weight: 500;
+}
+
+[data-fdm-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+[data-fdm-reveal].is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-fdm-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ===== Hero ===== */
+.fdm-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+}
+.fdm-hero-image {
+  position: absolute;
+  inset: 0;
+}
+.fdm-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: fdm-zoom 12s ease forwards;
+}
+@keyframes fdm-zoom { to { transform: scale(1); } }
+.fdm-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(248,248,246,0.4) 0%, rgba(15,15,15,0.6) 100%);
+}
+.fdm-hero-inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 116px 0 64px;
+  color: #fff;
+}
+.fdm-hero-top, .fdm-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.fdm-hero-center { text-align: center; }
+.fdm-hero-eyebrow {
+  display: block;
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 28px;
+  opacity: 0.92;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #fff;
+}
+.fdm-hero-name {
+  font-family: var(--fdm-display);
+  font-weight: 500;
+  font-size: clamp(56px, 9vw, 144px);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+.fdm-hero-tagline {
+  margin-top: 18px;
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: 24px;
+  opacity: 0.95;
+}
+.fdm-hero-body {
+  margin: 28px auto 0;
+  max-width: 600px;
+  font-size: 14px;
+  line-height: 1.85;
+  opacity: 0.92;
+}
+
+/* ===== Section common ===== */
+.fdm-section {
+  padding: 160px 0;
+}
+@media (max-width: 767px) { .fdm-section { padding: 96px 0; } }
+.fdm-section-head { text-align: center; margin-bottom: 80px; }
+.fdm-section-title {
+  margin-top: 14px;
+  font-family: var(--fdm-display);
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+}
+.fdm-section-title-kr {
+  margin-top: 8px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--fdm-text-mute);
+}
+
+/* ===== Chef ===== */
+.fdm-chef-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 1023px) { .fdm-chef-grid { grid-template-columns: 1fr; gap: 32px; } }
+.fdm-chef-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--fdm-bg-2);
+}
+.fdm-chef-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+.fdm-chef-image:hover img { transform: scale(1.03); }
+.fdm-chef-text h2 {
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 12px;
+}
+.fdm-chef-text p {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--fdm-text-soft);
+  line-height: 1.85;
+}
+
+/* ===== Menu — courses ===== */
+.fdm-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.fdm-course {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  border-bottom: 1px solid var(--fdm-rule);
+}
+.fdm-course:nth-child(even) .fdm-course-image { order: 2; }
+@media (max-width: 1023px) {
+  .fdm-course,
+  .fdm-course:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  .fdm-course:nth-child(even) .fdm-course-image { order: initial; }
+}
+.fdm-course-image {
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: var(--fdm-bg-2);
+}
+.fdm-course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  transition: transform 1.2s ease;
+}
+.fdm-course.is-visible .fdm-course-image img { transform: scale(1); }
+.fdm-course-text {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+@media (max-width: 767px) { .fdm-course-text { padding: 48px 32px; } }
+.fdm-course-num {
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: 48px;
+  color: var(--fdm-accent);
+  font-weight: 500;
+  line-height: 1;
+}
+.fdm-course-name {
+  margin-top: 18px;
+  font-family: var(--fdm-display);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+.fdm-course-name-kr {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--fdm-text-mute);
+  letter-spacing: 0.04em;
+}
+.fdm-course-caption {
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--fdm-text-soft);
+  line-height: 1.85;
+  max-width: 440px;
+}
+
+.fdm-menu-meta {
+  margin-top: 96px;
+  text-align: center;
+  padding-top: 56px;
+  border-top: 1px solid var(--fdm-rule);
+}
+.fdm-menu-meta-format {
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--fdm-accent);
+}
+.fdm-menu-meta-row {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--fdm-text-soft);
+}
+.fdm-menu-meta-price {
+  margin-top: 28px;
+  font-family: var(--fdm-display);
+  font-size: 32px;
+  font-weight: 500;
+}
+.fdm-menu-meta-price small {
+  display: block;
+  font-family: var(--fdm-body);
+  font-size: 13px;
+  color: var(--fdm-text-soft);
+  margin-top: 6px;
+}
+.fdm-menu-meta-notice {
+  margin-top: 32px;
+  font-size: 13px;
+  color: var(--fdm-text-mute);
+  font-style: italic;
+}
+
+/* ===== Wine ===== */
+.fdm-wine {
+  background: var(--fdm-bg-2);
+}
+.fdm-wine-grid {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.fdm-wine-title {
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: clamp(36px, 5vw, 64px);
+  margin: 14px 0 32px;
+  font-weight: 500;
+}
+.fdm-wine-body p {
+  margin-top: 18px;
+  color: var(--fdm-text-soft);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* ===== Reservation ===== */
+.fdm-rsv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+@media (max-width: 1023px) { .fdm-rsv-grid { grid-template-columns: 1fr; } }
+.fdm-rsv-card {
+  background: #fff;
+  padding: 56px 48px;
+  border: 1px solid var(--fdm-rule);
+}
+.fdm-rsv-card h3 {
+  font-family: var(--fdm-display);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: var(--fdm-accent);
+}
+.fdm-rsv-card p {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--fdm-text-soft);
+  line-height: 1.85;
+}
+.fdm-rsv-hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--fdm-rule);
+  font-size: 14px;
+}
+.fdm-rsv-hours-row:last-child { border-bottom: none; }
+.fdm-rsv-hours-row strong { color: var(--fdm-accent); font-weight: 500; }
+.fdm-rsv-info {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--fdm-rule);
+}
+.fdm-rsv-info p { margin-top: 6px; }
+.fdm-rsv-info strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fdm-accent);
+  margin-top: 14px;
+  font-weight: 500;
+}
+.fdm-rsv-map {
+  margin-top: 56px;
+  border: 1px solid var(--fdm-rule);
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+.fdm-rsv-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(0.7); }
+
+/* ===== Footer ===== */
+.fdm-footer {
+  background: var(--fdm-text);
+  color: var(--fdm-bg);
+  padding: 80px 0 56px;
+  text-align: center;
+}
+.fdm-footer-name {
+  font-family: var(--fdm-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-style: italic;
+}
+.fdm-footer-tag {
+  margin-top: 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.fdm-footer-disclaimer {
+  margin: 56px auto 0;
+  max-width: 640px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(248, 248, 246, 0.18);
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.7;
+}

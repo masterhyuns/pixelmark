@@ -56,6 +56,7 @@ import fmagHeroUrl from "~/demos/food-magazine/assets/images/home/home-hero.webp
 import lvmHeroUrl from "~/demos/living-modern/assets/images/hero/hero.webp"
 import bpHeroUrl from "~/demos/bakery-pastel/assets/images/hero/hero-bg.webp"
 import wbdHeroUrl from "~/demos/winebar-darklux/assets/images/home/home-hero.webp"
+import fdmHeroUrl from "~/demos/finedining-mono/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1053,6 +1054,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "브랜드명·메뉴 영문명·섹션 헤딩 등 디스플레이는 영문, 메뉴 설명 / 인사글 / 예약 정책 / 영업시간 / 드레스 코드 / 푸터 disclaimer는 모두 한국어 메인으로 작성해 한국 손님이 가장 중요한 정보를 그대로 읽을 수 있게 했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "finedining-mono",
+    title: "파인다이닝 / 코스 레스토랑",
+    subtitle: "오프 화이트 + 옅은 골드 브라운의 모노톤 시크 톤으로 완성한 미슐랭급 코스 레스토랑 데모",
+    category: "fnb",
+    tier: "standard",
+    industry: "파인다이닝 / 코스 레스토랑",
+    duration: "1주",
+    order: 28,
+    demoUrl: "/demos/finedining-mono",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "Cormorant Garamond", "IntersectionObserver"],
+    description:
+      "가상 파인다이닝 'Restaurant Solène'의 모노톤 시크 데모입니다. 풀스크린 시그니처 디시 히어로 → 셰프 소개 → 4코스 풀폭 좌우 교차 스프레드 → 와인 페어링 → 예약 안내까지 6섹션을, 오프 화이트(#F8F8F6) + 블랙 + 옅은 골드 브라운(#8B7355) 3색만으로 잡았습니다. 큰 사진과 충분한 여백, 그리고 Cormorant Garamond 이탤릭의 격조로 절제된 미식 톤을 만들었습니다.",
+    thumbnail: fdmHeroUrl,
+    highlights: [
+      {
+        title: "코스 풀폭 좌우 교차 스프레드 (시그니처)",
+        description: "테이스팅 메뉴 4코스를 50/50 풀폭 그리드로 배치하고, :nth-child(even)으로 이미지가 자동 좌우 반전됩니다. IntersectionObserver가 코스에 .is-visible을 부여하면 이미지가 1.04 → 1.0 스케일로 1.2초에 걸쳐 천천히 풀립니다.",
+      },
+      {
+        title: "12s ease 히어로 zoom + Cormorant 이탤릭",
+        description: "히어로 사진은 1.05 → 1.0으로 12초 동안 한 번만 천천히 풀리고, 브랜드명은 clamp(56px, 9vw, 144px)의 Cormorant Garamond 세리프로 0.4 black-bottom gradient 위에 떠 있습니다.",
+      },
+      {
+        title: "골드 브라운 액센트 + 가격 시그니처",
+        description: "코스 번호 / 섹션 eyebrow / 가격 강조에 옅은 골드 브라운(#8B7355)을 일관되게 사용해, 모노톤 베이스에서 격조를 잃지 않고 시선이 갈 곳을 정확히 만듭니다. 메뉴 가격은 28px Cormorant + 와인 페어링 가격을 small로 분리했습니다.",
+      },
+      {
+        title: "Grayscale 0.7 카카오맵 + 2-카드 예약",
+        description: "예약 섹션은 화이트 카드 두 장(예약 정책 / 영업시간·위치)으로 분리하고, 카카오맵은 21:9 와이드 비율 + filter:grayscale(0.7)로 모노톤 톤을 끝까지 유지합니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "브랜드명·코스 영문/프랑스어명·섹션 헤딩 등 디스플레이는 영문 OK, 셰프 소개 / 코스 설명 / 와인 페어링 본문 / 예약 정책 / 영업시간 / 드레스 코드 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },
