@@ -58,6 +58,7 @@ import bpHeroUrl from "~/demos/bakery-pastel/assets/images/hero/hero-bg.webp"
 import wbdHeroUrl from "~/demos/winebar-darklux/assets/images/home/home-hero.webp"
 import fdmHeroUrl from "~/demos/finedining-mono/assets/images/hero/hero.webp"
 import pmnHeroUrl from "~/demos/photographer-mono/assets/images/intro/intro-main.webp"
+import ilvHeroUrl from "~/demos/illustrator-vivid/assets/images/hero/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1129,6 +1130,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "작가명 / 시리즈 영문명 / 섹션 헤딩은 영문 OK, 작가 노트 / 시리즈 캡션 / 의뢰 안내 / 분야 설명 / 프로세스 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "illustrator-vivid",
+    title: "일러스트레이터 포트폴리오",
+    subtitle: "Caveat 손글씨 + 핫 핑크/옐로/그린/블루 4색 펑키 그림자로 완성한 일러스트 포트폴리오",
+    category: "personal",
+    tier: "standard",
+    industry: "일러스트레이터 / 캐릭터 디자이너",
+    duration: "1주",
+    order: 30,
+    demoUrl: "/demos/illustrator-vivid",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "Caveat", "Quicksand", "Masonry Grid"],
+    description:
+      "가상 일러스트레이터 'Yara Lume'의 컬러풀 포트폴리오 데모입니다. 라디얼 그라데이션 4컬러 히어로 → 마소닉 작품 그리드(6컷, wide/tall 비대칭) → About → Commission(4 분야 × 4 프로세스 × 인스타 컨택) 5섹션 원페이지. 핫 핑크(#FF6B9D) / 옐로(#FFC93C) / 그린(#6BCB77) / 블루(#4D96FF) 4 컬러 액센트와 두꺼운 검정 보더 + 펑키 컬러 그림자(box-shadow)로 친근한 일러스트 톤을 만들었습니다.",
+    thumbnail: ilvHeroUrl,
+    highlights: [
+      {
+        title: "마소닉 작품 그리드 + 펑키 컬러 그림자 (시그니처)",
+        description: "6점 작품을 4-column grid에 wide/tall span 비대칭으로 배치한 마소닉. 카드는 모두 3px 검정 보더 + 6px 검정 그림자, hover 시 -3/-3 이동 + 9px 핑크 그림자로 펑키하게 떠오릅니다.",
+      },
+      {
+        title: "Caveat 손글씨 220px 작가명 + 라디얼 4컬러 배경",
+        description: "히어로 작가명을 clamp(72px, 14vw, 220px)의 Caveat 손글씨로 얹고, 'Yara'는 핑크 / 'Lume'은 다크 퍼플로 분리. 배경은 4개 라디얼 그라데이션(노랑 / 핑크 / 그린 / 블루)이 부드럽게 겹칩니다.",
+      },
+      {
+        title: "Commission 4분야 카드 × 4단계 프로세스",
+        description: "캐릭터 / 포스터 / 굿즈 / 에디토리얼 4분야 카드는 각자 다른 컬러 그림자(핑크 / 옐로 / 그린 / 블루)를 가지고, 단가는 검정 pill 라벨로 표시. 4단계 프로세스는 라운드 박스로 분리해 친근하게 안내합니다.",
+      },
+      {
+        title: "회전 + 컬러 그림자 hero 사진",
+        description: "히어로 사진은 -2도 살짝 기울이고 12px 핑크 그림자를 받쳐 펑키한 일러스트 패키징처럼 만들었습니다. 작업실 사진은 -1.5도 + 옐로 그림자로 변주.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "작가명·작품 영문 타이틀·섹션 헤딩은 영문 OK, 작가 소개 / 작품 캡션 / 의뢰 분야 / 프로세스 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },
