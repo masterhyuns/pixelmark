@@ -376,7 +376,7 @@ const extractPromptSections = (md: string): PromptSection[] => {
   // 패턴 1: "### 1. home-hero.webp" / "### 1. `home-hero.webp`"
   // 패턴 2: "#### look-01:" (4-hash, 콜론으로 끝, 확장자 없이)
   // 패턴 2의 경우 .webp를 자동 부착해 매칭
-  const headingRe = /(?:^|\n)(?:###\s+\d+\.\s*`?([\w-]+\.webp)`?[^\n]*|####\s+`?([\w-]+)`?[^\n]*?:)/g
+  const headingRe = /(?:^|\n)(?:#{3,4}\s+\d+\.\s*`?([\w-]+\.webp)`?[^\n]*|####\s+`?([\w-]+)`?[^\n]*?:)/g
   const matches: Array<{ start: number; filename: string }> = []
   let m: RegExpExecArray | null
   while ((m = headingRe.exec(md)) !== null) {

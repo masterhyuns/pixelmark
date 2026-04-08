@@ -54,6 +54,7 @@ import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.we
 import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp"
 import fmagHeroUrl from "~/demos/food-magazine/assets/images/home/home-hero.webp"
 import lvmHeroUrl from "~/demos/living-modern/assets/images/hero/hero.webp"
+import bpHeroUrl from "~/demos/bakery-pastel/assets/images/hero/hero-bg.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -977,6 +978,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "브랜드명·슬로건·룸 라벨 등 디스플레이는 영문으로 유지하고, 룸 캡션·컬렉션 본문·쇼룸 안내·푸터 disclaimer는 모두 한국어 메인으로 작성해 한국 손님이 정보를 그대로 읽을 수 있게 했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "bakery-pastel",
+    title: "베이커리 / 디저트 전문점",
+    subtitle: "파스텔 핑크 + 크림 화이트로 완성한 사랑스러운 디저트 베이커리 원페이지 데모",
+    category: "fnb",
+    tier: "standard",
+    industry: "베이커리 / 디저트",
+    duration: "1주",
+    order: 26,
+    demoUrl: "/demos/bakery-pastel",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "IntersectionObserver", "Custom Lightbox"],
+    description:
+      "한남동의 작은 베이커리 'Maison Crème'를 위한 사랑스러운 파스텔 톤 데모입니다. 풀스크린 히어로 → About → 시그니처 메뉴 3종 → 마소닉 갤러리 → 매장 안내 → 푸터로 이어지는 6섹션을, 크림 화이트(#FFF9F5) + 코랄 핑크(#F4A6A6) + 피치 + 캐러멜 4색 팔레트로 묶었습니다. 디저트 사진이 주인공이 되도록 둥근 모서리(border-radius 24px)와 넉넉한 여백을 유지합니다.",
+    thumbnail: bpHeroUrl,
+    highlights: [
+      {
+        title: "마소닉 갤러리 + 직접 구현 라이트박스",
+        description: "갤러리 5컷을 4-column grid에 wide(2칸)/tall(2행)/normal로 비대칭 배치한 마소닉 레이아웃. 라이트박스는 외부 라이브러리 없이 직접 구현 — 좌우 화살표 / ESC 닫기 / 키보드 조작 / 카운터까지 모두 vanilla TS로 작성했습니다.",
+      },
+      {
+        title: "Cormorant Garamond 이탤릭 + Quicksand 본문",
+        description: "히어로 브랜드명에 clamp(48px, 9vw, 132px)의 Cormorant 이탤릭을, 본문은 Quicksand 라운드 산세리프를 사용해 사랑스럽고 부드러운 베이커리 톤을 만들었습니다.",
+      },
+      {
+        title: "히어로 18s 호흡 zoom 애니메이션",
+        description: "히어로 배경이 scale 1.05 ↔ 1.12를 18초에 걸쳐 천천히 왕복합니다. ease-in-out alternate로 호흡 같은 리듬을 만들고, prefers-reduced-motion 시 비활성됩니다.",
+      },
+      {
+        title: "시그니처 카드 그림자 hover + dashed 가격 라인",
+        description: "시그니처 메뉴 3종 카드는 hover 시 4 → 24px 그림자 + 6px 떠오름 효과. 가격은 dashed 1px 라인으로 분리해 캐러멜 색으로 강조했습니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "브랜드명·시그니처 영문 메뉴명·섹션 헤딩 등 디스플레이는 영문 OK, 본문 / 메뉴 설명 / 가격 / 매장 안내 / 영업시간 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },
