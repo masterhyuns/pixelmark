@@ -52,6 +52,7 @@ import wnewsHeroUrl from "~/demos/wedding-newsprint/assets/images/header/header-
 import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope.webp"
 import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.webp"
 import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp"
+import fmagHeroUrl from "~/demos/food-magazine/assets/images/home/home-hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -901,6 +902,43 @@ export const projects: Project[] = [
       {
         title: "Grayscale 카카오맵 + 매장 카드",
         description: "Stores 섹션에 1px 블랙 보더 매장 카드 2개와 grayscale 카카오맵을 21:9 와이드 비율로 배치해 흑백 룩북 톤을 끝까지 유지합니다.",
+      },
+    ],
+  },
+  {
+    slug: "food-magazine",
+    title: "식품 브랜드 매거진",
+    subtitle: "Cormorant Garamond 디스플레이와 손글씨 액센트로 완성한 따뜻한 자연주의 식품 매거진",
+    category: "brand",
+    tier: "standard",
+    industry: "식품 / 베이커리 브랜드",
+    duration: "1주",
+    order: 24,
+    demoUrl: "/demos/food-magazine",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "React Router 7", "Cormorant Garamond", "Caveat"],
+    description:
+      "강원도 작은 농장의 식료품을 다루는 가상 브랜드 'Verde Provisions'의 매거진형 카탈로그입니다. 부모 layout이 SCSS와 사이트 chrome을 한 번만 import하고, 그 아래 홈 / 제품 / 스토리 3개 sub-route가 페이드 전환으로 이어집니다. Cormorant Garamond 디스플레이 세리프 + Caveat 손글씨 액센트 + Inter 본문이 따뜻한 자연주의 톤을 만들고, 크림(#FCF8F3) + 다크 브라운 + 세이지 그린 + 테라코타 4색만으로 매거진의 격조를 유지합니다.",
+    thumbnail: fmagHeroUrl,
+    highlights: [
+      {
+        title: "부모 layout + 3 sub-route 페이드 전환",
+        description: "_food-magazine.tsx 부모 layout이 SCSS와 사이트 헤더 / 푸터 / scrollReveal을 담당하고, useLocation으로 sub-route 변경을 감지해 .fmag-page에 .is-leaving 클래스를 부여 → opacity transition으로 부드럽게 전환됩니다.",
+      },
+      {
+        title: "Cormorant Garamond + Caveat 매거진 타이포",
+        description: "히어로 타이틀에 clamp(56px, 9vw, 132px)의 Cormorant Garamond 디스플레이 세리프를 사용하고, 한국어 부제는 Caveat 손글씨로 색감(테라코타)까지 분리해 따뜻한 페미닌 톤을 잡았습니다.",
+      },
+      {
+        title: "Story 매거진 스프레드 좌우 교차",
+        description: "스토리 페이지의 챕터 스프레드를 좌측 텍스트 + 우측 이미지로 배치하고, :nth-child(even)으로 다음 챕터는 자동으로 좌우 반전됩니다. 이미지가 IntersectionObserver로 뷰포트에 들어오면 1.04 → 1.0 스케일로 천천히 풀립니다.",
+      },
+      {
+        title: "Cormorant 이탤릭 마퀴 + 자연주의 컬러",
+        description: "홈 페이지 중간에 GRAIN · HONEY · JAM · BREAD · GRANOLA · TEA를 Cormorant 이탤릭 96px로 흘리는 마퀴 라인을 두어, 매거진형 카탈로그 특유의 식료품 인덱스 감각을 만들었습니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "브랜드명 / 슬로건 / 챕터 라벨 등 디스플레이는 영문으로 유지하면서, 본문 / 제품 설명 / 농장 이야기 / 매장 안내는 모두 한국어를 메인으로 작성해 한국 손님이 정보를 그대로 읽을 수 있게 했습니다.",
       },
     ],
   },

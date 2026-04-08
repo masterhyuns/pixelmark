@@ -70,6 +70,9 @@ export default {
       "/demos/wedding-postal",
       "/demos/wedding-storybook",
       "/demos/fashion-lookbook",
+      "/demos/food-magazine",
+      "/demos/food-magazine/products",
+      "/demos/food-magazine/story",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",
