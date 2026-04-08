@@ -129,7 +129,10 @@ export default function WeddingVinyl() {
               {tracksA.map((t) => (
                 <div key={t.num} className="wvny-track-row">
                   <span className="wvny-track-num">{t.num}</span>
-                  <span className="wvny-track-title">{t.title}</span>
+                  <span className="wvny-track-title">
+                    {t.title}
+                    <small className="wvny-track-title-kr"> · {t.titleKr}</small>
+                  </span>
                   <span className="wvny-track-duration">{t.duration}</span>
                 </div>
               ))}
@@ -143,7 +146,10 @@ export default function WeddingVinyl() {
               {tracksB.map((t) => (
                 <div key={t.num} className="wvny-track-row">
                   <span className="wvny-track-num">{t.num}</span>
-                  <span className="wvny-track-title">{t.title}</span>
+                  <span className="wvny-track-title">
+                    {t.title}
+                    <small className="wvny-track-title-kr"> · {t.titleKr}</small>
+                  </span>
                   <span className="wvny-track-duration">{t.duration}</span>
                 </div>
               ))}
@@ -186,7 +192,7 @@ export default function WeddingVinyl() {
                 </div>
                 <div className="wvny-gallery-body">
                   <p className="wvny-gallery-code">№ {g.code}</p>
-                  <h3 className="wvny-gallery-title">{g.title}</h3>
+                  <h3 className="wvny-gallery-title">{g.title} <small>· {g.titleKr}</small></h3>
                   <p className="wvny-gallery-caption">{g.caption}</p>
                 </div>
               </article>
@@ -216,7 +222,7 @@ export default function WeddingVinyl() {
               </div>
               <div className="wvny-release-row">
                 <p className="wvny-release-row-label">Address</p>
-                <p className="wvny-release-row-value">{venue.addressKr}</p>
+                <p className="wvny-release-row-value">{venue.address}</p>
               </div>
 
               <div className="wvny-countdown" data-wvny-countdown data-target={date.toISOString()} aria-label="릴리즈까지 남은 시간">
