@@ -155,9 +155,9 @@ export default function WeddingStorybook() {
             <p className="wbook-venue-eyebrow">— Save the Date —</p>
             <p className="wbook-venue-date">{`${monthFull} ${date.getDate()}, ${yyyy}`}</p>
             <p className="wbook-venue-time">{`${dayFull} · 13:00`}</p>
-            <p className="wbook-venue-name">{venue.name}</p>
-            <p className="wbook-venue-name-kr">{venue.nameKr}</p>
-            <p className="wbook-venue-address">{venue.addressKr}</p>
+            <p className="wbook-venue-name">{venue.nameEn}</p>
+            <p className="wbook-venue-name-kr">{venue.name}</p>
+            <p className="wbook-venue-address">{venue.address}</p>
           </div>
 
           <div className="wbook-venue-map" data-wbook-reveal>
