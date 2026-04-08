@@ -81,13 +81,13 @@ export default function WeddingPostal() {
           <div className="wpost-envelope-body">
             <div className="wpost-envelope-addresses">
               <div className="wpost-envelope-addr">
-                <p className="wpost-envelope-addr-label">From</p>
-                {envelope.from.name}<br />
+                <p className="wpost-envelope-addr-label">보내는 사람 · From</p>
+                {envelope.from.nameKr}<br />
                 {envelope.from.address}
               </div>
               <div className="wpost-envelope-addr wpost-envelope-addr--to">
-                <p className="wpost-envelope-addr-label">To</p>
-                {envelope.to.name}<br />
+                <p className="wpost-envelope-addr-label">받는 사람 · To</p>
+                {envelope.to.nameKr}<br />
                 {envelope.to.address}
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function WeddingPostal() {
             {postcards.map((p, i) => (
               <article key={p.code} className="wpost-postcard" data-wpost-reveal data-stagger-index={i}>
                 <div className="wpost-postcard-image">
-                  <img src={POSTCARD_IMAGES[p.image]} alt={`${p.city} postcard (가상)`} loading="lazy" />
+                  <img src={POSTCARD_IMAGES[p.image]} alt={`${p.cityKr} 엽서 (가상)`} loading="lazy" />
                 </div>
                 <div className="wpost-postcard-meta">
                   <span className="wpost-postcard-num">№{p.code}</span>
@@ -172,18 +172,18 @@ export default function WeddingPostal() {
               </div>
               <p className="wpost-destination-eyebrow">— RSVP By Mail —</p>
               <h3 className="wpost-destination-name">{venue.name}</h3>
-              <p className="wpost-destination-name-kr">{venue.nameKr}</p>
+              <p className="wpost-destination-name-kr">{venue.nameEn}</p>
               <div className="wpost-destination-row">
-                <p className="wpost-destination-row-label">Date</p>
-                <p className="wpost-destination-row-value">{`${monthFull} ${date.getDate()}, ${yyyy} · ${dayFull}`}</p>
+                <p className="wpost-destination-row-label">일시 · Date</p>
+                <p className="wpost-destination-row-value">{`${yyyy}년 ${date.getMonth() + 1}월 ${date.getDate()}일 (${["일","월","화","수","목","금","토"][date.getDay()]})`}</p>
               </div>
               <div className="wpost-destination-row">
-                <p className="wpost-destination-row-label">Time</p>
-                <p className="wpost-destination-row-value">14:00 sharp</p>
+                <p className="wpost-destination-row-label">시간 · Time</p>
+                <p className="wpost-destination-row-value">오후 2시 정각</p>
               </div>
               <div className="wpost-destination-row">
-                <p className="wpost-destination-row-label">Address</p>
-                <p className="wpost-destination-row-value">{venue.addressKr}</p>
+                <p className="wpost-destination-row-label">주소 · Address</p>
+                <p className="wpost-destination-row-value">{venue.address}</p>
               </div>
               <div className="wpost-destination-row">
                 <p className="wpost-destination-row-label">Postcode</p>
