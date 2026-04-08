@@ -83,8 +83,17 @@
     line-height: 1.05;
     letter-spacing: -0.01em;
     color: var(--wnews-text);
-    margin-bottom: 14px;
+    margin-bottom: 8px;
     min-height: 1em;
+  }
+  // 한국어 메인 헤드라인 (정보 전달, 정책 v1.0)
+  .wnews-headline-kr {
+    font-family: var(--wnews-font-body);
+    font-weight: 600;
+    font-size: clamp(18px, 2.4vw, 26px);
+    color: var(--wnews-text);
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
   }
   .wnews-subhead {
     font-family: var(--wnews-font-serif);

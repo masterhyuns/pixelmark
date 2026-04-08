@@ -7,6 +7,7 @@ import {
   newspaper,
   couple,
   headline,
+  headlineEn,
   subhead,
   article,
   venue,
@@ -56,10 +57,10 @@ export const links: Route.LinksFunction = () => [
 ]
 
 const GALLERY = [
-  { url: bw1Url, caption: "Two figures by a window" },
-  { url: bw2Url, caption: "A quiet morning at home" },
-  { url: bw3Url, caption: "An afternoon in the park" },
-  { url: bw4Url, caption: "Letters and slow rituals" },
+  { url: bw1Url, caption: "창가에 마주 앉은 두 사람" },
+  { url: bw2Url, caption: "조용한 아침의 부엌" },
+  { url: bw3Url, caption: "어느 오후의 산책길" },
+  { url: bw4Url, caption: "편지와 느린 의식들" },
 ]
 
 export default function WeddingNewsprint() {
@@ -95,7 +96,10 @@ export default function WeddingNewsprint() {
 
           <div className="wnews-headline-block">
             <p className="wnews-headline-eyebrow">— BREAKING NEWS —</p>
-            <h2 className="wnews-headline" data-wnews-typing>{headline}</h2>
+            {/* 큰 영문 헤드라인 (디스플레이) */}
+            <h2 className="wnews-headline" data-wnews-typing>{headlineEn}</h2>
+            {/* 한국어 메인 헤드라인 + 부제 (정보 전달) */}
+            <p className="wnews-headline-kr">{headline}</p>
             <p className="wnews-subhead">{subhead}</p>
             <span className="wnews-masthead-stamp">SPECIAL EDITION</span>
           </div>
@@ -129,26 +133,22 @@ export default function WeddingNewsprint() {
 
           <div className="wnews-wedding-grid" data-wnews-reveal>
             <div className="wnews-wedding-info">
-              <p className="wnews-wedding-info-eyebrow">— Wedding Notice —</p>
+              <p className="wnews-wedding-info-eyebrow">— 결혼 안내 · Wedding Notice —</p>
               <div className="wnews-wedding-row">
-                <p className="wnews-wedding-row-label">The Couple</p>
-                <p className="wnews-wedding-row-value">{couple.bride} &amp; {couple.groom}</p>
+                <p className="wnews-wedding-row-label">신랑 신부 · The Couple</p>
+                <p className="wnews-wedding-row-value">{couple.brideKr} ({couple.bride}) &amp; {couple.groomKr} ({couple.groom})</p>
               </div>
               <div className="wnews-wedding-row">
-                <p className="wnews-wedding-row-label">Date</p>
-                <p className="wnews-wedding-row-value">{`${monthFull} ${date.getDate()}, ${yyyy} · ${dayFull}`}</p>
+                <p className="wnews-wedding-row-label">일시 · Date</p>
+                <p className="wnews-wedding-row-value">{`${yyyy}년 ${date.getMonth() + 1}월 ${date.getDate()}일 (${["일","월","화","수","목","금","토"][date.getDay()]}) 오후 2시`}</p>
               </div>
               <div className="wnews-wedding-row">
-                <p className="wnews-wedding-row-label">Time</p>
-                <p className="wnews-wedding-row-value">14:00 sharp</p>
+                <p className="wnews-wedding-row-label">예식장 · Venue</p>
+                <p className="wnews-wedding-row-value">{venue.name} ({venue.nameEn})</p>
               </div>
               <div className="wnews-wedding-row">
-                <p className="wnews-wedding-row-label">Venue</p>
-                <p className="wnews-wedding-row-value">{venue.name} ({venue.nameKr})</p>
-              </div>
-              <div className="wnews-wedding-row">
-                <p className="wnews-wedding-row-label">Address</p>
-                <p className="wnews-wedding-row-value">{venue.addressKr}</p>
+                <p className="wnews-wedding-row-label">주소 · Address</p>
+                <p className="wnews-wedding-row-value">{venue.address}</p>
               </div>
             </div>
             <div className="wnews-wedding-map">
