@@ -57,6 +57,7 @@ import lvmHeroUrl from "~/demos/living-modern/assets/images/hero/hero.webp"
 import bpHeroUrl from "~/demos/bakery-pastel/assets/images/hero/hero-bg.webp"
 import wbdHeroUrl from "~/demos/winebar-darklux/assets/images/home/home-hero.webp"
 import fdmHeroUrl from "~/demos/finedining-mono/assets/images/hero/hero.webp"
+import pmnHeroUrl from "~/demos/photographer-mono/assets/images/intro/intro-main.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1091,6 +1092,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "브랜드명·코스 영문/프랑스어명·섹션 헤딩 등 디스플레이는 영문 OK, 셰프 소개 / 코스 설명 / 와인 페어링 본문 / 예약 정책 / 영업시간 / 드레스 코드 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "photographer-mono",
+    title: "사진작가 / 포토그래퍼 갤러리",
+    subtitle: "흑백 톤과 큰 산세리프로 완성한 사진작가 개인 갤러리 + 작업 의뢰 페이지",
+    category: "personal",
+    tier: "standard",
+    industry: "사진작가 / 포토그래퍼",
+    duration: "1주",
+    order: 29,
+    demoUrl: "/demos/photographer-mono",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "Inter ExtraBold", "filter:grayscale"],
+    description:
+      "가상 작가 'Aria Voss'의 흑백 사진 갤러리 데모입니다. 풀스크린 작품 인트로 → 3개 시리즈 좌우 교차 매거진 그리드 → 작가 노트 → 의뢰 안내(작업 분야 / 5단계 프로세스 / 연락처) → 푸터로 이어집니다. 모든 사진은 filter:grayscale(1)로 일관된 흑백 톤을 유지하고, 클램프 200px Inter ExtraBold 작가명으로 시각적 임팩트를 만듭니다.",
+    thumbnail: pmnHeroUrl,
+    highlights: [
+      {
+        title: "시리즈 좌우 교차 매거진 그리드 (시그니처)",
+        description: "3개 시리즈를 1.4fr / 1fr 비대칭 그리드에 배치하고 :nth-child(even)으로 자동 좌우 반전. 매거진처럼 시리즈마다 다른 리듬으로 흐르며 hover 시 사진이 1.04로 천천히 zoom됩니다.",
+      },
+      {
+        title: "Inter ExtraBold 200px 작가명 + 14s zoom",
+        description: "히어로의 작가명은 clamp(64px, 12vw, 200px)의 Inter 800 weight로 -0.04em 빽빽한 letter-spacing. 배경 작품은 14초에 걸쳐 1.05 → 1.0으로 천천히 풀리며 grayscale 유지.",
+      },
+      {
+        title: "Commission 5-step 프로세스 + 3 분야 카드",
+        description: "의뢰 안내는 Spaces / Still Life / Editorial 3개 분야 카드(2px black top border) + 5단계 프로세스(border-left 1px) 두 블록으로 분리. 단가 시그널과 워크플로우를 한 화면에서 보여줍니다.",
+      },
+      {
+        title: "filter:grayscale(1) + Off-white 모노 팔레트",
+        description: "오프 화이트(#FAFAFA) + 블랙(#1A1A1A) 단 2색 + 회색 보조만으로 모든 섹션을 구성. 모든 사진에 filter:grayscale(1)을 강제해 작가 톤이 어떤 원본이든 흔들리지 않게 했습니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "작가명 / 시리즈 영문명 / 섹션 헤딩은 영문 OK, 작가 노트 / 시리즈 캡션 / 의뢰 안내 / 분야 설명 / 프로세스 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },

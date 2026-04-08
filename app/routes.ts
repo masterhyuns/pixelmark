@@ -118,6 +118,9 @@ export default [
     // F-S3 파인다이닝 Restaurant Solène (단일 라우트, 원페이지)
     route("demos/finedining-mono", "routes/demos/finedining-mono.tsx"),
 
+    // PE-S1 사진작가 Aria Voss (단일 라우트, 원페이지)
+    route("demos/photographer-mono", "routes/demos/photographer-mono.tsx"),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),
