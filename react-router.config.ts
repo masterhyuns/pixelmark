@@ -88,6 +88,7 @@ export default {
       "/demos/medical-clean/departments",
       "/demos/medical-clean/staff",
       "/demos/medical-clean/reservation",
+      "/demos/tax-office-calm",
 
       // S-2 법률사무소 — 멀티페이지 5개 sub-route
       "/demos/law-office",
