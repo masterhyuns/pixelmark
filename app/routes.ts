@@ -142,6 +142,13 @@ export default [
     // P-S2 세무사 Cinder Tax & Accounting (단일 라우트, 원페이지 long)
     route("demos/tax-office-calm", "routes/demos/tax-office-calm.tsx"),
 
+    // P-S3 컨설팅 Northgate Consulting (멀티페이지: 부모 layout + 3 sub-route)
+    layout("routes/demos/_consulting-dark.tsx", [
+      route("demos/consulting-dark", "routes/demos/consulting-dark._index.tsx"),
+      route("demos/consulting-dark/cases", "routes/demos/consulting-dark.cases.tsx"),
+      route("demos/consulting-dark/contact", "routes/demos/consulting-dark.contact.tsx"),
+    ]),
+
     // E-S4 컨퍼런스 (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_conference-tech.tsx", [
       route("demos/conference-tech", "routes/demos/conference-tech._index.tsx"),

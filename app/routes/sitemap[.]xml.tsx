@@ -81,6 +81,9 @@ const STATIC_ROUTES: Array<{ path: string; priority: string; changefreq: string 
   { path: "/demos/medical-clean/staff", priority: "0.6", changefreq: "monthly" },
   { path: "/demos/medical-clean/reservation", priority: "0.6", changefreq: "monthly" },
   { path: "/demos/tax-office-calm", priority: "0.7", changefreq: "monthly" },
+  { path: "/demos/consulting-dark", priority: "0.7", changefreq: "monthly" },
+  { path: "/demos/consulting-dark/cases", priority: "0.6", changefreq: "monthly" },
+  { path: "/demos/consulting-dark/contact", priority: "0.6", changefreq: "monthly" },
 
   // S-2 law-office는 멀티페이지 구조 → 5개 sub-route 모두 노출
   { path: "/demos/law-office", priority: "0.7", changefreq: "monthly" },

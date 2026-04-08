@@ -62,6 +62,7 @@ import ilvHeroUrl from "~/demos/illustrator-vivid/assets/images/hero/hero.webp"
 import cwmHeroUrl from "~/demos/coach-warm/assets/images/about/hero.webp"
 import mclHeroUrl from "~/demos/medical-clean/assets/images/home/home-hero.webp"
 import taxHeroUrl from "~/demos/tax-office-calm/assets/images/hero/hero.webp"
+import cdkHeroUrl from "~/demos/consulting-dark/assets/images/home/hero.webp"
 export const projects: Project[] = [
   {
     slug: "beauty-landing",
@@ -1281,6 +1282,43 @@ export const projects: Project[] = [
       {
         title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
         description: "사무소명 / 업무 영문 라벨 / 섹션 헤딩 등 디스플레이는 영문 OK, 인사말 / 업무 설명 / 사무소 소개 / 사례 / 수수료 안내 / 자료 / 폼 라벨 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
+      },
+    ],
+  },
+  {
+    slug: "consulting-dark",
+    title: "B2B 컨설팅 펌",
+    subtitle: "딥 다크(#0F1218) + 시네마틱 골드(#C9A86E)로 완성한 프리미엄 컨설팅 멀티페이지",
+    category: "professional",
+    tier: "standard",
+    industry: "B2B 전략 / 경영 컨설팅",
+    duration: "1주",
+    order: 34,
+    demoUrl: "/demos/consulting-dark",
+    techStack: ["HTML5", "SCSS", "Vanilla TS", "React Router 7", "Cormorant Garamond", "Inter"],
+    description:
+      "가상 'Northgate Consulting'의 다크 럭셔리 멀티페이지 데모입니다. 부모 layout이 SCSS와 사이트 chrome / scrollReveal / 페이드 전환을 한 번에 묶고, 그 아래 홈 / 사례 / 문의 3개 sub-route가 이어집니다. 딥 다크(#0F1218) + 시네마틱 골드(#C9A86E) + 오프 화이트 3색 팔레트와 Cormorant Garamond 이탤릭 디스플레이로 프리미엄 B2B 톤을 만들었습니다.",
+    thumbnail: cdkHeroUrl,
+    highlights: [
+      {
+        title: "부모 layout + 3 sub-route 페이드 전환",
+        description: "_consulting-dark.tsx 부모가 SCSS · 사이트 헤더 · scrollReveal · 푸터를 한 번에 담당. useLocation으로 sub-route 변경마다 .cdk-page에 .is-leaving을 잠깐 부여 → opacity transition으로 부드럽게 페이드합니다.",
+      },
+      {
+        title: "사례 카드 grayscale → color hover (시그니처)",
+        description: "케이스 카드 4개는 평소 grayscale(0.3) + brightness(0.7)로 어두운 톤을 유지하다가, hover 시 grayscale(0) + brightness(0.85)로 살아납니다. 보더는 회색 → 골드로 바뀌고 24/48px 골드 그림자로 떠오릅니다.",
+      },
+      {
+        title: "Cormorant Garamond 이탤릭 골드 + 18s zoom 히어로",
+        description: "히어로 회사명을 clamp(48px, 8vw, 128px)의 Cormorant 이탤릭 골드로 얹고, 다크 도시 배경은 brightness(0.55)로 어둡게 깔린 채 18초에 걸쳐 1.05 → 1.0으로 천천히 풀립니다.",
+      },
+      {
+        title: "Metrics 4분할 + 일하는 원칙 3-카드",
+        description: "홈 페이지에 4분할 메트릭 (12 / 60+ / 12wk / 94%)를 골드 Cormorant 이탤릭 80px로 강조하고, 사례 페이지 하단에 골드 좌측 보더 1px의 일하는 원칙 3-카드(한 분기 한 문제 / 조직 안에 들어감 / 결과만 측정)를 둡니다.",
+      },
+      {
+        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
+        description: "회사명 / 서비스 영문 라벨 / 산업 라벨 / 섹션 헤딩 등 디스플레이는 영문 OK, 인사말 / 서비스 설명 / 케이스 요약 / 일하는 원칙 / 문의 폼 / 운영 시간 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
       },
     ],
   },
