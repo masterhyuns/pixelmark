@@ -89,16 +89,15 @@ export default function WeddingMagazine() {
               <span className="wmag-cover-amp"> &amp; </span>
               {couple.groom.toUpperCase()}
             </h1>
-            <p className="wmag-cover-subhead">{magazine.cover.subheadline}</p>
+            {/* 한글 부제 (정보 전달) */}
+            <p className="wmag-cover-subhead">{magazine.cover.headlineKr}</p>
+            <p className="wmag-cover-subhead" style={{ fontSize: "0.7em", marginTop: "8px" }}>{magazine.cover.subheadline}</p>
             <div className="wmag-cover-lines">
-              {magazine.cover.cover_lines.map((line, i) => {
-                const [tag, ...rest] = line.split(" — ")
-                return (
-                  <p key={i} className="wmag-cover-line">
-                    <strong>{tag}</strong> — {rest.join(" — ")}
-                  </p>
-                )
-              })}
+              {magazine.cover.coverLines.map((line, i) => (
+                <p key={i} className="wmag-cover-line">
+                  <strong>{line.tag}</strong> — {line.text}
+                </p>
+              ))}
             </div>
           </div>
 
@@ -145,19 +144,19 @@ export default function WeddingMagazine() {
 
           <div className="wmag-gallery-intro" data-wmag-reveal>
             <h2 className="wmag-gallery-intro-title">Four Frames of the Day</h2>
-            <p className="wmag-gallery-intro-sub">A quiet editorial — linen, florals, the setting, and the music.</p>
+            <p className="wmag-gallery-intro-sub">조용한 에디토리얼 — 린넨, 꽃, 공간, 그리고 음악.</p>
           </div>
 
           <div className="wmag-gallery-grid">
             {editorialItems.map((item, i) => (
               <article key={item.num} className="wmag-gallery-item" data-wmag-reveal data-stagger-index={i}>
                 <div className="wmag-gallery-image">
-                  <img src={EDITORIAL_IMAGES[i]} alt={`${item.title} editorial (가상)`} loading="lazy" />
+                  <img src={EDITORIAL_IMAGES[i]} alt={`${item.titleKr} (가상)`} loading="lazy" />
                 </div>
                 <div className="wmag-gallery-meta">
                   <span className="wmag-gallery-num">№ {item.num}</span>
                   <div>
-                    <h3 className="wmag-gallery-title">{item.title}</h3>
+                    <h3 className="wmag-gallery-title">{item.title} <small style={{ fontSize: "0.55em", color: "var(--wmag-text-soft)", marginLeft: "8px" }}>· {item.titleKr}</small></h3>
                     <p className="wmag-gallery-caption">{item.caption}</p>
                   </div>
                 </div>
@@ -180,18 +179,18 @@ export default function WeddingMagazine() {
             <div className="wmag-venue-info">
               <p className="wmag-venue-eyebrow">— Now Featured —</p>
               <h3 className="wmag-venue-name">{venue.name}</h3>
-              <p className="wmag-venue-name-kr">{venue.nameKr}</p>
+              <p className="wmag-venue-name-kr">{venue.nameEn}</p>
               <div className="wmag-venue-row">
-                <p className="wmag-venue-row-label">Date</p>
-                <p className="wmag-venue-row-value">{`${monthShort} ${date.getDate()}, ${yyyy}`}</p>
+                <p className="wmag-venue-row-label">일시 · Date</p>
+                <p className="wmag-venue-row-value">{`${yyyy}년 ${date.getMonth() + 1}월 ${date.getDate()}일 (${["일","월","화","수","목","금","토"][date.getDay()]})`}</p>
               </div>
               <div className="wmag-venue-row">
-                <p className="wmag-venue-row-label">Time</p>
-                <p className="wmag-venue-row-value">15:00 — Late</p>
+                <p className="wmag-venue-row-label">시간 · Time</p>
+                <p className="wmag-venue-row-value">오후 3시 — 늦은 저녁까지</p>
               </div>
               <div className="wmag-venue-row">
-                <p className="wmag-venue-row-label">Address</p>
-                <p className="wmag-venue-row-value">{venue.addressKr}</p>
+                <p className="wmag-venue-row-label">주소 · Address</p>
+                <p className="wmag-venue-row-value">{venue.address}</p>
               </div>
             </div>
             <div className="wmag-venue-map">
