@@ -14,12 +14,17 @@ import TechBadge from "./TechBadge"
  * - 텍스트: 색상-300 또는 -400 (밝은 톤)
  * - 보더: 색상/20
  */
+/**
+ * 썸네일 위 카테고리 배지 — 어떤 이미지 위에서도 확실히 읽히도록 solid 컬러 + 흰 글씨.
+ * 피드백 #002 팔로업: 반투명 배지는 썸네일에 묻혀 시인성이 낮다는 지적.
+ * → `bg-*-500/90` (솔리드에 가까운 불투명) + `text-white` + `backdrop-blur` 조합.
+ */
 const CATEGORY_STYLE: Record<ProjectCategory, string> = {
-  brand: "bg-pink-500/10 text-pink-300 border-pink-400/20",
-  professional: "bg-blue-500/10 text-blue-300 border-blue-400/20",
-  fnb: "bg-orange-500/10 text-orange-300 border-orange-400/20",
-  event: "bg-indigo-500/10 text-indigo-300 border-indigo-400/20",
-  personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
+  brand: "bg-pink-500/90 text-white border-white/30",
+  professional: "bg-blue-500/90 text-white border-white/30",
+  fnb: "bg-orange-500/90 text-white border-white/30",
+  event: "bg-indigo-500/90 text-white border-white/30",
+  personal: "bg-emerald-500/90 text-white border-white/30",
 }
 
 /**
@@ -80,13 +85,13 @@ const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
         />
         {/* 카테고리 배지 (좌상단, 메인 라벨 - 큰 시각 비중) */}
         <span
-          className={`absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${CATEGORY_STYLE[category]}`}
+          className={`absolute top-3 left-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-sm shadow-[0_4px_12px_rgba(0,0,0,0.35)] ${CATEGORY_STYLE[category]}`}
         >
           {CATEGORY_LABEL[category]}
         </span>
         {/* 등급 뱃지 (우상단, 패키지 시그널 - 작은 시각 비중) */}
         <span
-          className={`absolute top-3 right-3 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider border ${TIER_STYLE[tier]}`}
+          className={`absolute top-3 right-3 inline-flex items-center px-2.5 py-1 rounded text-[11px] font-bold tracking-wider border backdrop-blur-sm shadow-[0_4px_12px_rgba(0,0,0,0.35)] ${TIER_STYLE[tier]}`}
         >
           {TIER_LABEL[tier]}
         </span>

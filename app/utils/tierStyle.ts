@@ -26,8 +26,13 @@ import type { ProjectTier } from "~/types/types"
  * 같은 패턴으로 CATEGORY_STYLE도 두 파일에 중복 존재함.
  * 이번 작업이 안정적으로 동작하면 다음 지시서에서 `categoryStyle.ts`로 분리 권장.
  */
+/**
+ * 피드백 #002 팔로업: 썸네일 위에서 반투명 뱃지가 묻혀 읽히지 않는다는 지적.
+ * → 세 등급 모두 솔리드에 가까운 불투명 배경 + 흰 글씨 + 흰 보더로 통일.
+ * 기존 색상 톤(STANDARD 라이트블루 / DELUXE 앰버 / PREMIUM 뉴트럴)은 유지.
+ */
 export const TIER_STYLE: Record<ProjectTier, string> = {
-  standard: "bg-[#abbdef9c] text-white border-[#abbdef]/50",
-  deluxe: "bg-amber-500/10 text-amber-300 border-amber-400/20",
-  premium: "bg-white/20 text-white border-white/40",
+  standard: "bg-sky-500/90 text-white border-white/40",
+  deluxe: "bg-amber-500/90 text-white border-white/40",
+  premium: "bg-neutral-900/90 text-white border-white/50",
 }
