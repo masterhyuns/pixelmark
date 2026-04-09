@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router"
 import { motion, AnimatePresence } from "framer-motion"
 import type { Route } from "./+types/projects._index"
 import { createMeta, PAGE_META } from "~/utils/seo"
-import { projects } from "~/data/projects"
+import { projects, getSortedProjects } from "~/data/projects"
 import ProjectCard from "~/components/projects/ProjectCard"
 import type { FilterCategory } from "~/types/types"
 
@@ -27,10 +27,10 @@ export default function ProjectsIndex() {
   const [searchParams, setSearchParams] = useSearchParams()
   const currentCategory = (searchParams.get("category") ?? "all") as FilterCategory
 
-  const filtered =
-    currentCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === currentCategory)
+  // 피드백 #002-④: STANDARD → DELUXE → PREMIUM 등급순으로 그룹 노출
+  const filtered = getSortedProjects(
+    currentCategory === "all" ? undefined : currentCategory,
+  )
 
   const handleFilter = (category: FilterCategory) => {
     if (category === "all") {

@@ -22,6 +22,22 @@ const CATEGORY_STYLE: Record<ProjectCategory, string> = {
   personal: "bg-emerald-500/10 text-emerald-300 border-emerald-400/20",
 }
 
+/**
+ * 카테고리 텍스트 색상 — 카드 콘텐츠 영역 메타 라인용
+ *
+ * [왜 CATEGORY_STYLE과 분리하는가]
+ * - CATEGORY_STYLE은 썸네일 위 배지용(배경+보더+텍스트)
+ * - 콘텐츠 영역 메타 라인에서는 배경/보더 없이 텍스트 컬러만 필요
+ * - 같은 색상 팔레트를 유지해 좌상단 배지와 시각적 통일성 유지 (피드백 #002-③)
+ */
+const CATEGORY_TEXT: Record<ProjectCategory, string> = {
+  brand: "text-pink-300",
+  professional: "text-blue-300",
+  fnb: "text-orange-300",
+  event: "text-indigo-300",
+  personal: "text-emerald-300",
+}
+
 interface ProjectCardProps {
   project: Project
   /**
@@ -78,8 +94,12 @@ const ProjectCard = ({ project, priority = false }: ProjectCardProps) => {
 
       {/* 콘텐츠 */}
       <div className="p-5">
-        {/* 업종 + 기간 */}
+        {/* 카테고리 + 업종 + 기간 (피드백 #002-③: 카테고리 인지 강화) */}
         <div className="flex items-center gap-3 mb-2">
+          <span className={`text-xs font-semibold ${CATEGORY_TEXT[category]}`}>
+            {CATEGORY_LABEL[category]}
+          </span>
+          <span className="w-px h-3 bg-white/10" aria-hidden="true" />
           <span className="text-[#666666] text-xs">{industry}</span>
           <span className="w-px h-3 bg-white/10" aria-hidden="true" />
           <span className="text-[#666666] text-xs">{duration}</span>

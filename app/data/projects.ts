@@ -7,7 +7,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react"
-import type { Project, ServiceItem, TechGroup, StrengthItem, ProcessStep, StatItem } from "~/types/types"
+import type { Project, ProjectCategory, ProjectTier, ServiceItem, TechGroup, StrengthItem, ProcessStep, StatItem } from "~/types/types"
 
 /**
  * 포트폴리오 프로젝트 데이터
@@ -1332,9 +1332,41 @@ export const getProjectBySlug = (slug: string): Project | undefined =>
 export const getProjectsByCategory = (category: string): Project[] =>
   category === "all" ? projects : projects.filter((p) => p.category === category)
 
-/** 추천 프로젝트 (메인 하이라이트용, 최대 n개) */
+/**
+ * 등급 정렬 우선순위 (피드백 #002-④)
+ * STANDARD → DELUXE → PREMIUM 순서로 카드를 노출하기 위한 가중치.
+ */
+const TIER_PRIORITY: Record<ProjectTier, number> = {
+  standard: 1,
+  deluxe: 2,
+  premium: 3,
+}
+
+/**
+ * 등급순으로 정렬된 프로젝트 목록 반환 (피드백 #002-④)
+ *
+ * 1순위: tier (standard → deluxe → premium)
+ * 2순위: 같은 tier 내에서 order 오름차순
+ *
+ * @param category - 선택. 카테고리 필터링 (예: "brand")
+ */
+export const getSortedProjects = (category?: ProjectCategory): Project[] => {
+  const filtered = category
+    ? projects.filter((p) => p.category === category)
+    : projects
+  return [...filtered].sort((a, b) => {
+    const tierDiff = TIER_PRIORITY[a.tier] - TIER_PRIORITY[b.tier]
+    if (tierDiff !== 0) return tierDiff
+    return a.order - b.order
+  })
+}
+
+/**
+ * 추천 프로젝트 (메인 하이라이트용, 최대 n개).
+ * 피드백 #002-④: 홈 featured도 등급순으로 상위 n개 — 기획자 결정 사항.
+ */
 export const getFeaturedProjects = (n = 3): Project[] =>
-  [...projects].sort((a, b) => a.order - b.order).slice(0, n)
+  getSortedProjects().slice(0, n)
 
 /** 관련 프로젝트 (현재 slug 제외, 최대 n개) */
 export const getRelatedProjects = (currentSlug: string, n = 2): Project[] =>

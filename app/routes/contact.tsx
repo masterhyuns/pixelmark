@@ -14,7 +14,7 @@ export default function Contact() {
         <div className="container">
           <p className="text-[#2563eb] text-sm font-semibold uppercase tracking-wider mb-3">Contact</p>
           <h1 className="text-[clamp(2rem,5vw,3rem)] font-bold text-white mb-4">문의하기</h1>
-          <p className="text-[#aaaaaa] text-base md:text-lg max-w-lg leading-relaxed">
+          <p className="text-[#aaaaaa] text-base md:text-lg leading-relaxed">
             프로젝트 의뢰는 크몽을 통해 안전하게 진행합니다.
             견적부터 납품까지 체계적으로 관리됩니다.
           </p>

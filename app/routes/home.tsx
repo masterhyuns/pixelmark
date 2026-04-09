@@ -153,7 +153,7 @@ export default function Home() {
               href={KMONG_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold transition-colors duration-150 text-base"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 min-w-[220px] rounded-lg bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-semibold transition-colors duration-150 text-base"
             >
               크몽에서 문의하기
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -162,7 +162,7 @@ export default function Home() {
             </a>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-white/10 hover:bg-white/5 text-white font-semibold transition-colors duration-150 text-base"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 min-w-[220px] rounded-lg border border-white/10 hover:bg-white/5 text-white font-semibold transition-colors duration-150 text-base"
             >
               포트폴리오 보기
             </Link>
