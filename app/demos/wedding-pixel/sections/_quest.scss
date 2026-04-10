@@ -19,6 +19,13 @@
     align-items: baseline;
   }
   .wpix-quest-row:last-child { border-bottom: 0; }
+  // 모바일 세로에서 라벨+값이 가로로 넘치지 않도록 세로 배치
+  @media (max-width: 479px) {
+    .wpix-quest-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
   .wpix-quest-label {
     font-family: var(--wpix-font-pixel);
     font-size: 10px;

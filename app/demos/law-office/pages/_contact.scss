@@ -42,8 +42,11 @@
       }
     }
 
-    // 사이드 정보 패널
+    // 사이드 정보 패널 — 지도와 카드 높이를 폼 카드와 맞추기 위해 flex 레이아웃 적용
     .lo-contact-info {
+      display: flex;
+      flex-direction: column;
+
       .lo-contact-info-card {
         background: var(--lo-bg-alt);
         padding: 32px 28px;
@@ -107,8 +110,9 @@
       }
     }
 
-    // 지도
+    // 지도 — flex: 1로 남은 공간을 채워서 왼쪽 폼 카드와 높이를 맞춤
     .lo-contact-map {
+      flex: 1;
       background: var(--lo-bg-alt);
       border-radius: var(--lo-radius-lg);
       overflow: hidden;

@@ -18,11 +18,13 @@
     color: var(--wbook-text-soft);
     margin-bottom: 32px;
   }
+  // 데모 명시 disclaimer — 가운데 정렬 + 상단 여백 + 가독성 통일
   .wbook-footer-disclaimer {
-    margin: 0 auto;
+    margin: 24px auto 0;
     max-width: 580px;
     font-size: 11px;
     line-height: 1.85;
+    text-align: center;
     color: var(--wbook-text-soft);
     padding-top: 22px;
     border-top: 1px solid var(--wbook-border);

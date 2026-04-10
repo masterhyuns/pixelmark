@@ -77,10 +77,12 @@
     color: var(--wpost-text);
   }
 
+  // 지도 — 데스크톱에서 왼쪽 카드와 높이 맞춤을 위해 aspect-ratio 대신 height: 100% 사용
   .wpost-destination-map {
     background: var(--wpost-paper);
     border: 1px solid var(--wpost-border);
-    aspect-ratio: 16 / 11;
+    min-height: 360px;
+    height: 100%;
     overflow: hidden;
   }
   .wpost-destination-map iframe {

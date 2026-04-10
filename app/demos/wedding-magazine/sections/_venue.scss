@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 32px;
+    // stretch로 좌우 높이 맞춤
     align-items: stretch;
   }
   @media (min-width: 960px) {
@@ -60,10 +61,13 @@
     color: var(--wmag-text);
   }
 
+  // 지도 영역 — 데스크톱에서 왼쪽 정보 카드와 높이 맞춤을 위해
+  // aspect-ratio 대신 min-height + height: 100% 사용
   .wmag-venue-map {
     background: var(--wmag-bg);
     border: 1px solid var(--wmag-text);
-    aspect-ratio: 4 / 3;
+    min-height: 360px;
+    height: 100%;
     overflow: hidden;
   }
   .wmag-venue-map iframe {

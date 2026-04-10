@@ -70,6 +70,7 @@ body { background: var(--wbd-bg); }
 }
 
 /* ===== Site header ===== */
+/* border-bottom 제거 — 사장님 피드백 반영 */
 .wbd-site-header {
   position: fixed;
   top: 44px;
@@ -79,7 +80,7 @@ body { background: var(--wbd-bg); }
   background: rgba(15, 10, 10, 0.86);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--wbd-rule);
+  border-bottom: none;
 }
 .wbd-site-header-inner {
   max-width: 1200px;
@@ -268,9 +269,10 @@ body { background: var(--wbd-bg); }
   margin-bottom: 64px;
   border-bottom: 1px solid var(--wbd-rule);
 }
+/* 탭 텍스트와 하단 라인 사이 여백 확보 */
 .wbd-menu-tab {
   position: relative;
-  padding: 16px 0;
+  padding: 16px 0 12px;
   font-size: 13px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -340,8 +342,9 @@ body { background: var(--wbd-bg); }
   color: var(--wbd-text-soft);
   line-height: 1.7;
 }
+/* 추천 문구 — 위 메뉴 카드와 충분한 여백 + 가운데 정렬 */
 .wbd-menu-recommend {
-  margin-top: 80px;
+  margin-top: 48px;
   padding: 32px 40px;
   border: 1px solid var(--wbd-gold);
   background: rgba(212, 175, 55, 0.04);
@@ -444,12 +447,14 @@ body { background: var(--wbd-bg); }
   text-transform: uppercase;
   color: var(--wbd-text-soft);
 }
+/* 데모 명시 disclaimer — 가운데 정렬 + 상단 여백 + 가독성 통일 */
 .wbd-footer-disclaimer {
-  margin: 48px auto 0;
+  margin: 24px auto 0;
   max-width: 640px;
   padding-top: 24px;
   border-top: 1px solid var(--wbd-rule);
   font-size: 12px;
-  color: var(--wbd-text-mute);
+  text-align: center;
+  color: rgba(245, 230, 211, 0.4);
   line-height: 1.7;
 }

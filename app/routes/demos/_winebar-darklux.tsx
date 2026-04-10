@@ -50,9 +50,9 @@ export default function WinebarLayout() {
             <span className="wbd-logo-tag">{brand.hours}</span>
           </NavLink>
           <nav className="wbd-site-nav" aria-label="주 메뉴">
-            <NavLink to="/demos/winebar-darklux" end className={({ isActive }) => isActive ? "active" : ""}>Home · 홈</NavLink>
-            <NavLink to="/demos/winebar-darklux/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu · 메뉴</NavLink>
-            <NavLink to="/demos/winebar-darklux/reservation" className={({ isActive }) => isActive ? "active" : ""}>Reservation · 예약</NavLink>
+            <NavLink to="/demos/winebar-darklux" end className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink>
+            <NavLink to="/demos/winebar-darklux/menu" className={({ isActive }) => isActive ? "active" : ""}>Menu</NavLink>
+            <NavLink to="/demos/winebar-darklux/reservation" className={({ isActive }) => isActive ? "active" : ""}>Reservation</NavLink>
           </nav>
         </div>
       </header>

@@ -184,8 +184,9 @@ body { background: var(--cdk-bg); }
   color: var(--cdk-gold);
   max-width: 14ch;
 }
+/* 영문 타이틀과 한글 tagline 사이 여백 확보 — 모바일에서 겹침 방지 */
 .cdk-hero-tagline {
-  margin-top: 18px;
+  margin-top: 28px;
   font-family: var(--cdk-display);
   font-size: 24px;
   font-style: italic;
@@ -454,6 +455,7 @@ body { background: var(--cdk-bg); }
 .cdk-contact-form textarea { min-height: 120px; resize: vertical; }
 .cdk-contact-form input:focus,
 .cdk-contact-form textarea:focus { outline: none; border-color: var(--cdk-gold); }
+/* 문의하기 버튼 — 항상 보이는 텍스트 버튼 (hover에만 노출되는 문제 수정) */
 .cdk-contact-submit {
   margin-top: 8px;
   padding: 16px 28px;
@@ -464,9 +466,14 @@ body { background: var(--cdk-bg); }
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  transition: background 0.2s;
+  border: 1px solid var(--cdk-gold);
+  opacity: 1;
+  transition: background 0.2s, color 0.2s;
 }
-.cdk-contact-submit:hover { background: #b8965e; }
+.cdk-contact-submit:hover {
+  background: #b8965e;
+  border-color: #b8965e;
+}
 .cdk-contact-form-notice {
   margin-top: 12px;
   font-size: 12px;

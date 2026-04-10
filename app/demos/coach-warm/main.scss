@@ -196,9 +196,10 @@ body { background: var(--cwm-bg); }
 /* ===== Section common ===== */
 .cwm-section { padding: 120px 0; }
 @media (max-width: 767px) { .cwm-section { padding: 80px 0; } }
+/* 섹션 헤드 — 서브타이틀/타이틀/설명 사이 간격 확보 */
 .cwm-section-head { margin-bottom: 56px; }
 .cwm-section-title {
-  margin-top: 12px;
+  margin-top: 8px;
   font-family: var(--cwm-display);
   font-style: italic;
   font-size: clamp(40px, 5.5vw, 72px);
@@ -207,7 +208,7 @@ body { background: var(--cwm-bg); }
   letter-spacing: -0.01em;
 }
 .cwm-section-title-kr {
-  margin-top: 6px;
+  margin-top: 12px;
   font-size: 14px;
   color: var(--cwm-text-mute);
 }
@@ -331,9 +332,10 @@ body { background: var(--cwm-bg); }
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+/* 프로그램 금액 — 위 메타 정보와 시각적 분리 강화 */
 .cwm-program-price {
-  margin-top: 18px;
-  padding-top: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid var(--cwm-rule);
   font-size: 15px;
   color: var(--cwm-caramel);
@@ -501,12 +503,14 @@ body { background: var(--cwm-bg); }
   text-transform: uppercase;
   opacity: 0.7;
 }
+/* 데모 명시 disclaimer — 가운데 정렬 + 상단 여백 + 가독성 통일 */
 .cwm-footer-disclaimer {
-  margin: 48px auto 0;
+  margin: 24px auto 0;
   max-width: 640px;
   padding-top: 24px;
   border-top: 1px solid rgba(251, 247, 242, 0.18);
   font-size: 12px;
-  opacity: 0.6;
+  text-align: center;
+  color: rgba(251, 247, 242, 0.4);
   line-height: 1.7;
 }

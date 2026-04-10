@@ -5,6 +5,8 @@
 .wedding-classic {
   .wc-story {
     padding-top: calc(44px + var(--wc-header-h) + 40px);
+    // 스토리 하단 → Thank You(푸터) 영역과 충분한 여백 확보
+    padding-bottom: 80px;
   }
 
   .wc-story-greeting {

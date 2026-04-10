@@ -36,6 +36,8 @@
     transition: border-color 0.2s ease, background 0.2s ease;
   }
   .wv-rsvp-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+  // select 드롭다운 option 텍스트가 배경에 묻히지 않도록 명시 색상 지정
+  .wv-rsvp-select option { color: #333; background: #fff; }
   .wv-rsvp-input:focus,
   .wv-rsvp-select:focus {
     outline: none;

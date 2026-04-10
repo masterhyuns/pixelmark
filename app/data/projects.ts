@@ -102,7 +102,7 @@ export const projects: Project[] = [
   },
   {
     slug: "law-office",
-    title: "법률사무소/병원 소개 사이트",
+    title: "법률사무소 소개 사이트",
     subtitle: "신뢰감 있는 정보 구조와 상담 전환 설계에 집중한 전문직 멀티페이지 사이트",
     category: "professional",
     tier: "standard",
