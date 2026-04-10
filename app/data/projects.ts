@@ -48,7 +48,6 @@ import wmagHeroUrl from "~/demos/wedding-magazine/assets/images/cover/cover.webp
 import whanHeroUrl from "~/demos/wedding-hanji/assets/images/hero/hero.webp"
 import wvnyHeroUrl from "~/demos/wedding-vinyl/assets/images/hero/album-cover.webp"
 import wpixHeroUrl from "~/demos/wedding-pixel/assets/images/title/title-bg.webp"
-import wnewsHeroUrl from "~/demos/wedding-newsprint/assets/images/header/header-bg.webp"
 import wpostHeroUrl from "~/demos/wedding-postal/assets/images/envelope/envelope.webp"
 import wbookHeroUrl from "~/demos/wedding-storybook/assets/images/cover/cover.webp"
 import flbHeroUrl from "~/demos/fashion-lookbook/assets/images/hero/hero-bg.webp"
@@ -764,43 +763,6 @@ export const projects: Project[] = [
       {
         title: "GAME CLEAR 모달 + 픽셀 버튼",
         description: "RSVP는 'CONTINUE? JOIN THE QUEST' 폼. 픽셀 보더 + 4px shadow 버튼이 클릭 시 살짝 눌리는 transform 효과로 8비트 버튼 감각을 재현했습니다. 제출 시 ★ GAME CLEAR ★ 모달이 떠오릅니다.",
-      },
-    ],
-  },
-  {
-    slug: "wedding-newsprint",
-    title: "신문 청첩장",
-    subtitle: "빈티지 신문 헤드라인과 3컬럼 기사 + 분류광고 위트로 풀어낸 트렌디 청첩장",
-    category: "event",
-    tier: "standard",
-    industry: "결혼식 / 청첩장",
-    duration: "1주",
-    order: 20,
-    demoUrl: "/demos/wedding-newsprint",
-    techStack: ["HTML5", "CSS3", "SCSS", "Vanilla TS", "Old Standard TT", "CSS columns"],
-    description:
-      "종이 베이지 + 잉크 블랙 + 빈티지 레드의 신문 팔레트와 Old Standard TT 세리프로 빈티지 신문 1면 같은 청첩장을 만들었습니다. 시그니처는 'THE PIXELMARK TIMES' 마스트헤드와 한 글자씩 타이핑되는 헤드라인. 3컬럼 기사 본문(CSS columns + 골드 드롭캡), 흑백 4프레임 photo page, WANTED/FOR SALE/LOST 위트 분류광고, 신문지 격조의 계좌 광고 카드까지 5섹션을 단일 라우트에 담았습니다.",
-    thumbnail: wnewsHeroUrl,
-    highlights: [
-      {
-        title: "신문 마스트헤드 + 헤드라인 타이핑 (시그니처)",
-        description: "'THE PIXELMARK TIMES' 마스트헤드 아래 BREAKING NEWS 헤드라인이 한 글자씩 45ms 간격으로 타이핑됩니다. 4px 더블 보더와 SPECIAL EDITION 빈티지 스탬프로 신문 1면을 그대로 옮겼습니다.",
-      },
-      {
-        title: "3컬럼 기사 본문 + 드롭캡",
-        description: "Article 섹션에 CSS columns: 3과 column-rule을 적용해 진짜 신문 컬럼처럼 본문이 3등분됩니다. 첫 단락 첫 글자엔 큰 빨간 드롭캡.",
-      },
-      {
-        title: "Wedding Section 정보 카드 + 흑백 카카오맵",
-        description: "Page 03을 'Wedding Section'으로 표현. 2px 솔리드 보더 인포 카드와 grayscale(1) 처리한 카카오맵으로 신문지 인쇄 톤을 유지합니다.",
-      },
-      {
-        title: "흑백 Photo Page",
-        description: "Page 04에 4프레임 흑백 갤러리. 이탤릭 캡션과 1px 보더로 신문 사진 페이지의 톤을 그대로 살렸습니다.",
-      },
-      {
-        title: "WANTED/FOR SALE/LOST 분류광고",
-        description: "Page 05 Classified 섹션에 'WANTED: 조용한 오후를 좋아하는 손님', 'FOR SALE: 두 마음', 'LOST: Henry'라는 위트 있는 가상 분류광고 3개와 신랑·신부 계좌 광고 2개를 배치했습니다.",
       },
     ],
   },

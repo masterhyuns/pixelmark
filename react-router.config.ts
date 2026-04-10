@@ -66,7 +66,6 @@ export default {
       "/demos/wedding-hanji",
       "/demos/wedding-vinyl",
       "/demos/wedding-pixel",
-      "/demos/wedding-newsprint",
       "/demos/wedding-postal",
       "/demos/wedding-storybook",
       "/demos/fashion-lookbook",

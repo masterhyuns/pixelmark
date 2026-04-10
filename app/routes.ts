@@ -83,9 +83,6 @@ export default [
     // E-S15 게임 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-pixel", "routes/demos/wedding-pixel.tsx"),
 
-    // E-S16 신문 청첩장 (단일 라우트, 원페이지)
-    route("demos/wedding-newsprint", "routes/demos/wedding-newsprint.tsx"),
-
     // E-S17 우편 청첩장 (단일 라우트, 원페이지)
     route("demos/wedding-postal", "routes/demos/wedding-postal.tsx"),
 

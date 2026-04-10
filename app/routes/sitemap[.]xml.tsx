@@ -56,7 +56,6 @@ const STATIC_ROUTES: Array<{ path: string; priority: string; changefreq: string 
   { path: "/demos/wedding-hanji", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-vinyl", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-pixel", priority: "0.7", changefreq: "monthly" },
-  { path: "/demos/wedding-newsprint", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-postal", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/wedding-storybook", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/fashion-lookbook", priority: "0.7", changefreq: "monthly" },
