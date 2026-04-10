@@ -147,6 +147,7 @@
   .wpost-envelope.is-open .wpost-letter {
     transform: translateY(-72%) scale(1);
     opacity: 1;
+    z-index: 5; // 편지가 봉투 위로 올라와야 읽힘 (flap:3, stamp:2 보다 위)
   }
   .wpost-letter-line {
     height: 1px;
