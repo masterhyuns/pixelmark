@@ -207,14 +207,15 @@ body { background: var(--mcl-bg); }
   gap: 8px;
   margin-top: 32px;
   padding: 16px 28px;
-  background: var(--mcl-text);
-  color: #fff;
+  background: var(--mcl-mint);
+  color: #fff !important;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 600;
   transition: background 0.2s;
+  text-decoration: none;
 }
-.mcl-hero-cta:hover { background: var(--mcl-mint); }
+.mcl-hero-cta:hover { background: #4a9899; }
 .mcl-hero-image {
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -226,7 +227,7 @@ body { background: var(--mcl-bg); }
 /* ===== Section common ===== */
 .mcl-section { padding: 120px 0; }
 @media (max-width: 767px) { .mcl-section { padding: 80px 0; } }
-.mcl-section-head { text-align: center; margin-bottom: 64px; }
+.mcl-section-head { text-align: center; margin-bottom: 64px; max-width: 780px; margin-left: auto; margin-right: auto; }
 .mcl-section-title {
   margin-top: 12px;
   font-size: clamp(36px, 5vw, 64px);
@@ -443,6 +444,10 @@ body { background: var(--mcl-bg); }
   padding: 14px 0;
   border-bottom: 1px dashed var(--mcl-rule);
   font-size: 14px;
+  gap: 8px;
+}
+@media (max-width: 639px) {
+  .mcl-rsv-row { flex-direction: column; gap: 4px; }
 }
 .mcl-rsv-row:last-of-type { border-bottom: none; }
 .mcl-rsv-row strong { color: var(--mcl-mint); font-weight: 600; }
