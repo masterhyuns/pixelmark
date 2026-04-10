@@ -52,12 +52,23 @@ export const initGalleryReveal = (root: HTMLElement | null): (() => void) => {
         observer.unobserve(entry.target)
       })
     },
-    { threshold: 0.15 }
+    // threshold 0.15 → 0으로 낮춤: clip-path inset(100%) 상태에서도 확실히 트리거
+    { threshold: 0, rootMargin: "0px 0px -4% 0px" }
   )
 
   items.forEach((item) => observer.observe(item))
 
+  // 안전 장치: 2초 뒤에도 reveal 안 된 아이템이 있으면 강제 reveal
+  const fallbackTimer = setTimeout(() => {
+    items.forEach((item) => {
+      if (!item.classList.contains("is-revealed")) {
+        item.classList.add("is-revealed")
+      }
+    })
+  }, 2000)
+
   return () => {
+    clearTimeout(fallbackTimer)
     observer.disconnect()
   }
 }
