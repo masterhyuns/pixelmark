@@ -136,8 +136,8 @@ export default [
       route("demos/medical-clean/reservation", "routes/demos/medical-clean.reservation.tsx"),
     ]),
 
-    // P-S2 세무사 Cinder Tax & Accounting (단일 라우트, 원페이지 long)
-    route("demos/tax-office-calm", "routes/demos/tax-office-calm.tsx"),
+    // P-S2 세무사 — 리뉴얼 예정, 라우트 숨김 (파일은 보존)
+    // route("demos/tax-office-calm", "routes/demos/tax-office-calm.tsx"),
 
     // P-S3 컨설팅 Northgate Consulting (멀티페이지: 부모 layout + 3 sub-route)
     layout("routes/demos/_consulting-dark.tsx", [

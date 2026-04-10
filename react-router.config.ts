@@ -87,7 +87,7 @@ export default {
       "/demos/medical-clean/departments",
       "/demos/medical-clean/staff",
       "/demos/medical-clean/reservation",
-      "/demos/tax-office-calm",
+      // "/demos/tax-office-calm", // 리뉴얼 예정, prerender 숨김
       "/demos/consulting-dark",
       "/demos/consulting-dark/cases",
       "/demos/consulting-dark/contact",

@@ -60,7 +60,8 @@ import pmnHeroUrl from "~/demos/photographer-mono/assets/images/intro/intro-main
 import ilvHeroUrl from "~/demos/illustrator-vivid/assets/images/hero/hero.webp"
 import cwmHeroUrl from "~/demos/coach-warm/assets/images/about/hero.webp"
 import mclHeroUrl from "~/demos/medical-clean/assets/images/home/home-hero.webp"
-import taxHeroUrl from "~/demos/tax-office-calm/assets/images/hero/hero.webp"
+// tax-office-calm — 리뉴얼 예정, import 유지하되 projects 배열에서 제거
+// import taxHeroUrl from "~/demos/tax-office-calm/assets/images/hero/hero.webp"
 import cdkHeroUrl from "~/demos/consulting-dark/assets/images/home/hero.webp"
 export const projects: Project[] = [
   {
@@ -1210,43 +1211,7 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    slug: "tax-office-calm",
-    title: "세무사 / 회계 사무소",
-    subtitle: "라이트 그레이 + 블루 액센트로 완성한 1인 세무사 사무소 long-form 원페이지",
-    category: "professional",
-    tier: "standard",
-    industry: "세무사 / 회계사 / 노무사",
-    duration: "1주",
-    order: 33,
-    demoUrl: "/demos/tax-office-calm",
-    techStack: ["HTML5", "SCSS", "Vanilla TS", "Inter", "Mock Form"],
-    description:
-      "가상 'Cinder Tax & Accounting'의 long-form 원페이지 데모입니다. 히어로 → 6 업무 카드 → About + 경력 → 가상 케이스 3 → 기준 수수료 표 → PDF 자료 카드 3 → 상담 신청 폼 + 위치 7섹션. 라이트 그레이(#F7F7F7) + 다크 네이비(#1A2A3A) + 블루(#2563EB) 3색만으로 차분하고 정직한 전문직 톤을 만듭니다.",
-    thumbnail: taxHeroUrl,
-    highlights: [
-      {
-        title: "7섹션 long-form 원페이지 (정보 밀도 높게)",
-        description: "히어로 / 업무 안내 / About / 가상 사례 / 기준 수수료 / PDF 자료 / 상담 폼까지 7섹션을 한 페이지에 압축. 모든 섹션은 같은 1200px 컨테이너와 일관된 dashed 보더 / 좌측 3px 보더 패턴을 따릅니다.",
-      },
-      {
-        title: "Service 카드 좌측 보더 hover (시그니처)",
-        description: "6개 업무 카드는 좌측 3px 회색 보더가 hover 시 블루로 바뀌며 18/40px 블루 그림자가 생깁니다. -3px 떠오르는 transform과 함께. 정돈된 전문직 톤에 어울리는 절제된 인터랙션.",
-      },
-      {
-        title: "투명한 기준 수수료 테이블 (3-column row)",
-        description: "수수료는 1.4fr / 1fr / 1.2fr 3-column 행으로 업무명 / 가격 / 비고를 한 줄에 정렬. hover 시 행 배경이 부드럽게 라이트 그레이로 바뀌고, 가격은 블루 강조. 모든 가격이 가상이라는 안내 라인을 별도 표기.",
-      },
-      {
-        title: "Mock 상담 폼 + 가상 사례 + PDF 카드",
-        description: "사례 카드는 3개 가상 케이스를 80px Inter ExtraBold 번호 + 본문으로 분리. PDF 자료 카드는 3개를 dashed 라인으로 다운로드 링크 분리. 상담 폼은 4 필드 + 검정→블루 hover 버튼 + 가상 안내 메시지로 구성.",
-      },
-      {
-        title: "한국어 본문 메인 + 영문 디스플레이 (정책 v1.0)",
-        description: "사무소명 / 업무 영문 라벨 / 섹션 헤딩 등 디스플레이는 영문 OK, 인사말 / 업무 설명 / 사무소 소개 / 사례 / 수수료 안내 / 자료 / 폼 라벨 / 푸터 disclaimer는 모두 한국어 메인으로 작성했습니다.",
-      },
-    ],
-  },
+  // tax-office-calm — 리뉴얼 예정, 프로젝트 목록에서 숨김 (파일 보존)
   {
     slug: "consulting-dark",
     title: "B2B 컨설팅 펌",

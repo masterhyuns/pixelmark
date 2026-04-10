@@ -79,7 +79,7 @@ const STATIC_ROUTES: Array<{ path: string; priority: string; changefreq: string 
   { path: "/demos/medical-clean/departments", priority: "0.6", changefreq: "monthly" },
   { path: "/demos/medical-clean/staff", priority: "0.6", changefreq: "monthly" },
   { path: "/demos/medical-clean/reservation", priority: "0.6", changefreq: "monthly" },
-  { path: "/demos/tax-office-calm", priority: "0.7", changefreq: "monthly" },
+  // tax-office-calm — 리뉴얼 예정, sitemap 숨김
   { path: "/demos/consulting-dark", priority: "0.7", changefreq: "monthly" },
   { path: "/demos/consulting-dark/cases", priority: "0.6", changefreq: "monthly" },
   { path: "/demos/consulting-dark/contact", priority: "0.6", changefreq: "monthly" },
