@@ -83,4 +83,76 @@
   @media (min-width: 768px) {
     .wc-site-current { display: none; }
   }
+
+  // ===== 모바일 햄버거 =====
+  .wc-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 1.5px;
+      background: var(--wc-navy);
+      transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+    &.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    &.is-open span:nth-child(2) { opacity: 0; }
+    &.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+  @media (min-width: 768px) {
+    .wc-hamburger { display: none; }
+  }
+
+  // ===== 모바일 메뉴 오버레이 =====
+  .wc-mobile-menu {
+    position: fixed;
+    top: calc(44px + var(--wc-header-h));
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 49;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  @media (min-width: 768px) {
+    .wc-mobile-menu { display: none !important; }
+  }
+
+  .wc-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    a {
+      font-family: var(--wc-font-display);
+      font-size: 28px;
+      letter-spacing: 0.14em;
+      color: var(--wc-text);
+      transition: color 0.2s ease;
+
+      &.active { color: var(--wc-navy); }
+      &:hover { color: var(--wc-navy); }
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { NavLink, Outlet, useLocation } from "react-router"
 import "~/demos/wedding-classic/main.scss"
 import { couple } from "~/demos/wedding-classic/data/content"
@@ -47,6 +47,7 @@ const NAV_ITEMS = [
 export default function WeddingClassicLayout() {
   const rootRef = useRef<HTMLDivElement>(null)
   const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   // sub-route 변경 시 entering 페이드 + 상단 스크롤
   useEffect(() => {
@@ -57,6 +58,7 @@ export default function WeddingClassicLayout() {
       page.classList.remove("is-leaving")
     })
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior })
+    setMenuOpen(false)
     return () => cancelAnimationFrame(rafId)
   }, [location.pathname])
 
@@ -88,8 +90,36 @@ export default function WeddingClassicLayout() {
           </nav>
 
           <span className="wc-site-current">{current?.label}</span>
+
+          {/* 모바일 햄버거 버튼 */}
+          <button
+            type="button"
+            className={`wc-hamburger${menuOpen ? " is-open" : ""}`}
+            aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <span /><span /><span />
+          </button>
         </div>
       </header>
+
+      {/* 모바일 메뉴 오버레이 */}
+      <div className={`wc-mobile-menu${menuOpen ? " is-open" : ""}`} aria-hidden={!menuOpen}>
+        <nav className="wc-mobile-nav">
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
 
       {/* ===== 페이지 콘텐츠 ===== */}
       <div className="wc-page" style={{ paddingTop: "calc(44px + var(--wc-header-h))" }}>
