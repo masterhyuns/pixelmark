@@ -51,7 +51,7 @@ const DemoHeaderBar = ({ currentDemoName }: DemoHeaderBarProps) => {
       >
         {/* 좌측: 복귀 링크 + 구분점 + 현재 데모명 */}
         <Link
-          to="/"
+          to="/projects"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -59,7 +59,7 @@ const DemoHeaderBar = ({ currentDemoName }: DemoHeaderBarProps) => {
             color: "inherit",
             textDecoration: "none",
           }}
-          aria-label="Pixelmark 포트폴리오로 돌아가기"
+          aria-label="작업사례로 돌아가기"
         >
           {/* 좌측 화살표 아이콘 */}
           <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">

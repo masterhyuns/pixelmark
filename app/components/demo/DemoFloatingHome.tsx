@@ -26,9 +26,9 @@ const DemoFloatingHome = () => {
   return (
     <>
       <Link
-        to="/"
+        to="/projects"
         className="demo-floating-home"
-        aria-label="Pixelmark 포트폴리오 홈으로 이동"
+        aria-label="작업사례로 돌아가기"
         style={{
           position: "fixed",
           right: 24,
