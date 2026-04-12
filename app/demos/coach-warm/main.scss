@@ -208,7 +208,7 @@ body { background: var(--cwm-bg); }
   letter-spacing: -0.01em;
 }
 .cwm-section-title-kr {
-  margin-top: 12px;
+  margin-top: 12px !important;
   font-size: 14px;
   color: var(--cwm-text-mute);
 }
@@ -334,12 +334,13 @@ body { background: var(--cwm-bg); }
 }
 /* 프로그램 금액 — 위 메타 정보와 시각적 분리 강화 */
 .cwm-program-price {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: 20px !important;
+  padding-top: 16px !important;
   border-top: 1px solid var(--cwm-rule);
   font-size: 15px;
   color: var(--cwm-caramel);
   font-weight: 600;
+  text-align: right;
 }
 
 /* ===== Reviews ===== */
@@ -505,9 +506,9 @@ body { background: var(--cwm-bg); }
 }
 /* 데모 명시 disclaimer — 가운데 정렬 + 상단 여백 + 가독성 통일 */
 .cwm-footer-disclaimer {
-  margin: 24px auto 0;
+  margin: 12px auto 0 !important;
   max-width: 640px;
-  padding-top: 24px;
+  padding-top: 12px !important;
   border-top: 1px solid rgba(251, 247, 242, 0.18);
   font-size: 12px;
   text-align: center;

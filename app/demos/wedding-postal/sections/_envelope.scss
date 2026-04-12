@@ -26,6 +26,11 @@
     border: 1px solid var(--wpost-border);
     box-shadow: 0 20px 60px rgba(45, 38, 28, 0.18);
     overflow: hidden;
+    transition: overflow 0s 0.2s;
+  }
+  // 봉투 열리면 편지가 위로 올라오므로 overflow visible 필요
+  .wpost-envelope.is-open .wpost-envelope-body {
+    overflow: visible;
   }
   .wpost-envelope-body::before {
     content: "";

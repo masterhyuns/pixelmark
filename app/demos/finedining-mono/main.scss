@@ -410,9 +410,9 @@ body { background: var(--fdm-bg); }
 }
 /* 데모 명시 disclaimer — 가운데 정렬 + 상단 여백 + 가독성 통일 */
 .fdm-footer-disclaimer {
-  margin: 24px auto 0;
+  margin: 12px auto 0 !important;
   max-width: 640px;
-  padding-top: 24px;
+  padding-top: 12px !important;
   border-top: 1px solid rgba(248, 248, 246, 0.18);
   font-size: 12px;
   text-align: center;
