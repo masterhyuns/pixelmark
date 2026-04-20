@@ -3,7 +3,7 @@ import { createMeta, PAGE_META } from "~/utils/seo"
 
 export const meta: Route.MetaFunction = () => createMeta(PAGE_META.contact)
 
-const KMONG_URL = "https://kmong.com" // 실제 크몽 프로필 URL로 교체
+const KMONG_URL = "https://kmong.com/gig/760141"
 const EMAIL = "your@email.com" // 실제 이메일로 교체
 
 export default function Contact() {

@@ -14,7 +14,7 @@ import type { Project } from "~/types/types"
 export const SITE_NAME = "Pixelmark"
 export const SITE_URL = "https://kmong-dev.kr"
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`
-export const KMONG_PROFILE_URL = "https://kmong.com" // 실제 크몽 프로필로 교체
+export const KMONG_PROFILE_URL = "https://kmong.com/gig/760141"
 
 interface SeoOptions {
   title: string

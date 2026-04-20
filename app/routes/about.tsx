@@ -7,7 +7,7 @@ import { strengths, processSteps } from "~/data/projects"
 
 export const meta: Route.MetaFunction = () => createMeta(PAGE_META.about)
 
-const KMONG_URL = "https://kmong.com" // 실제 크몽 프로필 URL로 교체
+const KMONG_URL = "https://kmong.com/gig/760141"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)

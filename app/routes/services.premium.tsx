@@ -30,7 +30,7 @@ import { techGroups } from "~/data/projects"
 
 export const meta: Route.MetaFunction = () => createMeta(PAGE_META.premium)
 
-const KMONG_URL = "https://kmong.com"
+const KMONG_URL = "https://kmong.com/gig/760141"
 
 /** 비교 표 데이터 — STANDARD/DELUXE/PREMIUM 차이를 한 눈에 */
 const COMPARISON: Array<{ label: string; standard: string; deluxe: string; premium: string }> = [

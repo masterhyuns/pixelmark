@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { to: "/contact", label: "문의" },
 ]
 
-const KMONG_URL = "https://kmong.com" // 실제 크몽 프로필 URL로 교체
+const KMONG_URL = "https://kmong.com/gig/760141"
 
 /** 사이트 공통 푸터 */
 const Footer = () => {

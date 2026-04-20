@@ -43,7 +43,7 @@ export const meta: Route.MetaFunction = ({ data }) => {
   return createProjectMeta(typed.project)
 }
 
-const KMONG_URL = "https://kmong.com" // 실제 크몽 프로필 URL로 교체
+const KMONG_URL = "https://kmong.com/gig/760141"
 
 export default function ProjectDetail({ loaderData }: Route.ComponentProps) {
   const { project, related } = loaderData
